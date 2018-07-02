@@ -31,7 +31,6 @@
 		999D3FDC20E2900100950040 /* MDCacheFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 999D3FDB20E2900100950040 /* MDCacheFileManager.m */; };
 		99AA268520DE6BAF0053CAB6 /* meidaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA268420DE6BAF0053CAB6 /* meidaTests.m */; };
 		99AA269020DE6BAF0053CAB6 /* meidaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA268F20DE6BAF0053CAB6 /* meidaUITests.m */; };
-		99AA27F620DE6DC80053CAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99AA269E20DE6DC70053CAB6 /* Assets.xcassets */; };
 		99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26C620DE6DC70053CAB6 /* LSLocation.m */; };
 		99AA280120DE6DC80053CAB6 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26D120DE6DC70053CAB6 /* UserManager.m */; };
 		99AA280220DE6DC80053CAB6 /* UserAnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26D220DE6DC70053CAB6 /* UserAnalyticsManager.m */; };
@@ -111,6 +110,11 @@
 		C2CE591A20E9BAC5001F1F47 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C2CE590E20E9BAC5001F1F47 /* WeiboSDK.bundle */; };
 		C2CE591B20E9BAC5001F1F47 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CE591120E9BAC5001F1F47 /* libWeiboSDK.a */; };
 		C2CE591C20E9BAC5001F1F47 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C2CE591320E9BAC5001F1F47 /* README.md */; };
+		C2CE591E20E9BDB5001F1F47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CE591D20E9BDB5001F1F47 /* Assets.xcassets */; };
+		C2CE592420E9C1CF001F1F47 /* MDTrendChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592320E9C1CF001F1F47 /* MDTrendChannelView.m */; };
+		C2CE592720E9C1F1001F1F47 /* MDTrendUploadNewView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592620E9C1F1001F1F47 /* MDTrendUploadNewView.m */; };
+		C2CE592A20E9C211001F1F47 /* MDTrendRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592920E9C211001F1F47 /* MDTrendRecommendView.m */; };
+		C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592C20E9C247001F1F47 /* MDSegmentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,7 +198,6 @@
 		99AA268B20DE6BAF0053CAB6 /* meidaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meidaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99AA268F20DE6BAF0053CAB6 /* meidaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = meidaUITests.m; sourceTree = "<group>"; };
 		99AA269120DE6BAF0053CAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99AA269E20DE6DC70053CAB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99AA26C520DE6DC70053CAB6 /* LSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLocation.h; sourceTree = "<group>"; };
 		99AA26C620DE6DC70053CAB6 /* LSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLocation.m; sourceTree = "<group>"; };
 		99AA26D120DE6DC70053CAB6 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
@@ -394,6 +397,15 @@
 		C2CE591720E9BAC5001F1F47 /* WeiboSDK+Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeiboSDK+Statistics.h"; sourceTree = "<group>"; };
 		C2CE591820E9BAC5001F1F47 /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
 		C2CE591920E9BAC5001F1F47 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		C2CE591D20E9BDB5001F1F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2CE592220E9C1CF001F1F47 /* MDTrendChannelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendChannelView.h; sourceTree = "<group>"; };
+		C2CE592320E9C1CF001F1F47 /* MDTrendChannelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendChannelView.m; sourceTree = "<group>"; };
+		C2CE592520E9C1F1001F1F47 /* MDTrendUploadNewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendUploadNewView.h; sourceTree = "<group>"; };
+		C2CE592620E9C1F1001F1F47 /* MDTrendUploadNewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendUploadNewView.m; sourceTree = "<group>"; };
+		C2CE592820E9C211001F1F47 /* MDTrendRecommendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendRecommendView.h; sourceTree = "<group>"; };
+		C2CE592920E9C211001F1F47 /* MDTrendRecommendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendRecommendView.m; sourceTree = "<group>"; };
+		C2CE592B20E9C247001F1F47 /* MDSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentView.h; sourceTree = "<group>"; };
+		C2CE592C20E9C247001F1F47 /* MDSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentView.m; sourceTree = "<group>"; };
 		CB36AF007EC026AAC139C578 /* libPods-meidaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meidaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C6E32A3FADA3060F60577E /* libPods-meidaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meidaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FE177AA4B4966BA4439040 /* Pods-meida.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meida.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meida/Pods-meida.debug.xcconfig"; sourceTree = "<group>"; };
@@ -521,7 +533,7 @@
 		99AA269D20DE6DC70053CAB6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				99AA269E20DE6DC70053CAB6 /* Assets.xcassets */,
+				C2CE591D20E9BDB5001F1F47 /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -560,8 +572,6 @@
 		99AA26A220DE6DC70053CAB6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				99CD9C7D20DF31BD000BC7F0 /* MDServicesControl.h */,
-				99CD9C7E20DF31BD000BC7F0 /* MDServicesControl.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -592,6 +602,8 @@
 		99AA26A620DE6DC70053CAB6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				99CD9C7D20DF31BD000BC7F0 /* MDServicesControl.h */,
+				99CD9C7E20DF31BD000BC7F0 /* MDServicesControl.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -617,8 +629,6 @@
 		99AA26A920DE6DC70053CAB6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				99CD9C8020DF31F1000BC7F0 /* MDMineControl.h */,
-				99CD9C8120DF31F1000BC7F0 /* MDMineControl.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -649,6 +659,8 @@
 		99AA26AD20DE6DC70053CAB6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				99CD9C8020DF31F1000BC7F0 /* MDMineControl.h */,
+				99CD9C8120DF31F1000BC7F0 /* MDMineControl.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -674,8 +686,6 @@
 		99AA26B020DE6DC70053CAB6 /* Wardrobe */ = {
 			isa = PBXGroup;
 			children = (
-				99CD9C7A20DF3185000BC7F0 /* MDWardrobeControl.h */,
-				99CD9C7B20DF3185000BC7F0 /* MDWardrobeControl.m */,
 			);
 			path = Wardrobe;
 			sourceTree = "<group>";
@@ -706,6 +716,8 @@
 		99AA26B420DE6DC70053CAB6 /* Wardrobe */ = {
 			isa = PBXGroup;
 			children = (
+				99CD9C7A20DF3185000BC7F0 /* MDWardrobeControl.h */,
+				99CD9C7B20DF3185000BC7F0 /* MDWardrobeControl.m */,
 			);
 			path = Wardrobe;
 			sourceTree = "<group>";
@@ -890,6 +902,8 @@
 				99AA271720DE6DC70053CAB6 /* BaseTextField.m */,
 				99AA271B20DE6DC70053CAB6 /* MZSelectableLabel.h */,
 				99AA271420DE6DC70053CAB6 /* MZSelectableLabel.m */,
+				C2CE592B20E9C247001F1F47 /* MDSegmentView.h */,
+				C2CE592C20E9C247001F1F47 /* MDSegmentView.m */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1117,8 +1131,6 @@
 		99AA279D20DE6DC70053CAB6 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
-				99CD9C7720DF3147000BC7F0 /* MDTrendControl.h */,
-				99CD9C7820DF3147000BC7F0 /* MDTrendControl.m */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -1144,6 +1156,12 @@
 		99AA27AD20DE6DC70053CAB6 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
+				C2CE592220E9C1CF001F1F47 /* MDTrendChannelView.h */,
+				C2CE592320E9C1CF001F1F47 /* MDTrendChannelView.m */,
+				C2CE592520E9C1F1001F1F47 /* MDTrendUploadNewView.h */,
+				C2CE592620E9C1F1001F1F47 /* MDTrendUploadNewView.m */,
+				C2CE592820E9C211001F1F47 /* MDTrendRecommendView.h */,
+				C2CE592920E9C211001F1F47 /* MDTrendRecommendView.m */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -1159,6 +1177,8 @@
 		99AA27C720DE6DC70053CAB6 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
+				99CD9C7720DF3147000BC7F0 /* MDTrendControl.h */,
+				99CD9C7820DF3147000BC7F0 /* MDTrendControl.m */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -1429,6 +1449,7 @@
 				99AA285320DE6DC80053CAB6 /* AppStoreExportOptions.plist in Resources */,
 				99AA286F20DE6DC80053CAB6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				C2CE590920E9BAB6001F1F47 /* README.txt in Resources */,
+				C2CE591E20E9BDB5001F1F47 /* Assets.xcassets in Resources */,
 				99AA280920DE6DC80053CAB6 /* ShareViewCell.xib in Resources */,
 				99AA285120DE6DC80053CAB6 /* DeviceConstantInfo.plist in Resources */,
 				99AA287520DE6DC80053CAB6 /* SAMKeychain.bundle in Resources */,
@@ -1438,7 +1459,6 @@
 				C2CE591A20E9BAC5001F1F47 /* WeiboSDK.bundle in Resources */,
 				C2CE591C20E9BAC5001F1F47 /* README.md in Resources */,
 				99AA287020DE6DC80053CAB6 /* README.md in Resources */,
-				99AA27F620DE6DC80053CAB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1519,6 +1539,7 @@
 				9921785620E284DF001C6A76 /* MDHttpSessionManager.m in Sources */,
 				99AA289420DE6F580053CAB6 /* Util.m in Sources */,
 				99AA287420DE6DC80053CAB6 /* SAMKeychainQuery.m in Sources */,
+				C2CE592720E9C1F1001F1F47 /* MDTrendUploadNewView.m in Sources */,
 				99AA280620DE6DC80053CAB6 /* ShareView.m in Sources */,
 				99AA284F20DE6DC80053CAB6 /* NSDate+LSExtension.m in Sources */,
 				99AA284420DE6DC80053CAB6 /* UIView+AligmentRectInsets.m in Sources */,
@@ -1547,6 +1568,7 @@
 				99AA288F20DE6F580053CAB6 /* AnimationManager.m in Sources */,
 				99AA284820DE6DC80053CAB6 /* NSString+AttributeString.m in Sources */,
 				9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */,
+				C2CE592420E9C1CF001F1F47 /* MDTrendChannelView.m in Sources */,
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
@@ -1555,6 +1577,7 @@
 				99AA280320DE6DC80053CAB6 /* UserAnalyticsModel.m in Sources */,
 				99AA280B20DE6DC80053CAB6 /* ShareManager.m in Sources */,
 				99AA281D20DE6DC80053CAB6 /* MZSelectableLabel.m in Sources */,
+				C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */,
 				99970F5C20DF2E1500AEC45E /* MDTabBarSubviews.m in Sources */,
 				99CD9C7C20DF3185000BC7F0 /* MDWardrobeControl.m in Sources */,
 				99AA282B20DE6DC80053CAB6 /* LSAlertView.m in Sources */,
@@ -1562,6 +1585,7 @@
 				99AA281420DE6DC80053CAB6 /* BaseJumpModel.m in Sources */,
 				99AA283920DE6DC80053CAB6 /* UIImage+Blur.m in Sources */,
 				999D3FD620E28DF500950040 /* MDExceptionManager.m in Sources */,
+				C2CE592A20E9C211001F1F47 /* MDTrendRecommendView.m in Sources */,
 				99AA280C20DE6DC80053CAB6 /* VPImageCropperViewController.m in Sources */,
 				99AA281120DE6DC80053CAB6 /* BaseModel.m in Sources */,
 				99AA284220DE6DC80053CAB6 /* UIView+Animation.m in Sources */,

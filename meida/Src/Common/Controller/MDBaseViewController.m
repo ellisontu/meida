@@ -158,7 +158,6 @@
         [_lineview autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
         [_lineview autoSetDimension:ALDimensionHeight toSize:OnePixScale];
     }
-    
     return _navigation;
 }
 
@@ -338,7 +337,7 @@
 {
     [self addRightBtn];
     
-    if (title)
+    if (!stringIsEmpty(title))
     {
         [_rightBtn setTitle:title forState:UIControlStateNormal];
     }
@@ -350,7 +349,7 @@
 - (void) setLeftBtnWith:(NSString *)title image:(UIImage *)img
 {
     [self addLeftBtn];
-    if (title)
+    if (!stringIsEmpty(title))
     {
         [_leftBtn setTitle:title forState:UIControlStateNormal];
     }

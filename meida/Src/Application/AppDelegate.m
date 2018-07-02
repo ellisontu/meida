@@ -181,31 +181,15 @@ void uncaughtExceptionHandler(NSException *exception)
 - (void)addChildControllers
 {
     if (!_rvc) {
-//        //处理8系统的莫名崩溃
-//        if (IOS_LESS_THAN(@"9.0")) {
-//            dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC));
-//            dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-//                _rvc = [[MDTabBarController alloc] init];
-//                _rvc.view.backgroundColor = COLOR_WITH_WHITE;
-//                _navigation = [[MDNavigationController alloc] initWithRootViewController:_rvc];
-//                [MDDeviceManager sharedInstance].window = self.window;
-//                [MDDeviceManager sharedInstance].navigation = self.navigation;
-//                self.window.rootViewController = _navigation;
-//                [self.window makeKeyAndVisible];
-//                _rvc.tabbar.selectedIndex = 2;
-//            });
-//        }
-//        else {
-            _rvc = [[MDTabBarController alloc] init];
-            _rvc.view.backgroundColor = COLOR_WITH_WHITE;
-            _navigation = [[MDNavigationController alloc] initWithRootViewController:_rvc];
-            [MDDeviceManager sharedInstance].window = self.window;
-            [MDDeviceManager sharedInstance].navigation = self.navigation;
-            self.window.rootViewController = _navigation;
-            [self.window makeKeyAndVisible];
-            //[self performSelector:@selector(setTabTest:) withObject:nil afterDelay:1.f];
-            _rvc.tabbar.selectedIndex = 2;
-//        }
+        _rvc = [[MDTabBarController alloc] init];
+        _rvc.view.backgroundColor = COLOR_WITH_WHITE;
+        _navigation = [[MDNavigationController alloc] initWithRootViewController:_rvc];
+        [MDDeviceManager sharedInstance].window = self.window;
+        [MDDeviceManager sharedInstance].navigation = self.navigation;
+        self.window.rootViewController = _navigation;
+        [self.window makeKeyAndVisible];
+        //[self performSelector:@selector(setTabTest:) withObject:nil afterDelay:1.f];
+        _rvc.tabbar.selectedIndex = 0;
     }
 }
 

@@ -109,6 +109,9 @@ typedef void (^MDStatusBlock)(id sender, NSInteger state);
 // 默认内容返回数量
 #define kContentDefaultCount    20
 
+// 默认边距
+#define koffset    15.f
+
 #endif
 
 

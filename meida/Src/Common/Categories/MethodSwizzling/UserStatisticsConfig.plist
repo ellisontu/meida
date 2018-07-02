@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New item - 5</key>
+	<dict/>
+	<key>MineViewController_V2</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<string>MineViewController_V2</string>
+		<key>ControlEventIDs</key>
+		<dict/>
+	</dict>
+	<key>DiscoverVC</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<string>DiscoverVC</string>
+		<key>ControlEventIDs</key>
+		<dict/>
+	</dict>
+	<key>MDStoreHomeViewController</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<string>MDStoreHomeViewController</string>
+		<key>ControlEventIDs</key>
+		<dict/>
+	</dict>
+	<key>GHomeRecommendVC</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<string>GHomeRecommendVC</string>
+	</dict>
+	<key>GHomeContainerVC_bak</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<string>GHomeContainerVC</string>
+		<key>ControlEventIDs</key>
+		<dict/>
+	</dict>
+</dict>
+</plist>

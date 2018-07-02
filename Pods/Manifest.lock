@@ -1,0 +1,84 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - DateTools (2.0.0)
+  - FBRetainCycleDetector (0.1.4)
+  - FrameAccessor (2.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.15.3)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
+  - pop (1.0.10)
+  - PureLayout (3.0.2)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - UIImage-Resize (1.0.1)
+  - YYModel (1.0.4)
+  - ZipArchive (1.4.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - DateTools (~> 2.0.0)
+  - FrameAccessor (~> 2.0)
+  - Masonry (~> 1.1.0)
+  - MBProgressHUD (~> 1.0.0)
+  - MJRefresh (~> 3.1.14)
+  - MLeaksFinder (~> 1.0.0)
+  - pop (~> 1.0.9)
+  - PureLayout (~> 3.0.2)
+  - SDWebImage (~> 3.7.5)
+  - UIImage-Resize (~> 1.0.1)
+  - YYModel (~> 1.0.4)
+  - ZipArchive
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - DateTools
+    - FBRetainCycleDetector
+    - FrameAccessor
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MLeaksFinder
+    - pop
+    - PureLayout
+    - SDWebImage
+    - UIImage-Resize
+    - YYModel
+    - ZipArchive
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  UIImage-Resize: fa776860f10e6900bbaf53a73e494bdceaaccc77
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
+
+PODFILE CHECKSUM: 950f62c2c501abd71dbcb792a94eb7124c092012
+
+COCOAPODS: 1.5.2

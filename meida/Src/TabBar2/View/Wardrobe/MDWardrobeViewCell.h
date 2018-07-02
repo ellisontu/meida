@@ -19,8 +19,11 @@
 @end
 
 
-
 #pragma mark -  衣橱 -> 穿衣计划 -> cell view #############################################----------
 @interface MDWardrobeViewPlanCell : UITableViewCell
+
+@end
+
+@interface MDWardrobeViewPlanCellItem : UICollectionViewCell
 
 @end

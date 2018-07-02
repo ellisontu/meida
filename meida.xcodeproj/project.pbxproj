@@ -557,41 +557,9 @@
 		99AA26A020DE6DC70053CAB6 /* TabBar3 */ = {
 			isa = PBXGroup;
 			children = (
-				99AA26A120DE6DC70053CAB6 /* Model */,
-				99AA26A320DE6DC70053CAB6 /* View */,
 				99AA26A520DE6DC70053CAB6 /* Control */,
 			);
 			path = TabBar3;
-			sourceTree = "<group>";
-		};
-		99AA26A120DE6DC70053CAB6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				99AA26A220DE6DC70053CAB6 /* Services */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		99AA26A220DE6DC70053CAB6 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		99AA26A320DE6DC70053CAB6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				99AA26A420DE6DC70053CAB6 /* Services */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		99AA26A420DE6DC70053CAB6 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		99AA26A520DE6DC70053CAB6 /* Control */ = {
@@ -624,31 +592,17 @@
 		99AA26A820DE6DC70053CAB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				99AA26A920DE6DC70053CAB6 /* Mine */,
+				99C05AED20EA5E310027ABF9 /* Mine */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		99AA26A920DE6DC70053CAB6 /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mine;
 			sourceTree = "<group>";
 		};
 		99AA26AA20DE6DC70053CAB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				99AA26AB20DE6DC70053CAB6 /* Mine */,
+				99C05AEE20EA5E370027ABF9 /* Mine */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		99AA26AB20DE6DC70053CAB6 /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mine;
 			sourceTree = "<group>";
 		};
 		99AA26AC20DE6DC70053CAB6 /* Control */ = {
@@ -671,26 +625,11 @@
 		99AA26AE20DE6DC70053CAB6 /* TabBar2 */ = {
 			isa = PBXGroup;
 			children = (
-				99AA26AF20DE6DC70053CAB6 /* Model */,
+				99C05AEA20EA5D9F0027ABF9 /* Model */,
 				99AA26B120DE6DC70053CAB6 /* View */,
 				99AA26B320DE6DC70053CAB6 /* Control */,
 			);
 			path = TabBar2;
-			sourceTree = "<group>";
-		};
-		99AA26AF20DE6DC70053CAB6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				99AA26B020DE6DC70053CAB6 /* Wardrobe */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		99AA26B020DE6DC70053CAB6 /* Wardrobe */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Wardrobe;
 			sourceTree = "<group>";
 		};
 		99AA26B120DE6DC70053CAB6 /* View */ = {
@@ -1309,6 +1248,27 @@
 				99AA28BF20DE702A0053CAB6 /* AFHTTPSessionManager.h */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		99C05AEA20EA5D9F0027ABF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99C05AED20EA5E310027ABF9 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		99C05AEE20EA5E370027ABF9 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 		C2CE590320E9BAB6001F1F47 /* WechatSDK */ = {

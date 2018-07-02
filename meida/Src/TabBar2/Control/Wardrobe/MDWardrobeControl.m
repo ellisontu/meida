@@ -99,10 +99,10 @@ static NSString *MDWardrobeViewPlanCellID  = @"MDWardrobeViewPlanCell";
         return 85.f;
     }
     else if (1 == row){
-        return 200.f;
+        return SCR_WIDTH;
     }
     else if (2 == row){
-        return 150.f;
+        return SCR_WIDTH / 3.f + 90;
     }
     return 0.01f;
 }

@@ -48,7 +48,10 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        DLog(@"init ViewCtrl:%@",NSStringFromClass([self class]));
+        NSString *clasName = NSStringFromClass([self class]);
+        if (![clasName isEqualToString:@"MDSegmentChildControls"]) {
+            DLog(@"init ViewCtrl:%@",NSStringFromClass([self class]));
+        }
     }
     return self;
 }

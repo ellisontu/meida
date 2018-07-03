@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/Common/Controller/MDBaseViewController.m"
-            timestampString = "552221463.48305"
+            timestampString = "552307486.405296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
             landmarkName = "-setupLineView:"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meida/Src/TabBar2/Control/Wardrobe/MDWardrobeControl.m"
-            timestampString = "552274997.661725"
+            filePath = "meida/Src/TabBar3/Control/Services/MDServicesControl.m"
+            timestampString = "552307486.405606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-initView"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-initSegmentView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

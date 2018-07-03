@@ -117,6 +117,13 @@
 		C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592C20E9C247001F1F47 /* MDSegmentView.m */; };
 		C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */; };
 		C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */; };
+		C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593C20EB51D2001F1F47 /* UIView+cframe.m */; };
+		C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594220EB551F001F1F47 /* UIButton+ConentInsets.m */; };
+		C2CE594720EB57DB001F1F47 /* MDSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594620EB57DB001F1F47 /* MDSegmentTitleView.m */; };
+		C2CE594A20EB5D8C001F1F47 /* MDSegmentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594920EB5D8C001F1F47 /* MDSegmentScrollView.m */; };
+		C2CE594D20EB64BE001F1F47 /* MDSegmentChildControls.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594C20EB64BE001F1F47 /* MDSegmentChildControls.m */; };
+		C2CE595220EB7EAC001F1F47 /* MDServicesBaseSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */; };
+		C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE595620EB833F001F1F47 /* MDStarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -412,6 +419,20 @@
 		C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeViewCell.m; sourceTree = "<group>"; };
 		C2CE593420EB0C6A001F1F47 /* MDMineContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMineContentCell.h; sourceTree = "<group>"; };
 		C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMineContentCell.m; sourceTree = "<group>"; };
+		C2CE593B20EB51D2001F1F47 /* UIView+cframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+cframe.h"; sourceTree = "<group>"; };
+		C2CE593C20EB51D2001F1F47 /* UIView+cframe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+cframe.m"; sourceTree = "<group>"; };
+		C2CE594120EB551F001F1F47 /* UIButton+ConentInsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ConentInsets.h"; sourceTree = "<group>"; };
+		C2CE594220EB551F001F1F47 /* UIButton+ConentInsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ConentInsets.m"; sourceTree = "<group>"; };
+		C2CE594520EB57DB001F1F47 /* MDSegmentTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentTitleView.h; sourceTree = "<group>"; };
+		C2CE594620EB57DB001F1F47 /* MDSegmentTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentTitleView.m; sourceTree = "<group>"; };
+		C2CE594820EB5D8C001F1F47 /* MDSegmentScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentScrollView.h; sourceTree = "<group>"; };
+		C2CE594920EB5D8C001F1F47 /* MDSegmentScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentScrollView.m; sourceTree = "<group>"; };
+		C2CE594B20EB64BE001F1F47 /* MDSegmentChildControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentChildControls.h; sourceTree = "<group>"; };
+		C2CE594C20EB64BE001F1F47 /* MDSegmentChildControls.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentChildControls.m; sourceTree = "<group>"; };
+		C2CE595020EB7EAC001F1F47 /* MDServicesBaseSortCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDServicesBaseSortCell.h; sourceTree = "<group>"; };
+		C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDServicesBaseSortCell.m; sourceTree = "<group>"; };
+		C2CE595520EB833F001F1F47 /* MDStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDStarView.h; sourceTree = "<group>"; };
+		C2CE595620EB833F001F1F47 /* MDStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDStarView.m; sourceTree = "<group>"; };
 		CB36AF007EC026AAC139C578 /* libPods-meidaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meidaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C6E32A3FADA3060F60577E /* libPods-meidaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meidaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FE177AA4B4966BA4439040 /* Pods-meida.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meida.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meida/Pods-meida.debug.xcconfig"; sourceTree = "<group>"; };
@@ -560,6 +581,8 @@
 		99AA26A020DE6DC70053CAB6 /* TabBar3 */ = {
 			isa = PBXGroup;
 			children = (
+				C2CE594E20EB6570001F1F47 /* Model */,
+				C2CE593920EB46F9001F1F47 /* View */,
 				99AA26A520DE6DC70053CAB6 /* Control */,
 			);
 			path = TabBar3;
@@ -578,6 +601,8 @@
 			children = (
 				99CD9C7D20DF31BD000BC7F0 /* MDServicesControl.h */,
 				99CD9C7E20DF31BD000BC7F0 /* MDServicesControl.m */,
+				C2CE594B20EB64BE001F1F47 /* MDSegmentChildControls.h */,
+				C2CE594C20EB64BE001F1F47 /* MDSegmentChildControls.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -812,6 +837,8 @@
 		99AA26FC20DE6DC70053CAB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2CE595420EB831E001F1F47 /* StarView */,
+				C2CE594420EB576C001F1F47 /* MDSegmentComponent */,
 				99AA270620DE6DC70053CAB6 /* TabBar */,
 				99AA270F20DE6DC70053CAB6 /* Component */,
 				99AA271F20DE6DC70053CAB6 /* WaterWaveView */,
@@ -911,8 +938,8 @@
 		99AA273F20DE6DC70053CAB6 /* CHTCollectionLayout */ = {
 			isa = PBXGroup;
 			children = (
-				99AA274020DE6DC70053CAB6 /* CHTCollectionViewWaterfallLayout.m */,
 				99AA274120DE6DC70053CAB6 /* CHTCollectionViewWaterfallLayout.h */,
+				99AA274020DE6DC70053CAB6 /* CHTCollectionViewWaterfallLayout.m */,
 			);
 			path = CHTCollectionLayout;
 			sourceTree = "<group>";
@@ -966,6 +993,8 @@
 				99AA276620DE6DC70053CAB6 /* UIButton+EnlargeArea.m */,
 				99AA276520DE6DC70053CAB6 /* UIButton+Router.h */,
 				99AA276420DE6DC70053CAB6 /* UIButton+Router.m */,
+				C2CE594120EB551F001F1F47 /* UIButton+ConentInsets.h */,
+				C2CE594220EB551F001F1F47 /* UIButton+ConentInsets.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -984,6 +1013,8 @@
 			children = (
 				99AA276B20DE6DC70053CAB6 /* UIView+Gradient.h */,
 				99AA277020DE6DC70053CAB6 /* UIView+Gradient.m */,
+				C2CE593B20EB51D2001F1F47 /* UIView+cframe.h */,
+				C2CE593C20EB51D2001F1F47 /* UIView+cframe.m */,
 				99AA276E20DE6DC70053CAB6 /* UIView+MDHitTest.h */,
 				99AA277320DE6DC70053CAB6 /* UIView+MDHitTest.m */,
 				99AA277220DE6DC70053CAB6 /* UIView+Animation.h */,
@@ -1310,6 +1341,59 @@
 			path = libWeiboSDK;
 			sourceTree = "<group>";
 		};
+		C2CE593920EB46F9001F1F47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE593A20EB46F9001F1F47 /* Services */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2CE593A20EB46F9001F1F47 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE595020EB7EAC001F1F47 /* MDServicesBaseSortCell.h */,
+				C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2CE594420EB576C001F1F47 /* MDSegmentComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE594520EB57DB001F1F47 /* MDSegmentTitleView.h */,
+				C2CE594620EB57DB001F1F47 /* MDSegmentTitleView.m */,
+				C2CE594820EB5D8C001F1F47 /* MDSegmentScrollView.h */,
+				C2CE594920EB5D8C001F1F47 /* MDSegmentScrollView.m */,
+			);
+			name = MDSegmentComponent;
+			path = meida/Src/Common/MDSegmentComponent;
+			sourceTree = SOURCE_ROOT;
+		};
+		C2CE594E20EB6570001F1F47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE594F20EB6570001F1F47 /* Services */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2CE594F20EB6570001F1F47 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2CE595420EB831E001F1F47 /* StarView */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE595520EB833F001F1F47 /* MDStarView.h */,
+				C2CE595620EB833F001F1F47 /* MDStarView.m */,
+			);
+			path = StarView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1379,6 +1463,11 @@
 				TargetAttributes = {
 					99AA266720DE6BAE0053CAB6 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					99AA267F20DE6BAF0053CAB6 = {
 						CreatedOnToolsVersion = 9.3;
@@ -1496,6 +1585,7 @@
 			files = (
 				99AA280720DE6DC80053CAB6 /* SharePosterView.m in Sources */,
 				99AA289020DE6F580053CAB6 /* LSFileManage.m in Sources */,
+				C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */,
 				99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */,
 				99970F5920DF2CFA00AEC45E /* MDTabBar.m in Sources */,
 				99970F5620DE785800AEC45E /* MDTabBarManager.m in Sources */,
@@ -1513,6 +1603,7 @@
 				99AA280620DE6DC80053CAB6 /* ShareView.m in Sources */,
 				99AA284F20DE6DC80053CAB6 /* NSDate+LSExtension.m in Sources */,
 				99AA284420DE6DC80053CAB6 /* UIView+AligmentRectInsets.m in Sources */,
+				C2CE594720EB57DB001F1F47 /* MDSegmentTitleView.m in Sources */,
 				99CD9C8220DF31F1000BC7F0 /* MDMineControl.m in Sources */,
 				99AA280220DE6DC80053CAB6 /* UserAnalyticsManager.m in Sources */,
 				99AA281F20DE6DC80053CAB6 /* BaseTextField.m in Sources */,
@@ -1520,7 +1611,9 @@
 				99AA284320DE6DC80053CAB6 /* UIView+Gradient.m in Sources */,
 				99AA280120DE6DC80053CAB6 /* UserManager.m in Sources */,
 				99AA289120DE6F580053CAB6 /* LSStringTools.m in Sources */,
+				C2CE594A20EB5D8C001F1F47 /* MDSegmentScrollView.m in Sources */,
 				99AA284520DE6DC80053CAB6 /* UIView+MDHitTest.m in Sources */,
+				C2CE595220EB7EAC001F1F47 /* MDServicesBaseSortCell.m in Sources */,
 				99AA284B20DE6DC80053CAB6 /* UIViewController+Swizzling.m in Sources */,
 				99AA283F20DE6DC80053CAB6 /* UIButton+EnlargeArea.m in Sources */,
 				9921785320E28484001C6A76 /* MDNetWorking.m in Sources */,
@@ -1534,11 +1627,13 @@
 				99970F5020DE76EE00AEC45E /* MDNavigationController.m in Sources */,
 				99339BF720E13A9C00E45EC7 /* MDRefreshGifFooter.m in Sources */,
 				99AA284E20DE6DC80053CAB6 /* UserStatistics.m in Sources */,
+				C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */,
 				9921785020E28244001C6A76 /* MDLoadingView.m in Sources */,
 				99AA288F20DE6F580053CAB6 /* AnimationManager.m in Sources */,
 				99AA284820DE6DC80053CAB6 /* NSString+AttributeString.m in Sources */,
 				9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */,
 				C2CE592420E9C1CF001F1F47 /* MDTrendChannelView.m in Sources */,
+				C2CE594D20EB64BE001F1F47 /* MDSegmentChildControls.m in Sources */,
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
@@ -1559,6 +1654,7 @@
 				C2CE592A20E9C211001F1F47 /* MDTrendRecommendView.m in Sources */,
 				99AA280C20DE6DC80053CAB6 /* VPImageCropperViewController.m in Sources */,
 				C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */,
+				C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */,
 				99AA281120DE6DC80053CAB6 /* BaseModel.m in Sources */,
 				99AA284220DE6DC80053CAB6 /* UIView+Animation.m in Sources */,
 				99AA284920DE6DC80053CAB6 /* NSString+TrimmingAdditions.m in Sources */,

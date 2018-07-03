@@ -189,7 +189,7 @@ void uncaughtExceptionHandler(NSException *exception)
         self.window.rootViewController = _navigation;
         [self.window makeKeyAndVisible];
         //[self performSelector:@selector(setTabTest:) withObject:nil afterDelay:1.f];
-        _rvc.tabbar.selectedIndex = 3;
+        _rvc.tabbar.selectedIndex = 2;
     }
 }
 

@@ -116,6 +116,7 @@
 		C2CE592A20E9C211001F1F47 /* MDTrendRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592920E9C211001F1F47 /* MDTrendRecommendView.m */; };
 		C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592C20E9C247001F1F47 /* MDSegmentView.m */; };
 		C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */; };
+		C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -409,6 +410,8 @@
 		C2CE592C20E9C247001F1F47 /* MDSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentView.m; sourceTree = "<group>"; };
 		C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeViewCell.h; sourceTree = "<group>"; };
 		C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeViewCell.m; sourceTree = "<group>"; };
+		C2CE593420EB0C6A001F1F47 /* MDMineContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMineContentCell.h; sourceTree = "<group>"; };
+		C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMineContentCell.m; sourceTree = "<group>"; };
 		CB36AF007EC026AAC139C578 /* libPods-meidaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meidaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C6E32A3FADA3060F60577E /* libPods-meidaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meidaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FE177AA4B4966BA4439040 /* Pods-meida.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meida.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meida/Pods-meida.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1267,6 +1270,8 @@
 		99C05AEE20EA5E370027ABF9 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				C2CE593420EB0C6A001F1F47 /* MDMineContentCell.h */,
+				C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1553,6 +1558,7 @@
 				999D3FD620E28DF500950040 /* MDExceptionManager.m in Sources */,
 				C2CE592A20E9C211001F1F47 /* MDTrendRecommendView.m in Sources */,
 				99AA280C20DE6DC80053CAB6 /* VPImageCropperViewController.m in Sources */,
+				C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */,
 				99AA281120DE6DC80053CAB6 /* BaseModel.m in Sources */,
 				99AA284220DE6DC80053CAB6 /* UIView+Animation.m in Sources */,
 				99AA284920DE6DC80053CAB6 /* NSString+TrimmingAdditions.m in Sources */,

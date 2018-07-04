@@ -48,7 +48,10 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        DLog(@"init ViewCtrl:%@",NSStringFromClass([self class]));
+        NSString *clasName = NSStringFromClass([self class]);
+        if (![clasName isEqualToString:@"MDSegmentChildControls"]) {
+            DLog(@"init ViewCtrl:%@",NSStringFromClass([self class]));
+        }
     }
     return self;
 }
@@ -168,7 +171,7 @@
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _backBtn.translatesAutoresizingMaskIntoConstraints = NO;
         _backBtn.backgroundColor = [UIColor clearColor];
-        [_backBtn setImage:[UIImage imageNamed:@"so_back_black"] forState:UIControlStateNormal];
+        [_backBtn setImage:[UIImage imageNamed:@"navi_back_black"] forState:UIControlStateNormal];
         [_backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
         [self.navigation addSubview:_backBtn];
         

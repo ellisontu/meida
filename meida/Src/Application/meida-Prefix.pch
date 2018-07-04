@@ -17,7 +17,8 @@
 #import "URLDEFINE.h"
 #import "MDNetWorking.h"
 #import <Masonry.h>
-#import <UIImageView+WebCache.h>
+#import "UIImageView+sdTools.h"
+//#import <UIImageView+WebCache.h>
 //#import <UIImage+WebP.h>
 #import <FrameAccessor.h>
 #import "UserManager.h"

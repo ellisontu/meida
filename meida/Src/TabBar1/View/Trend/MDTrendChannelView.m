@@ -22,12 +22,12 @@ static NSString *kTrendChannelViewCellID =@"MDTrendChannelViewCell";
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     _listView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     [self addSubview:_listView];
@@ -103,12 +103,12 @@ static NSString *kTrendChannelViewCellID =@"MDTrendChannelViewCell";
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
@@ -137,12 +137,12 @@ static NSString *kTrendChannelViewCellID =@"MDTrendChannelViewCell";
         make.width.mas_equalTo(SCR_WIDTH - 30.f);
     }];
     [_descLblView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakPtr.titleLblView.mas_bottom).offset(koffset);
+        make.top.equalTo(weakPtr.titleLblView.mas_bottom).offset(kOffPadding);
         make.centerX.equalTo(weakPtr.contentView);
         make.width.mas_equalTo(SCR_WIDTH - 30.f);
     }];
     [_contentImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakPtr.descLblView.mas_bottom).offset(koffset);
+        make.top.equalTo(weakPtr.descLblView.mas_bottom).offset(kOffPadding);
         make.centerX.equalTo(weakPtr.contentView);
         make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, SCR_WIDTH));
     }];
@@ -163,7 +163,7 @@ static NSString *kTrendChannelViewCellID =@"MDTrendChannelViewCell";
     _descLblView.text = @"红地毯和机场的T台秀";
     _contentImgView.contentMode = UIViewContentModeScaleAspectFill;
     _contentImgView.layer.masksToBounds = YES;
-    [_contentImgView sd_setImageWithURL:[NSURL URLWithString:@"https://pro.modao.cc/uploads3/images/2007/20077619/raw_1526134582.png"] placeholderImage:IMAGE(@"place_holer_icon")];
+    [_contentImgView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/2007/20077619/raw_1526134582.png" placeholderImage:IMAGE(@"place_holer_icon")];
     
     [_lookBtnView setTitle:@"去看看" forState:UIControlStateNormal];
     [_lookBtnView setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];

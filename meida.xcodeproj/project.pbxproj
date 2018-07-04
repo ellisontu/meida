@@ -116,6 +116,21 @@
 		C2CE592A20E9C211001F1F47 /* MDTrendRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592920E9C211001F1F47 /* MDTrendRecommendView.m */; };
 		C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592C20E9C247001F1F47 /* MDSegmentView.m */; };
 		C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */; };
+		C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */; };
+		C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593C20EB51D2001F1F47 /* UIView+cframe.m */; };
+		C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594220EB551F001F1F47 /* UIButton+ConentInsets.m */; };
+		C2CE594720EB57DB001F1F47 /* MDSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594620EB57DB001F1F47 /* MDSegmentTitleView.m */; };
+		C2CE594A20EB5D8C001F1F47 /* MDSegmentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594920EB5D8C001F1F47 /* MDSegmentScrollView.m */; };
+		C2CE594D20EB64BE001F1F47 /* MDSegmentChildControls.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594C20EB64BE001F1F47 /* MDSegmentChildControls.m */; };
+		C2CE595220EB7EAC001F1F47 /* MDServicesBaseSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */; };
+		C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE595620EB833F001F1F47 /* MDStarView.m */; };
+		C2F5FBE720EC60D800DC04FF /* MDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBE620EC60D800DC04FF /* MDCycleScrollView.m */; };
+		C2F5FBEA20EC626600DC04FF /* MDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBE920EC626600DC04FF /* MDPageControl.m */; };
+		C2F5FBED20EC63DB00DC04FF /* MDAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBEC20EC63DB00DC04FF /* MDAbstractDotView.m */; };
+		C2F5FBF220EC758100DC04FF /* MDFlipCarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBF120EC758100DC04FF /* MDFlipCarFlowLayout.m */; };
+		C2F5FBF620EC7A6200DC04FF /* UIImageView+sdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBF520EC7A6200DC04FF /* UIImageView+sdTools.m */; };
+		C2F5FBFA20EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBF920EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m */; };
+		C2FF1A2320ECA30C0017DFF5 /* WardrobeAfterClothCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FF1A2220ECA30C0017DFF5 /* WardrobeAfterClothCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -409,6 +424,36 @@
 		C2CE592C20E9C247001F1F47 /* MDSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentView.m; sourceTree = "<group>"; };
 		C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeViewCell.h; sourceTree = "<group>"; };
 		C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeViewCell.m; sourceTree = "<group>"; };
+		C2CE593420EB0C6A001F1F47 /* MDMineContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMineContentCell.h; sourceTree = "<group>"; };
+		C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMineContentCell.m; sourceTree = "<group>"; };
+		C2CE593B20EB51D2001F1F47 /* UIView+cframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+cframe.h"; sourceTree = "<group>"; };
+		C2CE593C20EB51D2001F1F47 /* UIView+cframe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+cframe.m"; sourceTree = "<group>"; };
+		C2CE594120EB551F001F1F47 /* UIButton+ConentInsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ConentInsets.h"; sourceTree = "<group>"; };
+		C2CE594220EB551F001F1F47 /* UIButton+ConentInsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ConentInsets.m"; sourceTree = "<group>"; };
+		C2CE594520EB57DB001F1F47 /* MDSegmentTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentTitleView.h; sourceTree = "<group>"; };
+		C2CE594620EB57DB001F1F47 /* MDSegmentTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentTitleView.m; sourceTree = "<group>"; };
+		C2CE594820EB5D8C001F1F47 /* MDSegmentScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentScrollView.h; sourceTree = "<group>"; };
+		C2CE594920EB5D8C001F1F47 /* MDSegmentScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentScrollView.m; sourceTree = "<group>"; };
+		C2CE594B20EB64BE001F1F47 /* MDSegmentChildControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentChildControls.h; sourceTree = "<group>"; };
+		C2CE594C20EB64BE001F1F47 /* MDSegmentChildControls.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentChildControls.m; sourceTree = "<group>"; };
+		C2CE595020EB7EAC001F1F47 /* MDServicesBaseSortCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDServicesBaseSortCell.h; sourceTree = "<group>"; };
+		C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDServicesBaseSortCell.m; sourceTree = "<group>"; };
+		C2CE595520EB833F001F1F47 /* MDStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDStarView.h; sourceTree = "<group>"; };
+		C2CE595620EB833F001F1F47 /* MDStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDStarView.m; sourceTree = "<group>"; };
+		C2F5FBE520EC60D800DC04FF /* MDCycleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCycleScrollView.h; sourceTree = "<group>"; };
+		C2F5FBE620EC60D800DC04FF /* MDCycleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDCycleScrollView.m; sourceTree = "<group>"; };
+		C2F5FBE820EC626600DC04FF /* MDPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDPageControl.h; sourceTree = "<group>"; };
+		C2F5FBE920EC626600DC04FF /* MDPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDPageControl.m; sourceTree = "<group>"; };
+		C2F5FBEB20EC63DB00DC04FF /* MDAbstractDotView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAbstractDotView.h; sourceTree = "<group>"; };
+		C2F5FBEC20EC63DB00DC04FF /* MDAbstractDotView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAbstractDotView.m; sourceTree = "<group>"; };
+		C2F5FBF020EC758100DC04FF /* MDFlipCarFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFlipCarFlowLayout.h; sourceTree = "<group>"; };
+		C2F5FBF120EC758100DC04FF /* MDFlipCarFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFlipCarFlowLayout.m; sourceTree = "<group>"; };
+		C2F5FBF420EC7A6200DC04FF /* UIImageView+sdTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+sdTools.h"; sourceTree = "<group>"; };
+		C2F5FBF520EC7A6200DC04FF /* UIImageView+sdTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+sdTools.m"; sourceTree = "<group>"; };
+		C2F5FBF820EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeAfterClothCtrl.h; sourceTree = "<group>"; };
+		C2F5FBF920EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeAfterClothCtrl.m; sourceTree = "<group>"; };
+		C2FF1A2120ECA30C0017DFF5 /* WardrobeAfterClothCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WardrobeAfterClothCell.h; sourceTree = "<group>"; };
+		C2FF1A2220ECA30C0017DFF5 /* WardrobeAfterClothCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WardrobeAfterClothCell.m; sourceTree = "<group>"; };
 		CB36AF007EC026AAC139C578 /* libPods-meidaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meidaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C6E32A3FADA3060F60577E /* libPods-meidaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meidaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FE177AA4B4966BA4439040 /* Pods-meida.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meida.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meida/Pods-meida.debug.xcconfig"; sourceTree = "<group>"; };
@@ -557,6 +602,8 @@
 		99AA26A020DE6DC70053CAB6 /* TabBar3 */ = {
 			isa = PBXGroup;
 			children = (
+				C2CE594E20EB6570001F1F47 /* Model */,
+				C2CE593920EB46F9001F1F47 /* View */,
 				99AA26A520DE6DC70053CAB6 /* Control */,
 			);
 			path = TabBar3;
@@ -575,6 +622,8 @@
 			children = (
 				99CD9C7D20DF31BD000BC7F0 /* MDServicesControl.h */,
 				99CD9C7E20DF31BD000BC7F0 /* MDServicesControl.m */,
+				C2CE594B20EB64BE001F1F47 /* MDSegmentChildControls.h */,
+				C2CE594C20EB64BE001F1F47 /* MDSegmentChildControls.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -645,6 +694,8 @@
 			children = (
 				C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h */,
 				C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */,
+				C2FF1A2120ECA30C0017DFF5 /* WardrobeAfterClothCell.h */,
+				C2FF1A2220ECA30C0017DFF5 /* WardrobeAfterClothCell.m */,
 			);
 			path = Wardrobe;
 			sourceTree = "<group>";
@@ -662,6 +713,8 @@
 			children = (
 				99CD9C7A20DF3185000BC7F0 /* MDWardrobeControl.h */,
 				99CD9C7B20DF3185000BC7F0 /* MDWardrobeControl.m */,
+				C2F5FBF820EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.h */,
+				C2F5FBF920EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m */,
 			);
 			path = Wardrobe;
 			sourceTree = "<group>";
@@ -809,6 +862,10 @@
 		99AA26FC20DE6DC70053CAB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2F5FBEF20EC756E00DC04FF /* FlipCarFlowLayout */,
+				C2F5FBE420EC60C400DC04FF /* CycleScrollView */,
+				C2CE595420EB831E001F1F47 /* StarView */,
+				C2CE594420EB576C001F1F47 /* MDSegmentComponent */,
 				99AA270620DE6DC70053CAB6 /* TabBar */,
 				99AA270F20DE6DC70053CAB6 /* Component */,
 				99AA271F20DE6DC70053CAB6 /* WaterWaveView */,
@@ -908,8 +965,8 @@
 		99AA273F20DE6DC70053CAB6 /* CHTCollectionLayout */ = {
 			isa = PBXGroup;
 			children = (
-				99AA274020DE6DC70053CAB6 /* CHTCollectionViewWaterfallLayout.m */,
 				99AA274120DE6DC70053CAB6 /* CHTCollectionViewWaterfallLayout.h */,
+				99AA274020DE6DC70053CAB6 /* CHTCollectionViewWaterfallLayout.m */,
 			);
 			path = CHTCollectionLayout;
 			sourceTree = "<group>";
@@ -917,6 +974,7 @@
 		99AA275520DE6DC70053CAB6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C2F5FBF320EC79F000DC04FF /* UIImageView */,
 				99AA275620DE6DC70053CAB6 /* UIImage */,
 				99AA275F20DE6DC70053CAB6 /* UIPageControl */,
 				99AA276220DE6DC70053CAB6 /* UIButton */,
@@ -963,6 +1021,8 @@
 				99AA276620DE6DC70053CAB6 /* UIButton+EnlargeArea.m */,
 				99AA276520DE6DC70053CAB6 /* UIButton+Router.h */,
 				99AA276420DE6DC70053CAB6 /* UIButton+Router.m */,
+				C2CE594120EB551F001F1F47 /* UIButton+ConentInsets.h */,
+				C2CE594220EB551F001F1F47 /* UIButton+ConentInsets.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -981,6 +1041,8 @@
 			children = (
 				99AA276B20DE6DC70053CAB6 /* UIView+Gradient.h */,
 				99AA277020DE6DC70053CAB6 /* UIView+Gradient.m */,
+				C2CE593B20EB51D2001F1F47 /* UIView+cframe.h */,
+				C2CE593C20EB51D2001F1F47 /* UIView+cframe.m */,
 				99AA276E20DE6DC70053CAB6 /* UIView+MDHitTest.h */,
 				99AA277320DE6DC70053CAB6 /* UIView+MDHitTest.m */,
 				99AA277220DE6DC70053CAB6 /* UIView+Animation.h */,
@@ -1267,6 +1329,8 @@
 		99C05AEE20EA5E370027ABF9 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				C2CE593420EB0C6A001F1F47 /* MDMineContentCell.h */,
+				C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1303,6 +1367,90 @@
 				C2CE591920E9BAC5001F1F47 /* WeiboSDK.h */,
 			);
 			path = libWeiboSDK;
+			sourceTree = "<group>";
+		};
+		C2CE593920EB46F9001F1F47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE593A20EB46F9001F1F47 /* Services */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2CE593A20EB46F9001F1F47 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE595020EB7EAC001F1F47 /* MDServicesBaseSortCell.h */,
+				C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2CE594420EB576C001F1F47 /* MDSegmentComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE594520EB57DB001F1F47 /* MDSegmentTitleView.h */,
+				C2CE594620EB57DB001F1F47 /* MDSegmentTitleView.m */,
+				C2CE594820EB5D8C001F1F47 /* MDSegmentScrollView.h */,
+				C2CE594920EB5D8C001F1F47 /* MDSegmentScrollView.m */,
+			);
+			name = MDSegmentComponent;
+			path = meida/Src/Common/MDSegmentComponent;
+			sourceTree = SOURCE_ROOT;
+		};
+		C2CE594E20EB6570001F1F47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE594F20EB6570001F1F47 /* Services */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2CE594F20EB6570001F1F47 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2CE595420EB831E001F1F47 /* StarView */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE595520EB833F001F1F47 /* MDStarView.h */,
+				C2CE595620EB833F001F1F47 /* MDStarView.m */,
+			);
+			path = StarView;
+			sourceTree = "<group>";
+		};
+		C2F5FBE420EC60C400DC04FF /* CycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C2F5FBE520EC60D800DC04FF /* MDCycleScrollView.h */,
+				C2F5FBE620EC60D800DC04FF /* MDCycleScrollView.m */,
+				C2F5FBE820EC626600DC04FF /* MDPageControl.h */,
+				C2F5FBE920EC626600DC04FF /* MDPageControl.m */,
+				C2F5FBEB20EC63DB00DC04FF /* MDAbstractDotView.h */,
+				C2F5FBEC20EC63DB00DC04FF /* MDAbstractDotView.m */,
+			);
+			path = CycleScrollView;
+			sourceTree = "<group>";
+		};
+		C2F5FBEF20EC756E00DC04FF /* FlipCarFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C2F5FBF020EC758100DC04FF /* MDFlipCarFlowLayout.h */,
+				C2F5FBF120EC758100DC04FF /* MDFlipCarFlowLayout.m */,
+			);
+			path = FlipCarFlowLayout;
+			sourceTree = "<group>";
+		};
+		C2F5FBF320EC79F000DC04FF /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C2F5FBF420EC7A6200DC04FF /* UIImageView+sdTools.h */,
+				C2F5FBF520EC7A6200DC04FF /* UIImageView+sdTools.m */,
+			);
+			path = UIImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1374,6 +1522,11 @@
 				TargetAttributes = {
 					99AA266720DE6BAE0053CAB6 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					99AA267F20DE6BAF0053CAB6 = {
 						CreatedOnToolsVersion = 9.3;
@@ -1489,8 +1642,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F5FBF620EC7A6200DC04FF /* UIImageView+sdTools.m in Sources */,
 				99AA280720DE6DC80053CAB6 /* SharePosterView.m in Sources */,
 				99AA289020DE6F580053CAB6 /* LSFileManage.m in Sources */,
+				C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */,
 				99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */,
 				99970F5920DF2CFA00AEC45E /* MDTabBar.m in Sources */,
 				99970F5620DE785800AEC45E /* MDTabBarManager.m in Sources */,
@@ -1499,6 +1654,7 @@
 				99AA287620DE6DC80053CAB6 /* SAMKeychain.m in Sources */,
 				99AA281220DE6DC80053CAB6 /* BaseH5ConfigModel.m in Sources */,
 				99AA282120DE6DC80053CAB6 /* KYLabel.m in Sources */,
+				C2F5FBED20EC63DB00DC04FF /* MDAbstractDotView.m in Sources */,
 				997E63B820E7BD7D00B237EC /* MDTopLoadingView.m in Sources */,
 				99AA289220DE6F580053CAB6 /* RSAEncryptor.m in Sources */,
 				9921785620E284DF001C6A76 /* MDHttpSessionManager.m in Sources */,
@@ -1508,14 +1664,18 @@
 				99AA280620DE6DC80053CAB6 /* ShareView.m in Sources */,
 				99AA284F20DE6DC80053CAB6 /* NSDate+LSExtension.m in Sources */,
 				99AA284420DE6DC80053CAB6 /* UIView+AligmentRectInsets.m in Sources */,
+				C2CE594720EB57DB001F1F47 /* MDSegmentTitleView.m in Sources */,
 				99CD9C8220DF31F1000BC7F0 /* MDMineControl.m in Sources */,
 				99AA280220DE6DC80053CAB6 /* UserAnalyticsManager.m in Sources */,
 				99AA281F20DE6DC80053CAB6 /* BaseTextField.m in Sources */,
 				99AA289820DE6F580053CAB6 /* Reachability.m in Sources */,
 				99AA284320DE6DC80053CAB6 /* UIView+Gradient.m in Sources */,
 				99AA280120DE6DC80053CAB6 /* UserManager.m in Sources */,
+				C2F5FBF220EC758100DC04FF /* MDFlipCarFlowLayout.m in Sources */,
 				99AA289120DE6F580053CAB6 /* LSStringTools.m in Sources */,
+				C2CE594A20EB5D8C001F1F47 /* MDSegmentScrollView.m in Sources */,
 				99AA284520DE6DC80053CAB6 /* UIView+MDHitTest.m in Sources */,
+				C2CE595220EB7EAC001F1F47 /* MDServicesBaseSortCell.m in Sources */,
 				99AA284B20DE6DC80053CAB6 /* UIViewController+Swizzling.m in Sources */,
 				99AA283F20DE6DC80053CAB6 /* UIButton+EnlargeArea.m in Sources */,
 				9921785320E28484001C6A76 /* MDNetWorking.m in Sources */,
@@ -1529,21 +1689,25 @@
 				99970F5020DE76EE00AEC45E /* MDNavigationController.m in Sources */,
 				99339BF720E13A9C00E45EC7 /* MDRefreshGifFooter.m in Sources */,
 				99AA284E20DE6DC80053CAB6 /* UserStatistics.m in Sources */,
+				C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */,
 				9921785020E28244001C6A76 /* MDLoadingView.m in Sources */,
 				99AA288F20DE6F580053CAB6 /* AnimationManager.m in Sources */,
 				99AA284820DE6DC80053CAB6 /* NSString+AttributeString.m in Sources */,
 				9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */,
 				C2CE592420E9C1CF001F1F47 /* MDTrendChannelView.m in Sources */,
+				C2CE594D20EB64BE001F1F47 /* MDSegmentChildControls.m in Sources */,
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
 				99AA285A20DE6DC80053CAB6 /* InputView.m in Sources */,
 				99AA287320DE6DC80053CAB6 /* ttc_encrypt_v2.c in Sources */,
 				99AA280320DE6DC80053CAB6 /* UserAnalyticsModel.m in Sources */,
+				C2F5FBEA20EC626600DC04FF /* MDPageControl.m in Sources */,
 				99AA280B20DE6DC80053CAB6 /* ShareManager.m in Sources */,
 				99AA281D20DE6DC80053CAB6 /* MZSelectableLabel.m in Sources */,
 				C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */,
 				99970F5C20DF2E1500AEC45E /* MDTabBarSubviews.m in Sources */,
+				C2F5FBFA20EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m in Sources */,
 				C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */,
 				99CD9C7C20DF3185000BC7F0 /* MDWardrobeControl.m in Sources */,
 				99AA282B20DE6DC80053CAB6 /* LSAlertView.m in Sources */,
@@ -1553,9 +1717,13 @@
 				999D3FD620E28DF500950040 /* MDExceptionManager.m in Sources */,
 				C2CE592A20E9C211001F1F47 /* MDTrendRecommendView.m in Sources */,
 				99AA280C20DE6DC80053CAB6 /* VPImageCropperViewController.m in Sources */,
+				C2FF1A2320ECA30C0017DFF5 /* WardrobeAfterClothCell.m in Sources */,
+				C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */,
+				C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */,
 				99AA281120DE6DC80053CAB6 /* BaseModel.m in Sources */,
 				99AA284220DE6DC80053CAB6 /* UIView+Animation.m in Sources */,
 				99AA284920DE6DC80053CAB6 /* NSString+TrimmingAdditions.m in Sources */,
+				C2F5FBE720EC60D800DC04FF /* MDCycleScrollView.m in Sources */,
 				999D3FD920E28E8300950040 /* MDDeviceManager.m in Sources */,
 				99970F4D20DE768800AEC45E /* MDTabBarController.m in Sources */,
 				99AA283120DE6DC80053CAB6 /* CHTCollectionViewWaterfallLayout.m in Sources */,

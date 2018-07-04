@@ -22,12 +22,12 @@ static NSString *kTrendUploadNewViewCellID =@"MDTrendUploadNewViewCell";
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     _listView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     [self addSubview:_listView];
@@ -101,12 +101,12 @@ static NSString *kTrendUploadNewViewCellID =@"MDTrendUploadNewViewCell";
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
@@ -127,9 +127,9 @@ static NSString *kTrendUploadNewViewCellID =@"MDTrendUploadNewViewCell";
     
     [_containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView);
-        make.left.equalTo(self.contentView).offset(koffset);
-        make.right.equalTo(self.contentView).offset(-koffset);
-        make.bottom.equalTo(self.contentView).offset(-koffset);
+        make.left.equalTo(self.contentView).offset(kOffPadding);
+        make.right.equalTo(self.contentView).offset(-kOffPadding);
+        make.bottom.equalTo(self.contentView).offset(-kOffPadding);
     }];
     [_shopShowImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView);
@@ -184,7 +184,7 @@ static NSString *kTrendUploadNewViewCellID =@"MDTrendUploadNewViewCell";
     [_distanceTipsBtn setImage:IMAGE(@"navi_right_icon") forState:UIControlStateNormal];
     
     //TODO: - 测试数据
-    [_shopShowImgView sd_setImageWithURL:[NSURL URLWithString:@"https://pro.modao.cc/uploads3/images/2007/20078742/raw_1526138607.png"] placeholderImage:IMAGE(@"navi_right_icon")];
+    [_shopShowImgView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/2007/20078742/raw_1526138607.png" placeholderImage:IMAGE(@"navi_right_icon")];
 }
 
 @end

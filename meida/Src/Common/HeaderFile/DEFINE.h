@@ -110,7 +110,7 @@ typedef void (^MDStatusBlock)(id sender, NSInteger state);
 #define kContentDefaultCount    20
 
 // 默认边距
-#define koffset    15.f
+#define kOffPadding    15.f
 
 #endif
 

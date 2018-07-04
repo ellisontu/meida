@@ -15,12 +15,12 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -40,7 +40,7 @@
     separaLine.backgroundColor = kDefaultSeparationLineColor;
     [separaLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH - 2 * koffset, 1.f));
+        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH - 2 * kOffPadding, 1.f));
         make.bottom.equalTo(self.contentView);
     }];
     
@@ -154,12 +154,12 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
@@ -305,12 +305,12 @@ static NSString *MDWardrobeViewPlanCellItemID = @"MDWardrobeViewPlanCellItem";
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
@@ -319,7 +319,7 @@ static NSString *MDWardrobeViewPlanCellItemID = @"MDWardrobeViewPlanCellItem";
     [self.contentView addSubview:_titleLbl];
     [_titleLbl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView);
-        make.left.equalTo(self.contentView).offset(koffset);
+        make.left.equalTo(self.contentView).offset(kOffPadding);
     }];
     _titleLbl.font = FONT_SYSTEM_NORMAL(16);
     _titleLbl.textColor = kDefaultTitleColor;
@@ -389,12 +389,12 @@ static NSString *MDWardrobeViewPlanCellItemID = @"MDWardrobeViewPlanCellItem";
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
     _containerView = [[UIView alloc] init];

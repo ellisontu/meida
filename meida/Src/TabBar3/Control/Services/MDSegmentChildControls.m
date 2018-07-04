@@ -55,8 +55,8 @@ static NSString *MDServicesBaseSortCellID = @"MDServicesBaseSortCell";
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.sectionInset = UIEdgeInsetsMake(kOffset, kOffset, 0, kOffset);
-    layout.minimumLineSpacing = 10.f;
-    layout.minimumInteritemSpacing = 10.f;
+    layout.minimumLineSpacing = kOffset;
+    layout.minimumInteritemSpacing = kOffset;
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     [self.view addSubview:self.collectionView];

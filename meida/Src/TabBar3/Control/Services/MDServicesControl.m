@@ -12,9 +12,11 @@
 #import "MDSegmentTitleView.h"
 #import "MDSegmentScrollView.h"
 #import "UIView+cframe.h"
+#import "MDServicesBaseSortCell.h"
 
 @interface MDServicesControl () <MDSegmentTitleViewDelegate, MDSegmentScrollViewDelegate>
 
+@property (nonatomic ,strong) MDServicesHeaderView      *headerView;
 @property (nonatomic, strong) MDSegmentTitleView        *segmentTitleView;
 @property (nonatomic, strong) MDSegmentScrollView       *segmentScrollView;
 @property (nonatomic, strong) NSMutableArray            *childControlsArr;
@@ -41,7 +43,7 @@
 
 - (void)initScrollView
 {
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeaderHeight + 44.f + 44.f, SCR_HEIGHT, SCR_HEIGHT - kHeaderHeight - 44.f -44.f - kTabBarHeight)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeaderHeight + 44.f, SCR_HEIGHT, SCR_HEIGHT - kHeaderHeight - 44.f - kTabBarHeight)];
     [self.view addSubview:self.scrollView];
 
 }
@@ -57,7 +59,7 @@
     tipsLblView.text = @"预约";
     [tipsLblView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(kHeaderHeight + 10);
-        make.left.equalTo(self.view).offset(koffset);
+        make.left.equalTo(self.view).offset(kOffPadding);
     }];
     
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCR_WIDTH - 44.f, kStatusBarHeight, 44.f, 44.f)];
@@ -69,11 +71,14 @@
 - (void)initSegmentView
 {
     
+    _headerView = [[MDServicesHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH,300)];
+    [self.scrollView addSubview:_headerView];
+    
     NSArray *titleArr = @[@"精选", @"电影", @"电视剧", @"综艺", @"NBA", @"娱乐", @"动漫", @"演唱会", @"VIP会员"];
     MDSegmentTitleConfig *configure = [[MDSegmentTitleConfig alloc] init];
     configure.indicatorAdditionalWidth = 10;
     configure.showBottomSeparator = NO;
-    self.segmentTitleView = [[MDSegmentTitleView alloc] initWithFrame:CGRectMake(0, kHeaderHeight + 44.f, SCR_WIDTH, 44) delegate:self titleNames:titleArr configure:configure];
+    self.segmentTitleView = [[MDSegmentTitleView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_headerView.frame), SCR_WIDTH, 44) delegate:self titleNames:titleArr configure:configure];
     [self.view addSubview:self.segmentTitleView];
     
     for (int i = 0; i < titleArr.count; i++) {

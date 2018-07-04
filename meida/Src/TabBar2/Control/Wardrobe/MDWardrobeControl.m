@@ -41,7 +41,7 @@ static NSString *MDWardrobeViewPlanCellID  = @"MDWardrobeViewPlanCell";
     tipsLblView.text = @"发现";
     [tipsLblView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(kHeaderHeight + 10);
-        make.left.equalTo(self.view).offset(koffset);
+        make.left.equalTo(self.view).offset(kOffPadding);
     }];
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCR_WIDTH - 44.f, kStatusBarHeight, 44.f, 44.f)];
     [self.view addSubview:rightBtn];

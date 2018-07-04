@@ -24,12 +24,12 @@ static NSString *kTrendRecommendViewContentCellID = @"MDTrendRecommendViewConten
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     _listView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     [self addSubview:_listView];
@@ -116,12 +116,12 @@ static NSString *MDTrendRecommendViewUserCellItemID = @"MDTrendRecommendViewUser
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
@@ -188,12 +188,12 @@ static NSString *MDTrendRecommendViewUserCellItemID = @"MDTrendRecommendViewUser
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.contentView.backgroundColor   = COLOR_WITH_WHITE;
     self.contentView.layer.borderColor = kDefaultBorderColor.CGColor;
@@ -236,7 +236,7 @@ static NSString *MDTrendRecommendViewUserCellItemID = @"MDTrendRecommendViewUser
     _followUserBtn.layer.cornerRadius  = 5.f;
     _followUserBtn.layer.masksToBounds = YES;
     
-    [_userHeadIcon sd_setImageWithURL:[NSURL URLWithString:@"https://pro.modao.cc/uploads3/images/1665/16650324/raw_1516588548.png"] placeholderImage:IMAGE(@"navi_right_icon")];
+    [_userHeadIcon imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/1665/16650324/raw_1516588548.png" placeholderImage:IMAGE(@"navi_right_icon")];
     
 }
 
@@ -271,12 +271,12 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
@@ -308,7 +308,7 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     [_headContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self->_sepLineView.mas_bottom);
         make.centerX.equalTo(self.contentView);
-        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH - 2 * koffset, 80.f));
+        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH - 2 * kOffPadding, 80.f));
     }];
     [_userHeadIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50.f, 50.f));
@@ -352,15 +352,15 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     _followUserBtn.titleLabel.font = FONT_SYSTEM_NORMAL(11);
     _followUserBtn.layer.cornerRadius  = 5.f;
     _followUserBtn.layer.masksToBounds = YES;
-    [_userHeadIcon sd_setImageWithURL:[NSURL URLWithString:@"https://pro.modao.cc/uploads3/images/1665/16650324/raw_1516588548.png"] placeholderImage:IMAGE(@"navi_right_icon")];
+    [_userHeadIcon imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/1665/16650324/raw_1516588548.png" placeholderImage:IMAGE(@"navi_right_icon")];
     
     //2. 图片scroll
     _contentdescLbl = [[UILabel alloc] init];
     [self.contentView addSubview:_contentdescLbl];
     [_contentdescLbl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self->_headContentView.mas_bottom);
-        make.left.equalTo(self.contentView).offset(koffset);
-        make.right.equalTo(self.contentView).offset(-koffset);
+        make.left.equalTo(self.contentView).offset(kOffPadding);
+        make.right.equalTo(self.contentView).offset(-kOffPadding);
     }];
     
     UICollectionViewFlowLayout *flowLayout     = [[UICollectionViewFlowLayout alloc] init];
@@ -380,7 +380,7 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     [_contentPicsView registerClass:[MDTrendRecommendViewContentCellItem class] forCellWithReuseIdentifier:MDTrendRecommendViewContentCellItemID];
     [self.contentView addSubview:_contentPicsView];
     [_contentPicsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_contentdescLbl.mas_bottom).offset(koffset);
+        make.top.equalTo(self->_contentdescLbl.mas_bottom).offset(kOffPadding);
         make.left.equalTo(self.contentView);
         make.right.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).offset(-44.f);
@@ -482,12 +482,12 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     _imageView = [[UIImageView alloc] init];
     [self.contentView addSubview:_imageView];
@@ -496,7 +496,7 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     }];
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.layer.masksToBounds = YES;
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:@"https://pro.modao.cc/uploads3/images/1665/16650985/raw_1516589142.png"] placeholderImage:IMAGE(@"navi_right_icon")];
+    [_imageView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/1665/16650985/raw_1516589142.png" placeholderImage:IMAGE(@"navi_right_icon")];
     
 }
 

@@ -30,12 +30,12 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.backgroundColor = COLOR_WITH_WHITE;
     
@@ -76,8 +76,8 @@
     }];
     [_userNickLblView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.userSexImgView.mas_bottom).offset(10.f);
-        make.left.equalTo(self.userHeadImgView).offset(koffset);
-        make.right.equalTo(self.userHeadImgView).offset(-koffset);
+        make.left.equalTo(self.userHeadImgView).offset(kOffPadding);
+        make.right.equalTo(self.userHeadImgView).offset(-kOffPadding);
     }];
     [seplineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(2.f, 19.f));
@@ -86,12 +86,12 @@
     }];
     [_followCountView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(seplineView);
-        make.right.equalTo(seplineView).offset(-koffset);
-        make.width.mas_equalTo(SCR_WIDTH * 0.5 - 2 * koffset);
+        make.right.equalTo(seplineView).offset(-kOffPadding);
+        make.width.mas_equalTo(SCR_WIDTH * 0.5 - 2 * kOffPadding);
     }];
     [_beFollowCountView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(seplineView);
-        make.left.equalTo(seplineView).offset(koffset);
+        make.left.equalTo(seplineView).offset(kOffPadding);
         make.width.equalTo(self.followCountView);
     }];
     
@@ -99,7 +99,7 @@
     _backgroundImgView.userInteractionEnabled = YES;
     _userHeadImgView.layer.cornerRadius  = headIconWW * 0.5f;
     _userHeadImgView.layer.masksToBounds = YES;
-    [_userHeadImgView sd_setImageWithURL:[NSURL URLWithString:@"https://pro.modao.cc/uploads3/images/1665/16650324/raw_1516588548.png"] placeholderImage:IMAGE(@"place_holer_icon") completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [_userHeadImgView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/1665/16650324/raw_1516588548.png" placeholderImage:IMAGE(@"place_holer_icon") completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
     _userSexImgView.image = IMAGE(@"navi_right_icon");
     seplineView.backgroundColor = COLOR_HEX_STR(@"#66A298");
@@ -195,12 +195,12 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
+        [self initView];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)initView
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
@@ -219,11 +219,11 @@
     [_iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(25.f, 25.f));
         make.centerY.equalTo(self.contentView);
-        make.left.equalTo(self.contentView).offset(koffset);
+        make.left.equalTo(self.contentView).offset(kOffPadding);
     }];
     [_arrowImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(25.f, 25.f));
-        make.right.equalTo(self.contentView).offset(-koffset);
+        make.right.equalTo(self.contentView).offset(-kOffPadding);
         make.centerY.equalTo(self.contentView);
     }];
     [_titleLblView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -15,3 +15,7 @@
 
 
 #pragma mark -  服务 -> head -> cell view #############################################----------
+
+@interface MDServicesHeaderView : UIView
+
+@end

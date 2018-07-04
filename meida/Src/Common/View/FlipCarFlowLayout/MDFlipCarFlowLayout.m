@@ -8,28 +8,28 @@
 
 #import "MDFlipCarFlowLayout.h"
 
-#define kPageCardWidth 280
-#define kLineSpace 10
-#define kPageCardHeight 160
+#define kLineSpace      10
+#define kPageCardWidth  SCR_WIDTH - 4 * kLineSpace
+#define kPageCardHeight SCR_HEIGHT - kHeaderHeight - kTabBarHeight - kOffPadding * 2
 
 @interface MDFlipCarFlowLayout ()
 
 @property (nonatomic,assign) int pageNum;
+
 
 @end
 
 
 @implementation MDFlipCarFlowLayout
 
-- (void)prepareLayout{
+- (void)prepareLayout
+{
     
     [super prepareLayout];
     //滑动方向
     self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     //两个cell的间距
     self.minimumLineSpacing = kLineSpace;
-    //计算cell超出显示的宽度
-    //CGFloat width = ((SCR_WIDTH - kPageCardWidth) - (kLineSpace*2))/2;
     //每个section的间距
     self.sectionInset = UIEdgeInsetsMake(0, kLineSpace, 0, 0);
     //每个cell实际的大小
@@ -37,7 +37,8 @@
     
 }
 
-- (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
+- (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
+{
     NSArray *superAttributes = [super layoutAttributesForElementsInRect:rect];
     NSArray *attributes = [[NSArray alloc] initWithArray:superAttributes copyItems:YES];
     
@@ -60,36 +61,36 @@
         attribute.zIndex = 1;
         
         //渐变
-        CGFloat scaleForAlpha = 1 - fabs(scaleForDistance) * 0.6f;
+        CGFloat scaleForAlpha = 1.f - fabs(scaleForDistance) * 0.6f;
         attribute.alpha = scaleForAlpha;
     }];
-    
     return attributes;
 }
 
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
     return YES;
 }
 
-- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
+- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
+{
     // 分页以1/3处
     if (proposedContentOffset.x > self.previousOffsetX + self.itemSize.width / 3.0) {
-        self.previousOffsetX += kPageCardWidth+kLineSpace ;
-        self.pageNum = self.previousOffsetX/(kPageCardWidth+kLineSpace);
+        self.previousOffsetX += kPageCardWidth + kLineSpace ;
+        self.pageNum = self.previousOffsetX / (kPageCardWidth + kLineSpace);
         if ([self.delegate respondsToSelector:@selector(scrollToIndex:)]) {
             [self.delegate scrollToIndex:self.pageNum];
         }
     }
     else if (proposedContentOffset.x < self.previousOffsetX  - self.itemSize.width / 3.0) {
-        self.previousOffsetX -= kPageCardWidth+kLineSpace;
-        self.pageNum = self.previousOffsetX/(kPageCardWidth+kLineSpace);
+        self.previousOffsetX -= kPageCardWidth + kLineSpace;
+        self.pageNum = self.previousOffsetX / (kPageCardWidth + kLineSpace);
         if ([self.delegate respondsToSelector:@selector(scrollToIndex:)]) {
             [self.delegate scrollToIndex:self.pageNum];
         }
     }
     //将当前cell移动到屏幕中间位置
     proposedContentOffset.x = self.previousOffsetX;
-    
     return proposedContentOffset;
 }
 

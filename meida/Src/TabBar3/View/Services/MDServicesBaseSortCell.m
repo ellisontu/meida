@@ -152,11 +152,11 @@
                                   @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
                                   @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
                                   ];
-    NSArray *titles = @[@"新建交流QQ群：185534916 ",
-                        @"disableScrollGesture可以设置禁止拖动",
-                        @"感谢您的支持，如果下载的",
-                        @"如果代码在使用过程中出现问题",
-                        @"您可以发邮件到gsdios@126.com"
+    NSArray *titles = @[@"哈哈哈哈哈哈",
+                        @"本拉登又活了",
+                        @"卡扎菲也活了",
+                        @"塔利班的老铁又要炸美国了",
+                        @"就问美国你怕不怕啪啪啪啪~"
                         ];
     MDCycleScrollView *cycleScrollView = [MDCycleScrollView cycleScrollViewWithFrame:CGRectMake(kOffPadding, 55.f, SCR_WIDTH - 2 * kOffPadding, 135.f) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
     

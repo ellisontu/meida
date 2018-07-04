@@ -10,6 +10,7 @@
 
 @protocol MDFlipCarFlowLayoutDelegate <NSObject>
 
+@optional
 - (void)scrollToIndex:(NSInteger)index;
 
 @end

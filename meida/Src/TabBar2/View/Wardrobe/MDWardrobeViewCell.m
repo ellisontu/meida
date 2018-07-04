@@ -8,6 +8,8 @@
 
 #import "MDWardrobeViewCell.h"
 
+#import "MDWardrobeAfterClothCtrl.h"
+
 #pragma mark -  衣橱 -> 头部 -> cell view #############################################----------
 
 @implementation MDWardrobeViewFirstCell
@@ -123,7 +125,8 @@
             break;
         case 10002:
         {// 点击 "明日装"
-            
+            MDWardrobeAfterClothCtrl *vc = [[MDWardrobeAfterClothCtrl alloc] init];
+            [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
         }
             break;
         case 10003:

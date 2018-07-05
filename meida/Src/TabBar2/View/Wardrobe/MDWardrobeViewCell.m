@@ -9,6 +9,7 @@
 #import "MDWardrobeViewCell.h"
 
 #import "MDWardrobeAfterClothCtrl.h"
+#import "MDFanshionCircleCtrl.h"
 
 #pragma mark -  衣橱 -> 头部 -> cell view #############################################----------
 
@@ -131,7 +132,8 @@
             break;
         case 10003:
         {// 点击 "依尚圈"
-            
+            MDFanshionCircleCtrl *vc = [[MDFanshionCircleCtrl alloc] init];
+            [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
         }
             break;
         case 10004:

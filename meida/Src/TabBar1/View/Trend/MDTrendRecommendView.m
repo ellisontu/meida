@@ -93,7 +93,7 @@ static NSString *kTrendRecommendViewContentCellID = @"MDTrendRecommendViewConten
 {
     NSInteger row = indexPath.row;
     if (0 == row) {
-        return 146.f;
+        return 156.f;
     }
     else{
         return 350;
@@ -146,9 +146,16 @@ static NSString *MDTrendRecommendViewUserCellItemID = @"MDTrendRecommendViewUser
         make.top.equalTo(self.contentView);
         make.left.equalTo(self.contentView);
         make.right.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView).offset(-10.f);
+        make.bottom.equalTo(self.contentView).offset(-20.f);
     }];
-    
+    UIView *sepLineView = [[UIView alloc] init];
+    [self.contentView addSubview:sepLineView];
+    [sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, 10.f));
+        make.bottom.equalTo(self.contentView);
+        make.centerX.equalTo(self.contentView);
+    }];
+    sepLineView.backgroundColor = kDefaultBackgroundColor;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -213,13 +220,13 @@ static NSString *MDTrendRecommendViewUserCellItemID = @"MDTrendRecommendViewUser
         make.size.mas_equalTo(CGSizeMake(50.f, 50.f));
     }];
     [_userNickLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_userHeadIcon.mas_bottom).offset(5.f);
+        make.top.equalTo(self.userHeadIcon.mas_bottom).offset(5.f);
         make.centerX.equalTo(self.contentView);
         make.left.equalTo(self.contentView);
         make.right.equalTo(self.contentView);
     }];
     [_followUserBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_userNickLbl.mas_bottom).offset(10.f);
+        make.top.equalTo(self.userNickLbl.mas_bottom).offset(10.f);
         make.size.mas_equalTo(CGSizeMake(60.f, 25.f));
         make.centerX.equalTo(self.contentView);
     }];
@@ -285,7 +292,7 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     [self.contentView addSubview:_sepLineView];
     _sepLineView.backgroundColor = kDefaultBackgroundColor;
     [_sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
         make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, 10.f));
         make.centerX.equalTo(self.contentView);
     }];
@@ -306,31 +313,31 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     [_headContentView addSubview:_followUserBtn];
     
     [_headContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_sepLineView.mas_bottom);
+        make.top.equalTo(self.contentView);
         make.centerX.equalTo(self.contentView);
         make.size.mas_equalTo(CGSizeMake(SCR_WIDTH - 2 * kOffPadding, 80.f));
     }];
     [_userHeadIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50.f, 50.f));
-        make.centerY.equalTo(self->_headContentView);
-        make.left.equalTo(self->_headContentView);
+        make.centerY.equalTo(self.headContentView);
+        make.left.equalTo(self.headContentView);
     }];
     [_nickNameLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_userHeadIcon);
-        make.left.equalTo(self->_userHeadIcon.mas_right).offset(5.f);
+        make.top.equalTo(self.userHeadIcon);
+        make.left.equalTo(self.userHeadIcon.mas_right).offset(5.f);
     }];
     [_otherInfoLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self->_userHeadIcon);
-        make.left.equalTo(self->_nickNameLbl);
+        make.centerY.equalTo(self.userHeadIcon);
+        make.left.equalTo(self.nickNameLbl);
     }];
     [_timeTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self->_nickNameLbl);
-        make.bottom.equalTo(self->_userHeadIcon);
+        make.left.equalTo(self.nickNameLbl);
+        make.bottom.equalTo(self.userHeadIcon);
     }];
     [_followUserBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(60.f, 25.f));
-        make.right.equalTo(self->_headContentView);
-        make.centerY.equalTo(self->_otherInfoLbl);
+        make.right.equalTo(self.headContentView);
+        make.centerY.equalTo(self.otherInfoLbl);
     }];
     
     _headContentView.backgroundColor = COLOR_WITH_WHITE;
@@ -358,7 +365,7 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     _contentdescLbl = [[UILabel alloc] init];
     [self.contentView addSubview:_contentdescLbl];
     [_contentdescLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_headContentView.mas_bottom);
+        make.top.equalTo(self.headContentView.mas_bottom);
         make.left.equalTo(self.contentView).offset(kOffPadding);
         make.right.equalTo(self.contentView).offset(-kOffPadding);
     }];
@@ -380,10 +387,10 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     [_contentPicsView registerClass:[MDTrendRecommendViewContentCellItem class] forCellWithReuseIdentifier:MDTrendRecommendViewContentCellItemID];
     [self.contentView addSubview:_contentPicsView];
     [_contentPicsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_contentdescLbl.mas_bottom).offset(kOffPadding);
+        make.top.equalTo(self.contentdescLbl.mas_bottom).offset(kOffPadding);
         make.left.equalTo(self.contentView);
         make.right.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView).offset(-44.f);
+        make.bottom.equalTo(self.contentView).offset(-54.f);
     }];
     
     _contentdescLbl.font = FONT_SYSTEM_NORMAL(11);
@@ -402,27 +409,27 @@ static NSString *MDTrendRecommendViewContentCellItemID = @"MDTrendRecommendViewC
     [_footerContentView addSubview:_shareBtn];
     
     [_footerContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, 44.f));
+        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, 49.f));
         make.centerX.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView);
+        make.top.equalTo(self.contentPicsView.mas_bottom);
     }];
     
     [_praiseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self->_footerContentView);
+        make.left.equalTo(self.footerContentView);
         make.size.mas_equalTo(CGSizeMake(SCR_WIDTH / 3, 44.f));
-        make.centerY.equalTo(self->_footerContentView);
+        make.centerY.equalTo(self.footerContentView).offset(-2.5);
     }];
     [_commentBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self->_praiseBtn);
-        make.right.equalTo(self->_shareBtn);
-        make.centerY.equalTo(self->_footerContentView);
+        make.left.equalTo(self.praiseBtn);
+        make.right.equalTo(self.shareBtn);
+        make.centerY.equalTo(self.praiseBtn).offset(-2.5);
         make.height.mas_equalTo(44.f);
     }];
     [_shareBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self->_footerContentView);
+        make.right.equalTo(self.footerContentView);
         make.height.mas_equalTo(44.f);
-        make.centerY.equalTo(self->_footerContentView);
-        make.width.equalTo(self->_praiseBtn);
+        make.centerY.equalTo(self.praiseBtn).offset(-2.5);
+        make.width.equalTo(self.praiseBtn);
     }];
     
     CGFloat offset = 10.f;

@@ -1,5 +1,5 @@
 //
-//  MDSegmentChildControls.h
+//  MDServicesCategroyCtrl.h
 //  meida
 //
 //  Created by ToTo on 2018/7/3.
@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, SegmentChildViewType) {
     TypeTabeleView          /**< 横排: 类似 tableview  */
 };
 
-@interface MDSegmentChildControls : MDBaseViewController
+@interface MDServicesCategroyCtrl : MDBaseViewController
 
 - (instancetype)initStyle:(SegmentChildViewType )controlType;     /**<  唯一初始化入口 : 1.瀑布流，2.*/
 

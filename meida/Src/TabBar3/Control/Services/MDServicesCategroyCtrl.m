@@ -1,21 +1,21 @@
 //
-//  MDSegmentChildControls.m
+//  MDServicesCategroyCtrl.m
 //  meida
 //
 //  Created by ToTo on 2018/7/3.
 //  Copyright © 2018年 ymfashion. All rights reserved.
 //
 
-#import "MDSegmentChildControls.h"
+#import "MDServicesCategroyCtrl.h"
 #import "MDServicesBaseSortCell.h"
 
 static NSString *MDServicesBaseSortCellID = @"MDServicesBaseSortCell";
 
-@interface MDSegmentChildControls ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MDServicesCategroyCtrl ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
 
-@implementation MDSegmentChildControls
+@implementation MDServicesCategroyCtrl
 
 /**
  *  服务器告诉 展示什么样的 cell

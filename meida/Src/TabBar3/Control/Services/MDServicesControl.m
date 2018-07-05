@@ -7,7 +7,7 @@
 //  
 
 #import "MDServicesControl.h"
-#import "MDSegmentChildControls.h"
+#import "MDServicesCategroyCtrl.h"
 
 #import "MDSegmentTitleView.h"
 #import "MDSegmentScrollView.h"
@@ -82,7 +82,7 @@
     [self.view addSubview:self.segmentTitleView];
     
     for (int i = 0; i < titleArr.count; i++) {
-        MDSegmentChildControls *control = [[MDSegmentChildControls alloc] initStyle:1];
+        MDServicesCategroyCtrl *control = [[MDServicesCategroyCtrl alloc] initStyle:1];
         if (i % 2 == 0) {
             control.view.backgroundColor = kDefaultBackgroundColor;
         }

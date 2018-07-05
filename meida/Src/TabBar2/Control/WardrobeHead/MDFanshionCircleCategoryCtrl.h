@@ -1,5 +1,5 @@
 //
-//  MDFashCircleCategoryCtrl.h
+//  MDFanshionCircleCategoryCtrl.h
 //  meida
 //
 //  Created by ToTo on 2018/7/5.
@@ -8,6 +8,6 @@
 
 #import "MDBaseViewController.h"
 
-@interface MDFashCircleCategoryCtrl : MDBaseViewController
+@interface MDFanshionCircleCategoryCtrl : MDBaseViewController
 
 @end

@@ -1,22 +1,22 @@
 //
-//  MDFashCircleCategoryCtrl.m
+//  MDFanshionCircleCategoryCtrl.m
 //  meida
 //
 //  Created by ToTo on 2018/7/5.
 //  Copyright © 2018年 ymfashion. All rights reserved.
 //  时尚圈 分类 vc
 
-#import "MDFashCircleCategoryCtrl.h"
+#import "MDFanshionCircleCategoryCtrl.h"
 #import "MDTrendRecommendView.h"
 
 static NSString *MDTrendRecommendViewContentCellID = @"MDTrendRecommendViewContentCell";
 
-@interface MDFashCircleCategoryCtrl ()<UITableViewDataSource, UITableViewDelegate>
+@interface MDFanshionCircleCategoryCtrl ()<UITableViewDataSource, UITableViewDelegate>
 
 
 @end
 
-@implementation MDFashCircleCategoryCtrl
+@implementation MDFanshionCircleCategoryCtrl
 
 - (void)viewDidLoad {
     [super viewDidLoad];

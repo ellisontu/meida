@@ -106,7 +106,10 @@
 		99CD9C7F20DF31BD000BC7F0 /* MDServicesControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CD9C7E20DF31BD000BC7F0 /* MDServicesControl.m */; };
 		99CD9C8220DF31F1000BC7F0 /* MDMineControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CD9C8120DF31F1000BC7F0 /* MDMineControl.m */; };
 		C264CE4320EDB2690053AD0E /* MDFanshionCircleCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4220EDB2690053AD0E /* MDFanshionCircleCtrl.m */; };
-		C264CE4620EDB9C40053AD0E /* MDFashCircleCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4520EDB9C40053AD0E /* MDFashCircleCategoryCtrl.m */; };
+		C264CE4620EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4520EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m */; };
+		C264CE4920EDC51D0053AD0E /* MDMyWardrobeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4820EDC51D0053AD0E /* MDMyWardrobeCtrl.m */; };
+		C264CE4C20EDCE990053AD0E /* MDMyFittingRoomCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4B20EDCE990053AD0E /* MDMyFittingRoomCtrl.m */; };
+		C264CE5120EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5020EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m */; };
 		C2CE590920E9BAB6001F1F47 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C2CE590620E9BAB6001F1F47 /* README.txt */; };
 		C2CE590A20E9BAB6001F1F47 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CE590820E9BAB6001F1F47 /* libWeChatSDK.a */; };
 		C2CE591A20E9BAC5001F1F47 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C2CE590E20E9BAC5001F1F47 /* WeiboSDK.bundle */; };
@@ -398,8 +401,14 @@
 		99CD9C8120DF31F1000BC7F0 /* MDMineControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMineControl.m; sourceTree = "<group>"; };
 		C264CE4120EDB2690053AD0E /* MDFanshionCircleCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFanshionCircleCtrl.h; sourceTree = "<group>"; };
 		C264CE4220EDB2690053AD0E /* MDFanshionCircleCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFanshionCircleCtrl.m; sourceTree = "<group>"; };
-		C264CE4420EDB9C40053AD0E /* MDFashCircleCategoryCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFashCircleCategoryCtrl.h; sourceTree = "<group>"; };
-		C264CE4520EDB9C40053AD0E /* MDFashCircleCategoryCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFashCircleCategoryCtrl.m; sourceTree = "<group>"; };
+		C264CE4420EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFanshionCircleCategoryCtrl.h; sourceTree = "<group>"; };
+		C264CE4520EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFanshionCircleCategoryCtrl.m; sourceTree = "<group>"; };
+		C264CE4720EDC51D0053AD0E /* MDMyWardrobeCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMyWardrobeCtrl.h; sourceTree = "<group>"; };
+		C264CE4820EDC51D0053AD0E /* MDMyWardrobeCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMyWardrobeCtrl.m; sourceTree = "<group>"; };
+		C264CE4A20EDCE990053AD0E /* MDMyFittingRoomCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCtrl.h; sourceTree = "<group>"; };
+		C264CE4B20EDCE990053AD0E /* MDMyFittingRoomCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCtrl.m; sourceTree = "<group>"; };
+		C264CE4F20EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCategoryCtrl.h; sourceTree = "<group>"; };
+		C264CE5020EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCategoryCtrl.m; sourceTree = "<group>"; };
 		C2CE590420E9BAB6001F1F47 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		C2CE590520E9BAB6001F1F47 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		C2CE590620E9BAB6001F1F47 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -710,6 +719,8 @@
 			isa = PBXGroup;
 			children = (
 				99AA26B420DE6DC70053CAB6 /* Wardrobe */,
+				C264CE4E20EDCF9D0053AD0E /* WardrobeHead */,
+				C264CE4D20EDCF9D0053AD0E /* WardrobeBody */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -719,12 +730,6 @@
 			children = (
 				99CD9C7A20DF3185000BC7F0 /* MDWardrobeControl.h */,
 				99CD9C7B20DF3185000BC7F0 /* MDWardrobeControl.m */,
-				C2F5FBF820EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.h */,
-				C2F5FBF920EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m */,
-				C264CE4120EDB2690053AD0E /* MDFanshionCircleCtrl.h */,
-				C264CE4220EDB2690053AD0E /* MDFanshionCircleCtrl.m */,
-				C264CE4420EDB9C40053AD0E /* MDFashCircleCategoryCtrl.h */,
-				C264CE4520EDB9C40053AD0E /* MDFashCircleCategoryCtrl.m */,
 			);
 			path = Wardrobe;
 			sourceTree = "<group>";
@@ -1345,6 +1350,32 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		C264CE4D20EDCF9D0053AD0E /* WardrobeBody */ = {
+			isa = PBXGroup;
+			children = (
+				C264CE4720EDC51D0053AD0E /* MDMyWardrobeCtrl.h */,
+				C264CE4820EDC51D0053AD0E /* MDMyWardrobeCtrl.m */,
+				C264CE4A20EDCE990053AD0E /* MDMyFittingRoomCtrl.h */,
+				C264CE4B20EDCE990053AD0E /* MDMyFittingRoomCtrl.m */,
+				C264CE4F20EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.h */,
+				C264CE5020EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m */,
+			);
+			path = WardrobeBody;
+			sourceTree = "<group>";
+		};
+		C264CE4E20EDCF9D0053AD0E /* WardrobeHead */ = {
+			isa = PBXGroup;
+			children = (
+				C2F5FBF820EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.h */,
+				C2F5FBF920EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m */,
+				C264CE4120EDB2690053AD0E /* MDFanshionCircleCtrl.h */,
+				C264CE4220EDB2690053AD0E /* MDFanshionCircleCtrl.m */,
+				C264CE4420EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.h */,
+				C264CE4520EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m */,
+			);
+			path = WardrobeHead;
+			sourceTree = "<group>";
+		};
 		C2CE590320E9BAB6001F1F47 /* WechatSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -1660,10 +1691,11 @@
 				C264CE4320EDB2690053AD0E /* MDFanshionCircleCtrl.m in Sources */,
 				99970F5920DF2CFA00AEC45E /* MDTabBar.m in Sources */,
 				99970F5620DE785800AEC45E /* MDTabBarManager.m in Sources */,
-				C264CE4620EDB9C40053AD0E /* MDFashCircleCategoryCtrl.m in Sources */,
+				C264CE4620EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m in Sources */,
 				99AA280420DE6DC80053CAB6 /* UserModel.m in Sources */,
 				99AA284620DE6DC80053CAB6 /* UIImagePickerController+Permission.m in Sources */,
 				99AA287620DE6DC80053CAB6 /* SAMKeychain.m in Sources */,
+				C264CE5120EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m in Sources */,
 				99AA281220DE6DC80053CAB6 /* BaseH5ConfigModel.m in Sources */,
 				99AA282120DE6DC80053CAB6 /* KYLabel.m in Sources */,
 				C2F5FBED20EC63DB00DC04FF /* MDAbstractDotView.m in Sources */,
@@ -1694,6 +1726,7 @@
 				99AA280A20DE6DC80053CAB6 /* ShareViewCell.m in Sources */,
 				99AA282420DE6DC80053CAB6 /* QuadCurveMenuItem.m in Sources */,
 				999D3FDC20E2900100950040 /* MDCacheFileManager.m in Sources */,
+				C264CE4C20EDCE990053AD0E /* MDMyFittingRoomCtrl.m in Sources */,
 				99AA284C20DE6DC80053CAB6 /* HookUtility.m in Sources */,
 				99AA286720DE6DC80053CAB6 /* main.m in Sources */,
 				99AA289320DE6F580053CAB6 /* HandleOpenUrlManager.m in Sources */,
@@ -1753,6 +1786,7 @@
 				99AA287220DE6DC80053CAB6 /* EncryptionMethods.m in Sources */,
 				99AA282320DE6DC80053CAB6 /* LSWaterWaveView.m in Sources */,
 				99AA283E20DE6DC80053CAB6 /* UIButton+Router.m in Sources */,
+				C264CE4920EDC51D0053AD0E /* MDMyWardrobeCtrl.m in Sources */,
 				99AA281C20DE6DC80053CAB6 /* CustomeTextField.m in Sources */,
 				99339BF420E13A4F00E45EC7 /* MDRefreshGifHeader.m in Sources */,
 			);

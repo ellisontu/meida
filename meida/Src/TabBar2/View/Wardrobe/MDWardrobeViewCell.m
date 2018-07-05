@@ -10,6 +10,8 @@
 
 #import "MDWardrobeAfterClothCtrl.h"
 #import "MDFanshionCircleCtrl.h"
+#import "MDMyWardrobeCtrl.h"
+#import "MDMyFittingRoomCtrl.h"
 
 #pragma mark -  衣橱 -> 头部 -> cell view #############################################----------
 
@@ -269,12 +271,14 @@
     switch (sender.tag) {
         case 10001:
         {// 点击 "我的衣橱"
-            
+            MDMyWardrobeCtrl *vc = [[MDMyWardrobeCtrl alloc] init];
+            [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
         }
             break;
         case 10002:
         {// 点击 "试衣间"
-            
+            MDMyFittingRoomCtrl *vc = [[MDMyFittingRoomCtrl alloc] init];
+            [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
         }
             break;
         case 10003:

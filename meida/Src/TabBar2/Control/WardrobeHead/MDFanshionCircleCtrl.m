@@ -7,7 +7,7 @@
 //
 
 #import "MDFanshionCircleCtrl.h"
-#import "MDFashCircleCategoryCtrl.h"
+#import "MDFanshionCircleCategoryCtrl.h"
 
 #import "MDSegmentTitleView.h"
 #import "MDSegmentScrollView.h"
@@ -51,7 +51,7 @@
     [self.view addSubview:self.segmentTitleView];
     
     for (int i = 0; i < titleArr.count; i++) {
-        MDFashCircleCategoryCtrl *control = [[MDFashCircleCategoryCtrl alloc] init];
+        MDFanshionCircleCategoryCtrl *control = [[MDFanshionCircleCategoryCtrl alloc] init];
         if (i % 2 == 0) {
             control.view.backgroundColor = kDefaultBackgroundColor;
         }

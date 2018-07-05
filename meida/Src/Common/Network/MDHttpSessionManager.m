@@ -6,7 +6,7 @@
 //  Copyright © 2018年 ymfashion. All rights reserved.
 //
 
-#import "MDHTTPSessionManager.h"
+#import "MDHttpSessionManager.h"
 #import "CommonCrypto/CommonDigest.h"
 #import "CommonCrypto/CommonHMAC.h"
 #import "MDErrorModel.h"

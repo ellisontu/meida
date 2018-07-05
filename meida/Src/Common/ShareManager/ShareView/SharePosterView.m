@@ -215,7 +215,7 @@
 #pragma mark - 展示分享海报样式 -
 - (void)show
 {
-    [[MDDeviceManager sharedInstance].window addSubview:self];
+    [MDAPPDELEGATE.window addSubview:self];
     _bottomBgView.frame = CGRectMake(0, SCR_HEIGHT, SCR_WIDTH, shareBottomView_H);
     _posterView.alpha = 0.f;
     [UIView animateWithDuration:0.3f animations:^{
@@ -310,7 +310,7 @@
     else {
         if (_isSharePoster) {
             if (!_model.posterThumData || !_model.posterData) {
-                [Util showMessage:@"正在获取海报" forDuration:1.5f inView:[MDDeviceManager sharedInstance].window];
+                [Util showMessage:@"正在获取海报" forDuration:1.5f inView:MDAPPDELEGATE.window];
                 return;
             }
         }

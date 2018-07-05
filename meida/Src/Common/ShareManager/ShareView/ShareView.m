@@ -136,7 +136,7 @@
 
 - (void)show
 {
-    [[MDDeviceManager sharedInstance].window addSubview:self];
+    [MDAPPDELEGATE.window addSubview:self];
     CGFloat height = (_dataArray.count / 5 + 1) * SCR_WIDTH / 4 + 40 + 60 + kTabBarBottomHeight;
     self.platCollectionView.frame = CGRectMake(0, SCR_HEIGHT, SCR_WIDTH, height);
     [UIView animateWithDuration:0.3f animations:^{

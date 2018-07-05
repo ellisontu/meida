@@ -217,7 +217,7 @@
     if ([object isKindOfClass:[MDErrorModel class]]) {
         MDErrorModel *errorModel = (MDErrorModel *)object;
         if (errorModel.errMsg) {
-            [Util showMessage:errorModel.errMsg forDuration:duration inView:[MDDeviceManager sharedInstance].window];
+            [Util showMessage:errorModel.errMsg forDuration:duration inView:MDAPPDELEGATE.window];
         }
     }
 }
@@ -573,7 +573,7 @@
 //        {
 //            // 这是第三方登陆 并且没有绑定手机号
 //            [[UserManager sharedInstance] logOut];
-//            [Util showMessage:@"亲爱的唇蜜,由于第三方账号登录失效,请重新登录您的账号,感谢您长久以来的翻牌" inView:[MDDeviceManager sharedInstance].window];
+//            [Util showMessage:@"亲爱的唇蜜,由于第三方账号登录失效,请重新登录您的账号,感谢您长久以来的翻牌" inView:MDAPPDELEGATE.window];
 //        }
 //    }
 //}
@@ -751,7 +751,7 @@
 
 + (NSString *)getCurrentStackInfo
 {
-    NSArray *stackArr = [MDDeviceManager sharedInstance].navigation.childViewControllers;
+    NSArray *stackArr = MDAPPDELEGATE.navigation.childViewControllers;
     NSString *stackInfo = [NSString string];
     for (NSInteger index = 0; index < stackArr.count; index++) {
         UIViewController *vc = stackArr[index];
@@ -765,7 +765,7 @@
 
 + (UIViewController *)getCurrentVC
 {
-    UIViewController *viewController = [MDDeviceManager sharedInstance].navigation ? [MDDeviceManager sharedInstance].navigation : [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UIViewController *viewController = MDAPPDELEGATE.navigation ? MDAPPDELEGATE.navigation : [[[UIApplication sharedApplication] keyWindow] rootViewController];
     return [Util getCurrentViewController:viewController];
 }
 

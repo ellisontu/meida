@@ -180,7 +180,7 @@
 - (void)show
 {
     self.frame = CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT);
-    [[MDDeviceManager sharedInstance].window addSubview:self];
+    [MDAPPDELEGATE.window addSubview:self];
 }
 
 - (void)dismiss

@@ -184,8 +184,6 @@ void uncaughtExceptionHandler(NSException *exception)
         _rvc = [[MDTabBarController alloc] init];
         _rvc.view.backgroundColor = COLOR_WITH_WHITE;
         _navigation = [[MDNavigationController alloc] initWithRootViewController:_rvc];
-        [MDDeviceManager sharedInstance].window = self.window;
-        [MDDeviceManager sharedInstance].navigation = self.navigation;
         self.window.rootViewController = _navigation;
         [self.window makeKeyAndVisible];
         //[self performSelector:@selector(setTabTest:) withObject:nil afterDelay:1.f];

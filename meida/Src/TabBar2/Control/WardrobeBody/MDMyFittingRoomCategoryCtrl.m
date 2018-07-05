@@ -8,6 +8,8 @@
 
 #import "MDMyFittingRoomCategoryCtrl.h"
 
+#import "MDAddClothMatchCtrl.h"
+
 static NSString *MDMyFittingRoomCategoryCtrlCellID = @"MDMyFittingRoomCategoryCtrlCell";
 
 @interface MDMyFittingRoomCategoryCtrl ()<UICollectionViewDataSource, UICollectionViewDelegate>
@@ -55,13 +57,18 @@ static NSString *MDMyFittingRoomCategoryCtrlCellID = @"MDMyFittingRoomCategoryCt
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MDMyFittingRoomCategoryCtrlCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MDMyFittingRoomCategoryCtrlCellID forIndexPath:indexPath];
+    cell.indexPath = indexPath;
     return cell;
 }
 
-#pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSInteger row = indexPath.row;
+    if (0 == row) {
+        // 点击 第0个item 添加搭配
+        MDAddClothMatchCtrl *vc = [[MDAddClothMatchCtrl alloc] init];
+        [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

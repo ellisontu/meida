@@ -18,4 +18,6 @@
 
 @interface MDMyFittingRoomCategoryCtrlCell : UICollectionViewCell
 
+@property (nonatomic, strong) NSIndexPath       *indexPath;
+
 @end

@@ -28,6 +28,7 @@ PODS:
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
   - UIImage-Resize (1.0.1)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
   - YYModel (1.0.4)
   - ZipArchive (1.4.0)
 
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - PureLayout (~> 3.0.2)
   - SDWebImage (~> 3.7.5)
   - UIImage-Resize (~> 1.0.1)
+  - "UITableView+FDTemplateLayoutCell"
   - YYModel (~> 1.0.4)
   - ZipArchive
 
@@ -60,6 +62,7 @@ SPEC REPOS:
     - PureLayout
     - SDWebImage
     - UIImage-Resize
+    - "UITableView+FDTemplateLayoutCell"
     - YYModel
     - ZipArchive
 
@@ -76,9 +79,10 @@ SPEC CHECKSUMS:
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UIImage-Resize: fa776860f10e6900bbaf53a73e494bdceaaccc77
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 6dc598d94dccf151059edfb746b0b986257a615d
+PODFILE CHECKSUM: 913457d7268095dd25b9aaf6c523787b95fe7de0
 
 COCOAPODS: 1.5.2

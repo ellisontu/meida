@@ -21,6 +21,7 @@ target 'meida' do
     pod 'PureLayout', '~> 3.0.2'
     pod 'ZipArchive'
     pod 'YYModel', '~> 1.0.4'
+    pod 'UITableView+FDTemplateLayoutCell'
     
     
 end

@@ -112,6 +112,23 @@
 		C264CE5120EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5020EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m */; };
 		C264CE5420EDF99D0053AD0E /* MDAddClothMatchCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5320EDF99D0053AD0E /* MDAddClothMatchCtrl.m */; };
 		C264CE5720EDFC590053AD0E /* MDAddClothMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */; };
+		C2A8328620EF4BC100A821E6 /* MDLoginControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8328520EF4BC100A821E6 /* MDLoginControl.m */; };
+		C2A8328A20EF4C4E00A821E6 /* MDLoginCommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8328920EF4C4E00A821E6 /* MDLoginCommonView.m */; };
+		C2A832A920EF512300A821E6 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8328E20EF512300A821E6 /* FLAnimatedImage.m */; };
+		C2A832AA20EF512300A821E6 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8328F20EF512300A821E6 /* FLAnimatedImageView.m */; };
+		C2A832AB20EF512300A821E6 /* XHLaunchAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8329620EF512300A821E6 /* XHLaunchAdView.m */; };
+		C2A832AC20EF512300A821E6 /* XHLaunchAdButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8329920EF512300A821E6 /* XHLaunchAdButton.m */; };
+		C2A832AD20EF512300A821E6 /* XHLaunchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8329B20EF512300A821E6 /* XHLaunchImageView.m */; };
+		C2A832AE20EF512300A821E6 /* XHLaunchAdConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8329C20EF512300A821E6 /* XHLaunchAdConst.m */; };
+		C2A832AF20EF512300A821E6 /* XHLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8329E20EF512300A821E6 /* XHLaunchAd.m */; };
+		C2A832B020EF512300A821E6 /* XHLaunchAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A8329F20EF512300A821E6 /* XHLaunchAdController.m */; };
+		C2A832B120EF512300A821E6 /* XHLaunchAdDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832A020EF512300A821E6 /* XHLaunchAdDownloader.m */; };
+		C2A832B220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832A220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m */; };
+		C2A832B320EF512300A821E6 /* XHLaunchAdConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832A320EF512300A821E6 /* XHLaunchAdConfiguration.m */; };
+		C2A832B420EF512300A821E6 /* XHLaunchAdCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832A520EF512300A821E6 /* XHLaunchAdCache.m */; };
+		C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832A720EF512300A821E6 /* XHLaunchAdImageManager.m */; };
+		C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */; };
+		C2A832BB20EF524C00A821E6 /* MDLaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */; };
 		C2CE590920E9BAB6001F1F47 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C2CE590620E9BAB6001F1F47 /* README.txt */; };
 		C2CE590A20E9BAB6001F1F47 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CE590820E9BAB6001F1F47 /* libWeChatSDK.a */; };
 		C2CE591A20E9BAC5001F1F47 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C2CE590E20E9BAC5001F1F47 /* WeiboSDK.bundle */; };
@@ -415,6 +432,40 @@
 		C264CE5320EDF99D0053AD0E /* MDAddClothMatchCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCtrl.m; sourceTree = "<group>"; };
 		C264CE5520EDFC590053AD0E /* MDAddClothMatchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAddClothMatchCell.h; sourceTree = "<group>"; };
 		C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCell.m; sourceTree = "<group>"; };
+		C2A8328420EF4BC100A821E6 /* MDLoginControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDLoginControl.h; sourceTree = "<group>"; };
+		C2A8328520EF4BC100A821E6 /* MDLoginControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLoginControl.m; sourceTree = "<group>"; };
+		C2A8328820EF4C4E00A821E6 /* MDLoginCommonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDLoginCommonView.h; sourceTree = "<group>"; };
+		C2A8328920EF4C4E00A821E6 /* MDLoginCommonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLoginCommonView.m; sourceTree = "<group>"; };
+		C2A8328E20EF512300A821E6 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		C2A8328F20EF512300A821E6 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		C2A8329020EF512300A821E6 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		C2A8329120EF512300A821E6 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		C2A8329320EF512300A821E6 /* XHLaunchAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdController.h; sourceTree = "<group>"; };
+		C2A8329420EF512300A821E6 /* XHLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAd.h; sourceTree = "<group>"; };
+		C2A8329520EF512300A821E6 /* XHLaunchAdDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdDownloader.h; sourceTree = "<group>"; };
+		C2A8329620EF512300A821E6 /* XHLaunchAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdView.m; sourceTree = "<group>"; };
+		C2A8329720EF512300A821E6 /* XHLaunchAdCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdCache.h; sourceTree = "<group>"; };
+		C2A8329820EF512300A821E6 /* XHLaunchAdConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdConfiguration.h; sourceTree = "<group>"; };
+		C2A8329920EF512300A821E6 /* XHLaunchAdButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdButton.m; sourceTree = "<group>"; };
+		C2A8329A20EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XHLaunchAdImageView+XHLaunchAdCache.h"; sourceTree = "<group>"; };
+		C2A8329B20EF512300A821E6 /* XHLaunchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchImageView.m; sourceTree = "<group>"; };
+		C2A8329C20EF512300A821E6 /* XHLaunchAdConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdConst.m; sourceTree = "<group>"; };
+		C2A8329D20EF512300A821E6 /* XHLaunchAdImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdImageManager.h; sourceTree = "<group>"; };
+		C2A8329E20EF512300A821E6 /* XHLaunchAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAd.m; sourceTree = "<group>"; };
+		C2A8329F20EF512300A821E6 /* XHLaunchAdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdController.m; sourceTree = "<group>"; };
+		C2A832A020EF512300A821E6 /* XHLaunchAdDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdDownloader.m; sourceTree = "<group>"; };
+		C2A832A120EF512300A821E6 /* XHLaunchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchImageView.h; sourceTree = "<group>"; };
+		C2A832A220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XHLaunchAdImageView+XHLaunchAdCache.m"; sourceTree = "<group>"; };
+		C2A832A320EF512300A821E6 /* XHLaunchAdConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdConfiguration.m; sourceTree = "<group>"; };
+		C2A832A420EF512300A821E6 /* XHLaunchAdButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdButton.h; sourceTree = "<group>"; };
+		C2A832A520EF512300A821E6 /* XHLaunchAdCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdCache.m; sourceTree = "<group>"; };
+		C2A832A620EF512300A821E6 /* XHLaunchAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdView.h; sourceTree = "<group>"; };
+		C2A832A720EF512300A821E6 /* XHLaunchAdImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdImageManager.m; sourceTree = "<group>"; };
+		C2A832A820EF512300A821E6 /* XHLaunchAdConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdConst.h; sourceTree = "<group>"; };
+		C2A832B620EF51B300A821E6 /* MDLaunchAdManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDLaunchAdManager.h; sourceTree = "<group>"; };
+		C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLaunchAdManager.m; sourceTree = "<group>"; };
+		C2A832B920EF524C00A821E6 /* MDLaunchAdModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDLaunchAdModel.h; sourceTree = "<group>"; };
+		C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLaunchAdModel.m; sourceTree = "<group>"; };
 		C2CE590420E9BAB6001F1F47 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		C2CE590520E9BAB6001F1F47 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		C2CE590620E9BAB6001F1F47 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -670,6 +721,7 @@
 		99AA26AA20DE6DC70053CAB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2A8328720EF4C2C00A821E6 /* Login */,
 				99C05AEE20EA5E370027ABF9 /* Mine */,
 			);
 			path = View;
@@ -678,6 +730,7 @@
 		99AA26AC20DE6DC70053CAB6 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				C2A8328320EF4B8600A821E6 /* Login */,
 				99AA26AD20DE6DC70053CAB6 /* Mine */,
 			);
 			path = Control;
@@ -1228,6 +1281,7 @@
 		99AA27D020DE6DC70053CAB6 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				C2A8328B20EF512300A821E6 /* XHLaunchAd */,
 				C2CE590320E9BAB6001F1F47 /* WechatSDK */,
 				99AA27E620DE6DC80053CAB6 /* TencentSDK */,
 				99AA27EA20DE6DC80053CAB6 /* EncryptionMethods */,
@@ -1392,6 +1446,85 @@
 			children = (
 			);
 			path = TagCollectionView;
+			sourceTree = "<group>";
+		};
+		C2A8328320EF4B8600A821E6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C2A8328420EF4BC100A821E6 /* MDLoginControl.h */,
+				C2A8328520EF4BC100A821E6 /* MDLoginControl.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C2A8328720EF4C2C00A821E6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C2A8328820EF4C4E00A821E6 /* MDLoginCommonView.h */,
+				C2A8328920EF4C4E00A821E6 /* MDLoginCommonView.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C2A8328B20EF512300A821E6 /* XHLaunchAd */ = {
+			isa = PBXGroup;
+			children = (
+				C2A832B620EF51B300A821E6 /* MDLaunchAdManager.h */,
+				C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */,
+				C2A832B920EF524C00A821E6 /* MDLaunchAdModel.h */,
+				C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */,
+				C2A8328C20EF512300A821E6 /* Lib */,
+				C2A8329220EF512300A821E6 /* XHLaunchAd */,
+			);
+			path = XHLaunchAd;
+			sourceTree = "<group>";
+		};
+		C2A8328C20EF512300A821E6 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C2A8328D20EF512300A821E6 /* FLAnimatedImage */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		C2A8328D20EF512300A821E6 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				C2A8328E20EF512300A821E6 /* FLAnimatedImage.m */,
+				C2A8328F20EF512300A821E6 /* FLAnimatedImageView.m */,
+				C2A8329020EF512300A821E6 /* FLAnimatedImage.h */,
+				C2A8329120EF512300A821E6 /* FLAnimatedImageView.h */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		C2A8329220EF512300A821E6 /* XHLaunchAd */ = {
+			isa = PBXGroup;
+			children = (
+				C2A8329320EF512300A821E6 /* XHLaunchAdController.h */,
+				C2A8329420EF512300A821E6 /* XHLaunchAd.h */,
+				C2A8329520EF512300A821E6 /* XHLaunchAdDownloader.h */,
+				C2A8329620EF512300A821E6 /* XHLaunchAdView.m */,
+				C2A8329720EF512300A821E6 /* XHLaunchAdCache.h */,
+				C2A8329820EF512300A821E6 /* XHLaunchAdConfiguration.h */,
+				C2A8329920EF512300A821E6 /* XHLaunchAdButton.m */,
+				C2A8329A20EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.h */,
+				C2A8329B20EF512300A821E6 /* XHLaunchImageView.m */,
+				C2A8329C20EF512300A821E6 /* XHLaunchAdConst.m */,
+				C2A8329D20EF512300A821E6 /* XHLaunchAdImageManager.h */,
+				C2A8329E20EF512300A821E6 /* XHLaunchAd.m */,
+				C2A8329F20EF512300A821E6 /* XHLaunchAdController.m */,
+				C2A832A020EF512300A821E6 /* XHLaunchAdDownloader.m */,
+				C2A832A120EF512300A821E6 /* XHLaunchImageView.h */,
+				C2A832A220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m */,
+				C2A832A320EF512300A821E6 /* XHLaunchAdConfiguration.m */,
+				C2A832A420EF512300A821E6 /* XHLaunchAdButton.h */,
+				C2A832A520EF512300A821E6 /* XHLaunchAdCache.m */,
+				C2A832A620EF512300A821E6 /* XHLaunchAdView.h */,
+				C2A832A720EF512300A821E6 /* XHLaunchAdImageManager.m */,
+				C2A832A820EF512300A821E6 /* XHLaunchAdConst.h */,
+			);
+			path = XHLaunchAd;
 			sourceTree = "<group>";
 		};
 		C2CE590320E9BAB6001F1F47 /* WechatSDK */ = {
@@ -1708,25 +1841,32 @@
 				99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */,
 				C264CE4320EDB2690053AD0E /* MDFanshionCircleCtrl.m in Sources */,
 				99970F5920DF2CFA00AEC45E /* MDTabBar.m in Sources */,
+				C2A832B020EF512300A821E6 /* XHLaunchAdController.m in Sources */,
 				99970F5620DE785800AEC45E /* MDTabBarManager.m in Sources */,
 				C264CE4620EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m in Sources */,
 				99AA280420DE6DC80053CAB6 /* UserModel.m in Sources */,
 				99AA284620DE6DC80053CAB6 /* UIImagePickerController+Permission.m in Sources */,
 				99AA287620DE6DC80053CAB6 /* SAMKeychain.m in Sources */,
 				C264CE5120EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m in Sources */,
+				C2A832B320EF512300A821E6 /* XHLaunchAdConfiguration.m in Sources */,
 				99AA281220DE6DC80053CAB6 /* BaseH5ConfigModel.m in Sources */,
 				99AA282120DE6DC80053CAB6 /* KYLabel.m in Sources */,
 				C2F5FBED20EC63DB00DC04FF /* MDAbstractDotView.m in Sources */,
 				997E63B820E7BD7D00B237EC /* MDTopLoadingView.m in Sources */,
+				C2A832AC20EF512300A821E6 /* XHLaunchAdButton.m in Sources */,
 				99AA289220DE6F580053CAB6 /* RSAEncryptor.m in Sources */,
+				C2A8328620EF4BC100A821E6 /* MDLoginControl.m in Sources */,
 				9921785620E284DF001C6A76 /* MDHttpSessionManager.m in Sources */,
 				99AA289420DE6F580053CAB6 /* Util.m in Sources */,
 				99AA287420DE6DC80053CAB6 /* SAMKeychainQuery.m in Sources */,
+				C2A832AE20EF512300A821E6 /* XHLaunchAdConst.m in Sources */,
 				C2CE592720E9C1F1001F1F47 /* MDTrendUploadNewView.m in Sources */,
 				99AA280620DE6DC80053CAB6 /* ShareView.m in Sources */,
 				99AA284F20DE6DC80053CAB6 /* NSDate+LSExtension.m in Sources */,
 				99AA284420DE6DC80053CAB6 /* UIView+AligmentRectInsets.m in Sources */,
+				C2A832B220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
 				C2CE594720EB57DB001F1F47 /* MDSegmentTitleView.m in Sources */,
+				C2A832AF20EF512300A821E6 /* XHLaunchAd.m in Sources */,
 				99CD9C8220DF31F1000BC7F0 /* MDMineControl.m in Sources */,
 				99AA280220DE6DC80053CAB6 /* UserAnalyticsManager.m in Sources */,
 				99AA281F20DE6DC80053CAB6 /* BaseTextField.m in Sources */,
@@ -1735,9 +1875,11 @@
 				99AA280120DE6DC80053CAB6 /* UserManager.m in Sources */,
 				C264CE5420EDF99D0053AD0E /* MDAddClothMatchCtrl.m in Sources */,
 				C2F5FBF220EC758100DC04FF /* MDFlipCarFlowLayout.m in Sources */,
+				C2A832AA20EF512300A821E6 /* FLAnimatedImageView.m in Sources */,
 				99AA289120DE6F580053CAB6 /* LSStringTools.m in Sources */,
 				C2CE594A20EB5D8C001F1F47 /* MDSegmentScrollView.m in Sources */,
 				99AA284520DE6DC80053CAB6 /* UIView+MDHitTest.m in Sources */,
+				C2A832A920EF512300A821E6 /* FLAnimatedImage.m in Sources */,
 				C2CE595220EB7EAC001F1F47 /* MDServicesBaseSortCell.m in Sources */,
 				99AA284B20DE6DC80053CAB6 /* UIViewController+Swizzling.m in Sources */,
 				99AA283F20DE6DC80053CAB6 /* UIButton+EnlargeArea.m in Sources */,
@@ -1754,8 +1896,10 @@
 				99970F5020DE76EE00AEC45E /* MDNavigationController.m in Sources */,
 				99339BF720E13A9C00E45EC7 /* MDRefreshGifFooter.m in Sources */,
 				99AA284E20DE6DC80053CAB6 /* UserStatistics.m in Sources */,
+				C2A832BB20EF524C00A821E6 /* MDLaunchAdModel.m in Sources */,
 				C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */,
 				9921785020E28244001C6A76 /* MDLoadingView.m in Sources */,
+				C2A8328A20EF4C4E00A821E6 /* MDLoginCommonView.m in Sources */,
 				99AA288F20DE6F580053CAB6 /* AnimationManager.m in Sources */,
 				99AA284820DE6DC80053CAB6 /* NSString+AttributeString.m in Sources */,
 				9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */,
@@ -1764,6 +1908,7 @@
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
+				C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */,
 				99AA285A20DE6DC80053CAB6 /* InputView.m in Sources */,
 				99AA287320DE6DC80053CAB6 /* ttc_encrypt_v2.c in Sources */,
 				99AA280320DE6DC80053CAB6 /* UserAnalyticsModel.m in Sources */,
@@ -1782,7 +1927,9 @@
 				999D3FD620E28DF500950040 /* MDExceptionManager.m in Sources */,
 				C2CE592A20E9C211001F1F47 /* MDTrendRecommendView.m in Sources */,
 				99AA280C20DE6DC80053CAB6 /* VPImageCropperViewController.m in Sources */,
+				C2A832AB20EF512300A821E6 /* XHLaunchAdView.m in Sources */,
 				C2FF1A2320ECA30C0017DFF5 /* WardrobeAfterClothCell.m in Sources */,
+				C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */,
 				C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */,
 				C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */,
 				99AA281120DE6DC80053CAB6 /* BaseModel.m in Sources */,
@@ -1795,15 +1942,18 @@
 				99AA282520DE6DC80053CAB6 /* QuadCurveMenu.m in Sources */,
 				99970F5F20DF2F4C00AEC45E /* MDWebViewVC.m in Sources */,
 				99970F5320DE773600AEC45E /* MDBaseViewController.m in Sources */,
+				C2A832AD20EF512300A821E6 /* XHLaunchImageView.m in Sources */,
 				99AA284A20DE6DC80053CAB6 /* NSNumber+ConvertToString.m in Sources */,
 				99AA283A20DE6DC80053CAB6 /* UIImage+InternalMethod.m in Sources */,
 				99CD9C7920DF3147000BC7F0 /* MDTrendControl.m in Sources */,
 				99AA284720DE6DC80053CAB6 /* NSString+URLEncoding.m in Sources */,
 				99AA281E20DE6DC80053CAB6 /* CustomeSlider.m in Sources */,
 				99AA283C20DE6DC80053CAB6 /* UIImage+animatedGIF.m in Sources */,
+				C2A832B120EF512300A821E6 /* XHLaunchAdDownloader.m in Sources */,
 				99AA286820DE6DC80053CAB6 /* AppDelegate.m in Sources */,
 				99CD9C7F20DF31BD000BC7F0 /* MDServicesControl.m in Sources */,
 				99AA287220DE6DC80053CAB6 /* EncryptionMethods.m in Sources */,
+				C2A832B420EF512300A821E6 /* XHLaunchAdCache.m in Sources */,
 				99AA282320DE6DC80053CAB6 /* LSWaterWaveView.m in Sources */,
 				99AA283E20DE6DC80053CAB6 /* UIButton+Router.m in Sources */,
 				C264CE4920EDC51D0053AD0E /* MDMyWardrobeCtrl.m in Sources */,

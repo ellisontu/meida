@@ -13,6 +13,8 @@
 #import "MDMyWardrobeCtrl.h"
 #import "MDMyFittingRoomCtrl.h"
 
+#import "MDShootViewController.h"
+
 #pragma mark -  衣橱 -> 头部 -> cell view #############################################----------
 
 @implementation MDWardrobeViewFirstCell
@@ -288,6 +290,8 @@
             break;
         case 10004:
         {// 点击 "依报告"
+            MDShootViewController *vc = [[MDShootViewController alloc] init];
+            [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
             
         }
             break;

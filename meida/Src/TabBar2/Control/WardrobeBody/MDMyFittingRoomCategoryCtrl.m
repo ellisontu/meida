@@ -111,6 +111,8 @@ static NSString *MDMyFittingRoomCategoryCtrlCellID = @"MDMyFittingRoomCategoryCt
     
     [_showImgView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/1665/16651199/raw_1516589335.png" placeholderImage:IMAGE(@"place_holer_icon")];
     
+    
+    
 }
 
 @end

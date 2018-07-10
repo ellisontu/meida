@@ -227,7 +227,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     }
     
     if (!model) {
-        [Util showMessage:@"获取分享信息失败" forDuration:1.5f inView:MDAPPDELEGATE.window];
+        [Util showMessage:@"获取分享信息失败" forDuration:1.f inView:MDAPPDELEGATE.window];
         return;
     }
     _shareInfoModel = model;

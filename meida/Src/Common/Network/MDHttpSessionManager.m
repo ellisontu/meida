@@ -262,7 +262,7 @@
     ttc_encrypt(i, resultStr.length, o);
     NSString *request_id = [NSString stringWithCString:o encoding:NSASCIIStringEncoding];
     NSString *buildVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-    NSString *sm_deviceId = [MDAPPDELEGATE getSMDeviceId];
+    NSString *sm_deviceId = @"test data";//[MDAPPDELEGATE getSMDeviceId];
     
     if (ISLOGIN) {
         NSString *checkStr = [Util calculateCheckValue:url timeStamp:timeStamp];

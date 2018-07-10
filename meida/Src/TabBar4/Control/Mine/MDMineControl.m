@@ -83,7 +83,6 @@ static NSString *MDMineContentCommonCellID = @"MDMineContentCommonCell";
     return 2;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (0 == section) {
@@ -117,8 +116,6 @@ static NSString *MDMineContentCommonCellID = @"MDMineContentCommonCell";
     return 50.f;
 }
 
-
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, 10.f)];
@@ -137,5 +134,16 @@ static NSString *MDMineContentCommonCellID = @"MDMineContentCommonCell";
 {
     return 0.01f;
 }
+
+#pragma mark - 禁止下拉 ################## -------------
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint offset = scrollView.contentOffset;
+    if (offset.y <= 0){
+        offset.y = 0;
+    }
+    scrollView.contentOffset = offset;
+}
+
 
 @end

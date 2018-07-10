@@ -38,7 +38,6 @@
 		99AA280420DE6DC80053CAB6 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26D420DE6DC70053CAB6 /* UserModel.m */; };
 		99AA280620DE6DC80053CAB6 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26DD20DE6DC70053CAB6 /* ShareView.m */; };
 		99AA280720DE6DC80053CAB6 /* SharePosterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26DF20DE6DC70053CAB6 /* SharePosterView.m */; };
-		99AA280920DE6DC80053CAB6 /* ShareViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AA26E120DE6DC70053CAB6 /* ShareViewCell.xib */; };
 		99AA280A20DE6DC80053CAB6 /* ShareViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26E320DE6DC70053CAB6 /* ShareViewCell.m */; };
 		99AA280B20DE6DC80053CAB6 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26E720DE6DC70053CAB6 /* ShareManager.m */; };
 		99AA280C20DE6DC80053CAB6 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA26E920DE6DC70053CAB6 /* VPImageCropperViewController.m */; };
@@ -148,6 +147,14 @@
 		C2CE594D20EB64BE001F1F47 /* MDServicesCategroyCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594C20EB64BE001F1F47 /* MDServicesCategroyCtrl.m */; };
 		C2CE595220EB7EAC001F1F47 /* MDServicesBaseSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */; };
 		C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE595620EB833F001F1F47 /* MDStarView.m */; };
+		C2DEFA0220F34EBF00A7F89C /* SocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA0120F34EBF00A7F89C /* SocketManager.m */; };
+		C2DEFA0720F484B900A7F89C /* MDShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA0620F484B900A7F89C /* MDShootViewController.m */; };
+		C2DEFA0A20F4854A00A7F89C /* MDShootManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA0920F4854A00A7F89C /* MDShootManager.m */; };
+		C2DEFA1020F4AF9C00A7F89C /* MDAnimationRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA0F20F4AF9C00A7F89C /* MDAnimationRecordView.m */; };
+		C2DEFA1320F4B03900A7F89C /* MDShootPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA1220F4B03900A7F89C /* MDShootPlayerView.m */; };
+		C2DEFA1720F4B11100A7F89C /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA1620F4B11100A7F89C /* UIImage+Additions.m */; };
+		C2DEFA1A20F4B30C00A7F89C /* NSString+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA1820F4B30C00A7F89C /* NSString+Path.m */; };
+		C2DEFA1C20F4B7AB00A7F89C /* ShootIcons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C2DEFA1B20F4B7AB00A7F89C /* ShootIcons.bundle */; };
 		C2F5FBE720EC60D800DC04FF /* MDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBE620EC60D800DC04FF /* MDCycleScrollView.m */; };
 		C2F5FBEA20EC626600DC04FF /* MDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBE920EC626600DC04FF /* MDPageControl.m */; };
 		C2F5FBED20EC63DB00DC04FF /* MDAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBEC20EC63DB00DC04FF /* MDAbstractDotView.m */; };
@@ -251,7 +258,6 @@
 		99AA26DD20DE6DC70053CAB6 /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
 		99AA26DE20DE6DC70053CAB6 /* ShareViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewCell.h; sourceTree = "<group>"; };
 		99AA26DF20DE6DC70053CAB6 /* SharePosterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePosterView.m; sourceTree = "<group>"; };
-		99AA26E120DE6DC70053CAB6 /* ShareViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViewCell.xib; sourceTree = "<group>"; };
 		99AA26E220DE6DC70053CAB6 /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
 		99AA26E320DE6DC70053CAB6 /* ShareViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewCell.m; sourceTree = "<group>"; };
 		99AA26E420DE6DC70053CAB6 /* SharePosterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePosterView.h; sourceTree = "<group>"; };
@@ -512,6 +518,21 @@
 		C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDServicesBaseSortCell.m; sourceTree = "<group>"; };
 		C2CE595520EB833F001F1F47 /* MDStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDStarView.h; sourceTree = "<group>"; };
 		C2CE595620EB833F001F1F47 /* MDStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDStarView.m; sourceTree = "<group>"; };
+		C2DEFA0020F34EBF00A7F89C /* SocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketManager.h; sourceTree = "<group>"; };
+		C2DEFA0120F34EBF00A7F89C /* SocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketManager.m; sourceTree = "<group>"; };
+		C2DEFA0520F484B900A7F89C /* MDShootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDShootViewController.h; sourceTree = "<group>"; };
+		C2DEFA0620F484B900A7F89C /* MDShootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDShootViewController.m; sourceTree = "<group>"; };
+		C2DEFA0820F4854A00A7F89C /* MDShootManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDShootManager.h; sourceTree = "<group>"; };
+		C2DEFA0920F4854A00A7F89C /* MDShootManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDShootManager.m; sourceTree = "<group>"; };
+		C2DEFA0E20F4AF9C00A7F89C /* MDAnimationRecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAnimationRecordView.h; sourceTree = "<group>"; };
+		C2DEFA0F20F4AF9C00A7F89C /* MDAnimationRecordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAnimationRecordView.m; sourceTree = "<group>"; };
+		C2DEFA1120F4B03900A7F89C /* MDShootPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDShootPlayerView.h; sourceTree = "<group>"; };
+		C2DEFA1220F4B03900A7F89C /* MDShootPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDShootPlayerView.m; sourceTree = "<group>"; };
+		C2DEFA1520F4B11100A7F89C /* UIImage+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		C2DEFA1620F4B11100A7F89C /* UIImage+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		C2DEFA1820F4B30C00A7F89C /* NSString+Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Path.m"; sourceTree = "<group>"; };
+		C2DEFA1920F4B30C00A7F89C /* NSString+Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Path.h"; sourceTree = "<group>"; };
+		C2DEFA1B20F4B7AB00A7F89C /* ShootIcons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShootIcons.bundle; sourceTree = "<group>"; };
 		C2F5FBE520EC60D800DC04FF /* MDCycleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCycleScrollView.h; sourceTree = "<group>"; };
 		C2F5FBE620EC60D800DC04FF /* MDCycleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDCycleScrollView.m; sourceTree = "<group>"; };
 		C2F5FBE820EC626600DC04FF /* MDPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDPageControl.h; sourceTree = "<group>"; };
@@ -798,6 +819,9 @@
 		99AA26B520DE6DC70053CAB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C2DEFA1420F4B0FB00A7F89C /* Additions */,
+				C2DEFA0420F4847C00A7F89C /* ShootVideo */,
+				C2DEF9FF20F34EA100A7F89C /* Socket */,
 				99AA26B620DE6DC70053CAB6 /* Util */,
 				99AA26C420DE6DC70053CAB6 /* Location */,
 				99AA26C720DE6DC70053CAB6 /* Network */,
@@ -896,7 +920,6 @@
 				99AA26DD20DE6DC70053CAB6 /* ShareView.m */,
 				99AA26DE20DE6DC70053CAB6 /* ShareViewCell.h */,
 				99AA26E320DE6DC70053CAB6 /* ShareViewCell.m */,
-				99AA26E120DE6DC70053CAB6 /* ShareViewCell.xib */,
 				99AA26E420DE6DC70053CAB6 /* SharePosterView.h */,
 				99AA26DF20DE6DC70053CAB6 /* SharePosterView.m */,
 			);
@@ -1614,6 +1637,42 @@
 			path = StarView;
 			sourceTree = "<group>";
 		};
+		C2DEF9FF20F34EA100A7F89C /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				C2DEFA0020F34EBF00A7F89C /* SocketManager.h */,
+				C2DEFA0120F34EBF00A7F89C /* SocketManager.m */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		C2DEFA0420F4847C00A7F89C /* ShootVideo */ = {
+			isa = PBXGroup;
+			children = (
+				C2DEFA0820F4854A00A7F89C /* MDShootManager.h */,
+				C2DEFA0920F4854A00A7F89C /* MDShootManager.m */,
+				C2DEFA0520F484B900A7F89C /* MDShootViewController.h */,
+				C2DEFA0620F484B900A7F89C /* MDShootViewController.m */,
+				C2DEFA0E20F4AF9C00A7F89C /* MDAnimationRecordView.h */,
+				C2DEFA0F20F4AF9C00A7F89C /* MDAnimationRecordView.m */,
+				C2DEFA1120F4B03900A7F89C /* MDShootPlayerView.h */,
+				C2DEFA1220F4B03900A7F89C /* MDShootPlayerView.m */,
+				C2DEFA1B20F4B7AB00A7F89C /* ShootIcons.bundle */,
+			);
+			path = ShootVideo;
+			sourceTree = "<group>";
+		};
+		C2DEFA1420F4B0FB00A7F89C /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				C2DEFA1920F4B30C00A7F89C /* NSString+Path.h */,
+				C2DEFA1820F4B30C00A7F89C /* NSString+Path.m */,
+				C2DEFA1520F4B11100A7F89C /* UIImage+Additions.h */,
+				C2DEFA1620F4B11100A7F89C /* UIImage+Additions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
 		C2F5FBE420EC60C400DC04FF /* CycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1760,8 +1819,8 @@
 				99AA286F20DE6DC80053CAB6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				C2CE590920E9BAB6001F1F47 /* README.txt in Resources */,
 				C2CE591E20E9BDB5001F1F47 /* Assets.xcassets in Resources */,
-				99AA280920DE6DC80053CAB6 /* ShareViewCell.xib in Resources */,
 				99AA285120DE6DC80053CAB6 /* DeviceConstantInfo.plist in Resources */,
+				C2DEFA1C20F4B7AB00A7F89C /* ShootIcons.bundle in Resources */,
 				99AA287520DE6DC80053CAB6 /* SAMKeychain.bundle in Resources */,
 				99AA282620DE6DC80053CAB6 /* MenuImages.xcassets in Resources */,
 				99AA285020DE6DC80053CAB6 /* Xcodebuild-help.md in Resources */,
@@ -1838,6 +1897,7 @@
 				99AA280720DE6DC80053CAB6 /* SharePosterView.m in Sources */,
 				99AA289020DE6F580053CAB6 /* LSFileManage.m in Sources */,
 				C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */,
+				C2DEFA0A20F4854A00A7F89C /* MDShootManager.m in Sources */,
 				99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */,
 				C264CE4320EDB2690053AD0E /* MDFanshionCircleCtrl.m in Sources */,
 				99970F5920DF2CFA00AEC45E /* MDTabBar.m in Sources */,
@@ -1847,6 +1907,7 @@
 				99AA280420DE6DC80053CAB6 /* UserModel.m in Sources */,
 				99AA284620DE6DC80053CAB6 /* UIImagePickerController+Permission.m in Sources */,
 				99AA287620DE6DC80053CAB6 /* SAMKeychain.m in Sources */,
+				C2DEFA1720F4B11100A7F89C /* UIImage+Additions.m in Sources */,
 				C264CE5120EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m in Sources */,
 				C2A832B320EF512300A821E6 /* XHLaunchAdConfiguration.m in Sources */,
 				99AA281220DE6DC80053CAB6 /* BaseH5ConfigModel.m in Sources */,
@@ -1862,6 +1923,8 @@
 				C2A832AE20EF512300A821E6 /* XHLaunchAdConst.m in Sources */,
 				C2CE592720E9C1F1001F1F47 /* MDTrendUploadNewView.m in Sources */,
 				99AA280620DE6DC80053CAB6 /* ShareView.m in Sources */,
+				C2DEFA0220F34EBF00A7F89C /* SocketManager.m in Sources */,
+				C2DEFA1020F4AF9C00A7F89C /* MDAnimationRecordView.m in Sources */,
 				99AA284F20DE6DC80053CAB6 /* NSDate+LSExtension.m in Sources */,
 				99AA284420DE6DC80053CAB6 /* UIView+AligmentRectInsets.m in Sources */,
 				C2A832B220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
@@ -1888,6 +1951,7 @@
 				99AA282420DE6DC80053CAB6 /* QuadCurveMenuItem.m in Sources */,
 				999D3FDC20E2900100950040 /* MDCacheFileManager.m in Sources */,
 				C264CE4C20EDCE990053AD0E /* MDMyFittingRoomCtrl.m in Sources */,
+				C2DEFA1A20F4B30C00A7F89C /* NSString+Path.m in Sources */,
 				99AA284C20DE6DC80053CAB6 /* HookUtility.m in Sources */,
 				99AA286720DE6DC80053CAB6 /* main.m in Sources */,
 				99AA289320DE6F580053CAB6 /* HandleOpenUrlManager.m in Sources */,
@@ -1903,6 +1967,7 @@
 				99AA288F20DE6F580053CAB6 /* AnimationManager.m in Sources */,
 				99AA284820DE6DC80053CAB6 /* NSString+AttributeString.m in Sources */,
 				9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */,
+				C2DEFA1320F4B03900A7F89C /* MDShootPlayerView.m in Sources */,
 				C2CE592420E9C1CF001F1F47 /* MDTrendChannelView.m in Sources */,
 				C2CE594D20EB64BE001F1F47 /* MDServicesCategroyCtrl.m in Sources */,
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
@@ -1937,6 +2002,7 @@
 				99AA284920DE6DC80053CAB6 /* NSString+TrimmingAdditions.m in Sources */,
 				C2F5FBE720EC60D800DC04FF /* MDCycleScrollView.m in Sources */,
 				999D3FD920E28E8300950040 /* MDDeviceManager.m in Sources */,
+				C2DEFA0720F484B900A7F89C /* MDShootViewController.m in Sources */,
 				99970F4D20DE768800AEC45E /* MDTabBarController.m in Sources */,
 				99AA283120DE6DC80053CAB6 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				99AA282520DE6DC80053CAB6 /* QuadCurveMenu.m in Sources */,

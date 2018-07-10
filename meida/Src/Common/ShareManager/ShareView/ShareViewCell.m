@@ -11,18 +11,46 @@
 
 @interface ShareViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
-
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (nonatomic, strong) UIImageView   *iconView;
+@property (nonatomic, strong) UILabel       *nameLabel;
 
 @end
 
 @implementation ShareViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-    [super awakeFromNib];
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self initView];
+    }
+    return self;
+}
+
+- (void)initView
+{
     self.contentView.backgroundColor = [UIColor whiteColor];
+    
+    _iconView  = [[UIImageView alloc] init];
+    _nameLabel = [[UILabel alloc] init];
+    
+    [self.contentView addSubview:_iconView];
+    [self.contentView addSubview:_nameLabel];
+    
+    [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentView).offset(5.f);
+        make.left.equalTo(self.contentView).offset(2 * kOffset);
+        make.right.equalTo(self.contentView).offset(-2 * kOffset);
+        make.height.equalTo(self.iconView.mas_height);
+    }];
+    [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.iconView.mas_bottom).offset(8.f);
+        make.centerX.equalTo(self.contentView);
+    }];
+    
+    _nameLabel.font = FONT_SYSTEM_NORMAL(11);
+    _nameLabel.textColor = kDefaultTitleColor;
+    _iconView.contentMode = UIViewContentModeScaleToFill;
+    
 }
 
 - (void)setSnsName:(NSString *)snsName

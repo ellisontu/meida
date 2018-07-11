@@ -13,7 +13,7 @@
 #import "MDMyWardrobeCtrl.h"
 #import "MDMyFittingRoomCtrl.h"
 
-#import "MDShootViewController.h"
+#import "PayManager.h"
 
 #pragma mark -  衣橱 -> 头部 -> cell view #############################################----------
 
@@ -290,9 +290,7 @@
             break;
         case 10004:
         {// 点击 "依报告"
-            MDShootViewController *vc = [[MDShootViewController alloc] init];
-            [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
-            
+            //[[PayManager sharedInstance] goToPayWithParams:params payMethod:payMethodStr];
         }
             break;
         default:

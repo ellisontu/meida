@@ -9,33 +9,32 @@
 #import "ShareManager.h"
 #import "ShareView.h"
 #import "SharePosterView.h"
-//#import "UIImage+Capture.h"
-
+#import <WeiboSDK.h>
 
 #define SHARE_COUNT_KEY_TARGET  @"target"
 #define SHARE_COUNT_KEY_TYPE    @"type"
 #define SHARE_COUNT_KEY_TYPE_ID @"type_id"
 
 typedef NS_ENUM(NSInteger, ShareType) {
-    ShareTypeVideo,     /**< 卡片视频类型（H5） */
-    ShareTypeWebPage,   /**< 卡片图文类型（H5） */
-    ShareTypeImage,     /**< 图片类型（其实就是发消息和朋友圈） */
+    ShareTypeVideo,     /**< 卡片视频类型 */
+    ShareTypeWebPage,   /**< 卡片图文类型 */
+    ShareTypeImage,     /**< 图片类型 */
     
 };
 
 //用于传给服务器做统计数据用的静态字符串
-static NSString *const ShareAnalyzeTypeGoods        = @"goods";         /**< 商品详情分享 */
-static NSString *const ShareAnalyzeTypeGoodsTopic   = @"goods_topic";   /**< 商品专题分享 */
-static NSString *const ShareAnalyzeTypeGoodsTags    = @"goods_tags";    /**< 商品专题分享 */
-static NSString *const ShareAnalyzeTypeH5           = @"h5";            /**< H5分享 */
-static NSString *const ShareAnalyzeTypeRedbag       = @"share_red_bag"; /**< 领取唇印💋签到分享 */
-static NSString *const ShareAnalyzeTypeTags         = @"tags";          /**< 频道/活动分享 */
-static NSString *const ShareAnalyzeTypeLive         = @"live";          /**< 直播|直播回放分享 */
-static NSString *const ShareAnalyzeTypeShareOrder   = @"shareOrder";    /**< 晒单分享 */
-static NSString *const ShareAnalyzeTypeUser         = @"user";          /**< 个人页分享 */
-static NSString *const ShareAnalyzeTypeVideo        = @"video";         /**< 视频分享 */
-static NSString *const ShareAnalyzeTypeVip          = @"vip";           /**< 会员分享 */
-static NSString *const ShareAnalyzeTypeBeautyDiary  = @"beauty_diary";  /**< 变美日签分享 */
+static NSString *const ShareAnalyzeTypeGoods        = @"";
+static NSString *const ShareAnalyzeTypeGoodsTopic   = @"";
+static NSString *const ShareAnalyzeTypeGoodsTags    = @"";
+static NSString *const ShareAnalyzeTypeH5           = @"";
+static NSString *const ShareAnalyzeTypeRedbag       = @"";
+static NSString *const ShareAnalyzeTypeTags         = @"";
+static NSString *const ShareAnalyzeTypeLive         = @"";
+static NSString *const ShareAnalyzeTypeShareOrder   = @"";
+static NSString *const ShareAnalyzeTypeUser         = @"";
+static NSString *const ShareAnalyzeTypeVideo        = @"";
+static NSString *const ShareAnalyzeTypeVip          = @"";
+static NSString *const ShareAnalyzeTypeBeautyDiary  = @"";
 
 ShareManagerOptionsKey const ShareManagerToSina             = @"ShareManagerToSina";            /**< 分享到微博 */
 ShareManagerOptionsKey const ShareManagerToQQ               = @"ShareManagerToQQ";              /**< 分享到QQ */
@@ -50,7 +49,7 @@ ShareManagerOptionsKey const ShareManagerShareLink          = @"ShareManagerShar
 ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSavePoster";        /**< 保存海报到手机 */
 
 
-@interface ShareManager () <UIActionSheetDelegate, QQApiInterfaceDelegate>
+@interface ShareManager () <QQApiInterfaceDelegate>
 
 @property (nonatomic, strong) MDShareInfoModel *shareInfoModel;    /**< 分享的信息model */
 @property (nonatomic, assign) ShareSourceType   shareSourceType;    /**< 分享的目标源类型 */
@@ -427,7 +426,6 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     [_dict setObject:ShareAnalyzeTypeGoodsTags forKey:SHARE_COUNT_KEY_TYPE];
 }
 
-#pragma mark - 商品订单|团购订单|唇印兑换订单 界面分享红包(ShareSourceTypeOrderRedbag) -
 - (void)shareOrderRedbag
 {
     //展示shareView
@@ -437,7 +435,6 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     [_dict setObject:ShareAnalyzeTypeH5 forKey:SHARE_COUNT_KEY_TYPE];
 }
 
-#pragma mark - 分享视频(ShareSourceTypeVideo) -
 - (void)shareVideo
 {
     _shareType = ShareTypeVideo;

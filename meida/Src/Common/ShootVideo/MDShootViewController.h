@@ -22,7 +22,7 @@
 @end
 
 
-@interface MDShootViewController : UIViewController
+@interface MDShootViewController : MDBaseViewController
 
 @property (nonatomic, weak) id<MDShootViewControllerrDelegate> delegate;
 

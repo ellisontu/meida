@@ -243,7 +243,8 @@ typedef NS_ENUM(NSInteger,ShootType) {
 
 #pragma mark --- view releated methods
 // 闪光灯切换
-- (void)flashTriggerAction:(UIButton *)btn {
+- (void)flashTriggerAction:(UIButton *)btn
+{
     switch (self.flashMode) {
         case AVCaptureFlashModeOff:{
             self.flashMode = AVCaptureFlashModeOn;
@@ -280,7 +281,8 @@ typedef NS_ENUM(NSInteger,ShootType) {
 }
 
 //切换摄像头
-- (void) changeCamera:(UIButton *) buuton {
+- (void) changeCamera:(UIButton *) buuton
+{
     if ([AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo].count > 1) {
         NSArray *devicesVideo = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
         AVCaptureDeviceInput * newVideoInput;
@@ -306,7 +308,7 @@ typedef NS_ENUM(NSInteger,ShootType) {
 
 //取消录制
 - (void) cancelTakePhoto {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self back:nil];
 }
 
 
@@ -370,6 +372,7 @@ typedef NS_ENUM(NSInteger,ShootType) {
 
 //确定保存视频
 - (void) recordSureAction {
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
     if (self.shootType == ShootTypeImage) {
@@ -444,9 +447,9 @@ typedef NS_ENUM(NSInteger,ShootType) {
 - (void) addImageView {
     self.isGetShootImg = YES;
     CGFloat oriImgWidth = self.shootImage.size.width;
-    CGFloat oriImgHeight = self.shootImage.size.height;
-    CGFloat targetW = oriImgWidth;
-    CGFloat targetH = oriImgWidth * SHOOT_RATIO;
+    //CGFloat oriImgHeight = self.shootImage.size.height;
+    //CGFloat targetW = oriImgWidth;
+    //CGFloat targetH = oriImgWidth * SHOOT_RATIO;
     //self.shootImage = [self.shootImage clipImageInRect:CGRectMake(0, (oriImgHeight - targetH) * 0.5, targetW, targetH)];
     self.shootImageView = [[UIImageView alloc] initWithFrame:self.videoView.bounds];
     self.shootImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -586,7 +589,8 @@ typedef NS_ENUM(NSInteger,ShootType) {
     
 }
 
-- (void)closeView {
+- (void)closeView
+{
     [_videoSession stopRunning];
     [_videoPreLayer removeFromSuperlayer];
     _videoPreLayer = nil;
@@ -603,7 +607,8 @@ typedef NS_ENUM(NSInteger,ShootType) {
 }
 
 #pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
+{
     UIImage * image = [self imageFromSampleBuffer:sampleBuffer];
     if (image && !self.isGetShootImg) {
         self.shootImage = image;
@@ -680,7 +685,8 @@ typedef NS_ENUM(NSInteger,ShootType) {
     
 }
 
-- (UIImage*) cropImageInRect:(UIImage*)image{
+- (UIImage*) cropImageInRect:(UIImage*)image
+{
     
     CGSize size = [image size];
     CGRect cropRect = [self calcRect:size];

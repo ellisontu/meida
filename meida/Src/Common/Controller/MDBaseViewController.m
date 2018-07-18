@@ -149,7 +149,7 @@
         _navigation = [UIView newAutoLayoutView];
         _navigation.backgroundColor = UIColorFromRGB(0xffffff);
         [self.view addSubview:_navigation];
-        UIEdgeInsets inset = UIEdgeInsetsMake(0, 0, SCR_HEIGHT-kHeaderHeight, 0);
+        UIEdgeInsets inset = UIEdgeInsetsMake(0, 0, SCR_HEIGHT - kHeaderHeight, 0);
         [_navigation autoPinEdgesToSuperviewEdgesWithInsets:inset excludingEdge:ALEdgeBottom];
         [_navigation autoSetDimension:ALDimensionHeight toSize:kHeaderHeight];
         

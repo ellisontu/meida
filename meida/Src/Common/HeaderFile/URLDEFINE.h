@@ -27,8 +27,7 @@
 #define kAppId              @"931449079"
 #define kAppTarget          @"meida"
 #define BUNDLE_ID           @"cn.ymfashion.test.meida"
-#define BASEURL             @"https://trunk.ymfashion.com"
-#define BASEURL_2           @"https://test1.ymfashion.com"
+#define BASEURL             @"http://zf.tunnel.qydev.com"
 #define CODEPUSHKEY         @"mR5yLtjURIYdDIf1917YSaXCNvF44ksvOXqog"
 #define ANALYZE_URL         @"http://139.198.0.193/push"
 #define TINGYUN_APP_ID_COM  @"d7d3e19d3bc248fc985dc7e0b6c1f08a"
@@ -50,23 +49,17 @@
 #define API_SUCCESS  4
 #define API_VERSION  @"2.0"
 
-/**
- * 检查版本更新
- * @link /api2/index/get_vup
- * @return json
- */
-#define URL_CHECKOUT_UPDATE [BASEURL stringByAppendingString:@"/api2/index/get_vup"]
 
-#pragma mark ------------------------------------ 账号操作 ----------------------------------
-//regist
-/*
-    m 手机号  11位
-    p 密码 最少6个
-    c 验证码 纯数字
- 
+#pragma mark ------------------------------------ user reg && login  ----------------------------------
+/**
+ *  记录商品点击次数
+ *  @method POST
+ *  @link /user/reg
+ *  @param: phone / password
+ *  @return json
  */
-//新的注册接口，该接口仅仅是验证手机号，验证码，真正的注册是再第三部完成
-#define URL_REGIST [BASEURL stringByAppendingString:@"/api/auth/register"]
+//egister
+#define URL_POST_REGISTER [BASEURL stringByAppendingString:@"/user/reg"]
 
 
 #endif

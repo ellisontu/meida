@@ -28,7 +28,7 @@
     
     self.view.backgroundColor = COLOR_WITH_WHITE;
     
-    [self setNavigationType:NavHide];
+    [self setNavigationType:NavShowTitleAndRiht];
     
     [self setupTitleMenuView];
     
@@ -36,28 +36,13 @@
 
 - (void)setupTitleMenuView
 {
-    
-    // 设置头部信息
-    UILabel *tipsLblView = [[UILabel alloc] init];
-    [self.view addSubview:tipsLblView];
-    tipsLblView.font = FONT_SYSTEM_NORMAL(20);
-    tipsLblView.textColor = kDefaultTitleColor;
-    tipsLblView.text = @"看看";
-    [tipsLblView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(kHeaderHeight + 10);
-        make.left.equalTo(self.view).offset(kOffPadding);
-    }];
-    
-    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCR_WIDTH - 44.f, kStatusBarHeight, 44.f, 44.f)];
-    [self.view addSubview:rightBtn];
-    [rightBtn setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
-    [rightBtn setImage:IMAGE(@"navi_right_icon") forState:UIControlStateNormal];
+    [self setTitle:@"看看"];
+    [self setRightBtnWith:@"" image:IMAGE(@"navi_right_icon")];
+    [self setupLineView:NO];
 
     // 标题
     NSArray *titleArray = @[@"专题", @"上新", @"推荐"];
-    
-    CGFloat segmentViewW = 200.f;
-    _segmentView = [[MDSegmentView alloc] initWithFrame:CGRectMake(SCR_WIDTH - segmentViewW, CGRectGetMaxY(rightBtn.frame), segmentViewW, 40) titleArr:titleArray];
+    _segmentView = [[MDSegmentView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, 50) titleArr:titleArray];
     
     [self.view addSubview:_segmentView];
     
@@ -75,9 +60,9 @@
         }
     };
     // 各分类--背景容器
-    CGFloat scrollViewY = 40 + kHeaderHeight;
+    CGFloat scrollViewY = CGRectGetMaxY(_segmentView.frame);
     CGFloat scrollViewH = SCR_HEIGHT - scrollViewY - kTabBarHeight;
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewY + 15, SCR_WIDTH, scrollViewH)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewY, SCR_WIDTH, scrollViewH)];
     self.scrollView.delegate = self;
     self.scrollView.bounces = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;

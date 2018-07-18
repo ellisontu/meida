@@ -680,8 +680,8 @@
         
         tagWord = [tagWord URLEncodedString];
         
-        NSString *info_url = [NSString stringWithFormat:@"%@/search_es/video_and_sharebuy_count_v2?words=%@",BASEURL_2 ,tagWord];
-        NSString *data_url = [NSString stringWithFormat:@"%@/search_es/video_and_sharebuy_list_v2?words=%@",BASEURL_2 ,tagWord];
+        NSString *info_url = [NSString stringWithFormat:@"%@/search_es/video_and_sharebuy_count_v2?words=%@",BASEURL ,tagWord];
+        NSString *data_url = [NSString stringWithFormat:@"%@/search_es/video_and_sharebuy_list_v2?words=%@",BASEURL ,tagWord];
         
         info_url = [info_url URLEncodedString];
         data_url = [data_url URLEncodedString];

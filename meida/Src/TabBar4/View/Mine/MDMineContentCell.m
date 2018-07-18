@@ -9,6 +9,8 @@
 #import "MDMineContentCell.h"
 #import "UIImage+Blur.h"
 
+#import "MDLoginControl.h"
+
 #pragma mark -  我的 -> tableView headView -> user info view #############################################----------
 
 @interface MDMineContentHeadView ()
@@ -101,6 +103,8 @@
     _userHeadImgView.layer.masksToBounds = YES;
     [_userHeadImgView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/1665/16650324/raw_1516588548.png" placeholderImage:IMAGE(@"place_holer_icon") completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
+    _userHeadImgView.userInteractionEnabled = YES;
+    [_userHeadImgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loginAciton:)]];
     _userSexImgView.image = IMAGE(@"navi_right_icon");
     seplineView.backgroundColor = COLOR_HEX_STR(@"#66A298");
     _userNickLblView.font = FONT_SYSTEM_NORMAL(16);
@@ -176,6 +180,12 @@
     [_footMsgBtnView setAttributedTitle:strMsgAttr forState:UIControlStateNormal];
     [_footSpaceBtnView setAttributedTitle:strSpaceAttr forState:UIControlStateNormal];
     
+}
+
+- (void)loginAciton:(UITapGestureRecognizer *)gesture
+{
+    MDLoginControl *vc = [[MDLoginControl alloc] init];
+    [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
 }
 
 @end

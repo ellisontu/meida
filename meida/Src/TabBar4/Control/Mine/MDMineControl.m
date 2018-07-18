@@ -119,7 +119,7 @@ static NSString *MDMineContentCommonCellID = @"MDMineContentCommonCell";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, 10.f)];
-    view.backgroundColor = kDefaultBackgroundColor;
+    view.backgroundColor = COLOR_WITH_WHITE;
     return view;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section

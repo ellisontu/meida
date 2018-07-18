@@ -31,7 +31,7 @@
     
     self.view.backgroundColor = COLOR_WITH_WHITE;
     
-    [self setNavigationType:NavHide];
+    [self setNavigationType:NavOnlyShowTitle];
     
     [self initScrollView];
     
@@ -43,7 +43,7 @@
 
 - (void)initScrollView
 {
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeaderHeight + 44.f, SCR_HEIGHT, SCR_HEIGHT - kHeaderHeight - 44.f - kTabBarHeight)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_HEIGHT, SCR_HEIGHT - kHeaderHeight - kTabBarHeight)];
     [self.view addSubview:self.scrollView];
 
 }
@@ -52,20 +52,7 @@
 {
     
     // 设置头部信息
-    UILabel *tipsLblView = [[UILabel alloc] init];
-    [self.view addSubview:tipsLblView];
-    tipsLblView.font = FONT_SYSTEM_NORMAL(20);
-    tipsLblView.textColor = kDefaultTitleColor;
-    tipsLblView.text = @"预约";
-    [tipsLblView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(kHeaderHeight + 10);
-        make.left.equalTo(self.view).offset(kOffPadding);
-    }];
-    
-    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCR_WIDTH - 44.f, kStatusBarHeight, 44.f, 44.f)];
-    [self.view addSubview:rightBtn];
-    [rightBtn setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
-    [rightBtn setImage:IMAGE(@"navi_right_icon") forState:UIControlStateNormal];
+    [self setTitle:@"服务"];
 }
 
 - (void)initSegmentView

@@ -19,11 +19,11 @@
 @property (nonatomic, strong) UIImageView       *userHeadImgView;       /**< 用户头像 */
 @property (nonatomic, strong) UIImageView       *userSexImgView;        /**< 用户性别标识 */
 @property (nonatomic, strong) UILabel           *userNickLblView;       /**< 用户昵称 */
-@property (nonatomic, strong) UILabel           *followCountView;       /**< 用户关注人数 */
-@property (nonatomic, strong) UILabel           *beFollowCountView;     /**< 用户粉丝数量 */
-@property (nonatomic, strong) UIView            *footContainerView;     /**< 消息 和 空间 容器 %比提示 */
-@property (nonatomic, strong) UIButton          *footMsgBtnView;        /**< 消息 */
-@property (nonatomic, strong) UIButton          *footSpaceBtnView;      /**< 空间按钮 */
+@property (nonatomic, strong) UIView            *infoContainerView;     /**< 粉丝 关注 消息 空间view容器 */
+@property (nonatomic, strong) UILabel           *followNumLblView;         /**< 关注*/
+@property (nonatomic, strong) UILabel           *beFollowNumLblView;       /**< 粉丝 */
+@property (nonatomic, strong) UILabel           *messgeNumLblView;         /**< 消息 */
+@property (nonatomic, strong) UILabel           *spaceNumLblView;          /**< 空间view */
 
 @end
 
@@ -47,17 +47,11 @@
     _userHeadImgView   = [[UIImageView alloc] init];
     _userSexImgView    = [[UIImageView alloc] init];
     _userNickLblView   = [[UILabel alloc] init];
-    _followCountView   = [[UILabel alloc] init];
-    _beFollowCountView = [[UILabel alloc] init];
-    UIView *seplineView = [[UIView alloc] init];
     
     [self addSubview:_backgroundImgView];
     [_backgroundImgView addSubview:_userHeadImgView];
     [_backgroundImgView addSubview:_userSexImgView];
     [_backgroundImgView addSubview:_userNickLblView];
-    [_backgroundImgView addSubview:_followCountView];
-    [_backgroundImgView addSubview:_beFollowCountView];
-    [_backgroundImgView addSubview:seplineView];
     
     [_backgroundImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self);
@@ -81,22 +75,6 @@
         make.left.equalTo(self.userHeadImgView).offset(kOffPadding);
         make.right.equalTo(self.userHeadImgView).offset(-kOffPadding);
     }];
-    [seplineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(2.f, 19.f));
-        make.top.equalTo(self.userNickLblView.mas_bottom).offset(10.f);
-        make.centerX.equalTo(self.userHeadImgView);
-    }];
-    [_followCountView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(seplineView);
-        make.right.equalTo(seplineView).offset(-kOffPadding);
-        make.width.mas_equalTo(SCR_WIDTH * 0.5 - 2 * kOffPadding);
-    }];
-    [_beFollowCountView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(seplineView);
-        make.left.equalTo(seplineView).offset(kOffPadding);
-        make.width.equalTo(self.followCountView);
-    }];
-    
     _backgroundImgView.backgroundColor = COLOR_HEX_STR(@"#EEE8EF");
     _backgroundImgView.userInteractionEnabled = YES;
     _userHeadImgView.layer.cornerRadius  = headIconWW * 0.5f;
@@ -106,79 +84,165 @@
     _userHeadImgView.userInteractionEnabled = YES;
     [_userHeadImgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loginAciton:)]];
     _userSexImgView.image = IMAGE(@"navi_right_icon");
-    seplineView.backgroundColor = COLOR_HEX_STR(@"#66A298");
     _userNickLblView.font = FONT_SYSTEM_NORMAL(16);
     _userNickLblView.textColor = kDefaultTitleColor;
     _userNickLblView.textAlignment = NSTextAlignmentCenter;
-    _followCountView.font = FONT_SYSTEM_NORMAL(15);
-    _followCountView.textColor = COLOR_HEX_STR(@"#66A298");
-    _followCountView.textAlignment = NSTextAlignmentRight;
-    _beFollowCountView.font = FONT_SYSTEM_NORMAL(15);
-    _beFollowCountView.textColor = COLOR_HEX_STR(@"#66A298");
-    _beFollowCountView.textAlignment = NSTextAlignmentLeft;
     
     _userNickLblView.text = @"令狐冲";
-    _followCountView.text = @"关注 16000";
-    _beFollowCountView.text = @"粉丝 10000";
     
-    // 2. 消息 空间 按钮
-    _footContainerView = [[UIView alloc] init];
-    _footMsgBtnView    = [[UIButton alloc] init];
-    _footSpaceBtnView  = [[UIButton alloc] init];
-    UIView *sepLineView = [[UIView alloc] init];
+    //2.  粉丝 关注 消息 空间view容器
+    _infoContainerView = [[UIView alloc] init];
+    UIView *followView   = [[UIView alloc] init];
+    UIView *beFollowView = [[UIView alloc] init];
+    UIView *messgeView   = [[UIView alloc] init];
+    UIView *spaceView    = [[UIView alloc] init];
     
-    [self addSubview:_footContainerView];
-    [_footContainerView addSubview:_footMsgBtnView];
-    [_footContainerView addSubview:_footSpaceBtnView];
-    [_footContainerView addSubview:sepLineView];
-    [_footContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self);
-        make.right.equalTo(self);
-        make.bottom.equalTo(self);
-        make.height.mas_equalTo(kfootHH);
+    // 标题
+    UILabel *followTipsLbl = [[UILabel alloc] init];
+    UILabel *befollowTipslbl = [[UILabel alloc] init];
+    UILabel *messgeTipsLbl = [[UILabel alloc] init];
+    UILabel *spaceTipsLbl  = [[UILabel alloc] init];
+    
+    // 数量
+    _followNumLblView   = [[UILabel alloc] init];
+    _beFollowNumLblView = [[UILabel alloc] init];
+    _messgeNumLblView   = [[UILabel alloc] init];
+    _spaceNumLblView    = [[UILabel alloc] init];
+    
+    [self addSubview:_infoContainerView];
+    [_infoContainerView addSubview:followView];
+    [_infoContainerView addSubview:beFollowView];
+    [_infoContainerView addSubview:messgeView];
+    [_infoContainerView addSubview:spaceView];
+    
+    [followView addSubview:followTipsLbl];
+    [beFollowView addSubview:befollowTipslbl];
+    [messgeView addSubview:messgeTipsLbl];
+    [spaceView addSubview:spaceTipsLbl];
+    
+    [followView addSubview:_followNumLblView];
+    [beFollowView addSubview:_beFollowNumLblView];
+    [messgeView addSubview:_messgeNumLblView];
+    [spaceView addSubview:_spaceNumLblView];
+    
+    
+    _infoContainerView.backgroundColor = COLOR_WITH_WHITE;
+    
+    CGFloat totalWW = SCR_WIDTH - 3 * kOffPadding;
+    [_infoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.backgroundImgView.mas_bottom);
+        make.size.mas_equalTo(CGSizeMake(totalWW, 90.f));
+        make.centerX.equalTo(self.backgroundImgView);
     }];
-    [_footMsgBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.footContainerView);
-        make.right.equalTo(self.footSpaceBtnView.mas_left);
-        make.centerY.equalTo(self.footContainerView);
-        make.height.equalTo(self.footContainerView);
+    CGFloat btnWW = totalWW / 4;
+    CGFloat btnHH = 90.f;
+    [followView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(btnWW, btnHH));
+        make.left.equalTo(self.infoContainerView);
+        make.centerY.equalTo(self.infoContainerView);
     }];
-    [_footSpaceBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.footMsgBtnView);
-        make.height.equalTo(self.footContainerView);
-        make.centerY.equalTo(self.footContainerView);
-        make.right.equalTo(self.footContainerView);
+    [beFollowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(btnWW, btnHH));
+        make.left.equalTo(followView.mas_right);
+        make.centerY.equalTo(self.infoContainerView);
     }];
-    [sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(2.f, kfootHH - 30));
-        make.centerY.equalTo(self.footContainerView);
-        make.centerX.equalTo(self.footContainerView);
+    [messgeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(btnWW, btnHH));
+        make.left.equalTo(beFollowView.mas_right);
+        make.centerY.equalTo(self.infoContainerView);
+    }];
+    [spaceView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(btnWW, btnHH));
+        make.left.equalTo(messgeView.mas_right);
+        make.centerY.equalTo(self.infoContainerView);
     }];
     
-    sepLineView.backgroundColor = kDefaultSeparationLineColor;
     
-    CGFloat offset = 15.f;
-    _footMsgBtnView.titleEdgeInsets = UIEdgeInsetsMake(0, _footMsgBtnView.titleLabel.bounds.size.width + offset, 0, -_footMsgBtnView.titleLabel.bounds.size.width);
-    _footSpaceBtnView.titleEdgeInsets = UIEdgeInsetsMake(0, _footSpaceBtnView.titleLabel.bounds.size.width + offset, 0, -_footSpaceBtnView.titleLabel.bounds.size.width);
+    [_followNumLblView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(followView);
+        make.right.equalTo(followView);
+        make.top.equalTo(followView).offset(kOffPadding);
+    }];
+    [_beFollowNumLblView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(beFollowView);
+        make.right.equalTo(beFollowView);
+        make.top.equalTo(beFollowView).offset(kOffPadding);
+    }];
+    [_messgeNumLblView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(messgeView);
+        make.right.equalTo(messgeView);
+        make.top.equalTo(messgeView).offset(kOffPadding);
+    }];
+    [_spaceNumLblView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(spaceView);
+        make.right.equalTo(spaceView);
+        make.top.equalTo(spaceView).offset(kOffPadding);
+    }];
     
-    [_footMsgBtnView setImage:IMAGE(@"navi_right_icon") forState:UIControlStateNormal];
-    [_footSpaceBtnView setImage:IMAGE(@"navi_right_icon") forState:UIControlStateNormal];
-    [_footMsgBtnView setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
-    [_footSpaceBtnView setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
-    _footMsgBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(14);
-    _footSpaceBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(14);
+    [followTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(followView);
+        make.right.equalTo(followView);
+        make.top.equalTo(self.followNumLblView.mas_bottom).offset(kOffset);
+    }];
+    [befollowTipslbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(beFollowView);
+        make.right.equalTo(beFollowView);
+        make.top.equalTo(self.beFollowNumLblView.mas_bottom).offset(kOffset);
+    }];
+    [messgeTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(messgeView);
+        make.right.equalTo(messgeView);
+        make.top.equalTo(self.messgeNumLblView.mas_bottom).offset(kOffset);
+    }];
+    [spaceTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(spaceView);
+        make.right.equalTo(spaceView);
+        make.top.equalTo(self.spaceNumLblView.mas_bottom).offset(kOffset);
+    }];
     
-    NSString *strMsg = @"消息 18";
-    NSInteger loc = 2;
-    NSMutableAttributedString *strMsgAttr = [[NSMutableAttributedString alloc] initWithString:strMsg];
-    [strMsgAttr addAttribute:NSForegroundColorAttributeName value:RED range:NSMakeRange(loc,strMsg.length - loc)];
+    _infoContainerView.layer.cornerRadius  = 5.f;
+    _infoContainerView.layer.shadowColor = COLOR_HEX_STR(@"#000000").CGColor;
+    _infoContainerView.layer.shadowOffset = CGSizeMake(1, 1);
+    _infoContainerView.layer.shadowOpacity = 0.1;
+    _infoContainerView.layer.shadowRadius = 2.5;
     
-    NSString *strSpace = @"空间 50%";
-    NSMutableAttributedString *strSpaceAttr = [[NSMutableAttributedString alloc] initWithString:strSpace];
-    [strSpaceAttr addAttribute:NSForegroundColorAttributeName value:RED range:NSMakeRange(loc,strSpace.length - loc)];
     
-    [_footMsgBtnView setAttributedTitle:strMsgAttr forState:UIControlStateNormal];
-    [_footSpaceBtnView setAttributedTitle:strSpaceAttr forState:UIControlStateNormal];
+    _followNumLblView.font = FONT_SYSTEM_BOLD(20);
+    _followNumLblView.textColor = kDefaultTitleColor;
+    _beFollowNumLblView.font = FONT_SYSTEM_BOLD(20);
+    _beFollowNumLblView.textColor = kDefaultTitleColor;
+    _messgeNumLblView.font = FONT_SYSTEM_BOLD(20);
+    _messgeNumLblView.textColor = kDefaultTitleColor;
+    _spaceNumLblView.font = FONT_SYSTEM_BOLD(20);
+    _spaceNumLblView.textColor = kDefaultTitleColor;
+    _followNumLblView.textAlignment = NSTextAlignmentCenter;
+    _beFollowNumLblView.textAlignment = NSTextAlignmentCenter;
+    _messgeNumLblView.textAlignment = NSTextAlignmentCenter;
+    _spaceNumLblView.textAlignment = NSTextAlignmentCenter;
+    
+    followTipsLbl.font = FONT_SYSTEM_NORMAL(15);
+    followTipsLbl.textColor = COLOR_HEX_STR(@"#666666");
+    befollowTipslbl.font = FONT_SYSTEM_NORMAL(15);
+    befollowTipslbl.textColor = COLOR_HEX_STR(@"#666666");
+    messgeTipsLbl.font = FONT_SYSTEM_NORMAL(15);
+    messgeTipsLbl.textColor = COLOR_HEX_STR(@"#666666");
+    spaceTipsLbl.font = FONT_SYSTEM_NORMAL(15);
+    spaceTipsLbl.textColor = COLOR_HEX_STR(@"#666666");
+    
+    followTipsLbl.textAlignment = NSTextAlignmentCenter;
+    befollowTipslbl.textAlignment = NSTextAlignmentCenter;
+    messgeTipsLbl.textAlignment = NSTextAlignmentCenter;
+    spaceTipsLbl.textAlignment = NSTextAlignmentCenter;
+    
+    _followNumLblView.text = @"60";
+    _beFollowNumLblView.text = @"60";
+    _messgeNumLblView.text = @"60";
+    _spaceNumLblView.text  = @"60";
+    
+    followTipsLbl.text = @"关注";
+    befollowTipslbl.text = @"粉丝";
+    messgeTipsLbl.text = @"消息";
+    spaceTipsLbl.text  = @"空间";
     
 }
 

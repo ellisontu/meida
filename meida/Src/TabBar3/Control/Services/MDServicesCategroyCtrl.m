@@ -8,8 +8,10 @@
 
 #import "MDServicesCategroyCtrl.h"
 #import "MDServicesBaseSortCell.h"
+#define kBannerHH 249
 
 static NSString *MDServicesBaseSortCellID = @"MDServicesBaseSortCell";
+static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
 @interface MDServicesCategroyCtrl ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -20,26 +22,26 @@ static NSString *MDServicesBaseSortCellID = @"MDServicesBaseSortCell";
 /**
  *  服务器告诉 展示什么样的 cell
  */
-- (instancetype)initStyle:(SegmentChildViewType )controlType
-{
-    if (self = [super init]) {
-        switch (controlType) {
-            case TypeCollectionView:
-            {
-                
-            }
-                break;
-            case TypeTabeleView:
-            {
-                
-            }
-                break;
-            default:
-                break;
-        }
-    }
-    return self;
-}
+//- (instancetype)initStyle:(SegmentChildViewType )controlType
+//{
+//    if (self = [super init]) {
+//        switch (controlType) {
+//            case TypeCollectionView:
+//            {
+//                
+//            }
+//                break;
+//            case TypeTabeleView:
+//            {
+//                
+//            }
+//                break;
+//            default:
+//                break;
+//        }
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad {
     
@@ -70,6 +72,7 @@ static NSString *MDServicesBaseSortCellID = @"MDServicesBaseSortCell";
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:MDServicesReusableViewID];
     
 }
 
@@ -98,5 +101,27 @@ static NSString *MDServicesBaseSortCellID = @"MDServicesBaseSortCell";
 }
 
 
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(SCR_WIDTH, kBannerHH);
+}
+
+//这个也是最重要的方法 获取Header的 方法。
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    //从缓存中获取 Headercell
+    UICollectionReusableView *view = (UICollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:MDServicesReusableViewID forIndexPath:indexPath];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGFloat f = scrollView.contentOffset.y;
+    if (_delegate && [_delegate respondsToSelector:@selector(ServicesCategroyScrollTo:)]) {
+        [_delegate ServicesCategroyScrollTo:f];
+    }
+}
 
 @end

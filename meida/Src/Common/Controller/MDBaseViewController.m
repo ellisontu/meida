@@ -10,7 +10,7 @@
 
 @interface MDBaseViewController ()<UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIView    *navigation;
+//@property (nonatomic, strong) UIView    *navigation;
 @property (nonatomic, strong) UIButton  *backBtn;
 @property (nonatomic, strong) UIButton  *leftBtn;
 @property (nonatomic, strong) UIButton  *rightBtn;

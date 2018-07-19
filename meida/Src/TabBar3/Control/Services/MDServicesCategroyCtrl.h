@@ -8,15 +8,23 @@
 
 #import "MDBaseViewController.h"
 
-typedef NS_ENUM(NSInteger, SegmentChildViewType) {
-    TypeCollectionView = 1, /**< 竖排: 类似瀑布流 */
-    TypeTabeleView          /**< 横排: 类似 tableview  */
-};
+//typedef NS_ENUM(NSInteger, SegmentChildViewType) {
+//    TypeCollectionView = 1, /**< 竖排: 类似瀑布流 */
+//    TypeTabeleView          /**< 横排: 类似 tableview  */
+//};
+
+@protocol CategroyScrollViewDelegate <NSObject>
+
+@optional
+-(void)ServicesCategroyScrollTo:(CGFloat)locattionY;
+
+@end
 
 @interface MDServicesCategroyCtrl : MDBaseViewController
 
-- (instancetype)initStyle:(SegmentChildViewType )controlType;     /**<  唯一初始化入口 : 1.瀑布流，2.*/
+//- (instancetype)initStyle:(SegmentChildViewType )controlType;     /**<  唯一初始化入口 : 1.瀑布流，2.*/
+@property (nonatomic, weak) id<CategroyScrollViewDelegate> delegate;
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)init;
 
 @end

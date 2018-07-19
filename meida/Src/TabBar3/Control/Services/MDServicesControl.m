@@ -14,7 +14,9 @@
 #import "UIView+cframe.h"
 #import "MDServicesBaseSortCell.h"
 
-@interface MDServicesControl () <MDSegmentTitleViewDelegate, MDSegmentScrollViewDelegate>
+#define kBannerHH 249
+
+@interface MDServicesControl () <MDSegmentTitleViewDelegate, MDSegmentScrollViewDelegate, CategroyScrollViewDelegate>
 
 @property (nonatomic ,strong) MDServicesHeaderView      *headerView;
 @property (nonatomic, strong) MDSegmentTitleView        *segmentTitleView;
@@ -33,20 +35,12 @@
     
     [self setNavigationType:NavOnlyShowTitle];
     
-    [self initScrollView];
-    
     [self initSegmentView];
     
     [self intiTitleMenuView];
     
 }
 
-- (void)initScrollView
-{
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_HEIGHT, SCR_HEIGHT - kHeaderHeight - kTabBarHeight)];
-    [self.view addSubview:self.scrollView];
-
-}
 
 - (void)intiTitleMenuView
 {
@@ -58,30 +52,36 @@
 - (void)initSegmentView
 {
     
-    _headerView = [[MDServicesHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH,300)];
-    [self.scrollView addSubview:_headerView];
-    
     NSArray *titleArr = @[@"精选", @"电影", @"电视剧", @"综艺", @"NBA", @"娱乐", @"动漫", @"演唱会", @"VIP会员"];
-    MDSegmentTitleConfig *configure = [[MDSegmentTitleConfig alloc] init];
-    configure.indicatorAdditionalWidth = 10;
-    configure.showBottomSeparator = NO;
-    self.segmentTitleView = [[MDSegmentTitleView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_headerView.frame), SCR_WIDTH, 44) delegate:self titleNames:titleArr configure:configure];
-    [self.view addSubview:self.segmentTitleView];
-    
     for (int i = 0; i < titleArr.count; i++) {
-        MDServicesCategroyCtrl *control = [[MDServicesCategroyCtrl alloc] initStyle:1];
+        MDServicesCategroyCtrl *control = [[MDServicesCategroyCtrl alloc] init];
         if (i % 2 == 0) {
             control.view.backgroundColor = kDefaultBackgroundColor;
         }
         else{
             control.view.backgroundColor = kDefaultThirdTitleColor;
         }
+        control.delegate = self;
         [self.childControlsArr addObject:control];
     }
-   
-    self.segmentScrollView = [[MDSegmentScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.segmentTitleView.frame),SCR_WIDTH, self.scrollView.height) superControl:self subControls:self.childControlsArr];
+    CGFloat segmentHH = SCR_HEIGHT - kHeaderHeight - kTabBarHeight;
+    
+    self.segmentScrollView = [[MDSegmentScrollView alloc] initWithFrame:CGRectMake(0, kHeaderHeight,SCR_WIDTH, segmentHH) superControl:self subControls:self.childControlsArr];
     self.segmentScrollView.delegateSegmentView = self;
+    self.segmentScrollView.isScrollEnabled = NO;
     [self.view addSubview:self.segmentScrollView];
+    
+    _headerView = [[MDServicesHeaderView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH,kBannerHH)];
+    [self.view addSubview:_headerView];
+    
+    MDSegmentTitleConfig *configure = [[MDSegmentTitleConfig alloc] init];
+    configure.indicatorAdditionalWidth = 10;
+    configure.showBottomSeparator = NO;
+    CGFloat titleHH = 49.f;
+    self.segmentTitleView = [[MDSegmentTitleView alloc] initWithFrame:CGRectMake(0, kBannerHH - titleHH, SCR_WIDTH, titleHH) delegate:self titleNames:titleArr configure:configure];
+    [_headerView addSubview:self.segmentTitleView];
+    
+    [self.view bringSubviewToFront:self.navigation];
     
 }
 
@@ -90,9 +90,28 @@
     [self.segmentScrollView setSegmentScrollViewCurrentIndex:selectedIndex];
 }
 
-- (void)segmentScrollView:(MDSegmentScrollView *)segmentScrollView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex
+
+/**
+ * 上下滑动的时候，联动改变所有view y 坐标
+ */
+-(void)ServicesCategroyScrollTo:(CGFloat)locattionY
 {
-    [self.segmentTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
+    XLog(@"ServicesCategroyScrollTo: %f", -locattionY);
+    
+    CGRect rect = _headerView.frame;
+    rect.origin.y = - locattionY + kHeaderHeight;
+    
+    if (locattionY >= kBannerHH){
+        rect.origin.y = - kBannerHH;
+    }
+    
+    _headerView.frame = rect;
+    
+    if (locattionY <= kBannerHH && locattionY >=0) {
+        for (MDServicesCategroyCtrl *tbCtl in self.childControlsArr) {
+            tbCtl.collectionView.contentOffset = CGPointMake(0, locattionY);
+        }
+    }
 }
 
 - (NSMutableArray *)childControlsArr

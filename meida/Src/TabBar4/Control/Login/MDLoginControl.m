@@ -102,6 +102,7 @@ static CGFloat duration = 0.25f;
     
     _bgImgView.contentMode = UIViewContentModeScaleAspectFill;
     _bgImgView.layer.masksToBounds = YES;
+    _bgImgView.image = IMAGE(@"login_bg_image");
     
     
     [_loginBtnView setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
@@ -119,11 +120,6 @@ static CGFloat duration = 0.25f;
     [_loginBtnView addTarget:self action:@selector(switchLoginOrRegisAction:) forControlEvents:UIControlEventTouchUpInside];
     [_regisBtnView addTarget:self action:@selector(switchLoginOrRegisAction:) forControlEvents:UIControlEventTouchUpInside];
     _registerView.alpha = 0.01f;
-    
-    //TODO: - 测试数据
-    //_registerView.backgroundColor  = //[UIColor purpleColor];
-    _thirdPlatView.backgroundColor = kDefaultBackgroundColor;
-    
 }
 
 /**

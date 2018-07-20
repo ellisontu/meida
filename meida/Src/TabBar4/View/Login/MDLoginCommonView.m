@@ -443,6 +443,7 @@
     
     _seplineView.contentMode = UIViewContentModeScaleAspectFill;
     _seplineView.layer.masksToBounds = YES;
+    _containerView.backgroundColor = [UIColor clearColor];
     
     CGFloat btnWW = 26.f;
     CGFloat padding = (SCR_WIDTH - 3 * btnWW) / 4;

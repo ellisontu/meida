@@ -80,7 +80,7 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
 - (NSArray *)tabbarImageNameArray
 {
     NSArray *imageNameArray = nil;
-    imageNameArray = @[@"tabbar_home", @"tabbar_store", @"tabbar_social", @"tabbar_self"];
+    imageNameArray = @[@"tabbar_01", @"tabbar_02", @"tabbar_03", @"tabbar_04"];
     if ([MDTabBarManager sharedInstance].isDuringActive) {
         
         NSArray *resultArray = _getFileNameDict(imageNameArray);
@@ -97,7 +97,7 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
 - (NSArray *)tabbarHighLightImageArray
 {
     NSArray *highLightImageArray = nil;
-    highLightImageArray = @[@"tabbar_home_down",@"tabbar_store_down", @"tabbar_social_down", @"tabbar_self_down"];
+    highLightImageArray = @[@"tabbar_01_select",@"tabbar_02_select", @"tabbar_03_select", @"tabbar_04_select"];
     if ([MDTabBarManager sharedInstance].isDuringActive) {
         
         NSArray *resultArray = _getFileNameDict(highLightImageArray);

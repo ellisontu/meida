@@ -109,12 +109,14 @@
 		C2285064210193EE000FF959 /* MDTrendUploadNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2285063210193EE000FF959 /* MDTrendUploadNewCell.m */; };
 		C228506721019400000FF959 /* MDTrendRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C228506621019400000FF959 /* MDTrendRecommendCell.m */; };
 		C228506A2101BA9F000FF959 /* MDTrendRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850692101BA9F000FF959 /* MDTrendRecommendView.m */; };
-		C264CE4320EDB2690053AD0E /* MDFanshionCircleCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4220EDB2690053AD0E /* MDFanshionCircleCtrl.m */; };
-		C264CE4620EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4520EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m */; };
-		C264CE4920EDC51D0053AD0E /* MDMyWardrobeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4820EDC51D0053AD0E /* MDMyWardrobeCtrl.m */; };
-		C264CE4C20EDCE990053AD0E /* MDMyFittingRoomCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE4B20EDCE990053AD0E /* MDMyFittingRoomCtrl.m */; };
-		C264CE5120EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5020EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m */; };
-		C264CE5420EDF99D0053AD0E /* MDAddClothMatchCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5320EDF99D0053AD0E /* MDAddClothMatchCtrl.m */; };
+		C228506C2101C905000FF959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C228506B2101C905000FF959 /* Assets.xcassets */; };
+		C228507D2101CA81000FF959 /* MDMyFittingRoomCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */; };
+		C228507E2101CA81000FF959 /* MDMyWardrobeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850722101CA80000FF959 /* MDMyWardrobeCtrl.m */; };
+		C228507F2101CA81000FF959 /* MDMyFittingRoomCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850732101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.m */; };
+		C22850802101CA81000FF959 /* MDAddClothMatchCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */; };
+		C22850812101CA81000FF959 /* MDWardrobeAfterClothCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850772101CA81000FF959 /* MDWardrobeAfterClothCtrl.m */; };
+		C22850822101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C228507B2101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m */; };
+		C22850832101CA81000FF959 /* MDFanshionCircleCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */; };
 		C264CE5720EDFC590053AD0E /* MDAddClothMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */; };
 		C29E2A3420F5DF0800DE9BAC /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A1F20F5DF0800DE9BAC /* WXUtil.mm */; };
 		C29E2A3520F5DF0800DE9BAC /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A2220F5DF0800DE9BAC /* ApiXml.mm */; };
@@ -163,7 +165,6 @@
 		C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832A720EF512300A821E6 /* XHLaunchAdImageManager.m */; };
 		C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */; };
 		C2A832BB20EF524C00A821E6 /* MDLaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */; };
-		C2CE591E20E9BDB5001F1F47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CE591D20E9BDB5001F1F47 /* Assets.xcassets */; };
 		C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592C20E9C247001F1F47 /* MDSegmentView.m */; };
 		C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */; };
 		C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */; };
@@ -187,7 +188,6 @@
 		C2F5FBED20EC63DB00DC04FF /* MDAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBEC20EC63DB00DC04FF /* MDAbstractDotView.m */; };
 		C2F5FBF220EC758100DC04FF /* MDFlipCarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBF120EC758100DC04FF /* MDFlipCarFlowLayout.m */; };
 		C2F5FBF620EC7A6200DC04FF /* UIImageView+sdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBF520EC7A6200DC04FF /* UIImageView+sdTools.m */; };
-		C2F5FBFA20EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBF920EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m */; };
 		C2FF1A2320ECA30C0017DFF5 /* WardrobeAfterClothCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FF1A2220ECA30C0017DFF5 /* WardrobeAfterClothCell.m */; };
 /* End PBXBuildFile section */
 
@@ -447,18 +447,21 @@
 		C228506621019400000FF959 /* MDTrendRecommendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendRecommendCell.m; sourceTree = "<group>"; };
 		C22850682101BA9F000FF959 /* MDTrendRecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTrendRecommendView.h; sourceTree = "<group>"; };
 		C22850692101BA9F000FF959 /* MDTrendRecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrendRecommendView.m; sourceTree = "<group>"; };
-		C264CE4120EDB2690053AD0E /* MDFanshionCircleCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFanshionCircleCtrl.h; sourceTree = "<group>"; };
-		C264CE4220EDB2690053AD0E /* MDFanshionCircleCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFanshionCircleCtrl.m; sourceTree = "<group>"; };
-		C264CE4420EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFanshionCircleCategoryCtrl.h; sourceTree = "<group>"; };
-		C264CE4520EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFanshionCircleCategoryCtrl.m; sourceTree = "<group>"; };
-		C264CE4720EDC51D0053AD0E /* MDMyWardrobeCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMyWardrobeCtrl.h; sourceTree = "<group>"; };
-		C264CE4820EDC51D0053AD0E /* MDMyWardrobeCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMyWardrobeCtrl.m; sourceTree = "<group>"; };
-		C264CE4A20EDCE990053AD0E /* MDMyFittingRoomCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCtrl.h; sourceTree = "<group>"; };
-		C264CE4B20EDCE990053AD0E /* MDMyFittingRoomCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCtrl.m; sourceTree = "<group>"; };
-		C264CE4F20EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCategoryCtrl.h; sourceTree = "<group>"; };
-		C264CE5020EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCategoryCtrl.m; sourceTree = "<group>"; };
-		C264CE5220EDF99D0053AD0E /* MDAddClothMatchCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAddClothMatchCtrl.h; sourceTree = "<group>"; };
-		C264CE5320EDF99D0053AD0E /* MDAddClothMatchCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCtrl.m; sourceTree = "<group>"; };
+		C228506B2101C905000FF959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C228506E2101CA80000FF959 /* MDMyWardrobeCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMyWardrobeCtrl.h; sourceTree = "<group>"; };
+		C228506F2101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCategoryCtrl.h; sourceTree = "<group>"; };
+		C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCtrl.m; sourceTree = "<group>"; };
+		C22850712101CA80000FF959 /* MDAddClothMatchCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAddClothMatchCtrl.h; sourceTree = "<group>"; };
+		C22850722101CA80000FF959 /* MDMyWardrobeCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMyWardrobeCtrl.m; sourceTree = "<group>"; };
+		C22850732101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCategoryCtrl.m; sourceTree = "<group>"; };
+		C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCtrl.m; sourceTree = "<group>"; };
+		C22850752101CA80000FF959 /* MDMyFittingRoomCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCtrl.h; sourceTree = "<group>"; };
+		C22850772101CA81000FF959 /* MDWardrobeAfterClothCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeAfterClothCtrl.m; sourceTree = "<group>"; };
+		C22850782101CA81000FF959 /* MDFanshionCircleCategoryCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFanshionCircleCategoryCtrl.h; sourceTree = "<group>"; };
+		C22850792101CA81000FF959 /* MDFanshionCircleCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFanshionCircleCtrl.h; sourceTree = "<group>"; };
+		C228507A2101CA81000FF959 /* MDWardrobeAfterClothCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWardrobeAfterClothCtrl.h; sourceTree = "<group>"; };
+		C228507B2101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFanshionCircleCategoryCtrl.m; sourceTree = "<group>"; };
+		C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFanshionCircleCtrl.m; sourceTree = "<group>"; };
 		C264CE5520EDFC590053AD0E /* MDAddClothMatchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAddClothMatchCell.h; sourceTree = "<group>"; };
 		C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCell.m; sourceTree = "<group>"; };
 		C29E29B920F5DF0700DE9BAC /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
@@ -702,7 +705,6 @@
 		C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLaunchAdManager.m; sourceTree = "<group>"; };
 		C2A832B920EF524C00A821E6 /* MDLaunchAdModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDLaunchAdModel.h; sourceTree = "<group>"; };
 		C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLaunchAdModel.m; sourceTree = "<group>"; };
-		C2CE591D20E9BDB5001F1F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2CE592B20E9C247001F1F47 /* MDSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentView.h; sourceTree = "<group>"; };
 		C2CE592C20E9C247001F1F47 /* MDSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentView.m; sourceTree = "<group>"; };
 		C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeViewCell.h; sourceTree = "<group>"; };
@@ -748,8 +750,6 @@
 		C2F5FBF120EC758100DC04FF /* MDFlipCarFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFlipCarFlowLayout.m; sourceTree = "<group>"; };
 		C2F5FBF420EC7A6200DC04FF /* UIImageView+sdTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+sdTools.h"; sourceTree = "<group>"; };
 		C2F5FBF520EC7A6200DC04FF /* UIImageView+sdTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+sdTools.m"; sourceTree = "<group>"; };
-		C2F5FBF820EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeAfterClothCtrl.h; sourceTree = "<group>"; };
-		C2F5FBF920EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeAfterClothCtrl.m; sourceTree = "<group>"; };
 		C2FF1A2120ECA30C0017DFF5 /* WardrobeAfterClothCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WardrobeAfterClothCell.h; sourceTree = "<group>"; };
 		C2FF1A2220ECA30C0017DFF5 /* WardrobeAfterClothCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WardrobeAfterClothCell.m; sourceTree = "<group>"; };
 		E3FE177AA4B4966BA4439040 /* Pods-meida.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meida.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meida/Pods-meida.debug.xcconfig"; sourceTree = "<group>"; };
@@ -883,7 +883,7 @@
 		99AA269D20DE6DC70053CAB6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				C2CE591D20E9BDB5001F1F47 /* Assets.xcassets */,
+				C228506B2101C905000FF959 /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1010,8 +1010,8 @@
 			isa = PBXGroup;
 			children = (
 				99AA26B420DE6DC70053CAB6 /* Wardrobe */,
-				C264CE4E20EDCF9D0053AD0E /* WardrobeHead */,
-				C264CE4D20EDCF9D0053AD0E /* WardrobeBody */,
+				C228506D2101CA80000FF959 /* WardrobeBody */,
+				C22850762101CA81000FF959 /* WardrobeHead */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -1652,30 +1652,30 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
-		C264CE4D20EDCF9D0053AD0E /* WardrobeBody */ = {
+		C228506D2101CA80000FF959 /* WardrobeBody */ = {
 			isa = PBXGroup;
 			children = (
-				C264CE4720EDC51D0053AD0E /* MDMyWardrobeCtrl.h */,
-				C264CE4820EDC51D0053AD0E /* MDMyWardrobeCtrl.m */,
-				C264CE4A20EDCE990053AD0E /* MDMyFittingRoomCtrl.h */,
-				C264CE4B20EDCE990053AD0E /* MDMyFittingRoomCtrl.m */,
-				C264CE4F20EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.h */,
-				C264CE5020EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m */,
-				C264CE5220EDF99D0053AD0E /* MDAddClothMatchCtrl.h */,
-				C264CE5320EDF99D0053AD0E /* MDAddClothMatchCtrl.m */,
+				C228506E2101CA80000FF959 /* MDMyWardrobeCtrl.h */,
+				C22850722101CA80000FF959 /* MDMyWardrobeCtrl.m */,
+				C22850732101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.m */,
+				C228506F2101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.h */,
+				C22850712101CA80000FF959 /* MDAddClothMatchCtrl.h */,
+				C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */,
+				C22850752101CA80000FF959 /* MDMyFittingRoomCtrl.h */,
+				C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */,
 			);
 			path = WardrobeBody;
 			sourceTree = "<group>";
 		};
-		C264CE4E20EDCF9D0053AD0E /* WardrobeHead */ = {
+		C22850762101CA81000FF959 /* WardrobeHead */ = {
 			isa = PBXGroup;
 			children = (
-				C2F5FBF820EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.h */,
-				C2F5FBF920EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m */,
-				C264CE4120EDB2690053AD0E /* MDFanshionCircleCtrl.h */,
-				C264CE4220EDB2690053AD0E /* MDFanshionCircleCtrl.m */,
-				C264CE4420EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.h */,
-				C264CE4520EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m */,
+				C228507A2101CA81000FF959 /* MDWardrobeAfterClothCtrl.h */,
+				C22850772101CA81000FF959 /* MDWardrobeAfterClothCtrl.m */,
+				C22850782101CA81000FF959 /* MDFanshionCircleCategoryCtrl.h */,
+				C228507B2101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m */,
+				C22850792101CA81000FF959 /* MDFanshionCircleCtrl.h */,
+				C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */,
 			);
 			path = WardrobeHead;
 			sourceTree = "<group>";
@@ -2258,8 +2258,8 @@
 				99AA284D20DE6DC80053CAB6 /* UserStatisticsConfig.plist in Resources */,
 				99AA285320DE6DC80053CAB6 /* AppStoreExportOptions.plist in Resources */,
 				C29E2CAB20F5F68100DE9BAC /* README.txt in Resources */,
+				C228506C2101C905000FF959 /* Assets.xcassets in Resources */,
 				99AA286F20DE6DC80053CAB6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				C2CE591E20E9BDB5001F1F47 /* Assets.xcassets in Resources */,
 				99AA285120DE6DC80053CAB6 /* DeviceConstantInfo.plist in Resources */,
 				C2DEFA1C20F4B7AB00A7F89C /* ShootIcons.bundle in Resources */,
 				99AA287520DE6DC80053CAB6 /* SAMKeychain.bundle in Resources */,
@@ -2336,16 +2336,15 @@
 			files = (
 				C2F5FBF620EC7A6200DC04FF /* UIImageView+sdTools.m in Sources */,
 				99AA280720DE6DC80053CAB6 /* SharePosterView.m in Sources */,
+				C22850802101CA81000FF959 /* MDAddClothMatchCtrl.m in Sources */,
 				99AA289020DE6F580053CAB6 /* LSFileManage.m in Sources */,
 				C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */,
 				C2DEFA0A20F4854A00A7F89C /* MDShootManager.m in Sources */,
 				99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */,
-				C264CE4320EDB2690053AD0E /* MDFanshionCircleCtrl.m in Sources */,
 				99970F5920DF2CFA00AEC45E /* MDTabBar.m in Sources */,
 				C29E2A3620F5DF0800DE9BAC /* payRequsestHandler.mm in Sources */,
 				C2A832B020EF512300A821E6 /* XHLaunchAdController.m in Sources */,
 				99970F5620DE785800AEC45E /* MDTabBarManager.m in Sources */,
-				C264CE4620EDB9C40053AD0E /* MDFanshionCircleCategoryCtrl.m in Sources */,
 				99AA280420DE6DC80053CAB6 /* UserModel.m in Sources */,
 				99AA284620DE6DC80053CAB6 /* UIImagePickerController+Permission.m in Sources */,
 				C2285061210189A6000FF959 /* MDTrendChannelCell.m in Sources */,
@@ -2353,7 +2352,6 @@
 				99AA287620DE6DC80053CAB6 /* SAMKeychain.m in Sources */,
 				C29E2A3520F5DF0800DE9BAC /* ApiXml.mm in Sources */,
 				C2DEFA1720F4B11100A7F89C /* UIImage+Additions.m in Sources */,
-				C264CE5120EDD0000053AD0E /* MDMyFittingRoomCategoryCtrl.m in Sources */,
 				C2A832B320EF512300A821E6 /* XHLaunchAdConfiguration.m in Sources */,
 				99AA281220DE6DC80053CAB6 /* BaseH5ConfigModel.m in Sources */,
 				99AA282120DE6DC80053CAB6 /* KYLabel.m in Sources */,
@@ -2371,6 +2369,7 @@
 				C228506A2101BA9F000FF959 /* MDTrendRecommendView.m in Sources */,
 				C2DEFA1020F4AF9C00A7F89C /* MDAnimationRecordView.m in Sources */,
 				99AA284F20DE6DC80053CAB6 /* NSDate+LSExtension.m in Sources */,
+				C22850832101CA81000FF959 /* MDFanshionCircleCtrl.m in Sources */,
 				99AA284420DE6DC80053CAB6 /* UIView+AligmentRectInsets.m in Sources */,
 				C2A832B220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
 				C29E2A3420F5DF0800DE9BAC /* WXUtil.mm in Sources */,
@@ -2379,11 +2378,11 @@
 				99CD9C8220DF31F1000BC7F0 /* MDMineControl.m in Sources */,
 				99AA280220DE6DC80053CAB6 /* UserAnalyticsManager.m in Sources */,
 				99AA281F20DE6DC80053CAB6 /* BaseTextField.m in Sources */,
+				C228507D2101CA81000FF959 /* MDMyFittingRoomCtrl.m in Sources */,
 				99AA289820DE6F580053CAB6 /* Reachability.m in Sources */,
 				99AA284320DE6DC80053CAB6 /* UIView+Gradient.m in Sources */,
 				99AA280120DE6DC80053CAB6 /* UserManager.m in Sources */,
 				C2285064210193EE000FF959 /* MDTrendUploadNewCell.m in Sources */,
-				C264CE5420EDF99D0053AD0E /* MDAddClothMatchCtrl.m in Sources */,
 				C29E2C9F20F5F06400DE9BAC /* base64.m in Sources */,
 				C2F5FBF220EC758100DC04FF /* MDFlipCarFlowLayout.m in Sources */,
 				C2A832AA20EF512300A821E6 /* FLAnimatedImageView.m in Sources */,
@@ -2400,7 +2399,6 @@
 				99AA282420DE6DC80053CAB6 /* QuadCurveMenuItem.m in Sources */,
 				999D3FDC20E2900100950040 /* MDCacheFileManager.m in Sources */,
 				C29E2C9A20F5F06400DE9BAC /* openssl_wrapper.m in Sources */,
-				C264CE4C20EDCE990053AD0E /* MDMyFittingRoomCtrl.m in Sources */,
 				C2DEFA1A20F4B30C00A7F89C /* NSString+Path.m in Sources */,
 				99AA284C20DE6DC80053CAB6 /* HookUtility.m in Sources */,
 				99AA286720DE6DC80053CAB6 /* main.m in Sources */,
@@ -2412,6 +2410,7 @@
 				99AA284E20DE6DC80053CAB6 /* UserStatistics.m in Sources */,
 				C2A832BB20EF524C00A821E6 /* MDLaunchAdModel.m in Sources */,
 				C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */,
+				C228507F2101CA81000FF959 /* MDMyFittingRoomCategoryCtrl.m in Sources */,
 				9921785020E28244001C6A76 /* MDLoadingView.m in Sources */,
 				C2A8328A20EF4C4E00A821E6 /* MDLoginCommonView.m in Sources */,
 				99AA288F20DE6F580053CAB6 /* AnimationManager.m in Sources */,
@@ -2419,6 +2418,7 @@
 				9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */,
 				C2DEFA1320F4B03900A7F89C /* MDShootPlayerView.m in Sources */,
 				C2CE594D20EB64BE001F1F47 /* MDServicesCategroyCtrl.m in Sources */,
+				C22850822101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m in Sources */,
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
@@ -2431,7 +2431,6 @@
 				99AA281D20DE6DC80053CAB6 /* MZSelectableLabel.m in Sources */,
 				C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */,
 				99970F5C20DF2E1500AEC45E /* MDTabBarSubviews.m in Sources */,
-				C2F5FBFA20EC9C4800DC04FF /* MDWardrobeAfterClothCtrl.m in Sources */,
 				C29E2C9B20F5F06400DE9BAC /* MD5DataSigner.m in Sources */,
 				C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */,
 				99CD9C7C20DF3185000BC7F0 /* MDWardrobeControl.m in Sources */,
@@ -2447,6 +2446,7 @@
 				C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */,
 				C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */,
 				C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */,
+				C228507E2101CA81000FF959 /* MDMyWardrobeCtrl.m in Sources */,
 				C228505E2101835B000FF959 /* MDTrendBaseScrollView.m in Sources */,
 				99AA281120DE6DC80053CAB6 /* BaseModel.m in Sources */,
 				C29E2CA120F5F06400DE9BAC /* RSADataSigner.m in Sources */,
@@ -2477,7 +2477,7 @@
 				99AA282320DE6DC80053CAB6 /* LSWaterWaveView.m in Sources */,
 				99AA283E20DE6DC80053CAB6 /* UIButton+Router.m in Sources */,
 				C29E2A3720F5DF0800DE9BAC /* PayManager.m in Sources */,
-				C264CE4920EDC51D0053AD0E /* MDMyWardrobeCtrl.m in Sources */,
+				C22850812101CA81000FF959 /* MDWardrobeAfterClothCtrl.m in Sources */,
 				99AA281C20DE6DC80053CAB6 /* CustomeTextField.m in Sources */,
 				99339BF420E13A4F00E45EC7 /* MDRefreshGifHeader.m in Sources */,
 			);

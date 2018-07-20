@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553763520.748601"
+            timestampString = "553765344.3770289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-switchLoginOrRegisAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553763520.74866"
+            timestampString = "553765344.377159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-animationLoginViewAndRegisterView"
             landmarkType = "7">
             <Locations>
@@ -393,11 +393,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553763520.748702"
+            timestampString = "553765344.377225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "-animationLoginViewAndRegisterView"
             landmarkType = "7">
          </BreakpointContent>
@@ -409,60 +409,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553763520.74874"
+            timestampString = "553765344.377285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-switchLoginOrRegisAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "553763520.748781"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "468"
-            endingLineNumber = "468"
-            landmarkName = "-thirdPlatformBtnAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "553763520.7488199"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "472"
-            endingLineNumber = "472"
-            landmarkName = "-thirdPlatformBtnAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "553763520.748857"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "476"
-            endingLineNumber = "476"
-            landmarkName = "-thirdPlatformBtnAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -489,7 +441,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar1/Control/Trend/MDTrendControl.m"
-            timestampString = "553763520.748926"
+            timestampString = "553765344.377429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"

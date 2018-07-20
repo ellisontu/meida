@@ -44,8 +44,10 @@
 {
     NSArray *titleArr = @[@"精选", @"电影", @"电视剧", @"综艺", @"NBA", @"娱乐", @"动漫", @"演唱会", @"VIP会员"];
     MDSegmentTitleConfig *configure = [[MDSegmentTitleConfig alloc] init];
-    configure.indicatorAdditionalWidth = 10;
-    configure.showBottomSeparator = NO;
+    configure.titleColor = kDefaultThirdTitleColor;
+    configure.titleSelectedColor = kDefaultTitleColor;
+    configure.showIndicator = NO;
+    configure.showBottomSeparator = YES;
     self.segmentTitleView = [[MDSegmentTitleView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, 44) delegate:self titleNames:titleArr configure:configure];
     [self.view addSubview:self.segmentTitleView];
     

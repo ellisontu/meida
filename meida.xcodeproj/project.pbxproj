@@ -1657,12 +1657,12 @@
 			children = (
 				C228506E2101CA80000FF959 /* MDMyWardrobeCtrl.h */,
 				C22850722101CA80000FF959 /* MDMyWardrobeCtrl.m */,
-				C22850732101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.m */,
-				C228506F2101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.h */,
-				C22850712101CA80000FF959 /* MDAddClothMatchCtrl.h */,
-				C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */,
 				C22850752101CA80000FF959 /* MDMyFittingRoomCtrl.h */,
 				C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */,
+				C228506F2101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.h */,
+				C22850732101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.m */,
+				C22850712101CA80000FF959 /* MDAddClothMatchCtrl.h */,
+				C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */,
 			);
 			path = WardrobeBody;
 			sourceTree = "<group>";

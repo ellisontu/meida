@@ -85,6 +85,7 @@ static NSString *MDMyFittingRoomCategoryCtrlCellID = @"MDMyFittingRoomCategoryCt
 @interface MDMyFittingRoomCategoryCtrlCell ()
 
 @property (nonatomic, strong) UIImageView   *showImgView;
+@property (nonatomic, strong) UIView        *addClothView;
 
 @end
 
@@ -101,18 +102,58 @@ static NSString *MDMyFittingRoomCategoryCtrlCellID = @"MDMyFittingRoomCategoryCt
 - (void)initView
 {
     self.contentView.backgroundColor = COLOR_WITH_WHITE;
-    _showImgView = [[UIImageView alloc] init];
+    _showImgView  = [[UIImageView alloc] init];
+    _addClothView = [[UIView alloc] init];
+    UIImageView *addIcon = [[UIImageView alloc] init];
+    UILabel *addLbl = [[UILabel alloc] init];
+    
     [self.contentView addSubview:_showImgView];
+    [self.contentView addSubview:_addClothView];
+    [_addClothView addSubview:addIcon];
+    [_addClothView addSubview:addLbl];
+    
+    _showImgView.hidden  = YES;
+    _addClothView.hidden = YES;
+    
     [_showImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);
     }];
+    [_addClothView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView);
+    }];
+    [addIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(18.f, 18.f));
+        make.centerX.equalTo(self.addClothView);
+        make.centerY.equalTo(self.addClothView).offset(-35.f);
+    }];
+    
+    [addLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(addIcon);
+        make.top.equalTo(addIcon.mas_bottom).offset(kOffPadding);
+    }];
+    
     _showImgView.contentMode = UIViewContentModeScaleAspectFill;
     _showImgView.layer.masksToBounds = YES;
+    addIcon.image = IMAGE(@"add_cloth_icon");
+    addLbl.font = FONT_SYSTEM_NORMAL(15);
+    addLbl.textColor = COLOR_HEX_STR(@"#8C959F");
+    addLbl.text = @"新增搭配";
     
     [_showImgView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/1665/16651199/raw_1516589335.png" placeholderImage:IMAGE(@"place_holer_icon")];
     
+}
+
+- (void)setIndexPath:(NSIndexPath *)indexPath
+{
+    _showImgView.hidden  = YES;
+    _addClothView.hidden = YES;
     
-    
+    if (0 == indexPath.row) {
+        _addClothView.hidden = NO;
+    }
+    else{
+        _showImgView.hidden  = NO;
+    }
 }
 
 @end

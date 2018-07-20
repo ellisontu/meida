@@ -75,8 +75,9 @@
     [self.view addSubview:_headerView];
     
     MDSegmentTitleConfig *configure = [[MDSegmentTitleConfig alloc] init];
-    configure.indicatorAdditionalWidth = 10;
-    configure.showBottomSeparator = NO;
+    configure.titleColor = kDefaultThirdTitleColor;
+    configure.titleSelectedColor = kDefaultTitleColor;
+    configure.showIndicator = NO;
     CGFloat titleHH = 49.f;
     self.segmentTitleView = [[MDSegmentTitleView alloc] initWithFrame:CGRectMake(0, kBannerHH - titleHH, SCR_WIDTH, titleHH) delegate:self titleNames:titleArr configure:configure];
     [_headerView addSubview:self.segmentTitleView];

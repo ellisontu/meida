@@ -22,9 +22,6 @@
 
 @interface MDServicesCategroyCtrl : MDBaseViewController
 
-//- (instancetype)initStyle:(SegmentChildViewType )controlType;     /**<  唯一初始化入口 : 1.瀑布流，2.*/
 @property (nonatomic, weak) id<CategroyScrollViewDelegate> delegate;
-
-- (instancetype)init;
 
 @end

@@ -101,7 +101,7 @@ void uncaughtExceptionHandler(NSException *exception)
         _navigation = [[MDNavigationController alloc] initWithRootViewController:_rvc];
         self.window.rootViewController = _navigation;
         [self.window makeKeyAndVisible];
-        _rvc.tabbar.selectedIndex = 1;
+        _rvc.tabbar.selectedIndex = 0;
     }
 }
 

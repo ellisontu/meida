@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553678742.502166"
+            timestampString = "553763520.748601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553678742.502275"
+            timestampString = "553763520.74866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
@@ -346,7 +346,7 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-                  timestampString = "553687428.85857"
+                  timestampString = "553763495.312451"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "188"
@@ -357,11 +357,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__51-[MDLoginControl animationLoginViewAndRegisterView]_block_invoke.240"
+                  symbolName = "__51-[MDLoginControl animationLoginViewAndRegisterView]_block_invoke.238"
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-                  timestampString = "553687428.860799"
+                  timestampString = "553763495.3157721"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "188"
@@ -372,11 +372,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.242"
+                  symbolName = "__destroy_helper_block_.240"
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-                  timestampString = "553687428.863083"
+                  timestampString = "553763495.318676"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "188"
@@ -393,7 +393,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553678742.502352"
+            timestampString = "553763520.748702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
@@ -409,7 +409,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553678742.502425"
+            timestampString = "553763520.74874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -425,11 +425,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "553678742.502498"
+            timestampString = "553763520.748781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
             landmarkName = "-thirdPlatformBtnAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -441,11 +441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "553678742.502546"
+            timestampString = "553763520.7488199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
             landmarkName = "-thirdPlatformBtnAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -457,11 +457,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "553678742.5025899"
+            timestampString = "553763520.748857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "357"
-            endingLineNumber = "357"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
             landmarkName = "-thirdPlatformBtnAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -478,7 +478,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "-gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:"
+            landmarkName = "MDTrendChannelViewCell()"
+            landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "meida/Src/TabBar1/Control/Trend/MDTrendControl.m"
+            timestampString = "553763520.748926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-scrollViewDidScroll:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -488,13 +504,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meida/Src/TabBar3/Control/Services/MDServicesControl.m"
-            timestampString = "553689482.4007879"
+            filePath = "meida/Src/Common/View/Component/MDSegmentView.m"
+            timestampString = "553763520.749215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-initSegmentView"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-buttonAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -504,29 +520,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/MDSegmentComponent/MDSegmentScrollView.m"
-            timestampString = "553689482.403443"
+            filePath = "meida/Src/Common/View/Component/MDSegmentView.m"
+            timestampString = "553763520.749258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-initWithFrame:superControl:subControls:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/MDSegmentComponent/MDSegmentScrollView.m"
-            timestampString = "553689482.403496"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-scrollView"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-selectedSegmentViewPage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

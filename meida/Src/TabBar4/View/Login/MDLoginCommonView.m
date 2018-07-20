@@ -37,6 +37,11 @@
     
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)initView
 {
     
@@ -202,10 +207,14 @@
 #pragma mark - 注册 view ############ -------------------
 @interface MDRegisterView ()
 
+@property (nonatomic, strong) UILabel       *phoneTipsLbl;
 @property (nonatomic, strong) UITextField   *phoneTextField;    /**<  */
 @property (nonatomic, strong) UIView        *phoneTextLine;
+@property (nonatomic, strong) UILabel       *pCodeTipsLbl;
 @property (nonatomic, strong) UITextField   *pCodeTextField;    /**<  */
 @property (nonatomic, strong) UIView        *pCodeTextLine;     /**<  */
+@property (nonatomic, strong) UIButton      *pCodeRecivBtn;
+@property (nonatomic, strong) UIButton      *registerBtn;
 @property (nonatomic, weak) UIView          *mainView;
 
 @end
@@ -223,29 +232,112 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)initView
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillHideNotification object:nil];
+    
     self.backgroundColor = [UIColor clearColor];
     
-    NSMutableParagraphStyle *style1 = [[NSMutableParagraphStyle alloc] init];
-    style1.alignment = NSTextAlignmentCenter;
-    NSAttributedString *attrString1 = [[NSAttributedString alloc] initWithString:@"用户名" attributes:
-                                       @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
-                                         NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
-                                         NSParagraphStyleAttributeName:style1
-                                         }];
-    _phoneTextField.attributedPlaceholder = attrString1;
-    _phoneTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
+    _phoneTipsLbl   = [[UILabel alloc] init];
+    _phoneTextField = [[UITextField alloc] init];
+    _phoneTextLine  = [[UIView alloc] init];
+    _pCodeTextField = [[UITextField alloc] init];
+    _pCodeTipsLbl   = [[UILabel alloc] init];
+    _pCodeTextLine  = [[UIView alloc] init];
+    _pCodeRecivBtn  = [[UIButton alloc] init];
+    _registerBtn    = [[UIButton alloc] init];
     
-    NSMutableParagraphStyle *style2 = [[NSMutableParagraphStyle alloc] init];
-    style2.alignment = NSTextAlignmentCenter;
-    NSAttributedString *attrString2 = [[NSAttributedString alloc] initWithString:@"验证码" attributes:
-                                       @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
-                                         NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
-                                         NSParagraphStyleAttributeName:style2
-                                         }];
-    _pCodeTextField.attributedPlaceholder = attrString2;
+    [self addSubview:_phoneTipsLbl];
+    [self addSubview:_phoneTextField];
+    [self addSubview:_phoneTextLine];
+    [self addSubview:_pCodeTipsLbl];
+    [self addSubview:_pCodeTextField];
+    [self addSubview:_pCodeTextLine];
+    [self addSubview:_pCodeRecivBtn];
+    [self addSubview:_registerBtn];
+    
+    CGFloat tipsWW = 70.f;
+    [_phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(kOffPadding);
+        make.right.equalTo(self.phoneTextLine);
+        make.height.mas_equalTo(25.f);
+        make.left.equalTo(self.phoneTextLine).offset(tipsWW);
+    }];
+    [_phoneTextLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.phoneTextField.mas_bottom);
+        make.right.equalTo(self);
+        make.left.equalTo(self);
+        make.height.mas_equalTo(1.f);
+    }];
+    [_phoneTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.phoneTextField);
+        make.left.equalTo(self.phoneTextLine);
+    }];
+    
+    [_pCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.phoneTextLine.mas_bottom).offset(kOffPadding);
+        make.right.equalTo(self.pCodeTextLine);
+        make.height.mas_equalTo(25.f);
+        make.left.equalTo(self.pCodeTextLine).offset(tipsWW);
+    }];
+    [_pCodeTextLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.pCodeTextField.mas_bottom);
+        make.right.equalTo(self);
+        make.left.equalTo(self);
+        make.height.mas_equalTo(1.f);
+    }];
+    [_pCodeTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.pCodeTextField);
+        make.left.equalTo(self.pCodeTextLine);
+    }];
+    [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(kOffPadding);
+        make.right.equalTo(self).offset(-kOffPadding);
+        make.top.equalTo(self.pCodeTextLine).offset(25.f);
+        make.height.mas_equalTo(40.f);
+    }];
+    
+//    NSMutableParagraphStyle *style1 = [[NSMutableParagraphStyle alloc] init];
+//    style1.alignment = NSTextAlignmentCenter;
+//    NSAttributedString *attrString1 = [[NSAttributedString alloc] initWithString:@"用户名" attributes:
+//                                       @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
+//                                         NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
+//                                         NSParagraphStyleAttributeName:style1
+//                                         }];
+//    _phoneTextField.attributedPlaceholder = attrString1;
+//
+//    NSMutableParagraphStyle *style2 = [[NSMutableParagraphStyle alloc] init];
+//    style2.alignment = NSTextAlignmentCenter;
+//    NSAttributedString *attrString2 = [[NSAttributedString alloc] initWithString:@"验证码" attributes:
+//                                       @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
+//                                         NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
+//                                         NSParagraphStyleAttributeName:style2
+//                                         }];
+//    _pCodeTextField.attributedPlaceholder = attrString2;
+    
+    _phoneTipsLbl.font = FONT_SYSTEM_NORMAL(20);
+    _phoneTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
+    _phoneTipsLbl.text = @"手机号";
+    _pCodeTipsLbl.font = FONT_SYSTEM_NORMAL(20);
+    _pCodeTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
+    _pCodeTipsLbl.text = @"验证码";
+    
+    _phoneTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
     _pCodeTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
+    
+    _registerBtn.layer.cornerRadius  = 40.f * 0.5;
+    _registerBtn.layer.masksToBounds = YES;
+    _registerBtn.layer.borderColor   = COLOR_HEX_STR(@"#FEEA8D").CGColor;
+    _registerBtn.layer.borderWidth   = 1.f;
+    [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
+    _registerBtn.titleLabel.font = FONT_SYSTEM_NORMAL(15);
+    [_registerBtn setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
     
     _phoneTextField.tag = 10001;
     _pCodeTextField.tag = 10002;
@@ -275,6 +367,33 @@
 {
     [_phoneTextField endEditing:YES];
     [_pCodeTextField endEditing:YES];
+}
+
+- (void)keyboardChange:(NSNotification *)notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardEndFrame;
+    
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndFrame];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    [self layoutIfNeeded];
+    
+    if ([notification.name isEqual:UIKeyboardWillHideNotification]) {
+        self.mainView.y = kHeaderHeight;
+    }
+    else {
+        self.mainView.y = -kHeaderHeight;
+    }
+    
+    [UIView commitAnimations];
 }
 
 @end

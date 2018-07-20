@@ -1,23 +1,25 @@
 //
-//  MDTrendUploadNewView.m
+//  MDTrendUploadNewCell.m
 //  meida
 //
-//  Created by ToTo on 2018/7/2.
+//  Created by ToTo on 2018/7/20.
 //  Copyright © 2018年 ymfashion. All rights reserved.
 //
 
-#import "MDTrendUploadNewView.h"
+#import "MDTrendUploadNewCell.h"
 
-#pragma mark -  潮流 -> 上新 -> view ################################################----------
-static NSString *kTrendUploadNewViewCellID =@"MDTrendUploadNewViewCell";
-@interface MDTrendUploadNewView ()<UITableViewDelegate, UITableViewDataSource>
+@interface MDTrendUploadNewCell ()
 
-@property (nonatomic, strong) UITableView       *listView;
+@property (nonatomic, strong) UIView        *containerView;
+@property (nonatomic, strong) UIImageView   *shopShowImgView;   /**< 店面展示 image */
+@property (nonatomic, strong) UIImageView   *shopLogoImgView;   /**< 店面logo */
+@property (nonatomic, strong) UIButton      *heartBtnView;      /**< 收藏icon */
+@property (nonatomic, strong) UILabel       *shopLocationLbl;   /**< 店面地址 */
+@property (nonatomic, strong) UIButton      *distanceTipsBtn;   /**< 距离提示 */
 
 @end
 
-
-@implementation MDTrendUploadNewView
+@implementation MDTrendUploadNewCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -29,87 +31,7 @@ static NSString *kTrendUploadNewViewCellID =@"MDTrendUploadNewViewCell";
 
 - (void)initView
 {
-    _listView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    [self addSubview:_listView];
-    _listView.dataSource = self;
-    _listView.delegate = self;
-    _listView.showsVerticalScrollIndicator = NO;
-    _listView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_listView registerClass:[MDTrendUploadNewViewCell class] forCellReuseIdentifier:kTrendUploadNewViewCellID];
-    [_listView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    _listView.backgroundColor = [UIColor clearColor];
-    MDWeakPtr(weakPtr, self);
-    // 下拉刷新
-    MDRefreshGifHeader *refreshHeader = [MDRefreshGifHeader headerWithRefreshingBlock:^{
-        [weakPtr refreshListData];
-    }];
-    _listView.mj_header = refreshHeader;
-    
-    // 上拉加载
-    MDRefreshGifFooter *refreshFooter = [MDRefreshGifFooter footerWithRefreshingBlock:^{
-        [weakPtr loadMoreListData];
-    }];
-    _listView.mj_footer = refreshFooter;
-    //[_listView.mj_header beginRefreshing];
-    
-}
-
-- (void)refreshListData
-{
-    
-}
-
-- (void)loadMoreListData
-{
-    
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 5;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MDTrendUploadNewViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTrendUploadNewViewCellID];
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return SCR_WIDTH * 0.7;
-}
-
-@end
-
-
-#pragma mark -  潮流 -> 上新 -> cell view #############################################----------
-@interface MDTrendUploadNewViewCell ()
-
-@property (nonatomic, strong) UIView        *containerView;
-@property (nonatomic, strong) UIImageView   *shopShowImgView;   /**< 店面展示 image */
-@property (nonatomic, strong) UIImageView   *shopLogoImgView;   /**< 店面logo */
-@property (nonatomic, strong) UIButton      *heartBtnView;      /**< 收藏icon */
-@property (nonatomic, strong) UILabel       *shopLocationLbl;   /**< 店面地址 */
-@property (nonatomic, strong) UIButton      *distanceTipsBtn;   /**< 距离提示 */
-
-@end
-
-@implementation MDTrendUploadNewViewCell
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self initView];
-    }
-    return self;
-}
-
-- (void)initView
-{
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.contentView.backgroundColor = COLOR_WITH_WHITE;
+    self.backgroundColor = COLOR_WITH_WHITE;
     
     _containerView   = [[UIView alloc] init];
     _shopLogoImgView = [[UIImageView alloc] init];
@@ -185,8 +107,8 @@ static NSString *kTrendUploadNewViewCellID =@"MDTrendUploadNewViewCell";
     
     //TODO: - 测试数据
     [_shopShowImgView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/2007/20078742/raw_1526138607.png" placeholderImage:IMAGE(@"navi_right_icon")];
+    
 }
 
+
 @end
-
-

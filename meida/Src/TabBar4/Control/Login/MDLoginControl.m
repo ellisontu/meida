@@ -81,7 +81,7 @@ static CGFloat duration = 0.25f;
         make.centerX.equalTo(self.mainView).offset(65.f);
     }];
     
-    CGFloat padding = 80.f;
+    CGFloat padding = 50.f;
     CGFloat _viewWW = SCR_WIDTH - 2 * padding;
     [_loginView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(_viewWW, 100.f));
@@ -121,7 +121,7 @@ static CGFloat duration = 0.25f;
     _registerView.alpha = 0.01f;
     
     //TODO: - 测试数据
-    _registerView.backgroundColor  = [UIColor purpleColor];
+    //_registerView.backgroundColor  = //[UIColor purpleColor];
     _thirdPlatView.backgroundColor = kDefaultBackgroundColor;
     
 }

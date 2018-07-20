@@ -1,23 +1,25 @@
 //
-//  MDTrendChannelView.m
+//  MDTrendChannelCell.m
 //  meida
 //
-//  Created by ToTo on 2018/7/2.
+//  Created by ToTo on 2018/7/20.
 //  Copyright © 2018年 ymfashion. All rights reserved.
 //
 
-#import "MDTrendChannelView.h"
+#import "MDTrendChannelCell.h"
 
-#pragma mark -  潮流 -> 专题 -> view #############################################-----------
-static NSString *kTrendChannelViewCellID =@"MDTrendChannelViewCell";
+@interface MDTrendChannelCell ()
 
-@interface MDTrendChannelView ()<UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) UIView        *sepLineView;
+@property (nonatomic, strong) UILabel       *titleLblView;
+@property (nonatomic, strong) UILabel       *descLblView;
+@property (nonatomic, strong) UIImageView   *contentImgView;
+@property (nonatomic, strong) UIButton      *lookBtnView;
 
-@property (nonatomic, strong) UITableView       *listView;
 
 @end
 
-@implementation MDTrendChannelView
+@implementation MDTrendChannelCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -29,89 +31,7 @@ static NSString *kTrendChannelViewCellID =@"MDTrendChannelViewCell";
 
 - (void)initView
 {
-    _listView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    [self addSubview:_listView];
-    _listView.dataSource = self;
-    _listView.delegate = self;
-    _listView.showsVerticalScrollIndicator = NO;
-    _listView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_listView registerClass:[MDTrendChannelViewCell class] forCellReuseIdentifier:kTrendChannelViewCellID];
-    [_listView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    _listView.backgroundColor = [UIColor clearColor];
-    
-    MDWeakPtr(weakPtr, self);
-    // 下拉刷新
-    MDRefreshGifHeader *refreshHeader = [MDRefreshGifHeader headerWithRefreshingBlock:^{
-        [weakPtr refreshListData];
-    }];
-    _listView.mj_header = refreshHeader;
-    
-    // 上拉加载
-    MDRefreshGifFooter *refreshFooter = [MDRefreshGifFooter footerWithRefreshingBlock:^{
-        [weakPtr loadMoreListData];
-    }];
-    _listView.mj_footer = refreshFooter;
-    //[_listView.mj_header beginRefreshing];
-
-}
-
-- (void)refreshListData
-{
-    
-}
-
-- (void)loadMoreListData
-{
-    
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 5;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MDTrendChannelViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTrendChannelViewCellID];
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 185 + SCR_WIDTH;
-}
-
-
-@end
-
-
-#pragma mark -  潮流 -> 专题 -> cell view ########################################-----------
-@interface MDTrendChannelViewCell ()
-
-@property (nonatomic, strong) UIView        *sepLineView;
-@property (nonatomic, strong) UILabel       *titleLblView;
-@property (nonatomic, strong) UILabel       *descLblView;
-@property (nonatomic, strong) UIImageView   *contentImgView;
-@property (nonatomic, strong) UIButton      *lookBtnView;
-
-@end
-
-@implementation MDTrendChannelViewCell
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self initView];
-    }
-    return self;
-}
-
-- (void)initView
-{
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.contentView.backgroundColor = COLOR_WITH_WHITE;
+    self.backgroundColor = COLOR_WITH_WHITE;
     
     _sepLineView  = [[UIView alloc] init];
     _titleLblView = [[UILabel alloc] init];
@@ -173,5 +93,6 @@ static NSString *kTrendChannelViewCellID =@"MDTrendChannelViewCell";
     _lookBtnView.imageEdgeInsets = UIEdgeInsetsMake(0, _lookBtnView.titleLabel.bounds.size.width + 15, 0, -_lookBtnView.titleLabel.bounds.size.width);
     
 }
+
 
 @end

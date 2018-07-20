@@ -19,30 +19,6 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
 @implementation MDServicesCategroyCtrl
 
-/**
- *  服务器告诉 展示什么样的 cell
- */
-//- (instancetype)initStyle:(SegmentChildViewType )controlType
-//{
-//    if (self = [super init]) {
-//        switch (controlType) {
-//            case TypeCollectionView:
-//            {
-//                
-//            }
-//                break;
-//            case TypeTabeleView:
-//            {
-//                
-//            }
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-//    return self;
-//}
-
 - (void)viewDidLoad {
     
     [super viewDidLoad];

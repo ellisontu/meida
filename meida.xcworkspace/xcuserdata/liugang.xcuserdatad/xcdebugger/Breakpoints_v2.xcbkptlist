@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553765344.3770289"
+            timestampString = "553766082.944477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-switchLoginOrRegisAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553765344.377159"
+            timestampString = "553766082.944572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-animationLoginViewAndRegisterView"
             landmarkType = "7">
             <Locations>
@@ -393,11 +393,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553765344.377225"
+            timestampString = "553766082.94464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-animationLoginViewAndRegisterView"
             landmarkType = "7">
          </BreakpointContent>
@@ -409,11 +409,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/Control/Login/MDLoginControl.m"
-            timestampString = "553765344.377285"
+            timestampString = "553766082.944702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "-switchLoginOrRegisAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -441,7 +441,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar1/Control/Trend/MDTrendControl.m"
-            timestampString = "553765344.377429"
+            timestampString = "553766082.944805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"

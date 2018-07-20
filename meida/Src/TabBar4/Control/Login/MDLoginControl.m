@@ -66,7 +66,7 @@ static CGFloat duration = 0.25f;
     }];
     [_iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mainView).offset(65.f);
-        make.size.mas_equalTo(CGSizeMake(70.f, 68.f));
+        make.size.mas_equalTo(CGSizeMake(44.5f, 43.5f));
         make.centerX.equalTo(self.mainView);
     }];
     
@@ -103,6 +103,7 @@ static CGFloat duration = 0.25f;
     _bgImgView.contentMode = UIViewContentModeScaleAspectFill;
     _bgImgView.layer.masksToBounds = YES;
     _bgImgView.image = IMAGE(@"login_bg_image");
+    _iconImgView.image = IMAGE(@"logo_icon");
     
     
     [_loginBtnView setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];

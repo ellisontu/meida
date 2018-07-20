@@ -25,8 +25,6 @@ static NSString *MDWardrobeViewPlanCellID  = @"MDWardrobeViewPlanCell";
     
     self.view.backgroundColor = COLOR_WITH_WHITE;
     
-    [self setNavigationType:NavHide];
-    
     [self initView];
     
 }
@@ -34,25 +32,15 @@ static NSString *MDWardrobeViewPlanCellID  = @"MDWardrobeViewPlanCell";
 - (void)initView
 {
     // 设置头部信息
-    UILabel *tipsLblView = [[UILabel alloc] init];
-    [self.view addSubview:tipsLblView];
-    tipsLblView.font = FONT_SYSTEM_NORMAL(20);
-    tipsLblView.textColor = kDefaultTitleColor;
-    tipsLblView.text = @"发现";
-    [tipsLblView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(kHeaderHeight + 10);
-        make.left.equalTo(self.view).offset(kOffPadding);
-    }];
-    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCR_WIDTH - 44.f, kStatusBarHeight, 44.f, 44.f)];
-    [self.view addSubview:rightBtn];
-    [rightBtn setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
-    [rightBtn setImage:IMAGE(@"navi_right_icon") forState:UIControlStateNormal];
-    
+    [self setNavigationType:NavShowTitleAndRiht];
+    [self setTitle:@"衣橱"];
+    [self setRightBtnWith:@"" image:IMAGE(@"navi_right_icon")];
+    [self setupLineView:NO];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(kHeaderHeight + rightBtn.height);
+        make.top.equalTo(self.view).offset(kHeaderHeight);
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(-kTabBarHeight);

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class MDAddClothGroupTagModel, MDAddClothTagModel;
+
 #pragma mark -  衣橱 -> 我的衣橱 -> 搭配 Camera 相机 cell #############################################----------
 @interface MDAddClothMatchCameraCell : UITableViewCell
 
@@ -15,20 +17,15 @@
 
 
 #pragma mark -  衣橱 -> 我的衣橱 -> 搭配 object 物件 cell #############################################----------
-@interface MDAddClothMatchObjectCell : UITableViewCell
+@interface MDAddClothMatchTagCell : UITableViewCell
+
+@property (nonatomic, strong) MDAddClothGroupTagModel *groupTag;
 
 @end
 
+@interface MDAddClothMatchTagCellItem : UICollectionViewCell
 
-#pragma mark -  衣橱 -> 我的衣橱 -> 搭配 situation 场所 cell #############################################----------
-@interface MDAddClothMatchSituationCell : UITableViewCell
-
-@end
-
-
-
-#pragma mark -  衣橱 -> 我的衣橱 -> 搭配 season 季节 cell #############################################----------
-@interface MDAddClothMatchSeasonCell : UITableViewCell
+@property (nonatomic, strong) MDAddClothTagModel    *tagModel;
 
 @end
 

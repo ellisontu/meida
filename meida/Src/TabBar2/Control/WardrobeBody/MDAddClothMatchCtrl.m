@@ -7,7 +7,10 @@
 //
 
 #import "MDAddClothMatchCtrl.h"
+#import "MDAddClothMatchCell.h"
 
+static NSString *MDAddClothMatchCameraCellID = @"MDAddClothMatchCameraCell";
+static NSString *MDAddClothMatchTagCellID    = @"MDAddClothMatchTagCell";
 @interface MDAddClothMatchCtrl () <UITableViewDataSource, UITableViewDelegate>
 
 @end
@@ -28,18 +31,17 @@
     [self setTitle:@"添加搭配"];
     [self setRightBtnWith:@"" image:IMAGE(@"navi_right_icon")];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_HEIGHT - kHeaderHeight) style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //[self.tableView registerClass:[MDTrendRecommendViewUserCell class] forCellReuseIdentifier:kTrendRecommendViewUserCellID];
-    //[self.tableView registerClass:[MDTrendRecommendViewContentCell class] forCellReuseIdentifier:kTrendRecommendViewContentCellID];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
+    
+    [self.tableView registerClass:[MDAddClothMatchCameraCell class] forCellReuseIdentifier:MDAddClothMatchCameraCellID];
+    [self.tableView registerClass:[MDAddClothMatchTagCell class] forCellReuseIdentifier:MDAddClothMatchTagCellID];
 
+    /*
     MDWeakPtr(weakPtr, self);
     // 下拉刷新
     MDRefreshGifHeader *refreshHeader = [MDRefreshGifHeader headerWithRefreshingBlock:^{
@@ -52,7 +54,8 @@
         [weakPtr loadMoreListData];
     }];
     self.tableView.mj_footer = refreshFooter;
-    //[self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
+     */
     
 }
 
@@ -68,24 +71,46 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = indexPath.row;
+    if (0 == row) {
+        MDAddClothMatchCameraCell *cell = [tableView dequeueReusableCellWithIdentifier:MDAddClothMatchCameraCellID];
+        return cell;
+    }
+    else if (1 == row){
+        MDAddClothMatchTagCell *cell = [tableView dequeueReusableCellWithIdentifier:MDAddClothMatchTagCellID];
+        return cell;
+    }
+    else if (2 == row){
+        MDAddClothMatchTagCell *cell = [tableView dequeueReusableCellWithIdentifier:MDAddClothMatchTagCellID];
+        return cell;
+    }
+    else if (3 == row){
+        MDAddClothMatchTagCell *cell = [tableView dequeueReusableCellWithIdentifier:MDAddClothMatchTagCellID];
+        return cell;
+    }
     return nil;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
     if (0 == row) {
-        return 156.f;
+        return SCR_WIDTH;
     }
-    else{
-        return 350;
+    else if (1 == row){
+        return 110;
     }
+    else if (2 == row){
+        return 110;
+    }
+    else if (3 == row){
+        return 110;
+    }
+    return 0.01f;
 }
 
 @end

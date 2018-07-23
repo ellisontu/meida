@@ -165,6 +165,7 @@
 		C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832A720EF512300A821E6 /* XHLaunchAdImageManager.m */; };
 		C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */; };
 		C2A832BB20EF524C00A821E6 /* MDLaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */; };
+		C2B053642105CC9600102972 /* MDAddClothTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B053632105CC9600102972 /* MDAddClothTagModel.m */; };
 		C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592C20E9C247001F1F47 /* MDSegmentView.m */; };
 		C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */; };
 		C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */; };
@@ -705,6 +706,8 @@
 		C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLaunchAdManager.m; sourceTree = "<group>"; };
 		C2A832B920EF524C00A821E6 /* MDLaunchAdModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDLaunchAdModel.h; sourceTree = "<group>"; };
 		C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLaunchAdModel.m; sourceTree = "<group>"; };
+		C2B053622105CC9600102972 /* MDAddClothTagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAddClothTagModel.h; sourceTree = "<group>"; };
+		C2B053632105CC9600102972 /* MDAddClothTagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAddClothTagModel.m; sourceTree = "<group>"; };
 		C2CE592B20E9C247001F1F47 /* MDSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentView.h; sourceTree = "<group>"; };
 		C2CE592C20E9C247001F1F47 /* MDSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentView.m; sourceTree = "<group>"; };
 		C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeViewCell.h; sourceTree = "<group>"; };
@@ -988,6 +991,7 @@
 		99AA26B120DE6DC70053CAB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2B053602105CC5A00102972 /* AddCloth */,
 				99AA26B220DE6DC70053CAB6 /* Wardrobe */,
 			);
 			path = View;
@@ -1000,8 +1004,6 @@
 				C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */,
 				C2FF1A2120ECA30C0017DFF5 /* WardrobeAfterClothCell.h */,
 				C2FF1A2220ECA30C0017DFF5 /* WardrobeAfterClothCell.m */,
-				C264CE5520EDFC590053AD0E /* MDAddClothMatchCell.h */,
-				C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */,
 			);
 			path = Wardrobe;
 			sourceTree = "<group>";
@@ -1171,7 +1173,6 @@
 		99AA26FC20DE6DC70053CAB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C264CE5820EE15FF0053AD0E /* TagCollectionView */,
 				C2F5FBEF20EC756E00DC04FF /* FlipCarFlowLayout */,
 				C2F5FBE420EC60C400DC04FF /* CycleScrollView */,
 				C2CE595420EB831E001F1F47 /* StarView */,
@@ -1632,6 +1633,7 @@
 		99C05AEA20EA5D9F0027ABF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2B053612105CC7A00102972 /* AddCloth */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1678,13 +1680,6 @@
 				C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */,
 			);
 			path = WardrobeHead;
-			sourceTree = "<group>";
-		};
-		C264CE5820EE15FF0053AD0E /* TagCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TagCollectionView;
 			sourceTree = "<group>";
 		};
 		C29E29B220F5DF0700DE9BAC /* PayManager */ = {
@@ -2022,6 +2017,24 @@
 				C2A832A820EF512300A821E6 /* XHLaunchAdConst.h */,
 			);
 			path = XHLaunchAd;
+			sourceTree = "<group>";
+		};
+		C2B053602105CC5A00102972 /* AddCloth */ = {
+			isa = PBXGroup;
+			children = (
+				C264CE5520EDFC590053AD0E /* MDAddClothMatchCell.h */,
+				C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */,
+			);
+			path = AddCloth;
+			sourceTree = "<group>";
+		};
+		C2B053612105CC7A00102972 /* AddCloth */ = {
+			isa = PBXGroup;
+			children = (
+				C2B053622105CC9600102972 /* MDAddClothTagModel.h */,
+				C2B053632105CC9600102972 /* MDAddClothTagModel.m */,
+			);
+			path = AddCloth;
 			sourceTree = "<group>";
 		};
 		C2CE593920EB46F9001F1F47 /* View */ = {
@@ -2381,6 +2394,7 @@
 				C228507D2101CA81000FF959 /* MDMyFittingRoomCtrl.m in Sources */,
 				99AA289820DE6F580053CAB6 /* Reachability.m in Sources */,
 				99AA284320DE6DC80053CAB6 /* UIView+Gradient.m in Sources */,
+				C2B053642105CC9600102972 /* MDAddClothTagModel.m in Sources */,
 				99AA280120DE6DC80053CAB6 /* UserManager.m in Sources */,
 				C2285064210193EE000FF959 /* MDTrendUploadNewCell.m in Sources */,
 				C29E2C9F20F5F06400DE9BAC /* base64.m in Sources */,

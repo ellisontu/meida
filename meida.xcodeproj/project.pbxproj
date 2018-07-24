@@ -118,6 +118,9 @@
 		C22850832101CA81000FF959 /* MDFanshionCircleCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */; };
 		C24C620A210707E5007407CE /* ChannelDetailShowImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C6209210707E5007407CE /* ChannelDetailShowImgCell.m */; };
 		C24C620D210707FD007407CE /* ChannelDetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C620C210707FD007407CE /* ChannelDetailInfoCell.m */; };
+		C24C621021070EEB007407CE /* UploadNewDetailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C620F21070EEB007407CE /* UploadNewDetailScrollView.m */; };
+		C24C621321071894007407CE /* UploadNewDetailPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C621221071894007407CE /* UploadNewDetailPriceCell.m */; };
+		C24C621721071B20007407CE /* CustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C621621071B20007407CE /* CustomPageControl.m */; };
 		C264CE5720EDFC590053AD0E /* MDAddClothMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */; };
 		C29E2A3420F5DF0800DE9BAC /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A1F20F5DF0800DE9BAC /* WXUtil.mm */; };
 		C29E2A3520F5DF0800DE9BAC /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A2220F5DF0800DE9BAC /* ApiXml.mm */; };
@@ -469,6 +472,12 @@
 		C24C6209210707E5007407CE /* ChannelDetailShowImgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChannelDetailShowImgCell.m; sourceTree = "<group>"; };
 		C24C620B210707FD007407CE /* ChannelDetailInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChannelDetailInfoCell.h; sourceTree = "<group>"; };
 		C24C620C210707FD007407CE /* ChannelDetailInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChannelDetailInfoCell.m; sourceTree = "<group>"; };
+		C24C620E21070EEB007407CE /* UploadNewDetailScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadNewDetailScrollView.h; sourceTree = "<group>"; };
+		C24C620F21070EEB007407CE /* UploadNewDetailScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadNewDetailScrollView.m; sourceTree = "<group>"; };
+		C24C621121071894007407CE /* UploadNewDetailPriceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadNewDetailPriceCell.h; sourceTree = "<group>"; };
+		C24C621221071894007407CE /* UploadNewDetailPriceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadNewDetailPriceCell.m; sourceTree = "<group>"; };
+		C24C621521071B20007407CE /* CustomPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPageControl.h; sourceTree = "<group>"; };
+		C24C621621071B20007407CE /* CustomPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPageControl.m; sourceTree = "<group>"; };
 		C264CE5520EDFC590053AD0E /* MDAddClothMatchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAddClothMatchCell.h; sourceTree = "<group>"; };
 		C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCell.m; sourceTree = "<group>"; };
 		C29E29B920F5DF0700DE9BAC /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
@@ -1185,6 +1194,7 @@
 		99AA26FC20DE6DC70053CAB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C24C621421071B02007407CE /* UIPageControl */,
 				C2F5FBEF20EC756E00DC04FF /* FlipCarFlowLayout */,
 				C2F5FBE420EC60C400DC04FF /* CycleScrollView */,
 				C2CE595420EB831E001F1F47 /* StarView */,
@@ -1469,8 +1479,8 @@
 			children = (
 				99AA27AD20DE6DC70053CAB6 /* Trend */,
 				C2B053662106D4CD00102972 /* ChannelDetail */,
-				C2B053672106D4CD00102972 /* RecommendDetail */,
 				C2B053652106D4CD00102972 /* UploadNewDetail */,
+				C2B053672106D4CD00102972 /* RecommendDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1507,10 +1517,10 @@
 				99CD9C7820DF3147000BC7F0 /* MDTrendControl.m */,
 				C2B053682106D51000102972 /* MDChannelDetailCtrl.h */,
 				C2B053692106D51000102972 /* MDChannelDetailCtrl.m */,
-				C2B0536B2106D55E00102972 /* MDRecommendDetailCtrl.h */,
-				C2B0536C2106D55E00102972 /* MDRecommendDetailCtrl.m */,
 				C2B0536E2106D56B00102972 /* MDUploadNewDetailCtrl.h */,
 				C2B0536F2106D56B00102972 /* MDUploadNewDetailCtrl.m */,
+				C2B0536B2106D55E00102972 /* MDRecommendDetailCtrl.h */,
+				C2B0536C2106D55E00102972 /* MDRecommendDetailCtrl.m */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -1691,6 +1701,15 @@
 				C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */,
 			);
 			path = WardrobeHead;
+			sourceTree = "<group>";
+		};
+		C24C621421071B02007407CE /* UIPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				C24C621521071B20007407CE /* CustomPageControl.h */,
+				C24C621621071B20007407CE /* CustomPageControl.m */,
+			);
+			path = UIPageControl;
 			sourceTree = "<group>";
 		};
 		C29E29B220F5DF0700DE9BAC /* PayManager */ = {
@@ -2051,6 +2070,10 @@
 		C2B053652106D4CD00102972 /* UploadNewDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C24C620E21070EEB007407CE /* UploadNewDetailScrollView.h */,
+				C24C620F21070EEB007407CE /* UploadNewDetailScrollView.m */,
+				C24C621121071894007407CE /* UploadNewDetailPriceCell.h */,
+				C24C621221071894007407CE /* UploadNewDetailPriceCell.m */,
 			);
 			path = UploadNewDetail;
 			sourceTree = "<group>";
@@ -2484,6 +2507,7 @@
 				99AA281D20DE6DC80053CAB6 /* MZSelectableLabel.m in Sources */,
 				C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */,
 				99970F5C20DF2E1500AEC45E /* MDTabBarSubviews.m in Sources */,
+				C24C621021070EEB007407CE /* UploadNewDetailScrollView.m in Sources */,
 				C29E2C9B20F5F06400DE9BAC /* MD5DataSigner.m in Sources */,
 				C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */,
 				99CD9C7C20DF3185000BC7F0 /* MDWardrobeControl.m in Sources */,
@@ -2493,8 +2517,10 @@
 				99AA281420DE6DC80053CAB6 /* BaseJumpModel.m in Sources */,
 				99AA283920DE6DC80053CAB6 /* UIImage+Blur.m in Sources */,
 				999D3FD620E28DF500950040 /* MDExceptionManager.m in Sources */,
+				C24C621721071B20007407CE /* CustomPageControl.m in Sources */,
 				C29E2CA020F5F06400DE9BAC /* DataVerifier.m in Sources */,
 				99AA280C20DE6DC80053CAB6 /* VPImageCropperViewController.m in Sources */,
+				C24C621321071894007407CE /* UploadNewDetailPriceCell.m in Sources */,
 				C2A832AB20EF512300A821E6 /* XHLaunchAdView.m in Sources */,
 				C2FF1A2320ECA30C0017DFF5 /* WardrobeAfterClothCell.m in Sources */,
 				C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */,

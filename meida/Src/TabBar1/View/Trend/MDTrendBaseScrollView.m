@@ -174,15 +174,16 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_cellType == CellTypeChannel) {
+        // 
         MDChannelDetailCtrl *vc = [[MDChannelDetailCtrl alloc] init];
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
     }
     else if (_cellType == CellTypeUploadNew){
-        MDRecommendDetailCtrl *vc = [[MDRecommendDetailCtrl alloc] init];
+        MDUploadNewDetailCtrl *vc = [[MDUploadNewDetailCtrl alloc] init];
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
     }
     else if (_cellType == CellTypeRecommend){
-        MDUploadNewDetailCtrl *vc = [[MDUploadNewDetailCtrl alloc] init];
+        MDRecommendDetailCtrl *vc = [[MDRecommendDetailCtrl alloc] init];
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
     }
 }

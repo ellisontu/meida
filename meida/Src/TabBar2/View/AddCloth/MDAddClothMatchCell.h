@@ -16,7 +16,20 @@
 @end
 
 
-#pragma mark -  衣橱 -> 我的衣橱 -> 搭配 object 物件 cell #############################################----------
+
+
+#pragma mark -  衣橱 -> 我的衣橱 -> 搭配物件 cell         #############################################----------
+@interface MDAddClothMatchObjCell : UITableViewCell
+
+@end
+
+@interface MDAddClothMatchObjCellItem : UICollectionViewCell
+
+@end
+
+
+
+#pragma mark -  衣橱 -> 我的衣橱 -> 搭配 tags 场所&天气 cell #############################################----------
 @interface MDAddClothMatchTagCell : UITableViewCell
 
 @property (nonatomic, strong) MDAddClothGroupTagModel *groupTag;

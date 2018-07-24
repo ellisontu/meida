@@ -35,19 +35,26 @@
     
     _showImgView = [[UIImageView alloc] init];
     _addBtnView  = [[UIButton alloc] init];
+    UIView *lineView = [[UIView alloc] init];
     
     [self.contentView addSubview:_showImgView];
     [self.contentView addSubview:_addBtnView];
+    [self.contentView addSubview:lineView];
     
     [_showImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, SCR_WIDTH));
-        make.centerX.equalTo(self);
-        make.centerY.equalTo(self);
+        make.centerX.equalTo(self.contentView);
+        make.centerY.equalTo(self.contentView);
     }];
     [_addBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, SCR_WIDTH));
-        make.centerX.equalTo(self);
-        make.centerY.equalTo(self);
+        make.centerX.equalTo(self.contentView);
+        make.centerY.equalTo(self.contentView);
+    }];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, 1.f));
+        make.bottom.equalTo(self.contentView);
+        make.centerX.equalTo(self.contentView);
     }];
     
     [_addBtnView setImage:IMAGE(@"camera_icon") forState:UIControlStateNormal];
@@ -56,8 +63,9 @@
     _addBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(15);
     
     CGFloat offset = 25.f;
-    _addBtnView.titleEdgeInsets = UIEdgeInsetsMake(_addBtnView.imageView.height + offset, -_addBtnView.imageView.width, 100,0);
-    _addBtnView.imageEdgeInsets = UIEdgeInsetsMake(0, _addBtnView.titleLabel.width/2, _addBtnView.titleLabel.height + 135, -_addBtnView.titleLabel.width/2);
+    _addBtnView.titleEdgeInsets = UIEdgeInsetsMake(_addBtnView.imageView.height + offset, -_addBtnView.imageView.width, 55,0);
+    _addBtnView.imageEdgeInsets = UIEdgeInsetsMake(0, _addBtnView.titleLabel.width/2, _addBtnView.titleLabel.height + 85, -_addBtnView.titleLabel.width/2);
+    lineView.backgroundColor = COLOR_HEX_STR(@"#E7E7E7");
     
 }
 
@@ -65,14 +73,137 @@
 
 
 
+#pragma mark -  衣橱 -> 我的衣橱 -> 搭配物件 cell         #############################################----------
+static NSString *MDAddClothMatchObjCellItemID = @"MDAddClothMatchObjCellItem";
 
-#pragma mark -  衣橱 -> 我的衣橱 -> 搭配 object 物件 cell #############################################----------
-static NSString *MDAddClothMatchTagCellItemID = @"MDAddClothMatchTagCellItem";
-@interface MDAddClothMatchTagCell ()<UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface MDAddClothMatchObjCell ()<UICollectionViewDataSource, UICollectionViewDelegate>
+
 @property (nonatomic, strong) UILabel           *titleLblView;
 @property (nonatomic, strong) UICollectionView  *collectionView;
-@property (nonatomic, strong) UIView            *sepelineView;
 
+@end
+
+@implementation MDAddClothMatchObjCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self initView];
+    }
+    return self;
+}
+
+- (void)initView
+{
+    self.contentView.backgroundColor = COLOR_WITH_WHITE;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    // 1. 标题
+    _titleLblView   = [[UILabel alloc] init];
+    [self.contentView addSubview:_titleLblView];
+    [_titleLblView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(kOffPadding);
+        make.top.equalTo(self.contentView).offset(kOffset);
+    }];
+    _titleLblView.font = FONT_SYSTEM_BOLD(12);
+    _titleLblView.textColor = kDefaultTitleColor;
+    _titleLblView.text = @"搭配物件";
+    
+    // 2.1 flowLayout
+    NSInteger cellNum = 0;
+    if (SCR_WIDTH >= 375){
+        cellNum = 6;
+    }
+    else if (SCR_WIDTH >= 320){
+        cellNum = 5;
+    }
+    CGFloat margin = 10;
+    CGFloat itemW = (SCR_WIDTH - (cellNum + 1) * margin) / cellNum;
+    CGFloat itemH = 40.f;
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.sectionInset = UIEdgeInsetsZero;
+    flowLayout.itemSize = CGSizeMake(itemW, itemH);
+    flowLayout.minimumInteritemSpacing = margin;
+    flowLayout.minimumLineSpacing = margin;
+    flowLayout.sectionInset = UIEdgeInsetsMake(margin, margin, margin, margin);
+    
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
+    _collectionView.alwaysBounceHorizontal = NO;
+    _collectionView.showsHorizontalScrollIndicator = NO;
+    _collectionView.bounces = NO;
+    self.collectionView.scrollEnabled = NO;
+    
+    [_collectionView registerClass:[MDAddClothMatchObjCellItem class] forCellWithReuseIdentifier:MDAddClothMatchObjCellItemID];
+    
+    // 设置collectionView
+    self.collectionView.dataSource = self;
+    self.collectionView.scrollEnabled = NO;
+    [self.contentView addSubview:_collectionView];
+    [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLblView.mas_bottom).offset(5.f);
+        make.left.equalTo(self.contentView);
+        make.right.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
+    }];
+    //3. 分割线
+    UIView *lineView = [[UIView alloc] init];
+    [self.contentView addSubview:lineView];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
+        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, 1.f));
+    }];
+    lineView.backgroundColor = COLOR_HEX_STR(@"#E7E7E7");
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_collectionView reloadData];
+}
+
+@end
+
+@interface MDAddClothMatchObjCellItem ()
+
+@end
+
+@implementation MDAddClothMatchObjCellItem
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self initView];
+    }
+    return self;
+}
+
+- (void)initView
+{
+    self.contentView.backgroundColor = [UIColor orangeColor];
+}
+
+@end
+
+
+
+
+#pragma mark -  衣橱 -> 我的衣橱 -> 搭配 tags 场所&天气 cell #############################################----------
+static NSString *MDAddClothMatchTagCellItemID = @"MDAddClothMatchTagCellItem";
+@interface MDAddClothMatchTagCell ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic, strong) UILabel           *titleLblView;
+@property (nonatomic, strong) UICollectionView  *collectionView;
 
 @end
 
@@ -93,6 +224,13 @@ static NSString *MDAddClothMatchTagCellItemID = @"MDAddClothMatchTagCellItem";
     // 1. 标题
     _titleLblView   = [[UILabel alloc] init];
     [self.contentView addSubview:_titleLblView];
+    [_titleLblView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(kOffPadding);
+        make.top.equalTo(self.contentView).offset(kOffset);
+    }];
+    _titleLblView.font = FONT_SYSTEM_BOLD(12);
+    _titleLblView.textColor = kDefaultTitleColor;
+    _titleLblView.text = @"搭配物件";
     
     // 2.1 flowLayout
     NSInteger cellNum = 0;
@@ -128,7 +266,10 @@ static NSString *MDAddClothMatchTagCellItemID = @"MDAddClothMatchTagCellItem";
     self.collectionView.scrollEnabled = NO;
     [self.contentView addSubview:_collectionView];
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contentView);
+        make.top.equalTo(self.titleLblView.mas_bottom).offset(5.f);
+        make.left.equalTo(self.contentView);
+        make.right.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
     }];
     
     self.groupTag = [[MDAddClothGroupTagModel alloc] init];
@@ -140,6 +281,16 @@ static NSString *MDAddClothMatchTagCellItemID = @"MDAddClothMatchTagCellItem";
         [self.groupTag.tagsArr addObject:model];
     }
     [_collectionView reloadData];
+    
+    //3. 分割线
+    UIView *lineView = [[UIView alloc] init];
+    [self.contentView addSubview:lineView];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
+        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, 1.f));
+    }];
+    lineView.backgroundColor = COLOR_HEX_STR(@"#E7E7E7");
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

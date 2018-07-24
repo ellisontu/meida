@@ -12,6 +12,10 @@
 #import "MDTrendUploadNewCell.h"
 #import "MDTrendRecommendCell.h"
 
+#import "MDChannelDetailCtrl.h"
+#import "MDRecommendDetailCtrl.h"
+#import "MDUploadNewDetailCtrl.h"
+
 #define ksegmentHH 49
 static NSString *MDTrendChannelCellID   = @"MDTrendChannelCell";
 static NSString *MDTrendUploadNewCellID = @"MDTrendUploadNewCell";
@@ -165,6 +169,22 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
             break;
     }
     return CGSizeZero;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_cellType == CellTypeChannel) {
+        MDChannelDetailCtrl *vc = [[MDChannelDetailCtrl alloc] init];
+        [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+    }
+    else if (_cellType == CellTypeUploadNew){
+        MDRecommendDetailCtrl *vc = [[MDRecommendDetailCtrl alloc] init];
+        [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+    }
+    else if (_cellType == CellTypeRecommend){
+        MDUploadNewDetailCtrl *vc = [[MDUploadNewDetailCtrl alloc] init];
+        [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+    }
 }
 
 

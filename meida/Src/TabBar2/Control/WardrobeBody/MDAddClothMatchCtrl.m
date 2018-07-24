@@ -99,10 +99,10 @@ static NSString *MDAddClothMatchTagCellID    = @"MDAddClothMatchTagCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
     if (0 == row) {
-        return SCR_WIDTH;
+        return SCR_WIDTH * 0.71f;
     }
     else if (1 == row){
-        return 110;
+        return 150;
     }
     else if (2 == row){
         return 110;

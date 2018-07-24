@@ -89,7 +89,15 @@
         make.left.equalTo(self.contentView).offset(kOffPadding);
         make.right.equalTo(self.contentView).offset(-kOffPadding);
     }];
-    
+    _titleLblView.font = FONT_SYSTEM_BOLD(14);
+    _titleLblView.textColor = kDefaultTitleColor;
+    _titleLblView.text = @"货品描述";
+    _descLblView.font = FONT_SYSTEM_NORMAL(14);
+    _descLblView.textColor = COLOR_HEX_STR(@"#8C959F");
+    _descLblView.numberOfLines = 0;
+    _descLblView.text = @"品牌名称：诗丹帝国\n"
+    "更多参数产品参数：\n"
+    "上市年份季节: 2018年夏季材质成分: 棉95%\n 聚氨酯弹性纤维(氨纶)5%货号: DSA409-2-PK26销售渠道类型: 纯电商(只在线上销售)面料分类: 针织料品牌: 诗丹帝国厚薄: 薄基础风格: 青春流行";
     
     
 }

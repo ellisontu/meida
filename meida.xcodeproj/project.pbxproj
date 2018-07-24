@@ -11,6 +11,7 @@
 		9921785320E28484001C6A76 /* MDNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9921785220E28484001C6A76 /* MDNetWorking.m */; };
 		9921785620E284DF001C6A76 /* MDHttpSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9921785520E284DF001C6A76 /* MDHttpSessionManager.m */; };
 		9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9921785820E28AEC001C6A76 /* MDErrorModel.m */; };
+		992C475021076A4000CD8AB6 /* RecommendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 992C474F21076A4000CD8AB6 /* RecommendDetailCell.m */; };
 		99339BF420E13A4F00E45EC7 /* MDRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 99339BF320E13A4F00E45EC7 /* MDRefreshGifHeader.m */; };
 		99339BF720E13A9C00E45EC7 /* MDRefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 99339BF620E13A9C00E45EC7 /* MDRefreshGifFooter.m */; };
 		997E63B520E7B4E900B237EC /* MDShareInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 997E63B420E7B4E900B237EC /* MDShareInfoModel.m */; };
@@ -227,6 +228,8 @@
 		9921785520E284DF001C6A76 /* MDHttpSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDHttpSessionManager.m; sourceTree = "<group>"; };
 		9921785720E28AEC001C6A76 /* MDErrorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDErrorModel.h; sourceTree = "<group>"; };
 		9921785820E28AEC001C6A76 /* MDErrorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDErrorModel.m; sourceTree = "<group>"; };
+		992C474E21076A4000CD8AB6 /* RecommendDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RecommendDetailCell.h; path = ../../../../../../../../../Documents/RecommendDetailCell.h; sourceTree = "<group>"; };
+		992C474F21076A4000CD8AB6 /* RecommendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RecommendDetailCell.m; path = ../../../../../../../../../Documents/RecommendDetailCell.m; sourceTree = "<group>"; };
 		99339BF220E13A4F00E45EC7 /* MDRefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRefreshGifHeader.h; sourceTree = "<group>"; };
 		99339BF320E13A4F00E45EC7 /* MDRefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDRefreshGifHeader.m; sourceTree = "<group>"; };
 		99339BF520E13A9C00E45EC7 /* MDRefreshGifFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRefreshGifFooter.h; sourceTree = "<group>"; };
@@ -852,6 +855,15 @@
 				3C96EC7282EC5535F39C5FF3 /* Pods-meida.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		992C474D210769AD00CD8AB6 /* RecommendDetail */ = {
+			isa = PBXGroup;
+			children = (
+				992C474E21076A4000CD8AB6 /* RecommendDetailCell.h */,
+				992C474F21076A4000CD8AB6 /* RecommendDetailCell.m */,
+			);
+			path = RecommendDetail;
 			sourceTree = "<group>";
 		};
 		99AA265F20DE6BAE0053CAB6 = {
@@ -1480,7 +1492,7 @@
 				99AA27AD20DE6DC70053CAB6 /* Trend */,
 				C2B053662106D4CD00102972 /* ChannelDetail */,
 				C2B053652106D4CD00102972 /* UploadNewDetail */,
-				C2B053672106D4CD00102972 /* RecommendDetail */,
+				992C474D210769AD00CD8AB6 /* RecommendDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2089,13 +2101,6 @@
 			path = ChannelDetail;
 			sourceTree = "<group>";
 		};
-		C2B053672106D4CD00102972 /* RecommendDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RecommendDetail;
-			sourceTree = "<group>";
-		};
 		C2CE593920EB46F9001F1F47 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2500,6 +2505,7 @@
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
 				C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */,
+				992C475021076A4000CD8AB6 /* RecommendDetailCell.m in Sources */,
 				99AA287320DE6DC80053CAB6 /* ttc_encrypt_v2.c in Sources */,
 				99AA280320DE6DC80053CAB6 /* UserAnalyticsModel.m in Sources */,
 				C2F5FBEA20EC626600DC04FF /* MDPageControl.m in Sources */,

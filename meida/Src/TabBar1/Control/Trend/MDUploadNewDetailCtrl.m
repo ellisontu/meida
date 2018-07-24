@@ -10,11 +10,12 @@
 #import "UploadNewDetailScrollView.h"
 #import "UploadNewDetailPriceCell.h"
 
+static CGFloat kbottomViewH = 60.f;
 static NSString *UploadNewDetailPriceCellID     = @"UploadNewDetailPriceCell";
-
 @interface MDUploadNewDetailCtrl ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UploadNewDetailScrollView *headScrollView;
+@property (nonatomic, strong) UploadNewDetailBottomView *bottomView;
 
 @end
 
@@ -32,7 +33,7 @@ static NSString *UploadNewDetailPriceCellID     = @"UploadNewDetailPriceCell";
     [self setNavigationType:NavShowBackAndTitle];
     [self setTitle:@"上新详情"];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_HEIGHT - kHeaderHeight) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_HEIGHT - kHeaderHeight - kbottomViewH) style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.dataSource = self;
@@ -44,6 +45,7 @@ static NSString *UploadNewDetailPriceCellID     = @"UploadNewDetailPriceCell";
     self.headScrollView.picsArr = @[@"https://pro.modao.cc/uploads3/images/2007/20078316/raw_1526137029.png",
                                     @"https://pro.modao.cc/uploads3/images/2007/20078316/raw_1526137029.png",
                                     @"https://pro.modao.cc/uploads3/images/2007/20078316/raw_1526137029.png"];
+    self.bottomView.hidden = NO;
     
 }
 
@@ -78,6 +80,21 @@ static NSString *UploadNewDetailPriceCellID     = @"UploadNewDetailPriceCell";
         self.tableView.tableHeaderView = _headScrollView;
     }
     return _headScrollView;
+}
+
+- (UploadNewDetailBottomView *)bottomView
+{
+    if (!_bottomView) {
+        _bottomView = [[UploadNewDetailBottomView alloc] init];
+        _bottomView.hidden = YES;
+        [self.view addSubview:_bottomView];
+        [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, kbottomViewH));
+            make.centerX.equalTo(self.view);
+            make.bottom.equalTo(self.view);
+        }];
+    }
+    return _bottomView;
 }
 
 @end

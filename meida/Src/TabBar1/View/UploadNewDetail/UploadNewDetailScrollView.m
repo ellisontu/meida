@@ -103,3 +103,58 @@
 }
 
 @end
+
+
+
+@interface UploadNewDetailBottomView ()
+
+@end
+
+@implementation UploadNewDetailBottomView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self initView];
+    }
+    return self;
+}
+
+- (void)initView
+{
+    self.backgroundColor = COLOR_WITH_WHITE;
+    
+    UIButton *consultBtn   = [[UIButton alloc] init];
+    UIButton *callChiefBtn = [[UIButton alloc] init];
+    
+    [self addSubview:consultBtn];
+    [self addSubview:callChiefBtn];
+    
+    [consultBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self);
+        make.left.equalTo(self);
+        make.height.equalTo(self);
+        make.right.equalTo(callChiefBtn.mas_left);
+    }];
+    [callChiefBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self);
+        make.right.equalTo(self);
+        make.height.equalTo(self);
+        make.width.equalTo(consultBtn);
+    }];
+    
+    [consultBtn setBackgroundColor:COLOR_HEX_STR(@"#FEEA8D")];
+    [consultBtn setImage:IMAGE(@"consult_icon") forState:UIControlStateNormal];
+    [consultBtn setTitle:@"  咨询服搭师" forState:UIControlStateNormal];
+    [consultBtn setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
+    consultBtn.titleLabel.font = FONT_SYSTEM_NORMAL(17);
+    
+    [callChiefBtn setBackgroundColor:COLOR_HEX_STR(@"#3E84E0")];
+    [callChiefBtn setImage:IMAGE(@"call_chief_icon") forState:UIControlStateNormal];
+    [callChiefBtn setTitle:@"  对话店长" forState:UIControlStateNormal];
+    [callChiefBtn setTitleColor:COLOR_WITH_WHITE forState:UIControlStateNormal];
+    callChiefBtn.titleLabel.font = FONT_SYSTEM_NORMAL(17);
+    
+}
+
+@end

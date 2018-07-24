@@ -13,3 +13,8 @@
 @property (nonatomic, strong) NSArray   *picsArr;
 
 @end
+
+@interface UploadNewDetailBottomView : UIView
+
+
+@end

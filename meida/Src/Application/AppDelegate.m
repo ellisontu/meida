@@ -11,7 +11,7 @@
 #import "WXApi.h"
 #import "NSString+URLEncoding.h"
 #import "MDTabBarManager.h"
-#import "LSFileManage.h"
+#import "LocalFileManager.h"
 #import "MDCacheFileManager.h"
 #import "MDExceptionManager.h"
 #import "EncryptionMethods.h"
@@ -101,7 +101,7 @@ void uncaughtExceptionHandler(NSException *exception)
         _navigation = [[MDNavigationController alloc] initWithRootViewController:_rvc];
         self.window.rootViewController = _navigation;
         [self.window makeKeyAndVisible];
-        _rvc.tabbar.selectedIndex = 0;
+        _rvc.tabbar.selectedIndex = 1;
     }
 }
 

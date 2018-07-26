@@ -1,5 +1,5 @@
 //
-//  LSFileManage.h
+//  LocalFileManager.h
 //  meida
 //
 //  Created by ToTo on 2018/6/26.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LSFileManage : NSObject
+@interface LocalFileManager : NSObject
 
 /**------------------- FileManage methods -------------------**/
 

@@ -7,6 +7,7 @@
 //
 
 #import "MDMyWardrobeCtrl.h"
+#import "MDWardrobeRecordCtrl.h"
 
 #pragma mark -  衣橱 -> 我的衣橱 -> vc #############################################----------
 static NSString *MDMyWardrobeCtrlCellID = @"MDMyWardrobeCtrlCell";
@@ -28,7 +29,7 @@ static NSString *MDMyWardrobeCtrlCellID = @"MDMyWardrobeCtrlCell";
     self.view.backgroundColor = COLOR_WITH_WHITE;
     [self setNavigationType:NavShowBackAndTitleAndRight];
     [self setTitle:@"我的衣橱"];
-    [self setRightBtnWith:@"" image:IMAGE(@"navi_right_icon")];
+    [self setRightBtnWith:@"" image:IMAGE(@"camera_icon")];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.sectionInset = UIEdgeInsetsMake(kOffset, kOffset, 0, kOffset);
@@ -45,6 +46,13 @@ static NSString *MDMyWardrobeCtrlCellID = @"MDMyWardrobeCtrlCell";
     self.collectionView.backgroundColor = COLOR_WITH_WHITE;
     [self.collectionView registerClass:[MDMyWardrobeCtrlCell class] forCellWithReuseIdentifier:MDMyWardrobeCtrlCellID];
     
+}
+
+- (void)rightBtnTapped:(id)sender
+{
+    [super rightBtnTapped:sender];
+    MDWardrobeRecordCtrl *vc = [[MDWardrobeRecordCtrl alloc] init];
+    [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -138,6 +146,7 @@ static NSString *MDMyWardrobeCtrlCellID = @"MDMyWardrobeCtrlCell";
     _countLblView.text = @"1990件";
     [_showImgView imageWithUrlStr:@"https://pro.modao.cc/uploads3/images/1665/16654097/raw_1516592335.png" placeholderImage:IMAGE(@"place_holer_icon")];
 }
+
 
 @end
 

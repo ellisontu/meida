@@ -7,7 +7,7 @@
 //
 
 #import "MDTabBarManager.h"
-#import "LSFileManage.h"
+#import "LocalFileManager.h"
 #import "ZipArchive.h"
 #import <UIImage+GIF.h>
 #import "EncryptionMethods.h"
@@ -169,10 +169,10 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
                 NSArray *contents = [fileManager contentsOfDirectoryAtPath:weakPtr.folderDirectory error:NULL];
                 if (!arrayIsEmpty(contents)) {
                     // 清空本地文件
-                    [LSFileManage deleteAllFileFromFolderPath:weakPtr.folderDirectory];
+                    [LocalFileManager deleteAllFileFromFolderPath:weakPtr.folderDirectory];
                 }
                 NSString *filePath = [weakPtr.folderDirectory stringByAppendingPathComponent:kFileName];
-                BOOL flag = [LSFileManage saveDataToPathName:filePath WithData:[NSData dataWithData:(NSData *)obj]];
+                BOOL flag = [LocalFileManager saveDataToPathName:filePath WithData:[NSData dataWithData:(NSData *)obj]];
                 if (flag) {
                     [[NSUserDefaults standardUserDefaults] setObject:zipParams forKey:@"tabBarCheckKey"];
                     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -200,7 +200,7 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
             
             DLog(@"unzip success");
             //删除压缩包(即 FOLDER_NAME 文件夹下，FILE_NAME 文件)
-            [LSFileManage deleteFileAtPath:filePath];
+            [LocalFileManager deleteFileAtPath:filePath];
             _duringActive = YES;
         }
         else {
@@ -227,7 +227,7 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
 
 - (void)resetTabBarCheckKey
 {
-    [LSFileManage deleteAllFileFromFolderPath:_folderDirectory];
+    [LocalFileManager deleteAllFileFromFolderPath:_folderDirectory];
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"tabBarCheckKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

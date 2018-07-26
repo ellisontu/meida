@@ -14,7 +14,7 @@
 #import "Themes.h"
 #import "Photos/Photos.h"
 #import "MDTopLoadingView.h"
-#import "LSFileManage.h"
+#import "LocalFileManager.h"
 //#import "GeTuiSdk.h"
 #import "NSString+URLEncoding.h"
 #import "MDDeviceManager.h"

@@ -1,14 +1,14 @@
 //
-//  LSFileManage.m
+//  LocalFileManager.m
 //  meida
 //
 //  Created by ToTo on 2018/6/26.
 //  Copyright © 2018年 ymfashion. All rights reserved.
 //
 
-#import "LSFileManage.h"
+#import "LocalFileManager.h"
 
-@implementation LSFileManage
+@implementation LocalFileManager
 
 /*** 获取应用沙盒根路径 ***/
 + (NSString *)getDirHomePath
@@ -34,7 +34,7 @@
     //[NSHomeDirectory() stringByAppendingPathComponent:@"Library"];
     //第2种方法
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *libraryDirectory = [paths objectAtIndex:0];
+    NSString *libraryDirectory = [paths firstObject];
     return libraryDirectory;
 }
 
@@ -42,7 +42,7 @@
 + (NSString *)getCachePath
 {
     NSArray *cacPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *cachePath = [cacPath objectAtIndex:0];
+    NSString *cachePath = [cacPath firstObject];
     return cachePath;
 }
 
@@ -60,7 +60,7 @@
 /*** Cache 目录下，创建 folderName 文件夹(目录) ***/
 + (NSString *)createCachePathWithFolderName:(NSString *)folderName
 {
-    NSString *documentsPath = [LSFileManage getCachePath];
+    NSString *documentsPath = [LocalFileManager getCachePath];
     NSString *folderDirectory = [documentsPath stringByAppendingPathComponent:folderName]; //eg:@"test"
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
@@ -83,7 +83,7 @@
 
 + (NSString *)saveDataToFolder:(NSString *)folder fileName:(NSString *)fileName data:(NSData *)data
 {
-    NSString *folderPath = [LSFileManage createCacheDirectorWithFolderName:folder];
+    NSString *folderPath = [LocalFileManager createCacheDirectorWithFolderName:folder];
     
     NSString *filePath = nil;
     if (stringIsEmpty(folderPath)) { //如果文件夹路径为空，默认保存在 Documents 目录下
@@ -109,7 +109,7 @@
 /*** 到 Caches 下指定文件夹里读取图片 ***/
 + (UIImage *)readCacheDirectorImageWithFolderName:(NSString *)folderName ImageName:(NSString *)imageName
 {
-    NSString *documentsPath = [LSFileManage getCachePath];
+    NSString *documentsPath = [LocalFileManager getCachePath];
     NSString *folderDirectory = [documentsPath stringByAppendingPathComponent:folderName]; //eg:@"test"
     NSString *imagePath = [folderDirectory stringByAppendingPathComponent:imageName];
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
@@ -138,7 +138,7 @@
 /*** Caches 目录下，创建 folderName 文件夹(目录) ***/
 + (NSString *)createCacheDirectorWithFolderName:(NSString *)folderName
 {
-    NSString *cachePath = [LSFileManage getCachePath];
+    NSString *cachePath = [LocalFileManager getCachePath];
     NSString *folderDirectory = [cachePath stringByAppendingPathComponent:folderName]; //eg:@"test"
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
@@ -164,7 +164,7 @@
 /*** Documents 目录下，创建 folderName 文件夹(目录) ***/
 + (NSString *)createDirectorWithFolderName:(NSString *)folderName
 {
-    NSString *documentsPath = [LSFileManage getDocumentsPath];
+    NSString *documentsPath = [LocalFileManager getDocumentsPath];
     NSString *folderDirectory = [documentsPath stringByAppendingPathComponent:folderName]; //eg:@"test"
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
@@ -188,7 +188,7 @@
 /*** Documents 目录下, folderName 文件夹(目录)下 新建文件 fileName ***/
 + (NSString *)createFileWithFolderName:(NSString *)folderName AndFileName:(NSString *)fileName
 {
-    NSString *documentsPath = [LSFileManage getDocumentsPath];
+    NSString *documentsPath = [LocalFileManager getDocumentsPath];
     NSString *folderDirectory = [documentsPath stringByAppendingPathComponent:folderName]; //eg:@"test"
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *filePath = [folderDirectory stringByAppendingPathComponent:fileName]; //eg:@"test.txt"
@@ -236,7 +236,7 @@
 /*** 写数据到文件 ***/
 + (BOOL)writeToFileWithFolderName:(NSString *)folderName FileName:(NSString *)fileName AndContentString:(NSString *)content
 {
-    NSString *documentsPath = [LSFileManage getDocumentsPath];
+    NSString *documentsPath = [LocalFileManager getDocumentsPath];
     NSString *folderDirectory = [documentsPath stringByAppendingPathComponent:folderName]; //eg:@"test"
     NSString *filePath = [folderDirectory stringByAppendingPathComponent:fileName];      //eg:@"test.txt"
     NSError *error = nil;
@@ -254,7 +254,7 @@
 /*** 读取文件 ***/
 - (NSString *)readFileWithFolderName:(NSString *)folderName FileName:(NSString *)fileName
 {
-    NSString *documentsPath = [LSFileManage getDocumentsPath];
+    NSString *documentsPath = [LocalFileManager getDocumentsPath];
     NSString *folderDirectory = [documentsPath stringByAppendingPathComponent:folderName]; //eg:@"test"
     NSString *filePath = [folderDirectory stringByAppendingPathComponent:fileName];      //eg:@"test.txt"
     //NSData *data = [NSData dataWithContentsOfFile:testPath];
@@ -296,7 +296,7 @@
 + (NSString *)saveDataToFolderName:(NSString *)folderName WithData:(NSData *)data
 {
     if (data != nil) {
-        NSString *documentsPath = [LSFileManage getDocumentsPath];
+        NSString *documentsPath = [LocalFileManager getDocumentsPath];
         NSString *filePath = [documentsPath stringByAppendingPathComponent:folderName];
         BOOL flag = [data writeToFile:filePath atomically:NO];
         if (flag) {
@@ -317,7 +317,7 @@
 /*** 到 Documents 下指定文件夹里读取图片 ***/
 + (NSString *)readImageWithFolderName:(NSString *)folderName ImageName:(NSString *)imageName
 {
-    NSString *documentsPath = [LSFileManage getDocumentsPath];
+    NSString *documentsPath = [LocalFileManager getDocumentsPath];
     NSString *folderDirectory = [documentsPath stringByAppendingPathComponent:folderName]; //eg:@"test"
     NSString *imagePath = [folderDirectory stringByAppendingPathComponent:imageName];
     //UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
@@ -360,7 +360,7 @@
  **/
 + (NSDictionary *)fileAttriutesWithFolderName:(NSString *)folderName FileName:(NSString *)fileName
 {
-    NSString *documentsPath = [LSFileManage getDocumentsPath];
+    NSString *documentsPath = [LocalFileManager getDocumentsPath];
     NSString *folderDirectory = [documentsPath stringByAppendingPathComponent:folderName];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *filePath = [folderDirectory stringByAppendingPathComponent:fileName];
@@ -400,7 +400,7 @@
                 directorySize += [self getDirectorySizeAtPath:filePath];
             }
             else {
-                double size = [LSFileManage getFileSizeAtPath:filePath];
+                double size = [LocalFileManager getFileSizeAtPath:filePath];
                 directorySize += size;
             }
         }
@@ -419,7 +419,7 @@
 /*** 删除指定路径的文件 ***/
 + (BOOL)deleteFileAtPath:(NSString *)path
 {
-    BOOL isExist = [LSFileManage isExistFileAtPath:path];
+    BOOL isExist = [LocalFileManager isExistFileAtPath:path];
     if (isExist) {
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error = nil;
@@ -442,7 +442,7 @@
 /*** 删除指定路径文件夹下的所有文件 ***/
 + (BOOL)deleteAllFileFromFolderPath:(NSString *)folderPath
 {
-    BOOL isExist = [LSFileManage isExistFileAtPath:folderPath];
+    BOOL isExist = [LocalFileManager isExistFileAtPath:folderPath];
     if (isExist) {
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error = nil;
@@ -508,7 +508,7 @@
         NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
         if([[fileName pathExtension] isEqualToString:@"mp4"]){
             
-            [LSFileManage deleteFileAtPath:fileAbsolutePath];
+            [LocalFileManager deleteFileAtPath:fileAbsolutePath];
         }
     }
 }
@@ -518,9 +518,9 @@
  */
 + (void)logAllFileAndSize
 {
-    NSString *documentsPath = [LSFileManage getDocumentsPath];
-    NSString *cachesPath = [LSFileManage getCachePath];
-    NSString *tmpPath = [LSFileManage getTmpPath];
+    NSString *documentsPath = [LocalFileManager getDocumentsPath];
+    NSString *cachesPath = [LocalFileManager getCachePath];
+    NSString *tmpPath = [LocalFileManager getTmpPath];
 //    NSArray *array = @[documentsPath, cachesPath, tmpPath];
     NSString *boxPath = [documentsPath stringByAppendingPathComponent:kVideoDraftBoxFile];
     NSArray *array = @[boxPath];
@@ -549,7 +549,7 @@ void _logFilesInfo(NSString *path)
                 _logFilesInfo(filePath);
             }
             else {
-                double size = [LSFileManage getFileSizeAtPath:filePath];
+                double size = [LocalFileManager getFileSizeAtPath:filePath];
                 DLog(@"fileName = %@, size = %lf", filePath, size);
             }
         }

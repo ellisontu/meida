@@ -11,7 +11,6 @@
 		9921785320E28484001C6A76 /* MDNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9921785220E28484001C6A76 /* MDNetWorking.m */; };
 		9921785620E284DF001C6A76 /* MDHttpSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9921785520E284DF001C6A76 /* MDHttpSessionManager.m */; };
 		9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9921785820E28AEC001C6A76 /* MDErrorModel.m */; };
-		992C475021076A4000CD8AB6 /* RecommendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 992C474F21076A4000CD8AB6 /* RecommendDetailCell.m */; };
 		99339BF420E13A4F00E45EC7 /* MDRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 99339BF320E13A4F00E45EC7 /* MDRefreshGifHeader.m */; };
 		99339BF720E13A9C00E45EC7 /* MDRefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 99339BF620E13A9C00E45EC7 /* MDRefreshGifFooter.m */; };
 		997E63B520E7B4E900B237EC /* MDShareInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 997E63B420E7B4E900B237EC /* MDShareInfoModel.m */; };
@@ -93,7 +92,7 @@
 		99AA287520DE6DC80053CAB6 /* SAMKeychain.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 99AA27F320DE6DC80053CAB6 /* SAMKeychain.bundle */; };
 		99AA287620DE6DC80053CAB6 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA27F520DE6DC80053CAB6 /* SAMKeychain.m */; };
 		99AA288F20DE6F580053CAB6 /* AnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA287820DE6F520053CAB6 /* AnimationManager.m */; };
-		99AA289020DE6F580053CAB6 /* LSFileManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA287A20DE6F530053CAB6 /* LSFileManage.m */; };
+		99AA289020DE6F580053CAB6 /* LocalFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA287A20DE6F530053CAB6 /* LocalFileManager.m */; };
 		99AA289120DE6F580053CAB6 /* LSStringTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA287B20DE6F530053CAB6 /* LSStringTools.m */; };
 		99AA289220DE6F580053CAB6 /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA287E20DE6F540053CAB6 /* RSAEncryptor.m */; };
 		99AA289320DE6F580053CAB6 /* HandleOpenUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99AA288320DE6F550053CAB6 /* HandleOpenUrlManager.m */; };
@@ -123,6 +122,10 @@
 		C24C621321071894007407CE /* UploadNewDetailPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C621221071894007407CE /* UploadNewDetailPriceCell.m */; };
 		C24C621721071B20007407CE /* CustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C621621071B20007407CE /* CustomPageControl.m */; };
 		C264CE5720EDFC590053AD0E /* MDAddClothMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */; };
+		C27E20FB21081BC800E95228 /* RecommendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E20FA21081BC800E95228 /* RecommendDetailCell.m */; };
+		C27E20FE2108202600E95228 /* MDWardrobeRecordCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E20FD2108202600E95228 /* MDWardrobeRecordCtrl.m */; };
+		C27E210221087B2800E95228 /* RecordVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210121087B2800E95228 /* RecordVideoView.m */; };
+		C27E210521087DFF00E95228 /* RecordVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210421087DFF00E95228 /* RecordVideoModel.m */; };
 		C29E2A3420F5DF0800DE9BAC /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A1F20F5DF0800DE9BAC /* WXUtil.mm */; };
 		C29E2A3520F5DF0800DE9BAC /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A2220F5DF0800DE9BAC /* ApiXml.mm */; };
 		C29E2A3620F5DF0800DE9BAC /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A2320F5DF0800DE9BAC /* payRequsestHandler.mm */; };
@@ -228,8 +231,6 @@
 		9921785520E284DF001C6A76 /* MDHttpSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDHttpSessionManager.m; sourceTree = "<group>"; };
 		9921785720E28AEC001C6A76 /* MDErrorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDErrorModel.h; sourceTree = "<group>"; };
 		9921785820E28AEC001C6A76 /* MDErrorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDErrorModel.m; sourceTree = "<group>"; };
-		992C474E21076A4000CD8AB6 /* RecommendDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RecommendDetailCell.h; path = ../../../../../../../../../Documents/RecommendDetailCell.h; sourceTree = "<group>"; };
-		992C474F21076A4000CD8AB6 /* RecommendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RecommendDetailCell.m; path = ../../../../../../../../../Documents/RecommendDetailCell.m; sourceTree = "<group>"; };
 		99339BF220E13A4F00E45EC7 /* MDRefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRefreshGifHeader.h; sourceTree = "<group>"; };
 		99339BF320E13A4F00E45EC7 /* MDRefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDRefreshGifHeader.m; sourceTree = "<group>"; };
 		99339BF520E13A9C00E45EC7 /* MDRefreshGifFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRefreshGifFooter.h; sourceTree = "<group>"; };
@@ -387,8 +388,8 @@
 		99AA27F520DE6DC80053CAB6 /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
 		99AA287720DE6E120053CAB6 /* meida-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "meida-Prefix.pch"; sourceTree = "<group>"; };
 		99AA287820DE6F520053CAB6 /* AnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationManager.m; sourceTree = "<group>"; };
-		99AA287920DE6F530053CAB6 /* LSFileManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFileManage.h; sourceTree = "<group>"; };
-		99AA287A20DE6F530053CAB6 /* LSFileManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFileManage.m; sourceTree = "<group>"; };
+		99AA287920DE6F530053CAB6 /* LocalFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalFileManager.h; sourceTree = "<group>"; };
+		99AA287A20DE6F530053CAB6 /* LocalFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalFileManager.m; sourceTree = "<group>"; };
 		99AA287B20DE6F530053CAB6 /* LSStringTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStringTools.m; sourceTree = "<group>"; };
 		99AA287C20DE6F530053CAB6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		99AA287D20DE6F540053CAB6 /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
@@ -483,6 +484,14 @@
 		C24C621621071B20007407CE /* CustomPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPageControl.m; sourceTree = "<group>"; };
 		C264CE5520EDFC590053AD0E /* MDAddClothMatchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAddClothMatchCell.h; sourceTree = "<group>"; };
 		C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCell.m; sourceTree = "<group>"; };
+		C27E20F921081BC800E95228 /* RecommendDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendDetailCell.h; sourceTree = "<group>"; };
+		C27E20FA21081BC800E95228 /* RecommendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendDetailCell.m; sourceTree = "<group>"; };
+		C27E20FC2108202600E95228 /* MDWardrobeRecordCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeRecordCtrl.h; sourceTree = "<group>"; };
+		C27E20FD2108202600E95228 /* MDWardrobeRecordCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeRecordCtrl.m; sourceTree = "<group>"; };
+		C27E210021087B2800E95228 /* RecordVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordVideoView.h; sourceTree = "<group>"; };
+		C27E210121087B2800E95228 /* RecordVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordVideoView.m; sourceTree = "<group>"; };
+		C27E210321087DFF00E95228 /* RecordVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordVideoModel.h; sourceTree = "<group>"; };
+		C27E210421087DFF00E95228 /* RecordVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordVideoModel.m; sourceTree = "<group>"; };
 		C29E29B920F5DF0700DE9BAC /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
 		C29E2A1F20F5DF0800DE9BAC /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
 		C29E2A2020F5DF0800DE9BAC /* payRequsestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = payRequsestHandler.h; sourceTree = "<group>"; };
@@ -860,8 +869,8 @@
 		992C474D210769AD00CD8AB6 /* RecommendDetail */ = {
 			isa = PBXGroup;
 			children = (
-				992C474E21076A4000CD8AB6 /* RecommendDetailCell.h */,
-				992C474F21076A4000CD8AB6 /* RecommendDetailCell.m */,
+				C27E20F921081BC800E95228 /* RecommendDetailCell.h */,
+				C27E20FA21081BC800E95228 /* RecommendDetailCell.m */,
 			);
 			path = RecommendDetail;
 			sourceTree = "<group>";
@@ -1063,6 +1072,7 @@
 		99AA26B520DE6DC70053CAB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C27E20FF21087AB000E95228 /* RecordVideoView */,
 				C29E29B220F5DF0700DE9BAC /* PayManager */,
 				C2DEFA1420F4B0FB00A7F89C /* Additions */,
 				C2DEFA0420F4847C00A7F89C /* ShootVideo */,
@@ -1089,8 +1099,8 @@
 				99AA288C20DE6F580053CAB6 /* DateUtility.h */,
 				99AA288A20DE6F570053CAB6 /* HandleOpenUrlManager.h */,
 				99AA288320DE6F550053CAB6 /* HandleOpenUrlManager.m */,
-				99AA287920DE6F530053CAB6 /* LSFileManage.h */,
-				99AA287A20DE6F530053CAB6 /* LSFileManage.m */,
+				99AA287920DE6F530053CAB6 /* LocalFileManager.h */,
+				99AA287A20DE6F530053CAB6 /* LocalFileManager.m */,
 				99AA287F20DE6F540053CAB6 /* LSStringTools.h */,
 				99AA287B20DE6F530053CAB6 /* LSStringTools.m */,
 				99AA287C20DE6F530053CAB6 /* Reachability.h */,
@@ -1692,6 +1702,8 @@
 			children = (
 				C228506E2101CA80000FF959 /* MDMyWardrobeCtrl.h */,
 				C22850722101CA80000FF959 /* MDMyWardrobeCtrl.m */,
+				C27E20FC2108202600E95228 /* MDWardrobeRecordCtrl.h */,
+				C27E20FD2108202600E95228 /* MDWardrobeRecordCtrl.m */,
 				C22850752101CA80000FF959 /* MDMyFittingRoomCtrl.h */,
 				C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */,
 				C228506F2101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.h */,
@@ -1722,6 +1734,17 @@
 				C24C621621071B20007407CE /* CustomPageControl.m */,
 			);
 			path = UIPageControl;
+			sourceTree = "<group>";
+		};
+		C27E20FF21087AB000E95228 /* RecordVideoView */ = {
+			isa = PBXGroup;
+			children = (
+				C27E210021087B2800E95228 /* RecordVideoView.h */,
+				C27E210121087B2800E95228 /* RecordVideoView.m */,
+				C27E210321087DFF00E95228 /* RecordVideoModel.h */,
+				C27E210421087DFF00E95228 /* RecordVideoModel.m */,
+			);
+			path = RecordVideoView;
 			sourceTree = "<group>";
 		};
 		C29E29B220F5DF0700DE9BAC /* PayManager */ = {
@@ -2415,7 +2438,7 @@
 				C2F5FBF620EC7A6200DC04FF /* UIImageView+sdTools.m in Sources */,
 				99AA280720DE6DC80053CAB6 /* SharePosterView.m in Sources */,
 				C22850802101CA81000FF959 /* MDAddClothMatchCtrl.m in Sources */,
-				99AA289020DE6F580053CAB6 /* LSFileManage.m in Sources */,
+				99AA289020DE6F580053CAB6 /* LocalFileManager.m in Sources */,
 				C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */,
 				C2DEFA0A20F4854A00A7F89C /* MDShootManager.m in Sources */,
 				99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */,
@@ -2503,9 +2526,10 @@
 				C22850822101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m in Sources */,
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
+				C27E20FE2108202600E95228 /* MDWardrobeRecordCtrl.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
 				C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */,
-				992C475021076A4000CD8AB6 /* RecommendDetailCell.m in Sources */,
+				C27E20FB21081BC800E95228 /* RecommendDetailCell.m in Sources */,
 				99AA287320DE6DC80053CAB6 /* ttc_encrypt_v2.c in Sources */,
 				99AA280320DE6DC80053CAB6 /* UserAnalyticsModel.m in Sources */,
 				C2F5FBEA20EC626600DC04FF /* MDPageControl.m in Sources */,
@@ -2519,6 +2543,7 @@
 				99CD9C7C20DF3185000BC7F0 /* MDWardrobeControl.m in Sources */,
 				99AA282B20DE6DC80053CAB6 /* LSAlertView.m in Sources */,
 				C2B053702106D56B00102972 /* MDUploadNewDetailCtrl.m in Sources */,
+				C27E210221087B2800E95228 /* RecordVideoView.m in Sources */,
 				997E63B520E7B4E900B237EC /* MDShareInfoModel.m in Sources */,
 				99AA281420DE6DC80053CAB6 /* BaseJumpModel.m in Sources */,
 				99AA283920DE6DC80053CAB6 /* UIImage+Blur.m in Sources */,
@@ -2539,6 +2564,7 @@
 				99AA284220DE6DC80053CAB6 /* UIView+Animation.m in Sources */,
 				99AA284920DE6DC80053CAB6 /* NSString+TrimmingAdditions.m in Sources */,
 				C2F5FBE720EC60D800DC04FF /* MDCycleScrollView.m in Sources */,
+				C27E210521087DFF00E95228 /* RecordVideoModel.m in Sources */,
 				999D3FD920E28E8300950040 /* MDDeviceManager.m in Sources */,
 				C2DEFA0720F484B900A7F89C /* MDShootViewController.m in Sources */,
 				99970F4D20DE768800AEC45E /* MDTabBarController.m in Sources */,

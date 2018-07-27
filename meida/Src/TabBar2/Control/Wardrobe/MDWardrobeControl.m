@@ -10,11 +10,10 @@
 
 #import "MDWardrobeViewCell.h"
 
-static NSString *MDWardrobeViewFirstCellID = @"MDWardrobeViewFirstCell";
-static NSString *MDWardrobeViewVerbCellID  = @"MDWardrobeViewVerbCell";
-static NSString *MDWardrobeViewPlanCellID  = @"MDWardrobeViewPlanCell";
-
-@interface MDWardrobeControl ()<UITableViewDataSource, UITableViewDelegate>
+static NSString *MDWardrobeViewCellID = @"MDWardrobeViewCell";
+static NSString *WardrobeAfterClothHeadViewID   = @"WardrobeAfterClothHeadView";
+static NSString *WardrobeAfterClothFooterViewID = @"WardrobeAfterClothFooterView";
+@interface MDWardrobeControl ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
 
@@ -37,64 +36,60 @@ static NSString *MDWardrobeViewPlanCellID  = @"MDWardrobeViewPlanCell";
     [self setRightBtnWith:@"" image:IMAGE(@"navi_right_icon")];
     [self setupLineView:NO];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    [self.view addSubview:self.tableView];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(kHeaderHeight);
-        make.left.equalTo(self.view);
-        make.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-kTabBarHeight);
-    }];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.sectionInset = UIEdgeInsetsMake(kOffPadding, kOffPadding, 0, kOffPadding);
+    layout.minimumLineSpacing = kOffPadding;
+    layout.minimumInteritemSpacing = kOffPadding;
+    CGFloat itemWW = (SCR_WIDTH - 3 * kOffPadding) / 2;
+    layout.itemSize = CGSizeMake(itemWW, itemWW);
+    layout.footerReferenceSize = CGSizeMake(SCR_WIDTH, 100);
+    layout.headerReferenceSize = CGSizeMake(SCR_WIDTH, 50);
     
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    self.tableView.showsVerticalScrollIndicator = NO;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_HEIGHT - kHeaderHeight - kTabBarHeight) collectionViewLayout:layout];
+    [self.view addSubview:self.collectionView];
+    self.collectionView.showsVerticalScrollIndicator = NO;
+    self.collectionView.backgroundColor = kDefaultBackgroundColor;
+    self.collectionView.alwaysBounceVertical = YES;
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    self.collectionView.backgroundColor = COLOR_WITH_WHITE;
+    [self.collectionView registerClass:[MDWardrobeViewCell class] forCellWithReuseIdentifier:MDWardrobeViewCellID];
+    [self.collectionView registerClass:[WardrobeAfterClothHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:WardrobeAfterClothHeadViewID];
+    [self.collectionView registerClass:[WardrobeAfterClothFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:WardrobeAfterClothFooterViewID];
     
-    [self.tableView registerClass:[MDWardrobeViewFirstCell class] forCellReuseIdentifier:MDWardrobeViewFirstCellID];
-    [self.tableView registerClass:[MDWardrobeViewVerbCell class] forCellReuseIdentifier:MDWardrobeViewVerbCellID];
-    [self.tableView registerClass:[MDWardrobeViewPlanCell class] forCellReuseIdentifier:MDWardrobeViewPlanCellID];
+    
 }
 
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 3;
+    return 6;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger row = indexPath.row;
-    if (0 == row) {
-        MDWardrobeViewFirstCell *cell = [tableView dequeueReusableCellWithIdentifier:MDWardrobeViewFirstCellID];
-        return cell;
+    MDWardrobeViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MDWardrobeViewCellID forIndexPath:indexPath];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        // headView
+        WardrobeAfterClothHeadView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:WardrobeAfterClothHeadViewID forIndexPath:indexPath];
+        return headView;
     }
-    else if (1 == row){
-        MDWardrobeViewVerbCell *cell = [tableView dequeueReusableCellWithIdentifier:MDWardrobeViewVerbCellID];
-        return cell;
-    }
-    else if (2 == row){
-        MDWardrobeViewPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:MDWardrobeViewPlanCellID];
-        return cell;
+    else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
+        // footView
+        WardrobeAfterClothFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:WardrobeAfterClothFooterViewID forIndexPath:indexPath];
+        return footerView;
     }
     return nil;
+    
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger row = indexPath.row;
-    if (0 == row) {
-        return 85.f;
-    }
-    else if (1 == row){
-        return SCR_WIDTH;
-    }
-    else if (2 == row){
-        return SCR_WIDTH / 3.f + 90;
-    }
-    return 0.01f;
-}
-
-
 
 @end

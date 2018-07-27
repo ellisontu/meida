@@ -126,6 +126,7 @@
 		C27E20FE2108202600E95228 /* MDWardrobeRecordCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E20FD2108202600E95228 /* MDWardrobeRecordCtrl.m */; };
 		C27E210221087B2800E95228 /* RecordVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210121087B2800E95228 /* RecordVideoView.m */; };
 		C27E210521087DFF00E95228 /* RecordVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210421087DFF00E95228 /* RecordVideoModel.m */; };
+		C27E210E2109D0C500E95228 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210D2109D0C500E95228 /* MDWardrobeViewCell.m */; };
 		C29E2A3420F5DF0800DE9BAC /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A1F20F5DF0800DE9BAC /* WXUtil.mm */; };
 		C29E2A3520F5DF0800DE9BAC /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A2220F5DF0800DE9BAC /* ApiXml.mm */; };
 		C29E2A3620F5DF0800DE9BAC /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A2320F5DF0800DE9BAC /* payRequsestHandler.mm */; };
@@ -178,7 +179,7 @@
 		C2B0536D2106D55E00102972 /* MDRecommendDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B0536C2106D55E00102972 /* MDRecommendDetailCtrl.m */; };
 		C2B053702106D56B00102972 /* MDUploadNewDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B0536F2106D56B00102972 /* MDUploadNewDetailCtrl.m */; };
 		C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592C20E9C247001F1F47 /* MDSegmentView.m */; };
-		C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */; };
+		C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m.bak in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m.bak */; };
 		C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */; };
 		C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593C20EB51D2001F1F47 /* UIView+cframe.m */; };
 		C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594220EB551F001F1F47 /* UIButton+ConentInsets.m */; };
@@ -492,6 +493,8 @@
 		C27E210121087B2800E95228 /* RecordVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordVideoView.m; sourceTree = "<group>"; };
 		C27E210321087DFF00E95228 /* RecordVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordVideoModel.h; sourceTree = "<group>"; };
 		C27E210421087DFF00E95228 /* RecordVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordVideoModel.m; sourceTree = "<group>"; };
+		C27E210C2109D0C500E95228 /* MDWardrobeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeViewCell.h; sourceTree = "<group>"; };
+		C27E210D2109D0C500E95228 /* MDWardrobeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeViewCell.m; sourceTree = "<group>"; };
 		C29E29B920F5DF0700DE9BAC /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
 		C29E2A1F20F5DF0800DE9BAC /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
 		C29E2A2020F5DF0800DE9BAC /* payRequsestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = payRequsestHandler.h; sourceTree = "<group>"; };
@@ -743,8 +746,8 @@
 		C2B0536F2106D56B00102972 /* MDUploadNewDetailCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDUploadNewDetailCtrl.m; sourceTree = "<group>"; };
 		C2CE592B20E9C247001F1F47 /* MDSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentView.h; sourceTree = "<group>"; };
 		C2CE592C20E9C247001F1F47 /* MDSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentView.m; sourceTree = "<group>"; };
-		C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeViewCell.h; sourceTree = "<group>"; };
-		C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeViewCell.m; sourceTree = "<group>"; };
+		C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h.bak */ = {isa = PBXFileReference; lastKnownFileType = text; path = MDWardrobeViewCell.h.bak; sourceTree = "<group>"; };
+		C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m.bak */ = {isa = PBXFileReference; lastKnownFileType = text; path = MDWardrobeViewCell.m.bak; sourceTree = "<group>"; };
 		C2CE593420EB0C6A001F1F47 /* MDMineContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMineContentCell.h; sourceTree = "<group>"; };
 		C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMineContentCell.m; sourceTree = "<group>"; };
 		C2CE593B20EB51D2001F1F47 /* UIView+cframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+cframe.h"; sourceTree = "<group>"; };
@@ -1042,8 +1045,10 @@
 		99AA26B220DE6DC70053CAB6 /* Wardrobe */ = {
 			isa = PBXGroup;
 			children = (
-				C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h */,
-				C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m */,
+				C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h.bak */,
+				C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m.bak */,
+				C27E210C2109D0C500E95228 /* MDWardrobeViewCell.h */,
+				C27E210D2109D0C500E95228 /* MDWardrobeViewCell.m */,
 				C2FF1A2120ECA30C0017DFF5 /* WardrobeAfterClothCell.h */,
 				C2FF1A2220ECA30C0017DFF5 /* WardrobeAfterClothCell.m */,
 			);
@@ -2515,6 +2520,7 @@
 				C2A832BB20EF524C00A821E6 /* MDLaunchAdModel.m in Sources */,
 				C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */,
 				C228507F2101CA81000FF959 /* MDMyFittingRoomCategoryCtrl.m in Sources */,
+				C27E210E2109D0C500E95228 /* MDWardrobeViewCell.m in Sources */,
 				9921785020E28244001C6A76 /* MDLoadingView.m in Sources */,
 				C2A8328A20EF4C4E00A821E6 /* MDLoginCommonView.m in Sources */,
 				C2B0536D2106D55E00102972 /* MDRecommendDetailCtrl.m in Sources */,
@@ -2539,7 +2545,7 @@
 				99970F5C20DF2E1500AEC45E /* MDTabBarSubviews.m in Sources */,
 				C24C621021070EEB007407CE /* UploadNewDetailScrollView.m in Sources */,
 				C29E2C9B20F5F06400DE9BAC /* MD5DataSigner.m in Sources */,
-				C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m in Sources */,
+				C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m.bak in Sources */,
 				99CD9C7C20DF3185000BC7F0 /* MDWardrobeControl.m in Sources */,
 				99AA282B20DE6DC80053CAB6 /* LSAlertView.m in Sources */,
 				C2B053702106D56B00102972 /* MDUploadNewDetailCtrl.m in Sources */,

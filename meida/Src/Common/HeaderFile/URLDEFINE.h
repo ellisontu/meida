@@ -22,14 +22,14 @@
 //正式-测试（仅测试时用）
 
 #elif (URL_CONFIG == 3)
+
 //测试
 // app id in appStore
 #define kAppId              @"931449079"
 #define kAppTarget          @"meida"
 #define BUNDLE_ID           @"cn.ymfashion.test.meida"
-#define BASEURL             @"http://zf.tunnel.qydev.com"
+#define BASEURL             @"http://118.24.16.26:8889"
 #define CODEPUSHKEY         @"mR5yLtjURIYdDIf1917YSaXCNvF44ksvOXqog"
-#define ANALYZE_URL         @"http://139.198.0.193/push"
 #define TINGYUN_APP_ID_COM  @"d7d3e19d3bc248fc985dc7e0b6c1f08a"
 //#define TINGYUN_APP_ID_COM  @"1111"
 #elif (URL_CONFIG == 4)
@@ -52,7 +52,7 @@
 
 #pragma mark ------------------------------------ user reg && login  ----------------------------------
 /**
- *  记录商品点击次数
+ *  用户注册
  *  @method POST
  *  @link /user/reg
  *  @param: phone / password

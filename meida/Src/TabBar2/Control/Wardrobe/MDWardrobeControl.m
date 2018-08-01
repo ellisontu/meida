@@ -15,6 +15,8 @@ static NSString *WardrobeAfterClothHeadViewID   = @"WardrobeAfterClothHeadView";
 static NSString *WardrobeAfterClothFooterViewID = @"WardrobeAfterClothFooterView";
 @interface MDWardrobeControl ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic, strong) NSArray       *titleArr;
+
 @end
 
 @implementation MDWardrobeControl
@@ -41,8 +43,8 @@ static NSString *WardrobeAfterClothFooterViewID = @"WardrobeAfterClothFooterView
     layout.minimumLineSpacing = kOffPadding;
     layout.minimumInteritemSpacing = kOffPadding;
     CGFloat itemWW = (SCR_WIDTH - 3 * kOffPadding) / 2;
-    layout.itemSize = CGSizeMake(itemWW, itemWW);
-    layout.footerReferenceSize = CGSizeMake(SCR_WIDTH, 100);
+    layout.itemSize = CGSizeMake(itemWW, itemWW * 1.3);
+    layout.footerReferenceSize = CGSizeMake(SCR_WIDTH, 80);
     layout.headerReferenceSize = CGSizeMake(SCR_WIDTH, 50);
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_HEIGHT - kHeaderHeight - kTabBarHeight) collectionViewLayout:layout];
@@ -58,16 +60,26 @@ static NSString *WardrobeAfterClothFooterViewID = @"WardrobeAfterClothFooterView
     [self.collectionView registerClass:[WardrobeAfterClothFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:WardrobeAfterClothFooterViewID];
     
     
+    _titleArr = @[@{@"name":@"上衣", @"image":IMAGE(@"clothes_jacket_icon"),@"count":@"101 items"},
+                  @{@"name":@"鞋子", @"image":IMAGE(@"clothes_shoe_icon"),@"count":@"102 items"},
+                  @{@"name":@"帽子", @"image":IMAGE(@"clothes_hat_icon"),@"count":@"103 items"},
+                  @{@"name":@"裤子", @"image":IMAGE(@"clothes_pant_icon"),@"count":@"104 items"},
+                  @{@"name":@"配饰", @"image":IMAGE(@"clothes_pendant_icon"),@"count":@"105 items"},
+                  ];
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    return _titleArr.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MDWardrobeViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MDWardrobeViewCellID forIndexPath:indexPath];
+    if (indexPath.row < _titleArr.count) {
+        cell.dict = _titleArr[indexPath.row];
+    }
     return cell;
 }
 

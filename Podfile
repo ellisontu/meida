@@ -23,6 +23,7 @@ target 'meida' do
     pod 'YYModel', '~> 1.0.4'
     pod 'UITableView+FDTemplateLayoutCell'
     
+    pod 'HyphenateLite', '~> 3.4.2'     #环信 IM sdk
     #pod 'CocoaAsyncSocket', '~> 7.6.3'      # im lib
     
     

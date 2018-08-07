@@ -17,6 +17,7 @@ PODS:
   - DateTools (2.0.0)
   - FBRetainCycleDetector (0.1.4)
   - FrameAccessor (2.0)
+  - HyphenateLite (3.4.2)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.15.3)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - DateTools (~> 2.0.0)
   - FrameAccessor (~> 2.0)
+  - HyphenateLite (~> 3.4.2)
   - Masonry (~> 1.1.0)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.14)
@@ -54,6 +56,7 @@ SPEC REPOS:
     - DateTools
     - FBRetainCycleDetector
     - FrameAccessor
+    - HyphenateLite
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -71,6 +74,7 @@ SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
+  HyphenateLite: 0c5d9392c30ada198ef656e179b921e38a192df3
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
@@ -83,6 +87,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 748eda02068fa68d04b9b79e4986f733b2917bf2
+PODFILE CHECKSUM: e7468a98f0a5d27676f38414132ced3c720e2d20
 
 COCOAPODS: 1.5.2

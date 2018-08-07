@@ -2307,6 +2307,7 @@
 				99AA266520DE6BAE0053CAB6 /* Frameworks */,
 				99AA266620DE6BAE0053CAB6 /* Resources */,
 				0749C29F0CD6B4A23A76E5D0 /* [CP] Copy Pods Resources */,
+				47DE8B7153670923EE642B48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2477,6 +2478,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-meida/Pods-meida-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47DE8B7153670923EE642B48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-meida/Pods-meida-frameworks.sh",
+				"${PODS_ROOT}/HyphenateLite/iOS_Pods_IMSDK_V3.4.2/HyphenateLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyphenateLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-meida/Pods-meida-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

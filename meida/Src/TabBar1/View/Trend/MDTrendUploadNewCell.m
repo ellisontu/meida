@@ -8,6 +8,7 @@
 
 #import "MDTrendUploadNewCell.h"
 
+
 @interface MDTrendUploadNewCell ()
 
 @property (nonatomic, strong) UIView        *containerView;
@@ -48,40 +49,34 @@
     [_containerView addSubview:_distanceTipsBtn];
     
     [_containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView);
-        make.left.equalTo(self.contentView).offset(kOffPadding);
-        make.right.equalTo(self.contentView).offset(-kOffPadding);
-        make.bottom.equalTo(self.contentView).offset(-kOffPadding);
+        make.edges.equalTo(self.contentView);
     }];
     [_shopShowImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView);
-        make.centerX.equalTo(self->_containerView);
-        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH - 30.f, SCR_WIDTH * 0.6 - 40.f));
+        make.centerX.equalTo(self.containerView);
+        make.size.mas_equalTo(CGSizeMake(SCR_WIDTH, SCR_WIDTH * 0.71));
     }];
     [_heartBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(100.f, 35.f));
-        make.top.equalTo(self->_shopShowImgView).offset(5.f);
-        make.right.equalTo(self->_shopShowImgView).offset(-5.f);
+        make.top.equalTo(self.shopShowImgView).offset(5.f);
+        make.right.equalTo(self.shopShowImgView).offset(-5.f);
     }];
     [_shopLogoImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self->_shopShowImgView).offset(5.f);
-        make.top.equalTo(self->_shopShowImgView).offset(5.f);
+        make.left.equalTo(self.shopShowImgView).offset(5.f);
+        make.top.equalTo(self.shopShowImgView).offset(5.f);
         make.size.mas_equalTo(CGSizeMake(65.f, 40.f));
     }];
     [_shopLocationLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self->_containerView).offset(10.f);
-        make.bottom.equalTo(self->_containerView).offset(-17.f);
+        make.left.equalTo(self.containerView).offset(10.f);
+        make.top.equalTo(self.shopShowImgView.mas_bottom).offset(15.f);
         make.width.mas_equalTo(150.f);// 临时宽度
     }];
     
     [_distanceTipsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(100.f, 40.f));
-        make.centerY.equalTo(self->_shopLocationLbl);
-        make.right.equalTo(self->_containerView).offset(-10.f);
+        make.centerY.equalTo(self.shopLocationLbl);
+        make.right.equalTo(self.containerView).offset(-10.f);
     }];
-    
-    _containerView.layer.borderColor = kDefaultBorderColor.CGColor;
-    _containerView.layer.borderWidth = 1.f;
     
     _shopShowImgView.contentMode = UIViewContentModeScaleAspectFill;
     _shopShowImgView.layer.masksToBounds = YES;
@@ -112,3 +107,4 @@
 
 
 @end
+

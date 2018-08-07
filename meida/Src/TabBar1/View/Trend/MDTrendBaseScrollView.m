@@ -15,6 +15,7 @@
 #import "MDChannelDetailCtrl.h"
 #import "MDRecommendDetailCtrl.h"
 #import "MDUploadNewDetailCtrl.h"
+#import "MDTrendUploadNewPopView.h"
 
 #define ksegmentHH 49
 static NSString *MDTrendChannelCellID   = @"MDTrendChannelCell";
@@ -24,6 +25,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
 @interface MDTrendBaseScrollView ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, assign) TrendScrollCellType   cellType;
+@property (nonatomic, assign) NSInteger             currentPage;
 
 @end
 
@@ -35,6 +37,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
     if (self = [super initWithFrame:frame]) {
         _cellType =  cellType;
         [self initView];
+        [self refreshData];
     }
     return self;
 }
@@ -48,7 +51,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
         case CellTypeChannel:
         {// 频道
             UICollectionViewFlowLayout *flowLayout     = [[UICollectionViewFlowLayout alloc] init];
-            CGFloat padding = 15.f;
+            CGFloat padding = 0.f;
             flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
             flowLayout.minimumInteritemSpacing = padding;
             flowLayout.minimumLineSpacing = padding;
@@ -59,7 +62,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
         case CellTypeUploadNew:
         {// 上新
             UICollectionViewFlowLayout *flowLayout     = [[UICollectionViewFlowLayout alloc] init];
-            CGFloat padding = 15.f;
+            CGFloat padding = 0.f;
             flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
             flowLayout.minimumInteritemSpacing = padding;
             flowLayout.minimumLineSpacing = padding;
@@ -75,6 +78,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
             flowLayout.minimumInteritemSpacing = padding;
             flowLayout.minimumLineSpacing = padding;
             self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+            self.collectionView.contentInset = UIEdgeInsetsMake(padding, padding, padding, padding);
             [self.collectionView registerClass:[MDTrendRecommendCell class] forCellWithReuseIdentifier:MDTrendRecommendCellID];
         }
             break;
@@ -94,6 +98,39 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
+    
+}
+
+- (void)refreshData
+{
+    
+    switch (_cellType) {
+        case CellTypeChannel:
+        {// 频道
+            NSMutableDictionary *params = [NSMutableDictionary dictionary];
+            [[MDNetWorking sharedClient] requestWithPath:URL_GET_SUBJECT_LIST params:params httpMethod:MethodGet callback:^(BOOL rs, NSObject *obj) {
+                if (rs) {
+                    XLog(@"-------------%@",obj);
+                }
+                else{
+                    [Util showErrorMessage:obj forDuration:1.0f];
+                }
+            }];
+        }
+            break;
+        case CellTypeUploadNew:
+        {// 上新
+           
+        }
+            break;
+        case CellTypeRecommend:
+        {// 推荐
+            
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -152,17 +189,18 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
     switch (_cellType) {
         case CellTypeChannel:
         {// 频道
-            return CGSizeMake(SCR_WIDTH, 185 + SCR_WIDTH);
+            return CGSizeMake(SCR_WIDTH, SCR_WIDTH + kOffPadding + 40);
         }
             break;
         case CellTypeUploadNew:
         {// 上新
-            return CGSizeMake(SCR_WIDTH, SCR_WIDTH * 0.7);
+            return CGSizeMake(SCR_WIDTH, SCR_WIDTH * 0.71 + 50);
         }
             break;
         case CellTypeRecommend:
         {// 推荐
-            return CGSizeMake(SCR_WIDTH, 350);
+            CGFloat itemWW = (SCR_WIDTH - 3 *kOffPadding) / 2.f;
+            return CGSizeMake(itemWW, 160.f);
         }
             break;
         default:
@@ -179,12 +217,15 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
     }
     else if (_cellType == CellTypeUploadNew){
-        MDUploadNewDetailCtrl *vc = [[MDUploadNewDetailCtrl alloc] init];
-        [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+        MDTrendUploadNewPopView *popView = [[MDTrendUploadNewPopView alloc] initWithFrame:MDAPPDELEGATE.window.frame];
+        [MDAPPDELEGATE.window addSubview:popView];
+        [popView showView];
     }
     else if (_cellType == CellTypeRecommend){
-        MDRecommendDetailCtrl *vc = [[MDRecommendDetailCtrl alloc] init];
+        MDUploadNewDetailCtrl *vc = [[MDUploadNewDetailCtrl alloc] init];
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+        //MDRecommendDetailCtrl *vc = [[MDRecommendDetailCtrl alloc] init];
+        //[MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
     }
 }
 

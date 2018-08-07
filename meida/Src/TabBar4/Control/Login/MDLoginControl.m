@@ -84,12 +84,12 @@ static CGFloat duration = 0.25f;
     CGFloat padding = 50.f;
     CGFloat _viewWW = SCR_WIDTH - 2 * padding;
     [_loginView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(_viewWW, 100.f));
+        make.size.mas_equalTo(CGSizeMake(_viewWW, 200.f));
         make.centerX.equalTo(self.mainView);
         make.top.equalTo(self.regisBtnView.mas_bottom).offset(kOffPadding);
     }];
     [_registerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(_viewWW, 100.f));
+        make.size.mas_equalTo(CGSizeMake(_viewWW, 200.f));
         make.centerX.equalTo(self.mainView).offset(_viewWW);
         make.top.equalTo(self.regisBtnView.mas_bottom).offset(kOffPadding);
     }];

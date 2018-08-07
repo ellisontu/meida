@@ -28,7 +28,7 @@
 #define kAppId              @"931449079"
 #define kAppTarget          @"meida"
 #define BUNDLE_ID           @"cn.ymfashion.test.meida"
-#define BASEURL             @"http://118.24.16.26:8889"
+#define BASEURL             @"http://118.24.16.26:8889/ym"
 #define CODEPUSHKEY         @"mR5yLtjURIYdDIf1917YSaXCNvF44ksvOXqog"
 #define TINGYUN_APP_ID_COM  @"d7d3e19d3bc248fc985dc7e0b6c1f08a"
 //#define TINGYUN_APP_ID_COM  @"1111"
@@ -59,7 +59,44 @@
  *  @return json
  */
 //egister
-#define URL_POST_REGISTER [BASEURL stringByAppendingString:@"/user/reg"]
+#define URL_POST_USER_REGISTER [BASEURL stringByAppendingString:@"/user/reg"]
+
+/**
+ *  用户登录
+ *  @method POST
+ *  @link /user/reg
+ *  @param: phone / password
+ *  @return json
+ */
+//egister
+#define URL_POST_USER_LOGIN [BASEURL stringByAppendingString:@"/user/login"]
 
 
 #endif
+
+
+
+#pragma mark ------------------------------------ 主页 --- 潮流   ----------------------------------
+/**
+ *  潮流 -- 专题 list
+ *  @method GET
+ *  @link /subject/list
+ *  @param: currentPage / pageSize
+ *  @return json
+ */
+//egister
+#define URL_GET_SUBJECT_LIST [BASEURL stringByAppendingString:@"/subject/list"]
+
+//GET /subject/view/{id}/{displayType}
+
+/**
+ *  专题详情
+ *  @method GET
+ *  @link /subject/view/{id}/{displayType}
+ *  @param: nil
+ *  @return json
+ */
+//egister
+#define URL_GET_SUBJECT_DETAIL [BASEURL stringByAppendingString:@"/subject/view/%@/%@"]
+
+

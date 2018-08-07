@@ -51,5 +51,10 @@
 	<string>请点击&quot;好&quot;以允许访问</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>请点击&quot;好&quot;以允许访问</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

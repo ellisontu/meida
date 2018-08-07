@@ -61,7 +61,7 @@
     [_addBtnView setTitle:@"拍下您的新搭配" forState:UIControlStateNormal];
     [_addBtnView setTitleColor:COLOR_HEX_STR(@"#8C959F") forState:UIControlStateNormal];
     _addBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(15);
-    
+    _addBtnView.userInteractionEnabled = NO;
     CGFloat offset = 25.f;
     _addBtnView.titleEdgeInsets = UIEdgeInsetsMake(_addBtnView.imageView.height + offset, -_addBtnView.imageView.width, 55,0);
     _addBtnView.imageEdgeInsets = UIEdgeInsetsMake(0, _addBtnView.titleLabel.width/2, _addBtnView.titleLabel.height + 85, -_addBtnView.titleLabel.width/2);

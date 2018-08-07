@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#pragma mark -  潮流 -> 上新 -> cell view ################################################----------
 @interface MDTrendUploadNewCell : UICollectionViewCell
 
 @end

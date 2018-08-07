@@ -24,6 +24,8 @@ static NSString *ChannelDetailInfoCellID    = @"ChannelDetailInfoCell";
     
     [self initView];
     
+    [self refreshData];
+    
 }
 
 - (void)initView
@@ -42,6 +44,14 @@ static NSString *ChannelDetailInfoCellID    = @"ChannelDetailInfoCell";
     [self.tableView registerClass:[ChannelDetailShowImgCell class] forCellReuseIdentifier:ChannelDetailShowImgCellID];
     [self.tableView registerClass:[ChannelDetailInfoCell class] forCellReuseIdentifier:ChannelDetailInfoCellID];
     
+}
+
+- (void)refreshData
+{
+    NSString *urlStr = [NSString stringWithFormat:URL_GET_SUBJECT_DETAIL,@(1),@(2)];
+    [[MDNetWorking sharedClient] requestWithPath:urlStr params:nil httpMethod:MethodGet callback:^(BOOL rs, NSObject *obj) {
+        
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

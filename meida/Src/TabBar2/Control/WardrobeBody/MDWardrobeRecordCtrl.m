@@ -49,9 +49,9 @@
     return _recordVideoView;
 }
 
-- (void)dismissVC
+- (void)cancelAction
 {
-    [MDAPPDELEGATE.navigation dismissViewControllerAnimated:YES completion:nil];
+    [MDAPPDELEGATE.navigation popViewControllerAnimated:YES ];
 }
 
 - (void)recordFinishWithvideoUrl:(NSURL *)videoUrl

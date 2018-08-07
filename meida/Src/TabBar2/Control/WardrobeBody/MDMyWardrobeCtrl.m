@@ -29,7 +29,7 @@ static NSString *MDMyWardrobeCtrlCellID = @"MDMyWardrobeCtrlCell";
     self.view.backgroundColor = COLOR_WITH_WHITE;
     [self setNavigationType:NavShowBackAndTitleAndRight];
     [self setTitle:@"我的衣橱"];
-    [self setRightBtnWith:@"" image:IMAGE(@"camera_icon")];
+    [self setRightBtnWith:@"" image:IMAGE(@"navi_right_icon")];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.sectionInset = UIEdgeInsetsMake(kOffset, kOffset, 0, kOffset);

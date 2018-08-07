@@ -132,6 +132,7 @@
     [_loginBtnView setTitle:@"登录" forState:UIControlStateNormal];
     _loginBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(15);
     [_loginBtnView setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
+    [_loginBtnView addTarget:self action:@selector(loginBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     
     _phoneTextField.tag = 10001;
     _pwordTextField.tag = 10002;
@@ -166,6 +167,18 @@
         [Util showMessage:@"请输入密码" inView:MDAPPDELEGATE.window];
         return;
     }
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:_phoneTextField.text forKey:@"phone"];
+    [params setObject:_pwordTextField.text forKey:@"password"];
+    
+    [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_LOGIN params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
+        if (rs) {
+            
+        }
+        else{
+            [Util showErrorMessage:obj forDuration:1.f];
+        }
+    }];
 }
 
 - (void)cancelAllEidit
@@ -286,6 +299,11 @@
         make.height.mas_equalTo(25.f);
         make.left.equalTo(self.pCodeTextLine).offset(tipsWW);
     }];
+    [_pCodeRecivBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.pCodeTextField).offset(10);
+        make.centerY.equalTo(self.pCodeTextField);
+        make.size.mas_equalTo(CGSizeMake(40.f, 25.f));
+    }];
     [_pCodeTextLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.pCodeTextField.mas_bottom);
         make.right.equalTo(self);
@@ -338,7 +356,8 @@
     [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
     _registerBtn.titleLabel.font = FONT_SYSTEM_NORMAL(15);
     [_registerBtn setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
-    
+    [_registerBtn addTarget:self action:@selector(registerBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_pCodeRecivBtn setTitle:@"验证码" forState:UIControlStateNormal];
     _phoneTextField.tag = 10001;
     _pCodeTextField.tag = 10002;
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
@@ -361,6 +380,32 @@
         // 验证码
         //XLog(@"验证码： ==== %@", textField.text);
     }
+}
+
+- (void)registerBtnAction:(UIButton *)sender
+{
+    
+    if (![Util isPhoneNumber:_phoneTextField.text]) {
+        [Util showMessage:@"请输入正确的手机号" inView:MDAPPDELEGATE.window];
+        return;
+    }
+    if (stringIsEmpty(_pCodeTextField.text)) {
+        [Util showMessage:@"请输入验证码" inView:MDAPPDELEGATE.window];
+        return;
+    }
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:_phoneTextField.text forKey:@"phone"];
+    [params setObject:_pCodeTextField.text forKey:@"phoneCode"];
+    [params setObject:@"123456" forKey:@"password"];
+    [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_REGISTER params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
+        if (rs) {
+            
+        }
+        else{
+            [Util showErrorMessage:obj forDuration:1.f];
+        }
+    }];
+    
 }
 
 - (void)cancelAllEidit

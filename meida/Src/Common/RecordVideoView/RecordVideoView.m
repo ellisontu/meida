@@ -7,6 +7,7 @@
 //
 
 #import "RecordVideoView.h"
+#import "UIButton+EnlargeArea.h"
 
 @interface RecordVideoView ()<RecordVideoModelDelegate>
 
@@ -81,13 +82,18 @@
     bgColor.backgroundColor = COLOR_HEX_STR(@"#292B2E");
     bgColor.alpha = 0.3f;
     [_cancelBtn setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
-    [_cancelBtn addTarget:self action:@selector(dismissVC) forControlEvents:UIControlEventTouchUpInside];
+    [_cancelBtn addTarget:self action:@selector(cancelBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [_turnCamera setImage:[UIImage imageNamed:@"listing_camera_lens"] forState:UIControlStateNormal];
     [_turnCamera addTarget:self action:@selector(turnCameraAction) forControlEvents:UIControlEventTouchUpInside];
     [_turnCamera sizeToFit];
     [_flashBtn setImage:[UIImage imageNamed:@"listing_flash_off"] forState:UIControlStateNormal];
     [_flashBtn addTarget:self action:@selector(flashAction) forControlEvents:UIControlEventTouchUpInside];
     [_flashBtn sizeToFit];
+    
+    CGFloat edgeOffSet = 20.f;
+    [_cancelBtn setEnlargeEdgeWithTop:edgeOffSet right:edgeOffSet bottom:edgeOffSet left:edgeOffSet];
+    [_turnCamera setEnlargeEdgeWithTop:edgeOffSet right:edgeOffSet bottom:edgeOffSet left:edgeOffSet];
+    [_flashBtn setEnlargeEdgeWithTop:edgeOffSet right:edgeOffSet bottom:edgeOffSet left:edgeOffSet];
     
     // 2. 进度条
     _progressView = [[UIProgressView alloc] init];
@@ -153,10 +159,10 @@
 }
 #pragma mark - action
 
-- (void)dismissVC
+- (void)cancelBtnAction:(UIButton *)sender
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(dismissVC)]) {
-        [self.delegate dismissVC];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cancelAction)]) {
+        [self.delegate cancelAction];
     }
 }
 

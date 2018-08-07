@@ -12,7 +12,7 @@
 @protocol RecordVideoViewDelegate <NSObject>
 
 @optional
--(void)dismissVC;
+-(void)cancelAction;
 -(void)recordFinishWithvideoUrl:(NSURL *)videoUrl;
 
 @end

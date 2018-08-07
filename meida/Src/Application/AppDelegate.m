@@ -18,8 +18,7 @@
 #import "SAMKeychain.h"
 #import "ServerConfigManager.h"
 #import "MDDeviceManager.h"
-
-#import "SocketManager.h"
+#import "MediaResourcesManager.h"
 
 @interface AppDelegate() <WXApiDelegate, UIAlertViewDelegate>
 {
@@ -35,8 +34,6 @@
 {
     
     [self configWindow];
-    
-    [self configSocket];
     
     [self startMonitorNetworkState];
     
@@ -84,14 +81,6 @@ void uncaughtExceptionHandler(NSException *exception)
     
     [self addChildControllers];
 }
-
-- (void)configSocket
-{
-    //SocketManager *socket = [SocketManager shareInstance];
-    //[socket connectSocket];
-    //[socket sendMsg:@"我是谁？ Michel Jordan"];
-}
-
 
 - (void)addChildControllers
 {
@@ -193,7 +182,7 @@ void uncaughtExceptionHandler(NSException *exception)
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
 {
-    //[MediaResourcesManager singletonDealloc];
+    [MediaResourcesManager singletonDealloc];
     XLog(@"%s", __func__);
 }
 

@@ -8,6 +8,7 @@
 
 #import "MDAddClothMatchCtrl.h"
 #import "MDAddClothMatchCell.h"
+#import "MDChoosePhotosCtrl.h"
 
 static NSString *MDAddClothMatchCameraCellID = @"MDAddClothMatchCameraCell";
 static NSString *MDAddClothMatchTagCellID    = @"MDAddClothMatchTagCell";
@@ -94,6 +95,15 @@ static NSString *MDAddClothMatchTagCellID    = @"MDAddClothMatchTagCell";
         return cell;
     }
     return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = indexPath.row;
+    if (0 == row) {
+        MDChoosePhotosCtrl *vc = [[MDChoosePhotosCtrl alloc] init];
+        [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

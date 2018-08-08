@@ -10,9 +10,13 @@
 #import "MDAddClothMatchCell.h"
 #import "MDChoosePhotosCtrl.h"
 
+#import "MDChooseVideoCtrl.h"
+
 static NSString *MDAddClothMatchCameraCellID = @"MDAddClothMatchCameraCell";
 static NSString *MDAddClothMatchTagCellID    = @"MDAddClothMatchTagCell";
 @interface MDAddClothMatchCtrl () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) UIImage   *shootImg;
 
 @end
 
@@ -80,6 +84,7 @@ static NSString *MDAddClothMatchTagCellID    = @"MDAddClothMatchTagCell";
     NSInteger row = indexPath.row;
     if (0 == row) {
         MDAddClothMatchCameraCell *cell = [tableView dequeueReusableCellWithIdentifier:MDAddClothMatchCameraCellID];
+        cell.shootImg = self.shootImg;
         return cell;
     }
     else if (1 == row){
@@ -101,8 +106,19 @@ static NSString *MDAddClothMatchTagCellID    = @"MDAddClothMatchTagCell";
 {
     NSInteger row = indexPath.row;
     if (0 == row) {
+        
+        /*
+         MDChooseVideoCtrl *vc = [[MDChooseVideoCtrl alloc] initWithVideoChosenType:VideoGallaryToShare maxLimitCount:MaxEditableVideoCount];
+         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+         */
         MDChoosePhotosCtrl *vc = [[MDChoosePhotosCtrl alloc] init];
+        MDWeakPtr(weakPtr, self);
+        vc.selcectImgBlock = ^(UIImage * image) {
+            weakPtr.shootImg = image;
+            [weakPtr.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        };
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+        
     }
 }
 

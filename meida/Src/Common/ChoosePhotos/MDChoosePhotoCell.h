@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) MediaAssetModel   *model;
 @property (nonatomic, strong) NSMutableArray    *selectArr;
-@property (nonatomic, strong) void (^choosePhotoCellCallBack)();
+@property (nonatomic, strong) void (^choosePhotoCellCallBack)(void);
 #pragma mark - 添加图片专用
 @property (nonatomic, assign) NSInteger     maxSelectCount; /**< 最大选择数量 */
 

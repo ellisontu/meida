@@ -13,6 +13,8 @@
 #pragma mark -  衣橱 -> 我的衣橱 -> 搭配 Camera 相机 cell #############################################----------
 @interface MDAddClothMatchCameraCell : UITableViewCell
 
+@property (nonatomic, strong) UIImage   *shootImg;
+
 @end
 
 

@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSMutableArray *publishArr;   /**< 发布过来的 旧照片 */
 @property (nonatomic, strong) NSMutableArray *deleteArr;    /**< 被删除的照片名 */
 
+@property (nonatomic, copy) void(^selcectImgBlock)(UIImage *);  /**< 选择图片 */
+
 @end

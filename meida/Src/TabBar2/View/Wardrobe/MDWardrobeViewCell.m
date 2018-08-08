@@ -8,7 +8,6 @@
 
 #import "MDWardrobeViewCell.h"
 
-#import "MDMyWardrobeCtrl.h"
 #import "MDMyFittingRoomCtrl.h"
 #import "MDWardrobeAfterClothCtrl.h"
 
@@ -124,8 +123,8 @@
             case 0:
             {//
                 [btn setTitle:@"我的衣橱" forState:UIControlStateNormal];
-                [btn setTitleColor:COLOR_HEX_STR(@"#8C959F") forState:UIControlStateNormal];
-                btn.backgroundColor = COLOR_HEX_STR(@"#F4F4F4");
+                [btn setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
+                btn.backgroundColor = COLOR_WITH_WHITE;
             }
                 break;
             case 1:
@@ -138,8 +137,8 @@
             case 2:
             {
                 [btn setTitle:@"明日装" forState:UIControlStateNormal];
-                [btn setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
-                btn.backgroundColor = COLOR_WITH_WHITE;
+                [btn setTitleColor:COLOR_HEX_STR(@"#8C959F") forState:UIControlStateNormal];
+                btn.backgroundColor = COLOR_HEX_STR(@"#F4F4F4");
             }
                 break;
             default:
@@ -154,8 +153,6 @@
     switch (sender.tag) {
         case 1000:
         {// 点击 "我的衣橱"
-            MDMyWardrobeCtrl *vc = [[MDMyWardrobeCtrl alloc] init];
-            [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
         }
             break;
         case 1001:

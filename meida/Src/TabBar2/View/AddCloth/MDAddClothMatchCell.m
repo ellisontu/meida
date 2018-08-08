@@ -66,7 +66,16 @@
     _addBtnView.titleEdgeInsets = UIEdgeInsetsMake(_addBtnView.imageView.height + offset, -_addBtnView.imageView.width, 55,0);
     _addBtnView.imageEdgeInsets = UIEdgeInsetsMake(0, _addBtnView.titleLabel.width/2, _addBtnView.titleLabel.height + 85, -_addBtnView.titleLabel.width/2);
     lineView.backgroundColor = COLOR_HEX_STR(@"#E7E7E7");
+    _showImgView.contentMode = UIViewContentModeScaleAspectFit;
     
+}
+
+- (void)setShootImg:(UIImage *)shootImg
+{
+    if (!shootImg) return;
+    _shootImg = shootImg;
+    _addBtnView.hidden = _shootImg;
+    _showImgView.image = _shootImg;
 }
 
 @end

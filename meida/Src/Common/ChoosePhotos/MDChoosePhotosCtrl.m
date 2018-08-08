@@ -7,6 +7,7 @@
 //
 
 #import "MDChoosePhotosCtrl.h"
+#import "MDShootPhotoCtrl.h"
 
 #import "MediaAlbumsModel.h"
 #import "MediaAssetModel.h"
@@ -14,10 +15,6 @@
 #import "MDPhotoAlbumListView.h"
 #import "MDChoosePhotoCell.h"
 #import "UIImage+Capture.h"
-//#import "XHCPhotoPreviewViewController.h"
-//#import "XHCEditPhotosViewController.h"
-//#import "ShootPhotoVC.h"
-//#import "ShareBuyPublishPhotoModel.h"
 
 #import "MediaResourcesManager.h"
 #import "LocalFileManager.h"
@@ -155,12 +152,11 @@ static NSString *MDChoosePhotoCellID = @"MDChoosePhotoCell";
     [backBtn addTarget:self action:@selector(clickBackBtn) forControlEvents:UIControlEventTouchUpInside];
     [backBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.f];
     [backBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kStatusBarHeight];
-    // 添加
-    _addCountBtn = [self creatButtonWithTitle:@"继续" addView:naviView];
-    [_addCountBtn setTitleColor:kDefaultBackgroundColor forState:UIControlStateNormal];
-    [_addCountBtn addTarget:self action:@selector(gotoEditPhotosVC:) forControlEvents:UIControlEventTouchUpInside];
+    // 确定
+    _addCountBtn = [self creatButtonWithTitle:@"确定" addView:naviView];
+    [_addCountBtn addTarget:self action:@selector(comfirmSelectImg:) forControlEvents:UIControlEventTouchUpInside];
     [_addCountBtn autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10.f];
-    _addCountBtn.titleLabel.font = FONT_SYSTEM_BOLD(15);
+    [self.addCountBtn setTitleColor:RED forState:UIControlStateNormal];
     
     // 标题
     _titleBtn = [self creatButtonWithTitle:@"相机胶卷" addView:naviView];
@@ -287,14 +283,14 @@ static NSString *MDChoosePhotoCellID = @"MDChoosePhotoCell";
             return;
         }
         // 拍摄
-//        ShootPhotoVC *vc = [[ShootPhotoVC alloc] init];
-//        vc.shootPhotoBlock = ^(id assets) {
-//            if ([assets isKindOfClass:[PHAsset class]]) {
-//                weakPtr.shootAssets = (PHAsset *)assets;
-//            }
-//            [weakPtr loadAlbumListWithShootBlock:YES];
-//        };
-//        [self.navigationController pushViewController:vc animated:YES];
+        MDShootPhotoCtrl *vc = [[MDShootPhotoCtrl alloc] init];
+        vc.shootPhotoBlock = ^(id assets) {
+            if ([assets isKindOfClass:[PHAsset class]]) {
+                weakPtr.shootAssets = (PHAsset *)assets;
+            }
+            [weakPtr loadAlbumListWithShootBlock:YES];
+        };
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -331,12 +327,11 @@ static NSString *MDChoosePhotoCellID = @"MDChoosePhotoCell";
     }];
 }
 
-- (void)gotoEditPhotosVC:(UIButton *)sender
+- (void)comfirmSelectImg:(UIButton *)sender
 {
-//    if (arrayIsEmpty(self.selectArr)) {
-//        return ;
-//    }
-//    sender.enabled = NO;
+    if (arrayIsEmpty(self.selectArr)) {
+        return ;
+    }
 //    [Util showLoadingVwInView:self.view withText:@"正在处理图片"];
 //    // 埋点
 //    UserAnalyticsModel *analyzeModel = [[UserAnalyticsModel alloc] init];
@@ -390,22 +385,16 @@ static NSString *MDChoosePhotoCellID = @"MDChoosePhotoCell";
 //
 //            [mArr addObject:photoModel];
 //        }
-//
-//        // 处理完成
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            XHCEditPhotosViewController *editPhotosVC = [XHCEditPhotosViewController new];
-//            editPhotosVC.editPhotoArr = mArr;
-//            if (arrayIsEmpty(self.publishArr)) {
-//                editPhotosVC.isAddPhoto = NO;
-//            }
-//            else {
-//                editPhotosVC.isAddPhoto = YES;
-//            }
-//            [self.navigationController pushViewController:editPhotosVC animated:YES];
-//
-//            sender.enabled = YES;
-//        });
-//
+
+        // 处理完成
+        dispatch_async(dispatch_get_main_queue(), ^{
+            MediaAssetModel *model = self.selectArr.firstObject;
+            if (self.selcectImgBlock) {
+                self.selcectImgBlock(model.originImage);
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        });
+
 //        [Util hideLoadingVw];
 //    });
 }
@@ -423,15 +412,15 @@ static NSString *MDChoosePhotoCellID = @"MDChoosePhotoCell";
 
 - (void)updateTheAddCountBtnCount
 {
-    if (arrayIsEmpty(self.selectArr)) {
-        [self.addCountBtn setTitle:@"继续" forState:UIControlStateNormal];
-        [self.addCountBtn setTitleColor:kDefaultBackgroundColor forState:UIControlStateNormal];
-    }
-    else {
-        NSString *addStr = [NSString stringWithFormat:@"继续(%zd)",self.selectArr.count];
-        [self.addCountBtn setTitle:addStr forState:UIControlStateNormal];
-        [self.addCountBtn setTitleColor:RED forState:UIControlStateNormal];
-    }
+//    if (arrayIsEmpty(self.selectArr)) {
+//        [self.addCountBtn setTitle:@"继续" forState:UIControlStateNormal];
+//        [self.addCountBtn setTitleColor:kDefaultBackgroundColor forState:UIControlStateNormal];
+//    }
+//    else {
+        //NSString *addStr = [NSString stringWithFormat:@"确定",self.selectArr.count];
+        //[self.addCountBtn setTitle:addStr forState:UIControlStateNormal];
+        //[self.addCountBtn setTitleColor:RED forState:UIControlStateNormal];
+//    }
 }
 
 #pragma mark - getter & setter

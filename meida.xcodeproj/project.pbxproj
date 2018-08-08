@@ -110,7 +110,6 @@
 		C228506A2101BA9F000FF959 /* MDTrendRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850692101BA9F000FF959 /* MDTrendRecommendView.m */; };
 		C228506C2101C905000FF959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C228506B2101C905000FF959 /* Assets.xcassets */; };
 		C228507D2101CA81000FF959 /* MDMyFittingRoomCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */; };
-		C228507E2101CA81000FF959 /* MDMyWardrobeCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850722101CA80000FF959 /* MDMyWardrobeCtrl.m */; };
 		C228507F2101CA81000FF959 /* MDMyFittingRoomCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850732101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.m */; };
 		C22850802101CA81000FF959 /* MDAddClothMatchCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */; };
 		C22850812101CA81000FF959 /* MDWardrobeAfterClothCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850772101CA81000FF959 /* MDWardrobeAfterClothCtrl.m */; };
@@ -125,10 +124,12 @@
 		C24C621721071B20007407CE /* CustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C621621071B20007407CE /* CustomPageControl.m */; };
 		C264CE5720EDFC590053AD0E /* MDAddClothMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */; };
 		C27E20FB21081BC800E95228 /* RecommendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E20FA21081BC800E95228 /* RecommendDetailCell.m */; };
-		C27E20FE2108202600E95228 /* MDWardrobeRecordCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E20FD2108202600E95228 /* MDWardrobeRecordCtrl.m */; };
-		C27E210221087B2800E95228 /* RecordVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210121087B2800E95228 /* RecordVideoView.m */; };
-		C27E210521087DFF00E95228 /* RecordVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210421087DFF00E95228 /* RecordVideoModel.m */; };
 		C27E210E2109D0C500E95228 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210D2109D0C500E95228 /* MDWardrobeViewCell.m */; };
+		C288E41D211A99E200CF197C /* MDShootPhotoCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C288E41C211A99E200CF197C /* MDShootPhotoCtrl.m */; };
+		C288E421211ACE5C00CF197C /* MDRecordVideoCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C288E420211ACE5C00CF197C /* MDRecordVideoCtrl.m */; };
+		C288E424211ACF0200CF197C /* MDChooseVideoCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C288E423211ACF0100CF197C /* MDChooseVideoCtrl.m */; };
+		C288E42A211ADAB700CF197C /* MDVideoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288E429211ADAB700CF197C /* MDVideoPreviewView.m */; };
+		C288E42D211ADB5400CF197C /* MDVideoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288E42C211ADB5300CF197C /* MDVideoPlayView.m */; };
 		C29E2A3420F5DF0800DE9BAC /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A1F20F5DF0800DE9BAC /* WXUtil.mm */; };
 		C29E2A3520F5DF0800DE9BAC /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A2220F5DF0800DE9BAC /* ApiXml.mm */; };
 		C29E2A3620F5DF0800DE9BAC /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = C29E2A2320F5DF0800DE9BAC /* payRequsestHandler.mm */; };
@@ -188,7 +189,6 @@
 		C2B0536D2106D55E00102972 /* MDRecommendDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B0536C2106D55E00102972 /* MDRecommendDetailCtrl.m */; };
 		C2B053702106D56B00102972 /* MDUploadNewDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B0536F2106D56B00102972 /* MDUploadNewDetailCtrl.m */; };
 		C2CE592D20E9C247001F1F47 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE592C20E9C247001F1F47 /* MDSegmentView.m */; };
-		C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m.bak in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m.bak */; };
 		C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */; };
 		C2CE593D20EB51D2001F1F47 /* UIView+cframe.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE593C20EB51D2001F1F47 /* UIView+cframe.m */; };
 		C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594220EB551F001F1F47 /* UIButton+ConentInsets.m */; };
@@ -197,13 +197,8 @@
 		C2CE594D20EB64BE001F1F47 /* MDServicesCategroyCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE594C20EB64BE001F1F47 /* MDServicesCategroyCtrl.m */; };
 		C2CE595220EB7EAC001F1F47 /* MDServicesBaseSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */; };
 		C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CE595620EB833F001F1F47 /* MDStarView.m */; };
-		C2DEFA0720F484B900A7F89C /* MDShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA0620F484B900A7F89C /* MDShootViewController.m */; };
-		C2DEFA0A20F4854A00A7F89C /* MDShootManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA0920F4854A00A7F89C /* MDShootManager.m */; };
-		C2DEFA1020F4AF9C00A7F89C /* MDAnimationRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA0F20F4AF9C00A7F89C /* MDAnimationRecordView.m */; };
-		C2DEFA1320F4B03900A7F89C /* MDShootPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA1220F4B03900A7F89C /* MDShootPlayerView.m */; };
 		C2DEFA1720F4B11100A7F89C /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA1620F4B11100A7F89C /* UIImage+Additions.m */; };
 		C2DEFA1A20F4B30C00A7F89C /* NSString+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DEFA1820F4B30C00A7F89C /* NSString+Path.m */; };
-		C2DEFA1C20F4B7AB00A7F89C /* ShootIcons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C2DEFA1B20F4B7AB00A7F89C /* ShootIcons.bundle */; };
 		C2F5FBE720EC60D800DC04FF /* MDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBE620EC60D800DC04FF /* MDCycleScrollView.m */; };
 		C2F5FBEA20EC626600DC04FF /* MDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBE920EC626600DC04FF /* MDPageControl.m */; };
 		C2F5FBED20EC63DB00DC04FF /* MDAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5FBEC20EC63DB00DC04FF /* MDAbstractDotView.m */; };
@@ -467,11 +462,9 @@
 		C22850682101BA9F000FF959 /* MDTrendRecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTrendRecommendView.h; sourceTree = "<group>"; };
 		C22850692101BA9F000FF959 /* MDTrendRecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrendRecommendView.m; sourceTree = "<group>"; };
 		C228506B2101C905000FF959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C228506E2101CA80000FF959 /* MDMyWardrobeCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMyWardrobeCtrl.h; sourceTree = "<group>"; };
 		C228506F2101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCategoryCtrl.h; sourceTree = "<group>"; };
 		C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCtrl.m; sourceTree = "<group>"; };
 		C22850712101CA80000FF959 /* MDAddClothMatchCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAddClothMatchCtrl.h; sourceTree = "<group>"; };
-		C22850722101CA80000FF959 /* MDMyWardrobeCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMyWardrobeCtrl.m; sourceTree = "<group>"; };
 		C22850732101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCategoryCtrl.m; sourceTree = "<group>"; };
 		C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCtrl.m; sourceTree = "<group>"; };
 		C22850752101CA80000FF959 /* MDMyFittingRoomCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCtrl.h; sourceTree = "<group>"; };
@@ -498,14 +491,18 @@
 		C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCell.m; sourceTree = "<group>"; };
 		C27E20F921081BC800E95228 /* RecommendDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendDetailCell.h; sourceTree = "<group>"; };
 		C27E20FA21081BC800E95228 /* RecommendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendDetailCell.m; sourceTree = "<group>"; };
-		C27E20FC2108202600E95228 /* MDWardrobeRecordCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeRecordCtrl.h; sourceTree = "<group>"; };
-		C27E20FD2108202600E95228 /* MDWardrobeRecordCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeRecordCtrl.m; sourceTree = "<group>"; };
-		C27E210021087B2800E95228 /* RecordVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordVideoView.h; sourceTree = "<group>"; };
-		C27E210121087B2800E95228 /* RecordVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordVideoView.m; sourceTree = "<group>"; };
-		C27E210321087DFF00E95228 /* RecordVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordVideoModel.h; sourceTree = "<group>"; };
-		C27E210421087DFF00E95228 /* RecordVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordVideoModel.m; sourceTree = "<group>"; };
 		C27E210C2109D0C500E95228 /* MDWardrobeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeViewCell.h; sourceTree = "<group>"; };
 		C27E210D2109D0C500E95228 /* MDWardrobeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeViewCell.m; sourceTree = "<group>"; };
+		C288E41B211A99E200CF197C /* MDShootPhotoCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDShootPhotoCtrl.h; sourceTree = "<group>"; };
+		C288E41C211A99E200CF197C /* MDShootPhotoCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDShootPhotoCtrl.m; sourceTree = "<group>"; };
+		C288E41F211ACE5C00CF197C /* MDRecordVideoCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRecordVideoCtrl.h; sourceTree = "<group>"; };
+		C288E420211ACE5C00CF197C /* MDRecordVideoCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDRecordVideoCtrl.m; sourceTree = "<group>"; };
+		C288E422211ACF0100CF197C /* MDChooseVideoCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDChooseVideoCtrl.h; sourceTree = "<group>"; };
+		C288E423211ACF0100CF197C /* MDChooseVideoCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDChooseVideoCtrl.m; sourceTree = "<group>"; };
+		C288E428211ADAB700CF197C /* MDVideoPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDVideoPreviewView.h; sourceTree = "<group>"; };
+		C288E429211ADAB700CF197C /* MDVideoPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDVideoPreviewView.m; sourceTree = "<group>"; };
+		C288E42B211ADB5300CF197C /* MDVideoPlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDVideoPlayView.h; sourceTree = "<group>"; };
+		C288E42C211ADB5300CF197C /* MDVideoPlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDVideoPlayView.m; sourceTree = "<group>"; };
 		C29E29B920F5DF0700DE9BAC /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
 		C29E2A1F20F5DF0800DE9BAC /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
 		C29E2A2020F5DF0800DE9BAC /* payRequsestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = payRequsestHandler.h; sourceTree = "<group>"; };
@@ -771,8 +768,6 @@
 		C2B0536F2106D56B00102972 /* MDUploadNewDetailCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDUploadNewDetailCtrl.m; sourceTree = "<group>"; };
 		C2CE592B20E9C247001F1F47 /* MDSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentView.h; sourceTree = "<group>"; };
 		C2CE592C20E9C247001F1F47 /* MDSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentView.m; sourceTree = "<group>"; };
-		C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h.bak */ = {isa = PBXFileReference; lastKnownFileType = text; path = MDWardrobeViewCell.h.bak; sourceTree = "<group>"; };
-		C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m.bak */ = {isa = PBXFileReference; lastKnownFileType = text; path = MDWardrobeViewCell.m.bak; sourceTree = "<group>"; };
 		C2CE593420EB0C6A001F1F47 /* MDMineContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMineContentCell.h; sourceTree = "<group>"; };
 		C2CE593520EB0C6A001F1F47 /* MDMineContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMineContentCell.m; sourceTree = "<group>"; };
 		C2CE593B20EB51D2001F1F47 /* UIView+cframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+cframe.h"; sourceTree = "<group>"; };
@@ -789,19 +784,10 @@
 		C2CE595120EB7EAC001F1F47 /* MDServicesBaseSortCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDServicesBaseSortCell.m; sourceTree = "<group>"; };
 		C2CE595520EB833F001F1F47 /* MDStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDStarView.h; sourceTree = "<group>"; };
 		C2CE595620EB833F001F1F47 /* MDStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDStarView.m; sourceTree = "<group>"; };
-		C2DEFA0520F484B900A7F89C /* MDShootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDShootViewController.h; sourceTree = "<group>"; };
-		C2DEFA0620F484B900A7F89C /* MDShootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDShootViewController.m; sourceTree = "<group>"; };
-		C2DEFA0820F4854A00A7F89C /* MDShootManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDShootManager.h; sourceTree = "<group>"; };
-		C2DEFA0920F4854A00A7F89C /* MDShootManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDShootManager.m; sourceTree = "<group>"; };
-		C2DEFA0E20F4AF9C00A7F89C /* MDAnimationRecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAnimationRecordView.h; sourceTree = "<group>"; };
-		C2DEFA0F20F4AF9C00A7F89C /* MDAnimationRecordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAnimationRecordView.m; sourceTree = "<group>"; };
-		C2DEFA1120F4B03900A7F89C /* MDShootPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDShootPlayerView.h; sourceTree = "<group>"; };
-		C2DEFA1220F4B03900A7F89C /* MDShootPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDShootPlayerView.m; sourceTree = "<group>"; };
 		C2DEFA1520F4B11100A7F89C /* UIImage+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		C2DEFA1620F4B11100A7F89C /* UIImage+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
 		C2DEFA1820F4B30C00A7F89C /* NSString+Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Path.m"; sourceTree = "<group>"; };
 		C2DEFA1920F4B30C00A7F89C /* NSString+Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Path.h"; sourceTree = "<group>"; };
-		C2DEFA1B20F4B7AB00A7F89C /* ShootIcons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShootIcons.bundle; sourceTree = "<group>"; };
 		C2F5FBE520EC60D800DC04FF /* MDCycleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCycleScrollView.h; sourceTree = "<group>"; };
 		C2F5FBE620EC60D800DC04FF /* MDCycleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDCycleScrollView.m; sourceTree = "<group>"; };
 		C2F5FBE820EC626600DC04FF /* MDPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDPageControl.h; sourceTree = "<group>"; };
@@ -1069,8 +1055,6 @@
 		99AA26B220DE6DC70053CAB6 /* Wardrobe */ = {
 			isa = PBXGroup;
 			children = (
-				C2CE593120EA2C09001F1F47 /* MDWardrobeViewCell.h.bak */,
-				C2CE593220EA2C09001F1F47 /* MDWardrobeViewCell.m.bak */,
 				C27E210C2109D0C500E95228 /* MDWardrobeViewCell.h */,
 				C27E210D2109D0C500E95228 /* MDWardrobeViewCell.m */,
 				C2FF1A2120ECA30C0017DFF5 /* WardrobeAfterClothCell.h */,
@@ -1101,12 +1085,11 @@
 		99AA26B520DE6DC70053CAB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C288E41E211ACE2B00CF197C /* RecordVideos */,
 				C2AD19AC211847EE00494E76 /* ChoosePhotos */,
 				C2AD199F21182CAC00494E76 /* MediaTools */,
-				C27E20FF21087AB000E95228 /* RecordVideoView */,
 				C29E29B220F5DF0700DE9BAC /* PayManager */,
 				C2DEFA1420F4B0FB00A7F89C /* Additions */,
-				C2DEFA0420F4847C00A7F89C /* ShootVideo */,
 				99AA26B620DE6DC70053CAB6 /* Util */,
 				99AA26C420DE6DC70053CAB6 /* Location */,
 				99AA26C720DE6DC70053CAB6 /* Network */,
@@ -1734,10 +1717,6 @@
 		C228506D2101CA80000FF959 /* WardrobeBody */ = {
 			isa = PBXGroup;
 			children = (
-				C228506E2101CA80000FF959 /* MDMyWardrobeCtrl.h */,
-				C22850722101CA80000FF959 /* MDMyWardrobeCtrl.m */,
-				C27E20FC2108202600E95228 /* MDWardrobeRecordCtrl.h */,
-				C27E20FD2108202600E95228 /* MDWardrobeRecordCtrl.m */,
 				C22850752101CA80000FF959 /* MDMyFittingRoomCtrl.h */,
 				C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */,
 				C228506F2101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.h */,
@@ -1770,15 +1749,19 @@
 			path = UIPageControl;
 			sourceTree = "<group>";
 		};
-		C27E20FF21087AB000E95228 /* RecordVideoView */ = {
+		C288E41E211ACE2B00CF197C /* RecordVideos */ = {
 			isa = PBXGroup;
 			children = (
-				C27E210021087B2800E95228 /* RecordVideoView.h */,
-				C27E210121087B2800E95228 /* RecordVideoView.m */,
-				C27E210321087DFF00E95228 /* RecordVideoModel.h */,
-				C27E210421087DFF00E95228 /* RecordVideoModel.m */,
+				C288E422211ACF0100CF197C /* MDChooseVideoCtrl.h */,
+				C288E423211ACF0100CF197C /* MDChooseVideoCtrl.m */,
+				C288E428211ADAB700CF197C /* MDVideoPreviewView.h */,
+				C288E429211ADAB700CF197C /* MDVideoPreviewView.m */,
+				C288E42B211ADB5300CF197C /* MDVideoPlayView.h */,
+				C288E42C211ADB5300CF197C /* MDVideoPlayView.m */,
+				C288E41F211ACE5C00CF197C /* MDRecordVideoCtrl.h */,
+				C288E420211ACE5C00CF197C /* MDRecordVideoCtrl.m */,
 			);
-			path = RecordVideoView;
+			path = RecordVideos;
 			sourceTree = "<group>";
 		};
 		C29E29B220F5DF0700DE9BAC /* PayManager */ = {
@@ -2138,6 +2121,8 @@
 				C2AD19AA211846F900494E76 /* MDChoosePhotosCtrl.m */,
 				C2AD19AD2118483500494E76 /* MDChoosePhotoCell.h */,
 				C2AD19AE2118483500494E76 /* MDChoosePhotoCell.m */,
+				C288E41B211A99E200CF197C /* MDShootPhotoCtrl.h */,
+				C288E41C211A99E200CF197C /* MDShootPhotoCtrl.m */,
 				C2AD19B02118495900494E76 /* MDPhotoAlbumListView.h */,
 				C2AD19B12118495900494E76 /* MDPhotoAlbumListView.m */,
 			);
@@ -2235,22 +2220,6 @@
 				C2CE595620EB833F001F1F47 /* MDStarView.m */,
 			);
 			path = StarView;
-			sourceTree = "<group>";
-		};
-		C2DEFA0420F4847C00A7F89C /* ShootVideo */ = {
-			isa = PBXGroup;
-			children = (
-				C2DEFA0820F4854A00A7F89C /* MDShootManager.h */,
-				C2DEFA0920F4854A00A7F89C /* MDShootManager.m */,
-				C2DEFA0520F484B900A7F89C /* MDShootViewController.h */,
-				C2DEFA0620F484B900A7F89C /* MDShootViewController.m */,
-				C2DEFA0E20F4AF9C00A7F89C /* MDAnimationRecordView.h */,
-				C2DEFA0F20F4AF9C00A7F89C /* MDAnimationRecordView.m */,
-				C2DEFA1120F4B03900A7F89C /* MDShootPlayerView.h */,
-				C2DEFA1220F4B03900A7F89C /* MDShootPlayerView.m */,
-				C2DEFA1B20F4B7AB00A7F89C /* ShootIcons.bundle */,
-			);
-			path = ShootVideo;
 			sourceTree = "<group>";
 		};
 		C2DEFA1420F4B0FB00A7F89C /* Additions */ = {
@@ -2413,7 +2382,6 @@
 				C228506C2101C905000FF959 /* Assets.xcassets in Resources */,
 				99AA286F20DE6DC80053CAB6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				99AA285120DE6DC80053CAB6 /* DeviceConstantInfo.plist in Resources */,
-				C2DEFA1C20F4B7AB00A7F89C /* ShootIcons.bundle in Resources */,
 				99AA287520DE6DC80053CAB6 /* SAMKeychain.bundle in Resources */,
 				99AA282620DE6DC80053CAB6 /* MenuImages.xcassets in Resources */,
 				C22869E82112F93E000AE14A /* Launch Screen.storyboard in Resources */,
@@ -2511,7 +2479,6 @@
 				C22850802101CA81000FF959 /* MDAddClothMatchCtrl.m in Sources */,
 				99AA289020DE6F580053CAB6 /* LocalFileManager.m in Sources */,
 				C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */,
-				C2DEFA0A20F4854A00A7F89C /* MDShootManager.m in Sources */,
 				99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */,
 				99970F5920DF2CFA00AEC45E /* MDTabBar.m in Sources */,
 				C29E2A3620F5DF0800DE9BAC /* payRequsestHandler.mm in Sources */,
@@ -2541,15 +2508,16 @@
 				C2A832AE20EF512300A821E6 /* XHLaunchAdConst.m in Sources */,
 				99AA280620DE6DC80053CAB6 /* ShareView.m in Sources */,
 				C228506A2101BA9F000FF959 /* MDTrendRecommendView.m in Sources */,
-				C2DEFA1020F4AF9C00A7F89C /* MDAnimationRecordView.m in Sources */,
 				99AA284F20DE6DC80053CAB6 /* NSDate+LSExtension.m in Sources */,
 				C22850832101CA81000FF959 /* MDFanshionCircleCtrl.m in Sources */,
 				99AA284420DE6DC80053CAB6 /* UIView+AligmentRectInsets.m in Sources */,
 				C2A832B220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
 				C29E2A3420F5DF0800DE9BAC /* WXUtil.mm in Sources */,
+				C288E41D211A99E200CF197C /* MDShootPhotoCtrl.m in Sources */,
 				C2CE594720EB57DB001F1F47 /* MDSegmentTitleView.m in Sources */,
 				C2A832AF20EF512300A821E6 /* XHLaunchAd.m in Sources */,
 				99CD9C8220DF31F1000BC7F0 /* MDMineControl.m in Sources */,
+				C288E424211ACF0200CF197C /* MDChooseVideoCtrl.m in Sources */,
 				99AA280220DE6DC80053CAB6 /* UserAnalyticsManager.m in Sources */,
 				99AA281F20DE6DC80053CAB6 /* BaseTextField.m in Sources */,
 				C228507D2101CA81000FF959 /* MDMyFittingRoomCtrl.m in Sources */,
@@ -2570,6 +2538,7 @@
 				C2A832A920EF512300A821E6 /* FLAnimatedImage.m in Sources */,
 				C2CE595220EB7EAC001F1F47 /* MDServicesBaseSortCell.m in Sources */,
 				99AA284B20DE6DC80053CAB6 /* UIViewController+Swizzling.m in Sources */,
+				C288E421211ACE5C00CF197C /* MDRecordVideoCtrl.m in Sources */,
 				99AA283F20DE6DC80053CAB6 /* UIButton+EnlargeArea.m in Sources */,
 				9921785320E28484001C6A76 /* MDNetWorking.m in Sources */,
 				99AA280A20DE6DC80053CAB6 /* ShareViewCell.m in Sources */,
@@ -2579,6 +2548,7 @@
 				C2DEFA1A20F4B30C00A7F89C /* NSString+Path.m in Sources */,
 				99AA284C20DE6DC80053CAB6 /* HookUtility.m in Sources */,
 				99AA286720DE6DC80053CAB6 /* main.m in Sources */,
+				C288E42D211ADB5400CF197C /* MDVideoPlayView.m in Sources */,
 				99AA289320DE6F580053CAB6 /* HandleOpenUrlManager.m in Sources */,
 				99AA283D20DE6DC80053CAB6 /* UIPageControl+CusPageControl.m in Sources */,
 				C264CE5720EDFC590053AD0E /* MDAddClothMatchCell.m in Sources */,
@@ -2596,17 +2566,16 @@
 				99AA284820DE6DC80053CAB6 /* NSString+AttributeString.m in Sources */,
 				9921785920E28AEC001C6A76 /* MDErrorModel.m in Sources */,
 				C2AD19AB211846F900494E76 /* MDChoosePhotosCtrl.m in Sources */,
-				C2DEFA1320F4B03900A7F89C /* MDShootPlayerView.m in Sources */,
 				C2CE594D20EB64BE001F1F47 /* MDServicesCategroyCtrl.m in Sources */,
 				C2AD19AF2118483500494E76 /* MDChoosePhotoCell.m in Sources */,
 				C22850822101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m in Sources */,
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
-				C27E20FE2108202600E95228 /* MDWardrobeRecordCtrl.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
 				C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */,
 				C27E20FB21081BC800E95228 /* RecommendDetailCell.m in Sources */,
 				99AA287320DE6DC80053CAB6 /* ttc_encrypt_v2.c in Sources */,
+				C288E42A211ADAB700CF197C /* MDVideoPreviewView.m in Sources */,
 				99AA280320DE6DC80053CAB6 /* UserAnalyticsModel.m in Sources */,
 				C2F5FBEA20EC626600DC04FF /* MDPageControl.m in Sources */,
 				C2AD19A721182CC600494E76 /* MediaAlbumsModel.m in Sources */,
@@ -2616,11 +2585,9 @@
 				99970F5C20DF2E1500AEC45E /* MDTabBarSubviews.m in Sources */,
 				C24C621021070EEB007407CE /* UploadNewDetailScrollView.m in Sources */,
 				C29E2C9B20F5F06400DE9BAC /* MD5DataSigner.m in Sources */,
-				C2CE593320EA2C09001F1F47 /* MDWardrobeViewCell.m.bak in Sources */,
 				99CD9C7C20DF3185000BC7F0 /* MDWardrobeControl.m in Sources */,
 				99AA282B20DE6DC80053CAB6 /* LSAlertView.m in Sources */,
 				C2B053702106D56B00102972 /* MDUploadNewDetailCtrl.m in Sources */,
-				C27E210221087B2800E95228 /* RecordVideoView.m in Sources */,
 				997E63B520E7B4E900B237EC /* MDShareInfoModel.m in Sources */,
 				99AA281420DE6DC80053CAB6 /* BaseJumpModel.m in Sources */,
 				99AA283920DE6DC80053CAB6 /* UIImage+Blur.m in Sources */,
@@ -2634,16 +2601,13 @@
 				C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */,
 				C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */,
 				C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */,
-				C228507E2101CA81000FF959 /* MDMyWardrobeCtrl.m in Sources */,
 				C228505E2101835B000FF959 /* MDTrendBaseScrollView.m in Sources */,
 				99AA281120DE6DC80053CAB6 /* BaseModel.m in Sources */,
 				C29E2CA120F5F06400DE9BAC /* RSADataSigner.m in Sources */,
 				99AA284220DE6DC80053CAB6 /* UIView+Animation.m in Sources */,
 				99AA284920DE6DC80053CAB6 /* NSString+TrimmingAdditions.m in Sources */,
 				C2F5FBE720EC60D800DC04FF /* MDCycleScrollView.m in Sources */,
-				C27E210521087DFF00E95228 /* RecordVideoModel.m in Sources */,
 				999D3FD920E28E8300950040 /* MDDeviceManager.m in Sources */,
-				C2DEFA0720F484B900A7F89C /* MDShootViewController.m in Sources */,
 				99970F4D20DE768800AEC45E /* MDTabBarController.m in Sources */,
 				99AA283120DE6DC80053CAB6 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				99AA282520DE6DC80053CAB6 /* QuadCurveMenu.m in Sources */,
@@ -2824,6 +2788,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6P76VDB54;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2855,7 +2820,7 @@
 					"\"$(SRCROOT)/meida/Lib/libWeiboSDK\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/meida/Src/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2865,6 +2830,7 @@
 					"$(PROJECT_DIR)/meida/Lib/libWeiboSDK",
 					"$(PROJECT_DIR)/meida/Lib/WechatSDK",
 					"$(PROJECT_DIR)/meida/Lib/AlipayPay",
+					"$(PROJECT_DIR)/meida/Lib/meisheSdk",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ymfashion.meida;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2881,6 +2847,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6P76VDB54;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/meida/Lib/TencentSDK",
@@ -2911,7 +2878,7 @@
 					"\"$(SRCROOT)/meida/Lib/libWeiboSDK\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/meida/Src/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2921,6 +2888,7 @@
 					"$(PROJECT_DIR)/meida/Lib/libWeiboSDK",
 					"$(PROJECT_DIR)/meida/Lib/WechatSDK",
 					"$(PROJECT_DIR)/meida/Lib/AlipayPay",
+					"$(PROJECT_DIR)/meida/Lib/meisheSdk",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ymfashion.meida;
 				PRODUCT_NAME = "$(TARGET_NAME)";

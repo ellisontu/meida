@@ -108,15 +108,15 @@ static NSString *MDAddClothMatchTagCellID    = @"MDAddClothMatchTagCell";
     if (0 == row) {
         
         /*
-         MDChooseVideoCtrl *vc = [[MDChooseVideoCtrl alloc] initWithVideoChosenType:VideoGallaryToShare maxLimitCount:MaxEditableVideoCount];
+         MDChoosePhotosCtrl *vc = [[MDChoosePhotosCtrl alloc] init];
+         MDWeakPtr(weakPtr, self);
+         vc.selcectImgBlock = ^(UIImage * image) {
+         weakPtr.shootImg = image;
+         [weakPtr.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+         };
          [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
          */
-        MDChoosePhotosCtrl *vc = [[MDChoosePhotosCtrl alloc] init];
-        MDWeakPtr(weakPtr, self);
-        vc.selcectImgBlock = ^(UIImage * image) {
-            weakPtr.shootImg = image;
-            [weakPtr.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-        };
+        MDChooseVideoCtrl *vc = [[MDChooseVideoCtrl alloc] initWithVideoChosenType:VideoGallaryToShare maxLimitCount:MaxEditableVideoCount];
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
         
     }

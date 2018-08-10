@@ -648,7 +648,7 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-                  timestampString = "555413560.071571"
+                  timestampString = "555581676.786517"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
@@ -663,7 +663,7 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-                  timestampString = "555413560.073294"
+                  timestampString = "555581676.788114"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
@@ -792,7 +792,7 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar1/Control/Trend/MDChannelDetailCtrl.m"
-                  timestampString = "555413560.106125"
+                  timestampString = "555581676.818217"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
@@ -807,7 +807,7 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar1/Control/Trend/MDChannelDetailCtrl.m"
-                  timestampString = "555413560.1078579"
+                  timestampString = "555581676.819875"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -855,109 +855,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/ChoosePhotos/MDChoosePhotosCtrl.m"
-            timestampString = "555413559.748453"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
-            landmarkName = "-comfirmSelectImg:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/ChoosePhotos/MDChoosePhotosCtrl.m"
-            timestampString = "555413559.748835"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
-            landmarkName = "-comfirmSelectImg:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "meida/Src/Common/ChoosePhotos/MDShootPhotoCtrl.h"
-            timestampString = "555413559.748898"
+            timestampString = "555581852.620277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
             landmarkName = "MDShootPhotoView"
             landmarkType = "2">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/ChoosePhotos/MDChoosePhotosCtrl.m"
-            timestampString = "555413559.749107"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
-            landmarkName = "-comfirmSelectImg:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MDChoosePhotosCtrl comfirmSelectImg:]"
-                  moduleName = "meida"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liugang/Desktop/meida/meida/Src/Common/ChoosePhotos/MDChoosePhotosCtrl.m"
-                  timestampString = "555413560.131188"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "390"
-                  endingLineNumber = "390"
-                  offsetFromSymbolStart = "140">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[MDChoosePhotosCtrl comfirmSelectImg:]_block_invoke"
-                  moduleName = "meida"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liugang/Desktop/meida/meida/Src/Common/ChoosePhotos/MDChoosePhotosCtrl.m"
-                  timestampString = "555413560.13363"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "390"
-                  endingLineNumber = "390"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.353"
-                  moduleName = "meida"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liugang/Desktop/meida/meida/Src/Common/ChoosePhotos/MDChoosePhotosCtrl.m"
-                  timestampString = "555413560.136745"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "390"
-                  endingLineNumber = "390"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -968,6 +873,22 @@
             continueAfterRunningActions = "No"
             scope = "0"
             stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "meida/Src/Common/ChoosePhotos/MDShootPhotoCtrl.m"
+            timestampString = "555581852.6203541"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "-initialSession"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

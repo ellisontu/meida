@@ -213,7 +213,6 @@
     _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error;
     [_captureDevice lockForConfiguration:&error];
-    DLog(@"error:%@",error.description);
     if ([_captureDevice isFlashModeSupported:AVCaptureFlashModeOff])
     {
         [_captureDevice setFlashMode:AVCaptureFlashModeOff];

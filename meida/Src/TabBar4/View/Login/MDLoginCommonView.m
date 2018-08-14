@@ -11,8 +11,10 @@
 #pragma mark - 登录 view ############ -------------------
 @interface MDLoginView ()
 
+@property (nonatomic, strong) UILabel       *phoneTipsLbl;
 @property (nonatomic, strong) UITextField   *phoneTextField;    /**<  */
 @property (nonatomic, strong) UIView        *phoneTextLine;     /**<  */
+@property (nonatomic, strong) UILabel       *pwordTipsLbl;
 @property (nonatomic, strong) UITextField   *pwordTextField;    /**<  */
 @property (nonatomic, strong) UIView        *pwordTextLine;     /**<  */
 @property (nonatomic, strong) UIButton      *forgotBtnView;     /**<  */
@@ -50,44 +52,56 @@
     
     self.backgroundColor = [UIColor clearColor];
     
+    _phoneTipsLbl   = [[UILabel alloc] init];
     _phoneTextField = [[UITextField alloc] init];
     _phoneTextLine  = [[UIView alloc] init];
+    _pwordTipsLbl   = [[UILabel alloc] init];
     _pwordTextField = [[UITextField alloc] init];
     _pwordTextLine  = [[UIView alloc] init];
     _forgotBtnView  = [[UIButton alloc] init];
     _loginBtnView   = [[UIButton alloc] init];
     
+    [self addSubview:_phoneTipsLbl];
     [self addSubview:_phoneTextField];
     [self addSubview:_phoneTextLine];
+    [self addSubview:_pwordTipsLbl];
     [self addSubview:_pwordTextField];
     [self addSubview:_pwordTextLine];
     [self addSubview:_forgotBtnView];
     [self addSubview:_loginBtnView];
     
-
+    CGFloat tipsWW = 70.f;
     [_phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self);
-        make.left.equalTo(self);
+        make.right.equalTo(self.phoneTextLine);
+        make.left.equalTo(self.phoneTextLine).offset(tipsWW);
         make.top.equalTo(self).offset(kOffPadding);
         make.height.mas_equalTo(25.f);
     }];
     [_phoneTextLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.phoneTextField.mas_bottom).offset(5.f);
+        make.top.equalTo(self.phoneTextField.mas_bottom);
         make.left.equalTo(self);
         make.right.equalTo(self);
         make.height.mas_equalTo(OnePixScale);
     }];
+    [_phoneTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.phoneTextField);
+        make.left.equalTo(self.phoneTextLine);
+    }];
     [_pwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self);
-        make.left.equalTo(self);
+        make.right.equalTo(self.pwordTextLine);
+        make.left.equalTo(self.pwordTextLine).offset(tipsWW);
         make.top.equalTo(self.phoneTextLine.mas_bottom).offset(kOffPadding);
         make.height.mas_equalTo(25.f);
     }];
     [_pwordTextLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.pwordTextField.mas_bottom).offset(5.f);
+        make.top.equalTo(self.pwordTextField.mas_bottom);
         make.left.equalTo(self);
         make.right.equalTo(self);
         make.height.mas_equalTo(OnePixScale);
+    }];
+    [_pwordTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.pwordTextField);
+        make.left.equalTo(self.pwordTextLine);
     }];
     [_forgotBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.pwordTextField.mas_bottom).offset(kOffPadding);
@@ -101,24 +115,33 @@
         make.height.mas_equalTo(40.f);
     }];
     
-    NSMutableParagraphStyle *style1 = [[NSMutableParagraphStyle alloc] init];
-    style1.alignment = NSTextAlignmentCenter;
-    NSAttributedString *attrString1 = [[NSAttributedString alloc] initWithString:@"用户名" attributes:
-                                      @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
-                                        NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
-                                        NSParagraphStyleAttributeName:style1
-                                        }];
-    _phoneTextField.attributedPlaceholder = attrString1;
-    _phoneTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
+//    NSMutableParagraphStyle *style1 = [[NSMutableParagraphStyle alloc] init];
+//    style1.alignment = NSTextAlignmentCenter;
+//    NSAttributedString *attrString1 = [[NSAttributedString alloc] initWithString:@"用户名" attributes:
+//                                      @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
+//                                        NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
+//                                        NSParagraphStyleAttributeName:style1
+//                                        }];
+//    _phoneTextField.attributedPlaceholder = attrString1;
+//    _phoneTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
+//
+//    NSMutableParagraphStyle *style2 = [[NSMutableParagraphStyle alloc] init];
+//    style2.alignment = NSTextAlignmentCenter;
+//    NSAttributedString *attrString2 = [[NSAttributedString alloc] initWithString:@"密码" attributes:
+//                                      @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
+//                                        NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
+//                                        NSParagraphStyleAttributeName:style2
+//                                        }];
+//    _pwordTextField.attributedPlaceholder = attrString2;
+//    _pwordTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
     
-    NSMutableParagraphStyle *style2 = [[NSMutableParagraphStyle alloc] init];
-    style2.alignment = NSTextAlignmentCenter;
-    NSAttributedString *attrString2 = [[NSAttributedString alloc] initWithString:@"密码" attributes:
-                                      @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
-                                        NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
-                                        NSParagraphStyleAttributeName:style2
-                                        }];
-    _pwordTextField.attributedPlaceholder = attrString2;
+    _phoneTipsLbl.font = FONT_SYSTEM_NORMAL(20);
+    _phoneTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
+    _phoneTipsLbl.text = @"手机号";
+    _pwordTipsLbl.font = FONT_SYSTEM_NORMAL(20);
+    _pwordTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
+    _pwordTipsLbl.text = @"密    码";
+    _phoneTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
     _pwordTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
     
     [_forgotBtnView setTitle:@"忘记密码?" forState:UIControlStateNormal];
@@ -371,7 +394,7 @@
     _pCodeTipsLbl.text = @"验证码";
     _pwordTipsLbl.font = FONT_SYSTEM_NORMAL(20);
     _pwordTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
-    _pwordTipsLbl.text = @"密码";
+    _pwordTipsLbl.text = @"密    码";
     
     _phoneTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
     _pCodeTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");

@@ -519,22 +519,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/Util/LocalFileManager.m"
-            timestampString = "554368141.964343"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "+createDirectorWithFolderName:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "meida/Src/Common/RecordVideoView/RecordVideoModel.m"
             timestampString = "555302308.0794491"
             startingColumnNumber = "9223372036854775807"
@@ -542,54 +526,6 @@
             startingLineNumber = "410"
             endingLineNumber = "410"
             landmarkName = "-captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/Util/LocalFileManager.m"
-            timestampString = "554368141.964551"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
-            landmarkName = "+deleteFileAtPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/Util/LocalFileManager.m"
-            timestampString = "554368141.964627"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "437"
-            endingLineNumber = "437"
-            landmarkName = "+deleteFileAtPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/Util/LocalFileManager.m"
-            timestampString = "554368141.964699"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
-            landmarkName = "+deleteFileAtPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -616,11 +552,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "555906336.508423"
+            timestampString = "555921502.212888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-loginBtnAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -632,11 +568,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "555906336.508725"
+            timestampString = "555921502.21296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "-loginBtnAction:"
             landmarkType = "7">
             <Locations>
@@ -648,11 +584,11 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-                  timestampString = "555845980.804934"
+                  timestampString = "555921420.682083"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "174"
-                  endingLineNumber = "174"
+                  startingLineNumber = "197"
+                  endingLineNumber = "197"
                   offsetFromSymbolStart = "1016">
                </Location>
                <Location
@@ -663,11 +599,11 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-                  timestampString = "555845980.806525"
+                  timestampString = "555921420.683955"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "175"
-                  endingLineNumber = "175"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
                   offsetFromSymbolStart = "56">
                </Location>
             </Locations>
@@ -696,11 +632,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar4/View/Login/MDLoginCommonView.m"
-            timestampString = "555906336.508945"
+            timestampString = "555921502.213044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "443"
-            endingLineNumber = "443"
+            startingLineNumber = "466"
+            endingLineNumber = "466"
             landmarkName = "-registerBtnAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -759,22 +695,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/Network/MDHttpSessionManager.m"
-            timestampString = "554968766.272578"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
-            landmarkName = "-netWorkFailureWithNSErrorChangeErrorModel:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "meida/Src/TabBar1/Control/Trend/MDChannelDetailCtrl.m"
             timestampString = "555228187.911325"
             startingColumnNumber = "9223372036854775807"
@@ -792,7 +712,7 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar1/Control/Trend/MDChannelDetailCtrl.m"
-                  timestampString = "555845980.8294801"
+                  timestampString = "555921420.712629"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
@@ -807,7 +727,7 @@
                   moduleName = "meida"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liugang/Desktop/meida/meida/Src/TabBar1/Control/Trend/MDChannelDetailCtrl.m"
-                  timestampString = "555845980.8310471"
+                  timestampString = "555921420.715181"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -882,7 +802,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/Common/ChoosePhotos/MDShootPhotoCtrl.m"
-            timestampString = "555906336.509383"
+            timestampString = "555921502.213254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
@@ -898,12 +818,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
-            timestampString = "555906336.509432"
+            timestampString = "555921502.213303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "-buttonAction:"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "-refreshTimeLabel"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -914,12 +834,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
-            timestampString = "555906336.50949"
+            timestampString = "555921502.213362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "-buttonAction:"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-updateRecordState:withUrl:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MDRecordVideoCtrl updateRecordState:withUrl:]"
+                  moduleName = "meida"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liugang/Desktop/meida/meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
+                  timestampString = "555921420.734156"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "596">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__47-[MDRecordVideoCtrl updateRecordState:withUrl:]_block_invoke"
+                  moduleName = "meida"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liugang/Desktop/meida/meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
+                  timestampString = "555921420.73638"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.225"
+                  moduleName = "meida"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liugang/Desktop/meida/meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
+                  timestampString = "555921420.738499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "meida/Src/Common/RecordVideos/MDVideoPlayView.m"
+            timestampString = "555921502.213412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "589"
+            endingLineNumber = "589"
+            landmarkName = "-startLocalVideoWithPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -929,61 +912,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
-            timestampString = "555906336.509542"
+            filePath = "meida/Src/Common/RecordVideos/MDVideoPlayView.m"
+            timestampString = "555921502.213455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "-dismiss"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
-            timestampString = "555906336.509589"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-gotoEditPhotoWithPhoto:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
-            timestampString = "555906336.509635"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "MDRecordVideoView"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "meida/Src/Common/RecordVideos/MDRecordVideoCtrl.m"
-            timestampString = "555906336.509674"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
-            landmarkName = "-initView"
+            startingLineNumber = "578"
+            endingLineNumber = "578"
+            landmarkName = "-startLocalVideoWithPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

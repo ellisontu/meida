@@ -615,6 +615,10 @@ typedef NS_ENUM(NSInteger, VideoLoadStatus) {
     _pauseBtn.userInteractionEnabled = NO;
 }
 
+-(void)setIsShowBotmView:(BOOL)isShowBotmView
+{
+    _bottomView.hidden = !isShowBotmView;
+}
 
 #pragma mark - NSKeyValueObserving -
 /*检测到AVPlayerItem属性值的变化，依据不同状态进行播放，暂停，提示正在缓冲，更新缓冲进度等操作。

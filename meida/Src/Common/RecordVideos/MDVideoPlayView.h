@@ -58,6 +58,7 @@ typedef NS_ENUM(NSUInteger, XHCPlayerStatus) {
 @property (nonatomic, strong) UIImage  *coverImage;                 /**< 封面图 */
 
 @property (nonatomic, strong) NSString *coverImageUrl;              /**< 封面图URL */
+@property (nonatomic, assign) BOOL      isShowBotmView;     
 
 @property (nonatomic, weak) id<VideoPlayViewDelegate> delegate;
 

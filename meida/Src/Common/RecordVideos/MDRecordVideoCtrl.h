@@ -15,39 +15,53 @@
 
 
 #pragma mark -  拍摄 录制视频 view #############################################----------
+
+//闪光灯状态
+typedef NS_ENUM(NSInteger, FlashState) {
+    FlashClose = 0,
+    FlashOpen,
+    FlashAuto,
+};
+
+//录制状态
+typedef NS_ENUM(NSInteger, RecordState) {
+    RecordStateInit = 0,
+    RecordStateRecording,
+    RecordStatePause,
+    RecordStateFinish,
+};
+
+@protocol RecordVideoViewDelegate <NSObject>
+
+- (void)updateRecordingProgress:(CGFloat)progress;
+- (void)updateRecordState:(RecordState)recordState withUrl:(NSURL *)videoUrl;
+@optional
+- (void)updateFlashState:(FlashState)state;
+
+@end
+
 @interface MDRecordVideoView : UIView
 
 
-@property (nonatomic, strong, readonly) AVCaptureSession *session;
-
-@property (nonatomic, assign, getter=isFront) BOOL front;
-
-@property (nonatomic, copy) void (^shootPhotoBlock)(id img_assets);
-
-/**
- *  接下来在viewWillAppear方法里执行加载预览图层的方法
- */
-- (void)setUpCameraLayer;
+@property (nonatomic, strong, readonly) AVCaptureSession    *session;
+@property (nonatomic, assign) RecordState                   recordState;
+@property (nonatomic, strong, readonly) NSURL               *videoUrl;
+@property (nonatomic, weak) id<RecordVideoViewDelegate>     delegate;
 
 /**
- *  拍照
+ *  录制视频
  */
-- (void)shutterCamera;
+- (void)startRecord;
 
 /**
  *  切换镜头
  */
-- (void)toggleCamera;
+- (void)returnCamera;
 
 /**
  *  开启闪光灯
  */
 - (void)flashLightAction;
-
-/**
- *  打开网格
- */
-- (void)gridAction;
 
 @end
 

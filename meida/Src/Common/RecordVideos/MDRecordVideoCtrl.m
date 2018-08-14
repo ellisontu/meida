@@ -7,12 +7,20 @@
 //
 
 #import "MDRecordVideoCtrl.h"
-#import "MDCacheFileManager.h"
+#import "LocalFileManager.h"
+#import "MDRecordProgressView.h"
+#import "MDVideoPlayView.h"
+
+//video
+#define RECORD_MAX_TIME     4.0           //最长录制时间
+#define TIMER_INTERVAL      0.05         //计时器刷新频率
 
 #pragma mark -  拍摄 录制视频 controller #############################################----------
-@interface MDRecordVideoCtrl ()
+@interface MDRecordVideoCtrl ()<RecordVideoViewDelegate>
 
 @property (nonatomic, strong) MDRecordVideoView     *recordView;
+@property (nonatomic, strong) MDRecordProgressView  *progressView;
+@property (nonatomic, strong) MDVideoPlayView       *playerView;
 
 @end
 
@@ -33,9 +41,6 @@
         // 初始化时 关闭闪光灯效果
         UIButton *button = [self.view viewWithTag:10];
         button.selected = NO;
-    }
-    if (_recordView) {
-        //[_recordView setUpCameraLayer];
     }
 }
 
@@ -93,18 +98,14 @@
 - (void)configShootView
 {
     _recordView = [[MDRecordVideoView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_WIDTH)];
-    __weak MDRecordVideoCtrl *weakSelf = self;
-    _recordView.shootPhotoBlock = ^(id img_assets) {
-        
-        [weakSelf gotoEditPhotoWithPhoto:img_assets];
-    };
+    _recordView.delegate = self;
     [self.view addSubview:_recordView];
 }
 
 - (void)configControlView
 {
-    NSArray *imageArray = @[@"c_flash_close", @"c_switch_scene", @"c_grid_close"];
-    NSArray *seletImageArray = @[@"c_flash_on", @"c_switch_scene", @"c_grid_on"];
+    NSArray *imageArray = @[@"c_flash_close", @"c_switch_scene"];
+    NSArray *seletImageArray = @[@"c_flash_on", @"c_switch_scene"];
     CGFloat buttonW_H = 25.f;
     CGFloat buttonY = kHeaderHeight + SCR_WIDTH + 25.f;
     CGFloat padding = (SCR_WIDTH - imageArray.count * buttonW_H) / (imageArray.count + 1);
@@ -122,65 +123,92 @@
         }
     }
     
-    UIButton *shootButton = [[UIButton alloc] init];
-    [shootButton setImage:IMAGE(@"c_shoot_press") forState:UIControlStateNormal];
-    shootButton.width = 55.f;
-    shootButton.height = 55.f;
-    shootButton.y = (IS_IPHONE_4_OR_LESS) ? kHeaderHeight + SCR_WIDTH + 10.f : buttonY + 50.f;
-    shootButton.centerX = SCR_WIDTH/2;
-    [shootButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:shootButton];
+    _progressView = [[MDRecordProgressView alloc] init];
+    [self.view addSubview:_progressView];
+    
+    _progressView.width = 55.f;
+    _progressView.height = 55.f;
+    _progressView.y = (IS_IPHONE_4_OR_LESS) ? kHeaderHeight + SCR_WIDTH + 10.f : buttonY + 50.f;
+    _progressView.centerX = SCR_WIDTH/2;
+    UIButton *btn = [[UIButton alloc] init];
+    [_progressView addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.progressView);
+    }];
+    btn.backgroundColor = [UIColor clearColor];
+    [btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 - (void)buttonAction:(UIButton *)sender
 {
     if (sender.tag == 10) {// 闪光灯
         [_recordView flashLightAction];
-        if (!_recordView.isFront) {
-            sender.selected = !sender.selected;
-        }
     }
     else if (sender.tag == 11) {// 转换摄像头
-        [_recordView toggleCamera];
+        [_recordView returnCamera];
         sender.selected = !sender.selected;
     }
-    else if (sender.tag == 12){// 网格
-        [_recordView gridAction];
-        sender.selected = !sender.selected;
-    }
-    else {// 拍照
-        sender.enabled = NO;
-        [_recordView shutterCamera];
+    else {// 录像
+        [_recordView startRecord];
     }
 }
 
-- (void)gotoEditPhotoWithPhoto:(id)photo
-{    
-    [self back:nil];
-}
-
-- (void)dismiss
+- (void)updateRecordingProgress:(CGFloat)progress
 {
-    [super back:nil];
+    [self.progressView updateProgressWithValue:progress];
 }
 
+- (void)updateRecordState:(RecordState)recordState withUrl:(NSURL *)videoUrl
+{
+    if (recordState == RecordStateInit) {
+        //[self updateViewWithStop];
+        [self.progressView resetProgress];
+    } else if (recordState == RecordStateRecording) {
+        //[self updateViewWithRecording];
+    } else  if (recordState == RecordStateFinish) {
+        if (!stringIsEmpty([videoUrl absoluteString])) {
+            self.playerView.videoType = VideoPlayViewSourceTypeDocument;
+            self.playerView.videoUrl = [videoUrl absoluteString];
+            [self.playerView videoPlay];
+            [self.playerView setIsShowBotmView:NO];
+            [UIView animateWithDuration:0.02 animations:^{
+                self.recordView.hidden = YES;
+                self.playerView.hidden = NO;
+            }];
+        }
+    }
+}
+
+- (MDVideoPlayView *)playerView
+{
+    if (!_playerView) {
+        _playerView = [[MDVideoPlayView alloc] initWithFrame:_recordView.frame];
+        _playerView.hidden = YES;
+        [self.view addSubview:_playerView];
+    }
+    return _playerView;
+}
 
 @end
 
 
 
 #pragma mark -  拍摄 录制视频 view #############################################----------
-@interface MDRecordVideoView ()
+
+@interface MDRecordVideoView ()<AVCaptureFileOutputRecordingDelegate>
 
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer    *previewlayer;  /**<  */
 @property (nonatomic, strong) AVCaptureDeviceInput          *videoInput;    /**<  */
 @property (nonatomic, strong) AVCaptureDeviceInput          *audioInput;    /**<  */
 @property (nonatomic, strong) AVCaptureMovieFileOutput      *FileOutput;    /**<  */
 
+@property (nonatomic, assign) FlashState                    flashState;    /**<  */
 @property (nonatomic, strong) UIImageView                   *focusCursor;   /**< 聚焦光标 */
 @property (nonatomic, strong, readwrite) NSURL              *videoUrl;      /**<  */
 @property (nonatomic, strong) NSTimer                       *timer;         /**<  */
 @property (nonatomic, assign) CGFloat                       recordTime;     /**<  */
+
 
 @end
 
@@ -206,7 +234,7 @@
     
     _previewlayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     _previewlayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    _previewlayer.frame = CGRectMake(0, 0, SCR_WIDTH, SCR_WIDTH);
+    _previewlayer.frame = CGRectMake(0, 0, self.width, self.height);
     [self.layer addSublayer:_previewlayer];
     
     // 1.1 获取视频输入设备(摄像头)
@@ -254,27 +282,15 @@
         [_session addOutput:_FileOutput];
     }
     
-    //self.previewlayer.frame = self.frame;
+    // 3.4 添加视频聚焦
+    
+    _focusCursor = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 48.f, 48.f)];
+    _focusCursor.image = [UIImage imageNamed:@"camera_focus_icon"];
+    _focusCursor.alpha = 0;
+    
+    [self addFocus];
     
 }
-
-
-//添加视频聚焦
-//- (void)addFocus
-//{
-//    [self addSubview:self.focusCursor];
-//    UITapGestureRecognizer *tapGesture= [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapScreen:)];
-//    [self addGestureRecognizer:tapGesture];
-//}
-//
-//-(void)tapScreen:(UITapGestureRecognizer *)tapGesture{
-//    CGPoint point= [tapGesture locationInView:self];
-//    //将UI坐标转化为摄像头坐标
-//    CGPoint cameraPoint= [self.previewlayer captureDevicePointOfInterestForPoint:point];
-//    [self setFocusCursorWithPoint:point];
-//    [self focusWithMode:AVCaptureFocusModeAutoFocus exposureMode:AVCaptureExposureModeAutoExpose atPoint:cameraPoint];
-//}
-
 
 -(AVCaptureDevice *)getCameraDeviceWithPosition:(AVCaptureDevicePosition )position{
     NSArray *cameras= [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -286,26 +302,129 @@
     return nil;
 }
 
-/**
- *  接下来在viewWillAppear方法里执行加载预览图层的方法
- */
-- (void)setUpCameraLayer
+
+//添加视频聚焦
+- (void)addFocus
 {
+    [self addSubview:self.focusCursor];
+    UITapGestureRecognizer *tapGesture= [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapScreen:)];
+    [self addGestureRecognizer:tapGesture];
+}
+
+-(void)tapScreen:(UITapGestureRecognizer *)tapGesture{
+    CGPoint point= [tapGesture locationInView:self];
+    //将UI坐标转化为摄像头坐标
+    CGPoint cameraPoint= [self.previewlayer captureDevicePointOfInterestForPoint:point];
+    
+    self.focusCursor.center= point;
+    self.focusCursor.transform=CGAffineTransformMakeScale(1.5, 1.5);
+    self.focusCursor.alpha=1.0;
+    [UIView animateWithDuration:1.0 animations:^{
+        self.focusCursor.transform=CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        self.focusCursor.alpha=0;
+        
+    }];
+    //设置聚焦点
+    [self focusWithMode:AVCaptureFocusModeAutoFocus exposureMode:AVCaptureExposureModeAutoExpose atPoint:cameraPoint];
+}
+//设置聚焦点
+-(void)focusWithMode:(AVCaptureFocusMode)focusMode exposureMode:(AVCaptureExposureMode)exposureMode atPoint:(CGPoint)point{
+    [self changeDeviceProperty:^(AVCaptureDevice *captureDevice) {
+        if ([captureDevice isFocusModeSupported:focusMode]) {
+            [captureDevice setFocusMode:AVCaptureFocusModeAutoFocus];
+        }
+        if ([captureDevice isFocusPointOfInterestSupported]) {
+            [captureDevice setFocusPointOfInterest:point];
+        }
+        if ([captureDevice isExposureModeSupported:exposureMode]) {
+            [captureDevice setExposureMode:AVCaptureExposureModeAutoExpose];
+        }
+        if ([captureDevice isExposurePointOfInterestSupported]) {
+            [captureDevice setExposurePointOfInterest:point];
+        }
+    }];
+}
+
+-(void)changeDeviceProperty:(void(^)(AVCaptureDevice *captureDevice))propertyChange{
+    AVCaptureDevice *captureDevice= [self.videoInput device];
+    NSError *error;
+    //注意改变设备属性前一定要首先调用lockForConfiguration:调用完之后使用unlockForConfiguration方法解锁
+    if ([captureDevice lockForConfiguration:&error]) {
+        propertyChange(captureDevice);
+        [captureDevice unlockForConfiguration];
+    }else{
+        NSLog(@"设置设备属性过程发生错误，错误信息：%@",error.localizedDescription);
+    }
+}
+
+- (void)startRecord
+{
+    NSString *cacheDir = [LocalFileManager getCachePath];
+    NSString *direc = [cacheDir stringByAppendingPathComponent:VIDEO_FOLDER];
+    if (![LocalFileManager isExistFileAtPath:direc]) {
+        [LocalFileManager createDirectorWithFolderName:direc];
+    }
+    NSString *videoPath = [direc stringByAppendingString:[NSString stringWithFormat:@"%@.mp4", [NSUUID UUID].UUIDString]];
+    self.videoUrl = [NSURL fileURLWithPath:videoPath];
+    [self.FileOutput startRecordingToOutputFileURL:self.videoUrl recordingDelegate:self];
+}
+
+#pragma mark - AVCaptureFileOutputRecordingDelegate
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL
+      fromConnections:(NSArray *)connections
+{
+    self.recordState = RecordStateRecording;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:TIMER_INTERVAL target:self selector:@selector(refreshTimeLabel) userInfo:nil repeats:YES];
+}
+
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error
+{
+    
+    if ([LocalFileManager isExistFileAtPath:[self.videoUrl path]]) {
+        
+        self.recordState = RecordStateFinish;
+        //剪裁成正方形
+        //[self cutVideoWithFinished:nil];
+        
+    }
     
 }
 
-/**
- *  拍照
- */
-- (void)shutterCamera
+- (void)refreshTimeLabel
 {
-    
+    _recordTime += TIMER_INTERVAL;
+    if(self.delegate && [self.delegate respondsToSelector:@selector(updateRecordingProgress:)]) {
+        [self.delegate updateRecordingProgress:_recordTime/RECORD_MAX_TIME];
+    }
+    if (_recordTime >= RECORD_MAX_TIME) {
+        [self stopRecord];
+    }
+}
+
+- (void)setRecordState:(RecordState)recordState
+{
+    if (_recordState != recordState) {
+        _recordState = recordState;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(updateRecordState:withUrl:)]) {
+            [self.delegate updateRecordState:_recordState withUrl:self.videoUrl];
+        }
+    }
+}
+
+
+- (void)stopRecord
+{
+    [self.FileOutput stopRecording];
+    [self.session stopRunning];
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 /**
  *  切换镜头
  */
-- (void)toggleCamera
+- (void)returnCamera
 {
     [self.session stopRunning];
     // 1. 获取当前摄像头
@@ -339,40 +458,30 @@
  */
 - (void)flashLightAction
 {
-//    if(_flashState == FMFlashClose){
-//        if ([self.videoInput.device hasTorch]) {
-//            [self.videoInput.device lockForConfiguration:nil];
-//            [self.videoInput.device setTorchMode:AVCaptureTorchModeOn];
-//            [self.videoInput.device unlockForConfiguration];
-//            _flashState = FMFlashOpen;
-//        }
-//    }else if(_flashState == FMFlashOpen){
-//        if ([self.videoInput.device hasTorch]) {
-//            [self.videoInput.device lockForConfiguration:nil];
-//            [self.videoInput.device setTorchMode:AVCaptureTorchModeAuto];
-//            [self.videoInput.device unlockForConfiguration];
-//            _flashState = FMFlashAuto;
-//        }
-//    }else if(_flashState == FMFlashAuto){
-//        if ([self.videoInput.device hasTorch]) {
-//            [self.videoInput.device lockForConfiguration:nil];
-//            [self.videoInput.device setTorchMode:AVCaptureTorchModeOff];
-//            [self.videoInput.device unlockForConfiguration];
-//            _flashState = FMFlashClose;
-//        }
-//    };
-//    if (self.delegate && [self.delegate respondsToSelector:@selector(updateFlashState:)]) {
-//        [self.delegate updateFlashState:_flashState];
-//    }
+    if(_flashState == FlashClose){
+        if ([self.videoInput.device hasTorch]) {
+            [self.videoInput.device lockForConfiguration:nil];
+            [self.videoInput.device setTorchMode:AVCaptureTorchModeOn];
+            [self.videoInput.device unlockForConfiguration];
+            _flashState = FlashOpen;
+        }
+    }else if(_flashState == FlashOpen){
+        if ([self.videoInput.device hasTorch]) {
+            [self.videoInput.device lockForConfiguration:nil];
+            [self.videoInput.device setTorchMode:AVCaptureTorchModeAuto];
+            [self.videoInput.device unlockForConfiguration];
+            _flashState = FlashAuto;
+        }
+    }else if(_flashState == FlashAuto){
+        if ([self.videoInput.device hasTorch]) {
+            [self.videoInput.device lockForConfiguration:nil];
+            [self.videoInput.device setTorchMode:AVCaptureTorchModeOff];
+            [self.videoInput.device unlockForConfiguration];
+            _flashState = FlashClose;
+        }
+    };
 }
 
-/**
- *  打开网格
- */
-- (void)gridAction
-{
-    
-}
 
 @end
 

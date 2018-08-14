@@ -125,6 +125,7 @@
 		C264CE5720EDFC590053AD0E /* MDAddClothMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C264CE5620EDFC590053AD0E /* MDAddClothMatchCell.m */; };
 		C27E20FB21081BC800E95228 /* RecommendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E20FA21081BC800E95228 /* RecommendDetailCell.m */; };
 		C27E210E2109D0C500E95228 /* MDWardrobeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27E210D2109D0C500E95228 /* MDWardrobeViewCell.m */; };
+		C2875B452122885300AF6153 /* MDRecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2875B442122885300AF6153 /* MDRecordProgressView.m */; };
 		C288E41D211A99E200CF197C /* MDShootPhotoCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C288E41C211A99E200CF197C /* MDShootPhotoCtrl.m */; };
 		C288E421211ACE5C00CF197C /* MDRecordVideoCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C288E420211ACE5C00CF197C /* MDRecordVideoCtrl.m */; };
 		C288E424211ACF0200CF197C /* MDChooseVideoCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C288E423211ACF0100CF197C /* MDChooseVideoCtrl.m */; };
@@ -493,6 +494,8 @@
 		C27E20FA21081BC800E95228 /* RecommendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendDetailCell.m; sourceTree = "<group>"; };
 		C27E210C2109D0C500E95228 /* MDWardrobeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDWardrobeViewCell.h; sourceTree = "<group>"; };
 		C27E210D2109D0C500E95228 /* MDWardrobeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeViewCell.m; sourceTree = "<group>"; };
+		C2875B432122885300AF6153 /* MDRecordProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRecordProgressView.h; sourceTree = "<group>"; };
+		C2875B442122885300AF6153 /* MDRecordProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDRecordProgressView.m; sourceTree = "<group>"; };
 		C288E41B211A99E200CF197C /* MDShootPhotoCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDShootPhotoCtrl.h; sourceTree = "<group>"; };
 		C288E41C211A99E200CF197C /* MDShootPhotoCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDShootPhotoCtrl.m; sourceTree = "<group>"; };
 		C288E41F211ACE5C00CF197C /* MDRecordVideoCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRecordVideoCtrl.h; sourceTree = "<group>"; };
@@ -1760,6 +1763,8 @@
 				C288E42C211ADB5300CF197C /* MDVideoPlayView.m */,
 				C288E41F211ACE5C00CF197C /* MDRecordVideoCtrl.h */,
 				C288E420211ACE5C00CF197C /* MDRecordVideoCtrl.m */,
+				C2875B432122885300AF6153 /* MDRecordProgressView.h */,
+				C2875B442122885300AF6153 /* MDRecordProgressView.m */,
 			);
 			path = RecordVideos;
 			sourceTree = "<group>";
@@ -2572,6 +2577,7 @@
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
+				C2875B452122885300AF6153 /* MDRecordProgressView.m in Sources */,
 				C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */,
 				C27E20FB21081BC800E95228 /* RecommendDetailCell.m in Sources */,
 				99AA287320DE6DC80053CAB6 /* ttc_encrypt_v2.c in Sources */,

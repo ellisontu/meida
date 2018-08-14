@@ -103,8 +103,8 @@
 
 - (void)configControlView
 {
-    NSArray *imageArray = @[@"c_flash_close", @"c_switch_scene", @"c_grid_close"];
-    NSArray *seletImageArray = @[@"c_flash_on", @"c_switch_scene", @"c_grid_on"];
+    NSArray *imageArray = @[@"c_flash_close", @"c_switch_scene"];
+    NSArray *seletImageArray = @[@"c_flash_on", @"c_switch_scene"];
     CGFloat buttonW_H = 25.f;
     CGFloat buttonY = kHeaderHeight + SCR_WIDTH + 25.f;
     CGFloat padding = (SCR_WIDTH - imageArray.count * buttonW_H) / (imageArray.count + 1);
@@ -142,10 +142,6 @@
     }
     else if (sender.tag == 11) {// 转换摄像头
         [_shootView toggleCamera];
-        sender.selected = !sender.selected;
-    }
-    else if (sender.tag == 12){// 网格
-        [_shootView gridAction];
         sender.selected = !sender.selected;
     }
     else {// 拍照

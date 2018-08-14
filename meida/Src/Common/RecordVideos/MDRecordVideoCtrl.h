@@ -18,7 +18,7 @@
 @interface MDRecordVideoView : UIView
 
 
-@property (nonatomic, strong) AVCaptureSession *session;
+@property (nonatomic, strong, readonly) AVCaptureSession *session;
 
 @property (nonatomic, assign, getter=isFront) BOOL front;
 

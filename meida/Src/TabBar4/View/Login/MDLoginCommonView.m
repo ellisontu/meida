@@ -75,7 +75,7 @@
         make.top.equalTo(self.phoneTextField.mas_bottom).offset(5.f);
         make.left.equalTo(self);
         make.right.equalTo(self);
-        make.height.mas_equalTo(1.f);
+        make.height.mas_equalTo(OnePixScale);
     }];
     [_pwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self);
@@ -87,7 +87,7 @@
         make.top.equalTo(self.pwordTextField.mas_bottom).offset(5.f);
         make.left.equalTo(self);
         make.right.equalTo(self);
-        make.height.mas_equalTo(1.f);
+        make.height.mas_equalTo(OnePixScale);
     }];
     [_forgotBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.pwordTextField.mas_bottom).offset(kOffPadding);
@@ -128,7 +128,7 @@
     _loginBtnView.layer.cornerRadius  = 40.f * 0.5;
     _loginBtnView.layer.masksToBounds = YES;
     _loginBtnView.layer.borderColor   = COLOR_HEX_STR(@"#FEEA8D").CGColor;
-    _loginBtnView.layer.borderWidth   = 1.f;
+    _loginBtnView.layer.borderWidth   = OnePixScale;
     [_loginBtnView setTitle:@"登录" forState:UIControlStateNormal];
     _loginBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(15);
     [_loginBtnView setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
@@ -227,6 +227,9 @@
 @property (nonatomic, strong) UITextField   *pCodeTextField;    /**<  */
 @property (nonatomic, strong) UIView        *pCodeTextLine;     /**<  */
 @property (nonatomic, strong) UIButton      *pCodeRecivBtn;
+@property (nonatomic, strong) UILabel       *pwordTipsLbl;
+@property (nonatomic, strong) UITextField   *pwordTextField;
+@property (nonatomic, strong) UIView        *pwordTextLine;
 @property (nonatomic, strong) UIButton      *registerBtn;
 @property (nonatomic, weak) UIView          *mainView;
 
@@ -264,6 +267,9 @@
     _pCodeTipsLbl   = [[UILabel alloc] init];
     _pCodeTextLine  = [[UIView alloc] init];
     _pCodeRecivBtn  = [[UIButton alloc] init];
+    _pwordTipsLbl   = [[UILabel alloc] init];
+    _pwordTextField = [[UITextField alloc] init];
+    _pwordTextLine  = [[UIView alloc] init];
     _registerBtn    = [[UIButton alloc] init];
     
     [self addSubview:_phoneTipsLbl];
@@ -273,6 +279,9 @@
     [self addSubview:_pCodeTextField];
     [self addSubview:_pCodeTextLine];
     [self addSubview:_pCodeRecivBtn];
+    [self addSubview:_pwordTipsLbl];
+    [self addSubview:_pwordTextField];
+    [self addSubview:_pwordTextLine];
     [self addSubview:_registerBtn];
     
     CGFloat tipsWW = 70.f;
@@ -286,7 +295,7 @@
         make.top.equalTo(self.phoneTextField.mas_bottom);
         make.right.equalTo(self);
         make.left.equalTo(self);
-        make.height.mas_equalTo(1.f);
+        make.height.mas_equalTo(OnePixScale);
     }];
     [_phoneTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.phoneTextField);
@@ -302,22 +311,37 @@
     [_pCodeRecivBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.pCodeTextField).offset(10);
         make.centerY.equalTo(self.pCodeTextField);
-        make.size.mas_equalTo(CGSizeMake(40.f, 25.f));
+        make.size.mas_equalTo(CGSizeMake(60.f, 25.f));
     }];
     [_pCodeTextLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.pCodeTextField.mas_bottom);
         make.right.equalTo(self);
         make.left.equalTo(self);
-        make.height.mas_equalTo(1.f);
+        make.height.mas_equalTo(OnePixScale);
     }];
     [_pCodeTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.pCodeTextField);
         make.left.equalTo(self.pCodeTextLine);
     }];
+    [_pwordTipsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.pCodeTipsLbl);
+        make.centerY.equalTo(self.pwordTextField);
+    }];
+    [_pwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(self.pCodeTextField);
+        make.centerX.equalTo(self.pCodeTextField);
+        make.top.equalTo(self.pCodeTipsLbl.mas_bottom).offset(kOffset);
+    }];
+    [_pwordTextLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.pwordTextField.mas_bottom);
+        make.right.equalTo(self);
+        make.left.equalTo(self);
+        make.height.mas_equalTo(OnePixScale);
+    }];
     [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(kOffPadding);
         make.right.equalTo(self).offset(-kOffPadding);
-        make.top.equalTo(self.pCodeTextLine).offset(25.f);
+        make.top.equalTo(self.pwordTextLine).offset(25.f);
         make.height.mas_equalTo(40.f);
     }];
     
@@ -345,14 +369,18 @@
     _pCodeTipsLbl.font = FONT_SYSTEM_NORMAL(20);
     _pCodeTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
     _pCodeTipsLbl.text = @"验证码";
+    _pwordTipsLbl.font = FONT_SYSTEM_NORMAL(20);
+    _pwordTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
+    _pwordTipsLbl.text = @"密码";
     
     _phoneTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
     _pCodeTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
+    _pwordTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
     
     _registerBtn.layer.cornerRadius  = 40.f * 0.5;
     _registerBtn.layer.masksToBounds = YES;
     _registerBtn.layer.borderColor   = COLOR_HEX_STR(@"#FEEA8D").CGColor;
-    _registerBtn.layer.borderWidth   = 1.f;
+    _registerBtn.layer.borderWidth   = OnePixScale;
     [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
     _registerBtn.titleLabel.font = FONT_SYSTEM_NORMAL(15);
     [_registerBtn setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
@@ -360,10 +388,13 @@
     [_pCodeRecivBtn setTitle:@"验证码" forState:UIControlStateNormal];
     _phoneTextField.tag = 10001;
     _pCodeTextField.tag = 10002;
+    _pwordTextField.tag = 10003;
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     _pCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
+    _pwordTextField.keyboardType = UIKeyboardTypeASCIICapable;
     [_phoneTextField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
     [_pCodeTextField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
+    [_pwordTextField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
     
 }
 
@@ -380,6 +411,12 @@
         // 验证码
         //XLog(@"验证码： ==== %@", textField.text);
     }
+    else if (_pwordTextField.tag == 10003){
+        //XLog(@"密码： ==== %@", textField.text);
+        if (textField.text.length > 11) {
+            textField.text = [textField.text substringToIndex:11];
+        }
+    }
 }
 
 - (void)registerBtnAction:(UIButton *)sender
@@ -393,10 +430,14 @@
         [Util showMessage:@"请输入验证码" inView:MDAPPDELEGATE.window];
         return;
     }
+    if (stringIsEmpty(_pwordTextField.text)) {
+        [Util showMessage:@"请输入密码" inView:MDAPPDELEGATE.window];
+        return;
+    }
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:_phoneTextField.text forKey:@"phone"];
     [params setObject:_pCodeTextField.text forKey:@"phoneCode"];
-    [params setObject:@"123456" forKey:@"password"];
+    [params setObject:_pwordTextField.text forKey:@"password"];
     [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_REGISTER params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
         if (rs) {
             
@@ -412,6 +453,7 @@
 {
     [_phoneTextField endEditing:YES];
     [_pCodeTextField endEditing:YES];
+    [_pwordTextField endEditing:YES];
 }
 
 - (void)keyboardChange:(NSNotification *)notification

@@ -2,25 +2,28 @@
 //  MDWardrobeViewCell.h
 //  meida
 //
-//  Created by ToTo on 2018/7/2.
+//  Created by ToTo on 2018/7/26.
 //  Copyright © 2018年 ymfashion. All rights reserved.
-//  潮流 cells
+//
 
 #import <UIKit/UIKit.h>
 
-#pragma mark -  衣橱 -> 头部 -> cell view #############################################----------
-@interface MDWardrobeViewFirstCell : UITableViewCell
+#pragma mark -  衣橱 -> cell view #############################################----------
+@interface MDWardrobeViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) NSDictionary *dict;
 
 @end
 
-#pragma mark -  衣橱 -> 分类 -> cell view #############################################----------
-@interface MDWardrobeViewVerbCell : UITableViewCell
+
+#pragma mark -  衣橱 -> 头部 view #############################################----------
+@interface WardrobeAfterClothHeadView : UICollectionReusableView
 
 @end
 
 
-
-#pragma mark -  衣橱 -> 穿衣计划 -> cell view #############################################----------
-@interface MDWardrobeViewPlanCell : UITableViewCell
+#pragma mark -  衣橱 -> 底部 ->  view #############################################----------
+@interface WardrobeAfterClothFooterView : UICollectionReusableView
 
 @end
+

@@ -233,7 +233,7 @@ CGFloat const kNameFont         = 10.f;
     if (to >= 0 && to < _imageArray.count) {
         UILabel *nameLabelSel = [button viewWithTag:to+40];
         UIImageView *imageViewSel = [button viewWithTag:to+30];
-        nameLabelSel.textColor = RED;
+        nameLabelSel.textColor = COLOR_HEX_STR(@"#FEEA8D");
         if ([MDTabBarManager sharedInstance].isDuringActive) {
             NSData *imageData = [NSData dataWithContentsOfFile:_selImageArray[to]];
             UIImage *image = [UIImage sd_animatedGIFWithData:imageData];

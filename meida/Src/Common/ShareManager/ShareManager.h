@@ -11,7 +11,6 @@
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/QQApiInterface.h>
-#import "WeiboSDK.h"
 
 typedef NSString * ShareManagerOptionsKey;
 typedef void(^ShareFinishBlock)(NSString *platform, BOOL success);

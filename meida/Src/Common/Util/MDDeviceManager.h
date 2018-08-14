@@ -13,8 +13,8 @@
 
 @interface MDDeviceManager : NSObject
 
-@property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) MDNavigationController *navigation;
+//@property (nonatomic, strong) UIWindow *window;
+//@property (nonatomic, strong) MDNavigationController *navigation;
 @property (nonatomic, strong) LSLocation *appLocation;
 @property (nonatomic, strong) NSString *deviceToken;    /**< 需要在网络请求头里放 */
 @property (nonatomic, strong) NSString *deviceIden;     /**< 获取设备标识符 */

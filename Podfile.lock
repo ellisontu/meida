@@ -17,6 +17,7 @@ PODS:
   - DateTools (2.0.0)
   - FBRetainCycleDetector (0.1.4)
   - FrameAccessor (2.0)
+  - HyphenateLite (3.4.2)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.15.3)
@@ -28,6 +29,7 @@ PODS:
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
   - UIImage-Resize (1.0.1)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
   - YYModel (1.0.4)
   - ZipArchive (1.4.0)
 
@@ -35,6 +37,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - DateTools (~> 2.0.0)
   - FrameAccessor (~> 2.0)
+  - HyphenateLite (~> 3.4.2)
   - Masonry (~> 1.1.0)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.14)
@@ -43,6 +46,7 @@ DEPENDENCIES:
   - PureLayout (~> 3.0.2)
   - SDWebImage (~> 3.7.5)
   - UIImage-Resize (~> 1.0.1)
+  - "UITableView+FDTemplateLayoutCell"
   - YYModel (~> 1.0.4)
   - ZipArchive
 
@@ -52,6 +56,7 @@ SPEC REPOS:
     - DateTools
     - FBRetainCycleDetector
     - FrameAccessor
+    - HyphenateLite
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -60,6 +65,7 @@ SPEC REPOS:
     - PureLayout
     - SDWebImage
     - UIImage-Resize
+    - "UITableView+FDTemplateLayoutCell"
     - YYModel
     - ZipArchive
 
@@ -68,6 +74,7 @@ SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
+  HyphenateLite: 0c5d9392c30ada198ef656e179b921e38a192df3
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
@@ -76,9 +83,10 @@ SPEC CHECKSUMS:
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UIImage-Resize: fa776860f10e6900bbaf53a73e494bdceaaccc77
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 950f62c2c501abd71dbcb792a94eb7124c092012
+PODFILE CHECKSUM: e7468a98f0a5d27676f38414132ced3c720e2d20
 
 COCOAPODS: 1.5.2

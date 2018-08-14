@@ -7,7 +7,7 @@
 //
 
 #import "MDCacheFileManager.h"
-#import "LSFileManage.h"
+#import "LocalFileManager.h"
 
 static CGFloat   const sizeRate = 1024.f*1024.f;
 /**
@@ -69,7 +69,7 @@ static NSString *const exceptionFile    = @"exceptionFile";     /**< 储存app�
             
         case CacheWeex:
         {
-            resultPath = [[LSFileManage getDocumentsPath] stringByAppendingPathComponent:weexDir];
+            resultPath = [[LocalFileManager getDocumentsPath] stringByAppendingPathComponent:weexDir];
         }
             break;
             
@@ -123,7 +123,7 @@ static NSString *const exceptionFile    = @"exceptionFile";     /**< 储存app�
 + (void)clearDiskWithType:(MDCacheType)type
 {
     NSString *cachePath = [self cachePathWithType:type];
-    [LSFileManage deleteFileAtPath:cachePath];
+    [LocalFileManager deleteFileAtPath:cachePath];
 }
 
 /**
@@ -158,7 +158,7 @@ static NSString *const exceptionFile    = @"exceptionFile";     /**< 储存app�
     NSArray *allCachePathArray = [self _getAllCachePathArray];
     
     for (NSString *cachePath in allCachePathArray) {
-        totalSize += [LSFileManage getDirectorySizeAtPath:cachePath]/sizeRate;
+        totalSize += [LocalFileManager getDirectorySizeAtPath:cachePath]/sizeRate;
     }
     
     CGFloat sdImageCacheSize = [[SDImageCache sharedImageCache] getSize]/sizeRate;
@@ -188,11 +188,11 @@ static NSString *const exceptionFile    = @"exceptionFile";     /**< 储存app�
 {
     // 迁移草稿箱文件夹位置，v2.7.2版本开始迁移
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *checkPath = [[LSFileManage getDocumentsPath] stringByAppendingPathComponent:@"drafts"];
+    NSString *checkPath = [[LocalFileManager getDocumentsPath] stringByAppendingPathComponent:@"drafts"];
     BOOL isDirectory = NO;
     BOOL isExists = [fileManager fileExistsAtPath:checkPath isDirectory:&isDirectory];
     if (isExists && isDirectory) {
-        NSString *newPath = [[LSFileManage getCachePath] stringByAppendingPathComponent:@"drafts"];
+        NSString *newPath = [[LocalFileManager getCachePath] stringByAppendingPathComponent:@"drafts"];
         if ([fileManager fileExistsAtPath:newPath]) {
             [fileManager removeItemAtPath:newPath error:nil];
         }
@@ -209,12 +209,12 @@ static NSString *const exceptionFile    = @"exceptionFile";     /**< 储存app�
 + (void)_removeRubbishFiles
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *cachePath = [LSFileManage getCachePath];
+    NSString *cachePath = [LocalFileManager getCachePath];
     NSString *captureDir = [cachePath stringByAppendingPathComponent:@"captureDir"];
     if ([fileManager fileExistsAtPath:captureDir]) {
         [fileManager removeItemAtPath:captureDir error:nil];
     }
-    [LSFileManage deleteFolderMP4SizeAtPath:cachePath];
+    [LocalFileManager deleteFolderMP4SizeAtPath:cachePath];
 }
 
 /**

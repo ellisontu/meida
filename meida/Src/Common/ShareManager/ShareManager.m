@@ -9,33 +9,32 @@
 #import "ShareManager.h"
 #import "ShareView.h"
 #import "SharePosterView.h"
-//#import "UIImage+Capture.h"
-
+#import <WeiboSDK.h>
 
 #define SHARE_COUNT_KEY_TARGET  @"target"
 #define SHARE_COUNT_KEY_TYPE    @"type"
 #define SHARE_COUNT_KEY_TYPE_ID @"type_id"
 
 typedef NS_ENUM(NSInteger, ShareType) {
-    ShareTypeVideo,     /**< 卡片视频类型（H5） */
-    ShareTypeWebPage,   /**< 卡片图文类型（H5） */
-    ShareTypeImage,     /**< 图片类型（其实就是发消息和朋友圈） */
+    ShareTypeVideo,     /**< 卡片视频类型 */
+    ShareTypeWebPage,   /**< 卡片图文类型 */
+    ShareTypeImage,     /**< 图片类型 */
     
 };
 
 //用于传给服务器做统计数据用的静态字符串
-static NSString *const ShareAnalyzeTypeGoods        = @"goods";         /**< 商品详情分享 */
-static NSString *const ShareAnalyzeTypeGoodsTopic   = @"goods_topic";   /**< 商品专题分享 */
-static NSString *const ShareAnalyzeTypeGoodsTags    = @"goods_tags";    /**< 商品专题分享 */
-static NSString *const ShareAnalyzeTypeH5           = @"h5";            /**< H5分享 */
-static NSString *const ShareAnalyzeTypeRedbag       = @"share_red_bag"; /**< 领取唇印💋签到分享 */
-static NSString *const ShareAnalyzeTypeTags         = @"tags";          /**< 频道/活动分享 */
-static NSString *const ShareAnalyzeTypeLive         = @"live";          /**< 直播|直播回放分享 */
-static NSString *const ShareAnalyzeTypeShareOrder   = @"shareOrder";    /**< 晒单分享 */
-static NSString *const ShareAnalyzeTypeUser         = @"user";          /**< 个人页分享 */
-static NSString *const ShareAnalyzeTypeVideo        = @"video";         /**< 视频分享 */
-static NSString *const ShareAnalyzeTypeVip          = @"vip";           /**< 会员分享 */
-static NSString *const ShareAnalyzeTypeBeautyDiary  = @"beauty_diary";  /**< 变美日签分享 */
+static NSString *const ShareAnalyzeTypeGoods        = @"";
+static NSString *const ShareAnalyzeTypeGoodsTopic   = @"";
+static NSString *const ShareAnalyzeTypeGoodsTags    = @"";
+static NSString *const ShareAnalyzeTypeH5           = @"";
+static NSString *const ShareAnalyzeTypeRedbag       = @"";
+static NSString *const ShareAnalyzeTypeTags         = @"";
+static NSString *const ShareAnalyzeTypeLive         = @"";
+static NSString *const ShareAnalyzeTypeShareOrder   = @"";
+static NSString *const ShareAnalyzeTypeUser         = @"";
+static NSString *const ShareAnalyzeTypeVideo        = @"";
+static NSString *const ShareAnalyzeTypeVip          = @"";
+static NSString *const ShareAnalyzeTypeBeautyDiary  = @"";
 
 ShareManagerOptionsKey const ShareManagerToSina             = @"ShareManagerToSina";            /**< 分享到微博 */
 ShareManagerOptionsKey const ShareManagerToQQ               = @"ShareManagerToQQ";              /**< 分享到QQ */
@@ -50,7 +49,7 @@ ShareManagerOptionsKey const ShareManagerShareLink          = @"ShareManagerShar
 ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSavePoster";        /**< 保存海报到手机 */
 
 
-@interface ShareManager () <UIActionSheetDelegate, QQApiInterfaceDelegate>
+@interface ShareManager () <QQApiInterfaceDelegate>
 
 @property (nonatomic, strong) MDShareInfoModel *shareInfoModel;    /**< 分享的信息model */
 @property (nonatomic, assign) ShareSourceType   shareSourceType;    /**< 分享的目标源类型 */
@@ -105,7 +104,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     }
     
     if (stringIsEmpty(model.poster_url)) {
-        [Util showMessage:@"获取分享信息失败" forDuration:1.5f inView:[MDDeviceManager sharedInstance].window];
+        [Util showMessage:@"获取分享信息失败" forDuration:1.5f inView:MDAPPDELEGATE.window];
         return;
     }
     
@@ -197,7 +196,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
                         [weakPtr shareViewSelectedAction:platform];
                     }
                     else {
-                        [Util showMessage:@"生成海报缩略图失败" inView:[MDDeviceManager sharedInstance].window];
+                        [Util showMessage:@"生成海报缩略图失败" inView:MDAPPDELEGATE.window];
                     }
                 });
             }];
@@ -212,7 +211,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
                     }
                     else {
                         [Util hideLoadingVw];
-                        [Util showMessage:@"生成海报失败" inView:[MDDeviceManager sharedInstance].window];
+                        [Util showMessage:@"生成海报失败" inView:MDAPPDELEGATE.window];
                     }
                 });
             }];
@@ -227,7 +226,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     }
     
     if (!model) {
-        [Util showMessage:@"获取分享信息失败" forDuration:1.5f inView:[MDDeviceManager sharedInstance].window];
+        [Util showMessage:@"获取分享信息失败" forDuration:1.f inView:MDAPPDELEGATE.window];
         return;
     }
     _shareInfoModel = model;
@@ -291,7 +290,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     }
     
     if (!model) {
-        [Util showMessage:@"获取分享信息失败" forDuration:1.5f inView:[MDDeviceManager sharedInstance].window];
+        [Util showMessage:@"获取分享信息失败" forDuration:1.5f inView:MDAPPDELEGATE.window];
         return;
     }
     _shareInfoModel = model;
@@ -427,7 +426,6 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     [_dict setObject:ShareAnalyzeTypeGoodsTags forKey:SHARE_COUNT_KEY_TYPE];
 }
 
-#pragma mark - 商品订单|团购订单|唇印兑换订单 界面分享红包(ShareSourceTypeOrderRedbag) -
 - (void)shareOrderRedbag
 {
     //展示shareView
@@ -437,7 +435,6 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     [_dict setObject:ShareAnalyzeTypeH5 forKey:SHARE_COUNT_KEY_TYPE];
 }
 
-#pragma mark - 分享视频(ShareSourceTypeVideo) -
 - (void)shareVideo
 {
     _shareType = ShareTypeVideo;
@@ -542,7 +539,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     MDWeakPtr(weakPtr, self);
     if ([platform isEqualToString:ShareManagerToWechatSession]) {
         if (!_shareInfoModel.weixin.iconData) {
-            [Util showLoadingVwInView:[MDDeviceManager sharedInstance].window withText:@"正在获取分享数据"];
+            [Util showLoadingVwInView:MDAPPDELEGATE.window withText:@"正在获取分享数据"];
             [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:_shareInfoModel.weixin.icon_url] options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
                 [Util hideLoadingVw];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -564,7 +561,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     //微信朋友圈
     else if ([platform isEqualToString:ShareManagerToWechatTimeline]) {
         if (!_shareInfoModel.pengyouquan.iconData) {
-            [Util showLoadingVwInView:[MDDeviceManager sharedInstance].window withText:@"正在获取分享数据"];
+            [Util showLoadingVwInView:MDAPPDELEGATE.window withText:@"正在获取分享数据"];
             [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:_shareInfoModel.pengyouquan.icon_url] options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
                 [Util hideLoadingVw];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -602,7 +599,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
             else {
                 imageUrl = _shareInfoModel.poster_url;
             }
-            [Util showLoadingVwInView:[MDDeviceManager sharedInstance].window withText:@"正在获取分享数据"];
+            [Util showLoadingVwInView:MDAPPDELEGATE.window withText:@"正在获取分享数据"];
             [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:imageUrl] options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
                 [Util hideLoadingVw];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -622,7 +619,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     //QQ好友
     else if ([platform isEqualToString:ShareManagerToQQ]) {
         if (!_shareInfoModel.qq.iconData) {
-            [Util showLoadingVwInView:[MDDeviceManager sharedInstance].window withText:@"正在获取分享数据"];
+            [Util showLoadingVwInView:MDAPPDELEGATE.window withText:@"正在获取分享数据"];
             [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:_shareInfoModel.qq.icon_url] options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
                 [Util hideLoadingVw];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -644,7 +641,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     //QQ空间
     else if ([platform isEqualToString:ShareManagerToQzone]) {
         if (!_shareInfoModel.qqzone.iconData) {
-            [Util showLoadingVwInView:[MDDeviceManager sharedInstance].window withText:@"正在获取分享数据"];
+            [Util showLoadingVwInView:MDAPPDELEGATE.window withText:@"正在获取分享数据"];
             [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:_shareInfoModel.qqzone.icon_url] options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
                 [Util hideLoadingVw];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -912,7 +909,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
 - (void)shareToSavePoster
 {
     if (!_shareInfoModel.posterData) {
-        [Util showMessage:@"图片未下载" forDuration:1.5f inView:[MDDeviceManager sharedInstance].window];
+        [Util showMessage:@"图片未下载" forDuration:1.5f inView:MDAPPDELEGATE.window];
         return;
     }
     UIImage *savedImage = [UIImage imageWithData:_shareInfoModel.posterData];
@@ -928,7 +925,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     else {
         msg = @"保存成功" ;
     }
-    [Util showMessage:msg forDuration:1.5f inView:[MDDeviceManager sharedInstance].window];
+    [Util showMessage:msg forDuration:1.5f inView:MDAPPDELEGATE.window];
 }
 
 // 获取所有的分享平台
@@ -1045,7 +1042,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
         }
     }
     
-    [Util showMessage:message forDuration:1.5 inView:[MDDeviceManager sharedInstance].window];
+    [Util showMessage:message forDuration:1.5 inView:MDAPPDELEGATE.window];
 }
 
 - (void)onReq:(QQBaseReq *)req
@@ -1100,7 +1097,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
         message = @"未知错误";
     }
     
-    [Util showMessage:message forDuration:1.5 inView:[MDDeviceManager sharedInstance].window];
+    [Util showMessage:message forDuration:1.5 inView:MDAPPDELEGATE.window];
 }
 
 - (void)feedBack

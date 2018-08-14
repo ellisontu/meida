@@ -217,7 +217,7 @@ static NSString *const m_share_poster   = @"share_v1";               /**< 调起
     NSString *poster = [self.methodParams objectForKey:@"poster"];
     if (!stringIsEmpty(poster)) {
         [ShareManager sharedInstance].isShow = YES;
-        [Util showLoadingVwInView:[MDDeviceManager sharedInstance].window withText:@"正在获取分享数据"];
+        [Util showLoadingVwInView:MDAPPDELEGATE.window withText:@"正在获取分享数据"];
     }
     else {
         [ShareManager sharedInstance].isShow = NO;

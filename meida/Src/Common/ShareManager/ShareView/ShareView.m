@@ -10,6 +10,7 @@
 #import "ShareViewCell.h"
 #import "ShareManager.h"
 
+static NSString *ShareViewCellID = @"ShareViewCell";
 @interface ShareView () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) MDShareInfoModel  *model;
@@ -74,6 +75,8 @@
         flowLayout.minimumInteritemSpacing = 0.f;
         flowLayout.headerReferenceSize = CGSizeMake(SCR_WIDTH, 40);
         flowLayout.footerReferenceSize = CGSizeMake(SCR_WIDTH, 60);
+        CGFloat itemWW = 90.f;
+        flowLayout.itemSize = CGSizeMake(itemWW, itemWW);
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
         self.platCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_HEIGHT - kHeaderHeight) collectionViewLayout:flowLayout];
@@ -83,7 +86,7 @@
         self.platCollectionView.dataSource = self;
         [self addSubview:self.platCollectionView];
         
-        [self.platCollectionView registerNib:[UINib nibWithNibName:@"ShareViewCell" bundle:nil] forCellWithReuseIdentifier:@"ShareViewCellID"];
+        [self.platCollectionView registerClass:[ShareViewCell class] forCellWithReuseIdentifier:ShareViewCellID];
         [self.platCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerCellID"];
         [self.platCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerCellID"];
     }
@@ -136,11 +139,11 @@
 
 - (void)show
 {
-    [[MDDeviceManager sharedInstance].window addSubview:self];
+    [MDAPPDELEGATE.window addSubview:self];
     CGFloat height = (_dataArray.count / 5 + 1) * SCR_WIDTH / 4 + 40 + 60 + kTabBarBottomHeight;
     self.platCollectionView.frame = CGRectMake(0, SCR_HEIGHT, SCR_WIDTH, height);
     [UIView animateWithDuration:0.3f animations:^{
-        if (_model.shareViewType != ShareViewTypeOrderGroup) {
+        if (self.model.shareViewType != ShareViewTypeOrderGroup) {
             self.customView.y = SCR_HEIGHT - height;
         }
         self.platCollectionView.y   = SCR_HEIGHT - height;
@@ -158,7 +161,7 @@
     [UIView animateWithDuration:0.3f animations:^{
         self.platCollectionView.y = SCR_HEIGHT;
         self.coverView.alpha = 0;
-        if (_model.shareViewType == ShareViewTypeOrderGroup) {
+        if (self.model.shareViewType == ShareViewTypeOrderGroup) {
             self.customView.alpha = 0;
         }
         else {
@@ -168,8 +171,8 @@
         self.customView.alpha = 1;
         [self removeFromSuperview];
         [self.customView removeFromSuperview];
-        if (_dismissBlock) {
-            _dismissBlock();
+        if (self.dismissBlock) {
+            self.dismissBlock();
         }
     }];
 }
@@ -188,7 +191,7 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShareViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ShareViewCellID" forIndexPath:indexPath];
+    ShareViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ShareViewCellID forIndexPath:indexPath];
     if (_dataArray.count > indexPath.item) {
         cell.snsName = _dataArray[indexPath.item];
     }

@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, MDNetStatus) {
 
 @interface MDBaseViewController : UIViewController
 
+@property (nonatomic, strong) UIView    * _Nonnull navigation;
 @property (nonatomic, assign) BOOL      isAlwaysHideBackToTopBtn;   /**< 是否总是隐藏返回顶部按钮 */
 @property (nonatomic, assign) BOOL      banCanLeft;                 /**< 是否禁掉左滑 YES表示禁掉  如无需禁掉则不需要设置*/
 @property (nonatomic, assign) CGFloat   backToTopBtn_bottomOffset;  /**< 底部有类似tabbar或输入框时，返回顶部按钮的偏移量(被减的值) */

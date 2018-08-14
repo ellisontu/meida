@@ -7,8 +7,9 @@
 //
 #import "BaseJumpModel.h"
 @interface BaseJumpModel ()
-@property (nonatomic, strong) NSString *urlPrefix;                  /**< 跳转 url 的前缀 */
-@property (nonatomic, strong) NSDictionary *paramDict;              /**< 用于存储跳转 url 里的各个参数 */
+@property (nonatomic, strong) NSString      *urlPrefix;         /**< 跳转 url 的前缀 */
+@property (nonatomic, strong) NSDictionary  *paramDict;         /**< 用于存储跳转 url 里的各个参数 */
+@property (nonatomic, strong) NSString      *urlString;
 @end
 //
 @implementation BaseJumpModel
@@ -23,15 +24,6 @@
     return self;
 }
 
-- (instancetype)initWithJumpType:(BaseJumpModelType)jumpType idString:(NSString *)idString
-{
-    if (self = [super init]) {
-        _jumpType = jumpType;
-        _idNumber = @(idString.integerValue);
-        _idString = idString;
-    }
-    return self;
-}
 
 - (void)setJumpTypeByUrlString:(NSString *)urlString
 {

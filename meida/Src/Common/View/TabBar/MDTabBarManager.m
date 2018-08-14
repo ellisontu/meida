@@ -7,7 +7,7 @@
 //
 
 #import "MDTabBarManager.h"
-#import "LSFileManage.h"
+#import "LocalFileManager.h"
 #import "ZipArchive.h"
 #import <UIImage+GIF.h>
 #import "EncryptionMethods.h"
@@ -80,7 +80,7 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
 - (NSArray *)tabbarImageNameArray
 {
     NSArray *imageNameArray = nil;
-    imageNameArray = @[@"tabbar_home", @"tabbar_store", @"tabbar_social", @"tabbar_self"];
+    imageNameArray = @[@"tabbar_01", @"tabbar_02", @"tabbar_03", @"tabbar_04"];
     if ([MDTabBarManager sharedInstance].isDuringActive) {
         
         NSArray *resultArray = _getFileNameDict(imageNameArray);
@@ -97,7 +97,7 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
 - (NSArray *)tabbarHighLightImageArray
 {
     NSArray *highLightImageArray = nil;
-    highLightImageArray = @[@"tabbar_home_down",@"tabbar_store_down", @"tabbar_social_down", @"tabbar_self_down"];
+    highLightImageArray = @[@"tabbar_01_select",@"tabbar_02_select", @"tabbar_03_select", @"tabbar_04_select"];
     if ([MDTabBarManager sharedInstance].isDuringActive) {
         
         NSArray *resultArray = _getFileNameDict(highLightImageArray);
@@ -169,10 +169,10 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
                 NSArray *contents = [fileManager contentsOfDirectoryAtPath:weakPtr.folderDirectory error:NULL];
                 if (!arrayIsEmpty(contents)) {
                     // 清空本地文件
-                    [LSFileManage deleteAllFileFromFolderPath:weakPtr.folderDirectory];
+                    [LocalFileManager deleteAllFileFromFolderPath:weakPtr.folderDirectory];
                 }
                 NSString *filePath = [weakPtr.folderDirectory stringByAppendingPathComponent:kFileName];
-                BOOL flag = [LSFileManage saveDataToPathName:filePath WithData:[NSData dataWithData:(NSData *)obj]];
+                BOOL flag = [LocalFileManager saveDataToPathName:filePath WithData:[NSData dataWithData:(NSData *)obj]];
                 if (flag) {
                     [[NSUserDefaults standardUserDefaults] setObject:zipParams forKey:@"tabBarCheckKey"];
                     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -200,7 +200,7 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
             
             DLog(@"unzip success");
             //删除压缩包(即 FOLDER_NAME 文件夹下，FILE_NAME 文件)
-            [LSFileManage deleteFileAtPath:filePath];
+            [LocalFileManager deleteFileAtPath:filePath];
             _duringActive = YES;
         }
         else {
@@ -227,7 +227,7 @@ static NSArray * _getFileNameDict(NSArray *imageNameArray)
 
 - (void)resetTabBarCheckKey
 {
-    [LSFileManage deleteAllFileFromFolderPath:_folderDirectory];
+    [LocalFileManager deleteAllFileFromFolderPath:_folderDirectory];
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"tabBarCheckKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

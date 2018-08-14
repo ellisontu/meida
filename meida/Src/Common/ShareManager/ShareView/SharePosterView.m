@@ -186,19 +186,20 @@
         _posterView.height = _posterView.width * _model.posterThumImgH_W;
     }
     else {
+        MDWeakPtr(weakPtr, self);
         [self indicatorViewStartAnimating];
-        [_posterView sd_setImageWithURL:[NSURL URLWithString:_model.poster_thum_url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            [_indicatorView stopAnimating];
+        [_posterView imageWithUrlStr:_model.poster_thum_url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [weakPtr.indicatorView stopAnimating];
             if (image) {
                 NSData *imageData = UIImageJPEGRepresentation(image, 0.7f);
-                _model.posterThumData = imageData;
-                _model.posterThumImgH_W = image.size.height/image.size.width;
-                _posterView.height = _posterView.width * _model.posterThumImgH_W;
-                _posterView.y = SCR_HEIGHT - shareBottomView_H;
-                _posterView.alpha = 0.f;
+                weakPtr.model.posterThumData = imageData;
+                weakPtr.model.posterThumImgH_W = image.size.height/image.size.width;
+                weakPtr.posterView.height = weakPtr.posterView.width * weakPtr.model.posterThumImgH_W;
+                weakPtr.posterView.y = SCR_HEIGHT - self->shareBottomView_H;
+                weakPtr.posterView.alpha = 0.f;
                 [UIView animateWithDuration:0.3f animations:^{
-                    _posterView.y = SCR_HEIGHT - shareBottomView_H - _posterView.height;
-                    _posterView.alpha = 1.f;
+                    weakPtr.posterView.y = SCR_HEIGHT - self->shareBottomView_H - weakPtr.posterView.height;
+                    weakPtr.posterView.alpha = 1.f;
                 }];
             }
         }];
@@ -214,7 +215,7 @@
 #pragma mark - 展示分享海报样式 -
 - (void)show
 {
-    [[MDDeviceManager sharedInstance].window addSubview:self];
+    [MDAPPDELEGATE.window addSubview:self];
     _bottomBgView.frame = CGRectMake(0, SCR_HEIGHT, SCR_WIDTH, shareBottomView_H);
     _posterView.alpha = 0.f;
     [UIView animateWithDuration:0.3f animations:^{
@@ -309,7 +310,7 @@
     else {
         if (_isSharePoster) {
             if (!_model.posterThumData || !_model.posterData) {
-                [Util showMessage:@"正在获取海报" forDuration:1.5f inView:[MDDeviceManager sharedInstance].window];
+                [Util showMessage:@"正在获取海报" forDuration:1.5f inView:MDAPPDELEGATE.window];
                 return;
             }
         }

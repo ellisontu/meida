@@ -179,6 +179,11 @@
 #define kDefualtTitleStr            @"标题要突出你的作品主题喔～"
 #define kDefualtDescStr             @"介绍一下你的作品和分享心得吧，越详细越容易热门呦～"
 
+//video
+#define RECORD_MAX_TIME 8.0           //最长录制时间
+#define TIMER_INTERVAL 0.05         //计时器刷新频率
+#define VIDEO_FOLDER @"recordVideoFile" //视频录制存放文件夹
+
 #endif
 
 

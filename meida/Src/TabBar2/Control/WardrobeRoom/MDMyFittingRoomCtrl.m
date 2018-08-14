@@ -1,18 +1,18 @@
 //
-//  MDFanshionCircleCtrl.m
+//  MDMyFittingRoomCtrl.m
 //  meida
 //
 //  Created by ToTo on 2018/7/5.
 //  Copyright © 2018年 ymfashion. All rights reserved.
 //
 
-#import "MDFanshionCircleCtrl.h"
-#import "MDFanshionCircleCategoryCtrl.h"
+#import "MDMyFittingRoomCtrl.h"
+#import "MDMyFittingRoomCategoryCtrl.h"
 
 #import "MDSegmentTitleView.h"
 #import "MDSegmentScrollView.h"
 
-@interface MDFanshionCircleCtrl ()<MDSegmentTitleViewDelegate, MDSegmentScrollViewDelegate>
+@interface MDMyFittingRoomCtrl ()<MDSegmentTitleViewDelegate, MDSegmentScrollViewDelegate>
 
 @property (nonatomic, strong) MDSegmentTitleView        *segmentTitleView;
 @property (nonatomic, strong) MDSegmentScrollView       *segmentScrollView;
@@ -20,26 +20,25 @@
 
 @end
 
-@implementation MDFanshionCircleCtrl
+@implementation MDMyFittingRoomCtrl
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self initView];
     
 }
 
+
 - (void)initView
 {
     self.view.backgroundColor = COLOR_WITH_WHITE;
-    
     [self setNavigationType:NavShowBackAndTitleAndRight];
-    [self setTitle:@"依尚圈"];
+    [self setTitle:@"我的试衣间"];
     [self setRightBtnWith:@"" image:IMAGE(@"navi_right_icon")];
     
     [self initSegmentView];
 }
-
 
 - (void)initSegmentView
 {
@@ -53,7 +52,7 @@
     [self.view addSubview:self.segmentTitleView];
     
     for (int i = 0; i < titleArr.count; i++) {
-        MDFanshionCircleCategoryCtrl *control = [[MDFanshionCircleCategoryCtrl alloc] init];
+        MDMyFittingRoomCategoryCtrl *control = [[MDMyFittingRoomCategoryCtrl alloc] init];
         if (i % 2 == 0) {
             control.view.backgroundColor = kDefaultBackgroundColor;
         }

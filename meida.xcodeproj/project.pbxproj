@@ -106,15 +106,12 @@
 		C228505E2101835B000FF959 /* MDTrendBaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C228505D2101835B000FF959 /* MDTrendBaseScrollView.m */; };
 		C2285061210189A6000FF959 /* MDTrendChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2285060210189A6000FF959 /* MDTrendChannelCell.m */; };
 		C2285064210193EE000FF959 /* MDTrendUploadNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2285063210193EE000FF959 /* MDTrendUploadNewCell.m */; };
-		C228506721019400000FF959 /* MDTrendRecommendCell.m.bak in Sources */ = {isa = PBXBuildFile; fileRef = C228506621019400000FF959 /* MDTrendRecommendCell.m.bak */; };
-		C228506A2101BA9F000FF959 /* MDTrendRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850692101BA9F000FF959 /* MDTrendRecommendView.m */; };
+		C228506721019400000FF959 /* MDTrendRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C228506621019400000FF959 /* MDTrendRecommendCell.m */; };
 		C228506C2101C905000FF959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C228506B2101C905000FF959 /* Assets.xcassets */; };
 		C228507D2101CA81000FF959 /* MDMyFittingRoomCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */; };
 		C228507F2101CA81000FF959 /* MDMyFittingRoomCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850732101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.m */; };
 		C22850802101CA81000FF959 /* MDAddClothMatchCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */; };
 		C22850812101CA81000FF959 /* MDWardrobeAfterClothCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C22850772101CA81000FF959 /* MDWardrobeAfterClothCtrl.m */; };
-		C22850822101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C228507B2101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m */; };
-		C22850832101CA81000FF959 /* MDFanshionCircleCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */; };
 		C22869E82112F93E000AE14A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22869E72112F93E000AE14A /* Launch Screen.storyboard */; };
 		C22869EB211308FB000AE14A /* MDTrendUploadNewPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22869EA211308FB000AE14A /* MDTrendUploadNewPopView.m */; };
 		C24C620A210707E5007407CE /* ChannelDetailShowImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C6209210707E5007407CE /* ChannelDetailShowImgCell.m */; };
@@ -178,7 +175,6 @@
 		C2A832B520EF512300A821E6 /* XHLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832A720EF512300A821E6 /* XHLaunchAdImageManager.m */; };
 		C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */; };
 		C2A832BB20EF524C00A821E6 /* MDLaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */; };
-		C2AD199E2117FCC700494E76 /* MDTrendRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD199D2117FCC700494E76 /* MDTrendRecommendCell.m */; };
 		C2AD19A621182CC600494E76 /* MediaAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD19A121182CC600494E76 /* MediaAssetModel.m */; };
 		C2AD19A721182CC600494E76 /* MediaAlbumsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD19A321182CC600494E76 /* MediaAlbumsModel.m */; };
 		C2AD19A821182CC600494E76 /* MediaResourcesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD19A521182CC600494E76 /* MediaResourcesManager.m */; };
@@ -458,10 +454,8 @@
 		C2285060210189A6000FF959 /* MDTrendChannelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendChannelCell.m; sourceTree = "<group>"; };
 		C2285062210193EE000FF959 /* MDTrendUploadNewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendUploadNewCell.h; sourceTree = "<group>"; };
 		C2285063210193EE000FF959 /* MDTrendUploadNewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendUploadNewCell.m; sourceTree = "<group>"; };
-		C228506521019400000FF959 /* MDTrendRecommendCell.h.bak */ = {isa = PBXFileReference; lastKnownFileType = text; path = MDTrendRecommendCell.h.bak; sourceTree = "<group>"; };
-		C228506621019400000FF959 /* MDTrendRecommendCell.m.bak */ = {isa = PBXFileReference; lastKnownFileType = text; path = MDTrendRecommendCell.m.bak; sourceTree = "<group>"; };
-		C22850682101BA9F000FF959 /* MDTrendRecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTrendRecommendView.h; sourceTree = "<group>"; };
-		C22850692101BA9F000FF959 /* MDTrendRecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrendRecommendView.m; sourceTree = "<group>"; };
+		C228506521019400000FF959 /* MDTrendRecommendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendRecommendCell.h; sourceTree = "<group>"; };
+		C228506621019400000FF959 /* MDTrendRecommendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendRecommendCell.m; sourceTree = "<group>"; };
 		C228506B2101C905000FF959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C228506F2101CA80000FF959 /* MDMyFittingRoomCategoryCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCategoryCtrl.h; sourceTree = "<group>"; };
 		C22850702101CA80000FF959 /* MDMyFittingRoomCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMyFittingRoomCtrl.m; sourceTree = "<group>"; };
@@ -470,11 +464,7 @@
 		C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAddClothMatchCtrl.m; sourceTree = "<group>"; };
 		C22850752101CA80000FF959 /* MDMyFittingRoomCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMyFittingRoomCtrl.h; sourceTree = "<group>"; };
 		C22850772101CA81000FF959 /* MDWardrobeAfterClothCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWardrobeAfterClothCtrl.m; sourceTree = "<group>"; };
-		C22850782101CA81000FF959 /* MDFanshionCircleCategoryCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFanshionCircleCategoryCtrl.h; sourceTree = "<group>"; };
-		C22850792101CA81000FF959 /* MDFanshionCircleCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFanshionCircleCtrl.h; sourceTree = "<group>"; };
 		C228507A2101CA81000FF959 /* MDWardrobeAfterClothCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWardrobeAfterClothCtrl.h; sourceTree = "<group>"; };
-		C228507B2101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFanshionCircleCategoryCtrl.m; sourceTree = "<group>"; };
-		C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFanshionCircleCtrl.m; sourceTree = "<group>"; };
 		C22869E72112F93E000AE14A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C22869E9211308FB000AE14A /* MDTrendUploadNewPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendUploadNewPopView.h; sourceTree = "<group>"; };
 		C22869EA211308FB000AE14A /* MDTrendUploadNewPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendUploadNewPopView.m; sourceTree = "<group>"; };
@@ -747,8 +737,6 @@
 		C2A832B720EF51B300A821E6 /* MDLaunchAdManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLaunchAdManager.m; sourceTree = "<group>"; };
 		C2A832B920EF524C00A821E6 /* MDLaunchAdModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDLaunchAdModel.h; sourceTree = "<group>"; };
 		C2A832BA20EF524C00A821E6 /* MDLaunchAdModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDLaunchAdModel.m; sourceTree = "<group>"; };
-		C2AD199C2117FCC700494E76 /* MDTrendRecommendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendRecommendCell.h; sourceTree = "<group>"; };
-		C2AD199D2117FCC700494E76 /* MDTrendRecommendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendRecommendCell.m; sourceTree = "<group>"; };
 		C2AD19A021182CC600494E76 /* MediaAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaAssetModel.h; sourceTree = "<group>"; };
 		C2AD19A121182CC600494E76 /* MediaAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaAssetModel.m; sourceTree = "<group>"; };
 		C2AD19A221182CC600494E76 /* MediaAlbumsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaAlbumsModel.h; sourceTree = "<group>"; };
@@ -1070,8 +1058,7 @@
 			isa = PBXGroup;
 			children = (
 				99AA26B420DE6DC70053CAB6 /* Wardrobe */,
-				C228506D2101CA80000FF959 /* WardrobeBody */,
-				C22850762101CA81000FF959 /* WardrobeHead */,
+				C228506D2101CA80000FF959 /* WardrobeRoom */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -1079,6 +1066,8 @@
 		99AA26B420DE6DC70053CAB6 /* Wardrobe */ = {
 			isa = PBXGroup;
 			children = (
+				C228507A2101CA81000FF959 /* MDWardrobeAfterClothCtrl.h */,
+				C22850772101CA81000FF959 /* MDWardrobeAfterClothCtrl.m */,
 				99CD9C7A20DF3185000BC7F0 /* MDWardrobeControl.h */,
 				99CD9C7B20DF3185000BC7F0 /* MDWardrobeControl.m */,
 			);
@@ -1526,8 +1515,6 @@
 		99AA27AD20DE6DC70053CAB6 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
-				C22850682101BA9F000FF959 /* MDTrendRecommendView.h */,
-				C22850692101BA9F000FF959 /* MDTrendRecommendView.m */,
 				C228505C2101835B000FF959 /* MDTrendBaseScrollView.h */,
 				C228505D2101835B000FF959 /* MDTrendBaseScrollView.m */,
 				C228505F210189A6000FF959 /* MDTrendChannelCell.h */,
@@ -1536,10 +1523,8 @@
 				C2285063210193EE000FF959 /* MDTrendUploadNewCell.m */,
 				C22869E9211308FB000AE14A /* MDTrendUploadNewPopView.h */,
 				C22869EA211308FB000AE14A /* MDTrendUploadNewPopView.m */,
-				C228506521019400000FF959 /* MDTrendRecommendCell.h.bak */,
-				C228506621019400000FF959 /* MDTrendRecommendCell.m.bak */,
-				C2AD199C2117FCC700494E76 /* MDTrendRecommendCell.h */,
-				C2AD199D2117FCC700494E76 /* MDTrendRecommendCell.m */,
+				C228506521019400000FF959 /* MDTrendRecommendCell.h */,
+				C228506621019400000FF959 /* MDTrendRecommendCell.m */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -1717,7 +1702,7 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
-		C228506D2101CA80000FF959 /* WardrobeBody */ = {
+		C228506D2101CA80000FF959 /* WardrobeRoom */ = {
 			isa = PBXGroup;
 			children = (
 				C22850752101CA80000FF959 /* MDMyFittingRoomCtrl.h */,
@@ -1727,20 +1712,7 @@
 				C22850712101CA80000FF959 /* MDAddClothMatchCtrl.h */,
 				C22850742101CA80000FF959 /* MDAddClothMatchCtrl.m */,
 			);
-			path = WardrobeBody;
-			sourceTree = "<group>";
-		};
-		C22850762101CA81000FF959 /* WardrobeHead */ = {
-			isa = PBXGroup;
-			children = (
-				C228507A2101CA81000FF959 /* MDWardrobeAfterClothCtrl.h */,
-				C22850772101CA81000FF959 /* MDWardrobeAfterClothCtrl.m */,
-				C22850782101CA81000FF959 /* MDFanshionCircleCategoryCtrl.h */,
-				C228507B2101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m */,
-				C22850792101CA81000FF959 /* MDFanshionCircleCtrl.h */,
-				C228507C2101CA81000FF959 /* MDFanshionCircleCtrl.m */,
-			);
-			path = WardrobeHead;
+			path = WardrobeRoom;
 			sourceTree = "<group>";
 		};
 		C24C621421071B02007407CE /* UIPageControl */ = {
@@ -2492,7 +2464,6 @@
 				C2AD19A821182CC600494E76 /* MediaResourcesManager.m in Sources */,
 				99AA280420DE6DC80053CAB6 /* UserModel.m in Sources */,
 				99AA284620DE6DC80053CAB6 /* UIImagePickerController+Permission.m in Sources */,
-				C2AD199E2117FCC700494E76 /* MDTrendRecommendCell.m in Sources */,
 				C2285061210189A6000FF959 /* MDTrendChannelCell.m in Sources */,
 				C29E2C9C20F5F06400DE9BAC /* RSADataVerifier.m in Sources */,
 				99AA287620DE6DC80053CAB6 /* SAMKeychain.m in Sources */,
@@ -2512,9 +2483,7 @@
 				99AA287420DE6DC80053CAB6 /* SAMKeychainQuery.m in Sources */,
 				C2A832AE20EF512300A821E6 /* XHLaunchAdConst.m in Sources */,
 				99AA280620DE6DC80053CAB6 /* ShareView.m in Sources */,
-				C228506A2101BA9F000FF959 /* MDTrendRecommendView.m in Sources */,
 				99AA284F20DE6DC80053CAB6 /* NSDate+LSExtension.m in Sources */,
-				C22850832101CA81000FF959 /* MDFanshionCircleCtrl.m in Sources */,
 				99AA284420DE6DC80053CAB6 /* UIView+AligmentRectInsets.m in Sources */,
 				C2A832B220EF512300A821E6 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
 				C29E2A3420F5DF0800DE9BAC /* WXUtil.mm in Sources */,
@@ -2573,7 +2542,6 @@
 				C2AD19AB211846F900494E76 /* MDChoosePhotosCtrl.m in Sources */,
 				C2CE594D20EB64BE001F1F47 /* MDServicesCategroyCtrl.m in Sources */,
 				C2AD19AF2118483500494E76 /* MDChoosePhotoCell.m in Sources */,
-				C22850822101CA81000FF959 /* MDFanshionCircleCategoryCtrl.m in Sources */,
 				99AA289520DE6F580053CAB6 /* ServerConfigManager.m in Sources */,
 				99AA283B20DE6DC80053CAB6 /* UIImage+Capture.m in Sources */,
 				99AA284020DE6DC80053CAB6 /* UIColor+Equalable.m in Sources */,
@@ -2633,7 +2601,7 @@
 				99CD9C7F20DF31BD000BC7F0 /* MDServicesControl.m in Sources */,
 				99AA287220DE6DC80053CAB6 /* EncryptionMethods.m in Sources */,
 				C2A832B420EF512300A821E6 /* XHLaunchAdCache.m in Sources */,
-				C228506721019400000FF959 /* MDTrendRecommendCell.m.bak in Sources */,
+				C228506721019400000FF959 /* MDTrendRecommendCell.m in Sources */,
 				99AA282320DE6DC80053CAB6 /* LSWaterWaveView.m in Sources */,
 				99AA283E20DE6DC80053CAB6 /* UIButton+Router.m in Sources */,
 				C2AD19A621182CC600494E76 /* MediaAssetModel.m in Sources */,
@@ -2836,7 +2804,6 @@
 					"$(PROJECT_DIR)/meida/Lib/libWeiboSDK",
 					"$(PROJECT_DIR)/meida/Lib/WechatSDK",
 					"$(PROJECT_DIR)/meida/Lib/AlipayPay",
-					"$(PROJECT_DIR)/meida/Lib/meisheSdk",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ymfashion.meida;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2894,7 +2861,6 @@
 					"$(PROJECT_DIR)/meida/Lib/libWeiboSDK",
 					"$(PROJECT_DIR)/meida/Lib/WechatSDK",
 					"$(PROJECT_DIR)/meida/Lib/AlipayPay",
-					"$(PROJECT_DIR)/meida/Lib/meisheSdk",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ymfashion.meida;
 				PRODUCT_NAME = "$(TARGET_NAME)";

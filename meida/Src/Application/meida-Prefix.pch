@@ -36,6 +36,8 @@
 #import <PureLayout.h>
 #import "MDDeviceManager.h"
 #import <MLeaksFinder.h>
+#import "UserManager.h"
+#import "UserModel.h"
 
 #endif
 

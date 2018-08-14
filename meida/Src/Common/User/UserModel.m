@@ -33,11 +33,11 @@
     }
 }
 
-- (void)setMobile:(NSString *)mobile
+- (void)setPhone:(NSString *)phone
 {
-    _mobile = mobile;
-    if (stringIsEmpty(mobile)) {
-        _mobile = @"";
+    _phone = phone;
+    if (stringIsEmpty(phone)) {
+        _phone = @"";
     }
 }
 
@@ -127,9 +127,7 @@
 
 - (BOOL)isPhoneBinded
 {
-    if (self.mobile
-        && self.mobile.length > 1
-        && [[self.mobile substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"1"]) {
+    if (self.phone && self.phone.length > 1 && [[self.phone substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"1"]) {
         return YES;
     }
     return NO;

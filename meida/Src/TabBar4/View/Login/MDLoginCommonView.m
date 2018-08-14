@@ -193,10 +193,16 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:_phoneTextField.text forKey:@"phone"];
     [params setObject:_pwordTextField.text forKey:@"password"];
-    
+    MDWeakPtr(weakPtr, self);
     [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_LOGIN params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
         if (rs) {
-            
+            UserManager *userManger = [UserManager sharedInstance];
+            userManger.loginUser = [[UserModel alloc] init];
+            userManger.loginUser.phone = weakPtr.phoneTextField.text;
+            userManger.loginUser.password = weakPtr.pwordTextField.text;
+            UIViewController *vc = [Util getCurrentVC];
+            [Util showMessage:@"登录..." forDuration:1.0 inView:MDAPPDELEGATE.window];
+            [vc.navigationController popViewControllerAnimated:YES];
         }
         else{
             [Util showErrorMessage:obj forDuration:1.f];
@@ -409,6 +415,7 @@
     [_registerBtn setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
     [_registerBtn addTarget:self action:@selector(registerBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [_pCodeRecivBtn setTitle:@"验证码" forState:UIControlStateNormal];
+    [_pCodeRecivBtn addTarget:self action:@selector(reciveBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     _phoneTextField.tag = 10001;
     _pCodeTextField.tag = 10002;
     _pwordTextField.tag = 10003;
@@ -461,15 +468,39 @@
     [params setObject:_phoneTextField.text forKey:@"phone"];
     [params setObject:_pCodeTextField.text forKey:@"phoneCode"];
     [params setObject:_pwordTextField.text forKey:@"password"];
+    MDWeakPtr(weakPtr, self);
     [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_REGISTER params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
         if (rs) {
-            
+            UserManager *userManger = [UserManager sharedInstance];
+            userManger.loginUser = [[UserModel alloc] init];
+            userManger.loginUser.phone = weakPtr.phoneTextField.text;
+            userManger.loginUser.password = weakPtr.pwordTextField.text;
+            UIViewController *vc = [Util getCurrentVC];
+            [Util showMessage:@"注册成功..." forDuration:1.0 inView:MDAPPDELEGATE.window];
+            [vc.navigationController popViewControllerAnimated:YES];
         }
         else{
             [Util showErrorMessage:obj forDuration:1.f];
         }
     }];
     
+}
+
+- (void)reciveBtnAction:(UIButton *)sender
+{
+    if (![Util isPhoneNumber:_phoneTextField.text]) {
+        [Util showMessage:@"请输入正确的手机号" inView:MDAPPDELEGATE.window];
+        return;
+    }
+    NSDictionary *params = @{@"phone":_phoneTextField.text};
+    [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_SENSMS params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
+        if (rs) {
+            
+        }
+        else{
+            [Util showErrorMessage:obj forDuration:1.0f];
+        }
+    }];
 }
 
 - (void)cancelAllEidit

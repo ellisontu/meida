@@ -1,5 +1,5 @@
 //
-//  MDFanshionCircleCategoryCtrl.h
+//  MDAddClothMatchCtrl.h
 //  meida
 //
 //  Created by ToTo on 2018/7/5.
@@ -8,6 +8,6 @@
 
 #import "MDBaseViewController.h"
 
-@interface MDFanshionCircleCategoryCtrl : MDBaseViewController
+@interface MDAddClothMatchCtrl : MDBaseViewController
 
 @end

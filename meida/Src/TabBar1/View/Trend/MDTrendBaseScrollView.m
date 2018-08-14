@@ -73,12 +73,10 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
         case CellTypeRecommend:
         {// 推荐
             UICollectionViewFlowLayout *flowLayout     = [[UICollectionViewFlowLayout alloc] init];
-            CGFloat padding = 15.f;
             flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-            flowLayout.minimumInteritemSpacing = padding;
-            flowLayout.minimumLineSpacing = padding;
+            flowLayout.minimumInteritemSpacing = kOffPadding;
+            flowLayout.minimumLineSpacing = kOffPadding;
             self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-            self.collectionView.contentInset = UIEdgeInsetsMake(padding, padding, padding, padding);
             [self.collectionView registerClass:[MDTrendRecommendCell class] forCellWithReuseIdentifier:MDTrendRecommendCellID];
         }
             break;
@@ -199,8 +197,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
             break;
         case CellTypeRecommend:
         {// 推荐
-            CGFloat itemWW = (SCR_WIDTH - 3 *kOffPadding) / 2.f;
-            return CGSizeMake(itemWW, 160.f);
+            return CGSizeMake(SCR_WIDTH, 350.f);
         }
             break;
         default:

@@ -71,9 +71,23 @@
 //egister
 #define URL_POST_USER_LOGIN [BASEURL stringByAppendingString:@"/user/login"]
 
+/**
+ *  用户获取验证码
+ *  @method POST
+ *  @link /user/sendSms
+ *  @param: phone
+ *  @return json
+ */
+#define URL_POST_USER_SENSMS [BASEURL stringByAppendingString:@"/user/sendSms"]
 
-#endif
-
+/**
+ *  关注
+ *  @method POST
+ *  @link /user/praise
+ *  @param: toUserId(用关注的用户ID) / userId(当前登录用户ID)
+ *  @return json
+ */
+#define URL_POST_USER_PRAISE [BASEURL stringByAppendingString:@"/user/praise"]
 
 
 #pragma mark ------------------------------------ 主页 --- 潮流   ----------------------------------
@@ -84,7 +98,6 @@
  *  @param: currentPage / pageSize
  *  @return json
  */
-//egister
 #define URL_GET_SUBJECT_LIST [BASEURL stringByAppendingString:@"/subject/list"]
 
 //GET /subject/view/{id}/{displayType}
@@ -96,7 +109,44 @@
  *  @param: nil
  *  @return json
  */
-//egister
 #define URL_GET_SUBJECT_DETAIL [BASEURL stringByAppendingString:@"/subject/view/%@/%@"]
+
+
+
+#pragma mark ------------------------------------   评论 comment   ----------------------------------
+
+/**
+ *  查询评论列表，根据关联ID
+ *  @method GET
+ *  @link /comment/queryListByRefId
+ *  @param: refId 关联id
+ *  @return json
+ */
+#define URL_GET_COMMENT_QUERY_LIST [BASEURL stringByAppendingString:@"/comment/queryListByRefId"]
+
+/**
+ *  新增评论
+ *  @method POST
+ *  @link /comment/add
+ *  @param: refId(关联id) / content(评论内容) / userId(当前登录用户ID)
+ *  @return json
+ */
+#define URL_GET_COMMENT_ADD [BASEURL stringByAppendingString:@"/comment/add"]
+
+/**
+ *  删除评论
+ *  @method POST
+ *  @link /comment/del/{id}
+ *  @param: id(关联id)
+ *  @return json
+ */
+#define URL_GET_COMMENT_DELETE [BASEURL stringByAppendingString:@"/comment/del/%@"]
+
+
+
+#endif
+
+
+
 
 

@@ -510,27 +510,33 @@
     if (self.tempBtn == nil) {
         button.selected = YES;
         self.tempBtn = button;
-        self.tempBtn.layer.borderColor = COLOR_WITH_WHITE.CGColor;
-        self.tempBtn.layer.borderWidth = 1.f;
-        self.tempBtn.backgroundColor = COLOR_WITH_WHITE;
+        if (self.configure.btnScrollStyle == BtnScrollStyleStyleCommon) {
+            self.tempBtn.layer.borderColor = COLOR_WITH_WHITE.CGColor;
+            self.tempBtn.layer.borderWidth = 1.f;
+            self.tempBtn.backgroundColor = COLOR_WITH_WHITE;
+        }
     }
     else if (self.tempBtn != nil && self.tempBtn == button){
         button.selected = YES;
     }
     else if (self.tempBtn != button && self.tempBtn != nil){
        
-        self.tempBtn.layer.borderColor = COLOR_HEX_STR(@"#E7E7E7").CGColor;
-        self.tempBtn.layer.borderWidth = 1.f;
-        self.tempBtn.backgroundColor = COLOR_HEX_STR(@"#F4F4F4");
+        if (self.configure.btnScrollStyle == BtnScrollStyleStyleCommon) {
+            self.tempBtn.layer.borderColor = COLOR_HEX_STR(@"#E7E7E7").CGColor;
+            self.tempBtn.layer.borderWidth = 1.f;
+            self.tempBtn.backgroundColor = COLOR_HEX_STR(@"#F4F4F4");
+        }
         
         self.tempBtn.selected = NO;
         button.selected = YES;
         
         self.tempBtn = button;
         
+        if (self.configure.btnScrollStyle == BtnScrollStyleStyleCommon) {
         self.tempBtn.layer.borderColor = COLOR_WITH_WHITE.CGColor;
         self.tempBtn.layer.borderWidth = 1.f;
         self.tempBtn.backgroundColor = COLOR_WITH_WHITE;
+        }
         
     }
     

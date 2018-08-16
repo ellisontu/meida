@@ -44,8 +44,7 @@
         //为设置定位的精度
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         //距离过滤器，为了减少对定位装置的轮询次数，位置的改变不会每次都去通知委托，而是在移动了足够的距离时才通知委托程序，它的单位是米
-        //_locationManager.distanceFilter = kCLDistanceFilterNone;
-        _locationManager.distanceFilter = 1000;
+        _locationManager.distanceFilter = 1000; // 一千米后更新一下位置；
         _locationManager.delegate = self;
         
         //使用期间使用定位服务
@@ -157,6 +156,7 @@
     self.latitude = _location.coordinate.latitude;
     LOGIN_USER.longitude = [NSString stringWithFormat:@"%f",self.longitude];
     LOGIN_USER.latitude  = [NSString stringWithFormat:@"%f",self.latitude];
+    [[UserManager sharedInstance] archivertUserInfo];
     [self reverseGeocode:_location];
 }
 

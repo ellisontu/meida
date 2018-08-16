@@ -186,6 +186,7 @@
     NSString *cookieAppVersion = [NSString stringWithFormat:@"md_appVersion=%@", kAppVersion];
     NSString *cookieValue = [NSString stringWithFormat:@"document.cookie = '%@'; document.cookie = '%@'", cookieInApp, cookieAppVersion];
     
+    /*
     if (LOGIN_USER && !stringIsEmpty(LOGIN_USER.token) && !stringIsEmpty(LOGIN_USER.prefix) && LOGIN_USER.hashTimes) {
         NSString *cookieToken = [NSString stringWithFormat:@"md_token=%@", LOGIN_USER.token];
         NSString *cookiePrefix = [NSString stringWithFormat:@"md_prefix=%@", LOGIN_USER.prefix];
@@ -194,7 +195,7 @@
         
         _cookieStr = [NSString stringWithFormat:@"%@; %@; %@", cookieToken, cookiePrefix, cookieHashTimes];
     }
-    
+    */
     WKUserScript *cookieScript = [[WKUserScript alloc] initWithSource:cookieValue injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
     [_webView.configuration.userContentController addUserScript:cookieScript];
     
@@ -219,7 +220,7 @@
     NSHTTPCookie *cookieAppVersion = [NSHTTPCookie cookieWithProperties:appVersionDic];
     [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookieAppVersion];
     
-    
+    /*
     if (LOGIN_USER && !stringIsEmpty(LOGIN_USER.token) && !stringIsEmpty(LOGIN_USER.prefix) && LOGIN_USER.hashTimes) {
         NSDictionary *tokenDic = @{NSHTTPCookieName:@"md_token",
                                    NSHTTPCookieValue:LOGIN_USER.token,
@@ -247,6 +248,7 @@
         //未登录删除 以上3个 cookie
         [self deleteCookie];
     }
+     */
 }
 
 - (void)deleteCookie

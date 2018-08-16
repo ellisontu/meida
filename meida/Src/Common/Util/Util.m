@@ -528,6 +528,7 @@
      for hash_times - 1:
      check = md5(prefix + "_" + check + "_" + timestamp)
      */
+    /*
     if (!LOGIN_USER.prefix || !LOGIN_USER.token || !LOGIN_USER.hashTimes) {
         return @" ";
     }
@@ -548,7 +549,8 @@
         
         hashTime--;
     }
-    return md5String;
+     */
+    return @"";//md5String;
 }
 
 /**
@@ -581,7 +583,7 @@
 + (BOOL)verify
 {
     // 这几个如果有一个不存在 则不能通过验证 需要重新登陆
-    return (stringIsEmpty(LOGIN_USER.prefix) || stringIsEmpty(LOGIN_USER.token) || !LOGIN_USER.hashTimes);
+    return @"";//(stringIsEmpty(LOGIN_USER.prefix) || stringIsEmpty(LOGIN_USER.token) || !LOGIN_USER.hashTimes);
 }
 
 /**
@@ -825,168 +827,5 @@
 {
 }
 
-#pragma mark - 获取用户通讯录
-+ (void)getAddressBook:(NSInteger )start size:(NSInteger)size complete:(void (^)(NSDictionary *))complete
-{
-    __block NSArray *addressArr = [NSArray array];  // 地址数据
-    __block NSDictionary *dict = [NSDictionary dictionary]; // 给h5传的参数 {code:0, data:[], total: 总数}
-    
-    ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
-    ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
-    NSString *code = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_address_book_code"];
-    
-    switch (status) {
-        case kABAuthorizationStatusAuthorized:
-            {
-                if (![code isEqualToString:@"0"]) {// 检测当前code状态是否和userDefault状态一致，不一致重新加载
-                    code = @"";
-                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user_address_book_code"];
-                }
-            }
-            break;
-        case kABAuthorizationStatusRestricted : kABAuthorizationStatusDenied:
-        {
-            if (![code isEqualToString:@"401"]) {// 检测当前code状态是否和userDefault状态一致，不一致重新加载
-                code = @"";
-                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user_address_book_code"];
-            }
-        }
-            break;
-        default:
-            break;
-    }
-    
-    // 本地已经存储 通讯录数组，并且用户允许访问通讯录
-    if ([code isEqualToString:@"0"] && start > 0) { // 分页传的时候，请求第二页，直接取本地array
-        addressArr = [Util getAddressBookFromUserDefault:start size:size];
-        dict = [Util configPostNotifyDict:addressArr code:code];
-        complete(dict);
-    }
-    // 用户禁止访问通讯录
-    else if ([code isEqualToString:@"401"]){
-        dict = [Util configPostNotifyDict:@[] code:code];
-        complete(dict);
-    }
-    // 用户尚未对访问通讯录做限制 code 尚未存储，所以传code时候，直接传字符串
-    // code = 0.成功/ 401 拒绝访问
-    else {
-        if (status == kABAuthorizationStatusNotDetermined) {
-            ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
-                if (granted) {
-                    addressArr = [Util copyAddressBook:addressBookRef size:size];
-                    dict = [Util configPostNotifyDict:addressArr code:@"0"];
-                    // 主线程更新
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        complete(dict);
-                    });
-                } else {
-                    [[NSUserDefaults standardUserDefaults] setObject:@"401" forKey:@"user_address_book_code"];
-                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user_address_book"];
-                    dict = [Util configPostNotifyDict:@[] code:@"401"];
-                    // 主线程更新
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        complete(dict);
-                    });
-                    if (addressBookRef) CFRelease(addressBookRef);
-                }
-            });
-        }
-        else if (status == kABAuthorizationStatusAuthorized){
-            addressArr = [Util copyAddressBook:addressBookRef size:size];;
-            dict = [Util configPostNotifyDict:addressArr code:@"0"];
-            complete(dict);
-        }
-        else if (status == kABAuthorizationStatusRestricted || status == kABAuthorizationStatusDenied){
-            [[NSUserDefaults standardUserDefaults] setObject:@"401" forKey:@"user_address_book_code"];
-            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user_address_book"];
-            dict = [Util configPostNotifyDict:@[] code:@"401"];
-            complete(dict);
-        }
-    }
-    
-}
-
-// 拼接给h5传的参数
-+ (NSDictionary *)configPostNotifyDict:(NSArray *)addressArr code:(NSString *)code
-{
-    NSDictionary *dict = [NSDictionary dictionary];
-    NSString *total = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_address_book_total"];
-
-    dict = @{@"code":code,
-             @"data":addressArr,
-             @"total": stringIsEmpty(total) ? @"" : total
-             };
-    return dict;
-}
-// 第一次访问通讯录，本地便利出来存储出来，方便以后直接读取
-+ (NSArray *)copyAddressBook:(ABAddressBookRef)addressBook size:(NSInteger)size
-{
-    CFIndex numberOfPeople = ABAddressBookGetPersonCount(addressBook);
-    CFArrayRef people = ABAddressBookCopyArrayOfAllPeople(addressBook);
-    
-    // 存储所有联系人对象 arr
-    NSMutableArray *personsArr = [NSMutableArray arrayWithCapacity:numberOfPeople];
-    for (int i = 0; i < numberOfPeople; i++) {
-        
-        //1. 存储联系人对象 dict
-        NSMutableDictionary *personInfo = [NSMutableDictionary dictionary];
-        ABRecordRef person = CFArrayGetValueAtIndex(people, i);
-        //1.1 名
-        NSString *firstName = (__bridge NSString *)(ABRecordCopyValue(person, kABPersonFirstNameProperty));
-        //1.2 姓
-        NSString *lastName = (__bridge NSString *)(ABRecordCopyValue(person, kABPersonLastNameProperty));
-        NSString *contact_name = [NSString stringWithFormat:@"%@%@",
-                          stringIsEmpty(lastName)  ? @"" : lastName,
-                          stringIsEmpty(firstName) ? @"" : firstName];
-        
-        //DLog(@"name === %@",contact_name);
-        
-        //2. 电话集合
-        ABMultiValueRef phone    = ABRecordCopyValue(person, kABPersonPhoneProperty);
-        NSMutableArray *contact_mobile = [NSMutableArray arrayWithCapacity:ABMultiValueGetCount(phone)];
-        for (int k = 0; k < ABMultiValueGetCount(phone); k++)
-        {
-            //电话值
-            NSString * personPhone = (__bridge NSString*)ABMultiValueCopyValueAtIndex(phone, k);
-           // DLog(@"personPhone === %@",personPhone);
-            if (!stringIsEmpty(personPhone)) {
-                [contact_mobile addObject:personPhone];
-            }
-        }
-        
-        // 3. 组装某个联系人的信息
-        if (!stringIsEmpty(contact_name)) {
-            [personInfo setObject:contact_name forKey:@"contact_name"];
-        }
-        if (contact_mobile) {
-            [personInfo setObject:contact_mobile forKey:@"contact_mobile"];
-        }
-        // 4. 组装所有联系人的信息
-        if (personInfo) {
-            [personsArr addObject:personInfo];
-        }
-    }
-    //code = 0.成功/ 401 拒绝访问
-    [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"user_address_book_code"];
-    [[NSUserDefaults standardUserDefaults] setObject:@(numberOfPeople) forKey:@"user_address_book_total"];
-    [[NSUserDefaults standardUserDefaults] setObject:[personsArr copy] forKey:@"user_address_book"];
-    
-    NSArray *persons = [personsArr copy];
-    NSInteger length = size >= persons.count ? persons.count : size;
-    
-    return [persons subarrayWithRange:NSMakeRange(0, length)];
-}
-// 直接读取本地 存储过的通讯录， 根据h5传的下标和请求大小
-+ (NSArray *)getAddressBookFromUserDefault:(NSInteger)start size:(NSInteger)size
-{
-    NSArray *addressArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_address_book"];
-    // 判断当前需要post的电话号码
-    NSInteger count = addressArr.count;
-    NSInteger length = start + size >= count ? count - start : size;
-    if (length <= 0) {
-        return @[];
-    }
-    return [addressArr subarrayWithRange:NSMakeRange(start, length)];
-}
 
 @end

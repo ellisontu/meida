@@ -50,26 +50,6 @@
 {
     [ServerConfigManager sharedInstance].model = model;
     
-    //老拉新活动
-    LOGIN_USER.title = model.title;
-    LOGIN_USER.actUrl = model.url;
-    
-    // 上传位置信息
-    if (model.oss_video_upload) {
-        // 阿里云
-        LOGIN_USER.aliAccess = model.oss_video_upload;
-    }
-    else {
-        // 清空本地存储的发布上传 位置信息
-        LOGIN_USER.aliAccess = nil;
-    }
-
-    [[UserManager sharedInstance] archivertUserInfo];
-    
-    // 会员信息
-    if (LOGIN_USER && model.vip) {
-        LOGIN_USER.vipInfo = model.vip;
-    }
 }
 
 

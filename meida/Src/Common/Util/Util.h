@@ -199,7 +199,4 @@ typedef enum {  // 获取图片的格式
  */
 + (void)clientEventTrackWithParams:(NSDictionary *)params;
 
-#pragma mark - 获取用户通讯录
-+ (void)getAddressBook:(NSInteger )start size:(NSInteger) size complete:(void (^)(NSDictionary *))complete;
-
 @end

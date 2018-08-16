@@ -26,7 +26,9 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
 @interface MDTrendChildCtrl ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, assign) NSInteger             currentPage;
+@property (nonatomic, strong) NSString     *currentPage;
+@property (nonatomic, strong) NSString     *pageSize;
+@property (nonatomic, assign) BOOL          flag;
 
 
 @end
@@ -37,6 +39,22 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
     [super viewDidLoad];
     
     [self initView];
+    
+    _currentPage = @"0";
+    _pageSize = @"10";
+    
+    if (self.cellType == CellTypeChannel || self.cellType == CellTypeRecommend) {
+        [self refreshData];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.cellType == CellTypeUploadNew && !self.flag) {
+        [self refreshData];
+        self.flag = YES;
+    }
 }
 
 - (void)initView
@@ -99,10 +117,10 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 - (void)refreshData
 {
     
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
     switch (self.cellType) {
         case CellTypeChannel:
         {// 频道
-            NSMutableDictionary *params = [NSMutableDictionary dictionary];
             [[MDNetWorking sharedClient] requestWithPath:URL_GET_SUBJECT_LIST params:params httpMethod:MethodGet callback:^(BOOL rs, NSObject *obj) {
                 if (rs) {
                     XLog(@"-------------%@",obj);
@@ -115,7 +133,18 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
             break;
         case CellTypeUploadNew:
         {// 上新
-            
+            [params setObject:_currentPage forKey:@"currentPage"];
+            [params setObject:_pageSize forKey:@"pageSize"];
+            [params setObject:LOGIN_USER.longitude forKey:@"mylng"];
+            [params setObject:LOGIN_USER.latitude forKey:@"mylat"];
+            [[MDNetWorking sharedClient] requestWithPath:URL_GET_STORE_LIST params:params httpMethod:MethodGet callback:^(BOOL rs, NSObject *obj) {
+                if (rs) {
+                    XLog(@"-------------%@",obj);
+                }
+                else{
+                    [Util showErrorMessage:obj forDuration:1.0f];
+                }
+            }];
         }
             break;
         case CellTypeRecommend:

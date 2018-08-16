@@ -273,7 +273,7 @@
                  @"app_version" : kAppVersion,
                  @"app_target" : kAppTarget,
                  @"timestamp": timeStamp,
-                 @"token" : LOGIN_USER.token ? LOGIN_USER.token : @" ",
+                 //@"token" : LOGIN_USER.token ? LOGIN_USER.token : @" ",
                  @"uid" : LOGIN_USER.uid ? LOGIN_USER.uid : @" ",
                  @"check" : checkStr,
                  @"device_token" : [MDDeviceManager sharedInstance].deviceToken ? [MDDeviceManager sharedInstance].deviceToken : @"",

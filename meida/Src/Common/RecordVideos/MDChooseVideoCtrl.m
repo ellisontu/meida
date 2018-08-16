@@ -258,13 +258,14 @@ typedef void(^ResultPath)(NSString *filePath, NSString *fileName);
 - (void) openConverEditorCtrl:(MediaAssetModel *)model
 {
     [Util showLoadingVwInView:self.view withText:@"正在读取需要上传的视频数据"];
+    /*
     [self getVideoPathFromPHAsset:model.asset Complete:^(NSString *filePath, NSString *fileName) {
         
         if (!stringIsEmpty(filePath)) {
-            
+         
             NSDictionary *fileInfoDic = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
             if (fileInfoDic) {
-                
+             
                 NSNumber *fileSize = [fileInfoDic objectForKey:NSFileSize];
                 if ([fileSize longLongValue] < [[LOGIN_USER.aliAccess objectForKey:@"limit"] longLongValue]) {
                     
@@ -294,6 +295,7 @@ typedef void(^ResultPath)(NSString *filePath, NSString *fileName);
         
         [Util hideLoadingVw];
     }];
+         */
 }
 
 #pragma mark - XHCVideoPreviewViewDelegate

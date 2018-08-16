@@ -54,18 +54,15 @@ static NSString *appGeTuiNotify         = @"appGeTuiNotifyIsOn";    /**< key 个
 - (instancetype)init
 {
     if (self = [super init]) {
-        
         NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:UserKey];
-        if (!data) {
-            // 如果新的键取不到数据从老的 key 取值 并保存到新的 key 中
-            data = [[NSUserDefaults standardUserDefaults] objectForKey:OldUserKey];
-            [[NSUserDefaults standardUserDefaults] setObject:data forKey:UserKey];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+        if (data) {
+            _loginUser = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         }
-        _loginUser = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-        _loginUID = _loginUser.uid;
-        if (!_loginUser.vipInfo) {
-            _loginUser.vipInfo = @0;
+        else{
+            _loginUser = [[UserModel alloc] init];
+            NSData *newData = [_loginUser yy_modelToJSONData];
+            [[NSUserDefaults standardUserDefaults] setObject:newData forKey:UserKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
     }
     return self;
@@ -86,7 +83,7 @@ static NSString *appGeTuiNotify         = @"appGeTuiNotifyIsOn";    /**< key 个
         BOOL is_expire = [[member objectForKey:@"is_expire"] boolValue];
         // 此处操作是为了登录成功后第一时间刷新 TabBar2 会员页面数据
         if (!dictionaryIsEmpty(member) && !is_expire) {
-            LOGIN_USER.vipInfo = @1;
+            //LOGIN_USER.vipInfo = @1;
         }
     }
     
@@ -137,13 +134,13 @@ static NSString *appGeTuiNotify         = @"appGeTuiNotifyIsOn";    /**< key 个
             
         case SaveTheIconType:
         {
-            [LOGIN_USER setIcon:info];
+            //[LOGIN_USER setIcon:info];
         }
             break;
             
         case SaveTheDescriptionsType:
         {
-            [LOGIN_USER setDesc:info];
+            //[LOGIN_USER setDesc:info];
         }
             break;
             
@@ -155,38 +152,38 @@ static NSString *appGeTuiNotify         = @"appGeTuiNotifyIsOn";    /**< key 个
             
         case SaveTheBackGroundType:
         {
-            [LOGIN_USER setBackground:info];
+            //[LOGIN_USER setBackground:info];
         }
             break;
         case SaveTheFollowType:
         {
-            NSInteger Attention = [[[[UserManager sharedInstance] loginUser] Attention] integerValue];
-            Attention += [info integerValue];
-            [LOGIN_USER setAttention:[NSString stringWithFormat:@"%zd",Attention]];
+            //NSInteger Attention = [[[[UserManager sharedInstance] loginUser] Attention] integerValue];
+            //Attention += [info integerValue];
+            //[LOGIN_USER setAttention:[NSString stringWithFormat:@"%zd",Attention]];
         }
             break;
             
         case SaveTheReleaseType:
         {
-            NSInteger uploadData = [[[[UserManager sharedInstance] loginUser] videos] integerValue];
-            uploadData += [info integerValue];
-            [LOGIN_USER setVideos:[NSString stringWithFormat:@"%zd",uploadData]];
+            //NSInteger uploadData = [[[[UserManager sharedInstance] loginUser] videos] integerValue];
+            //uploadData += [info integerValue];
+            //[LOGIN_USER setVideos:[NSString stringWithFormat:@"%zd",uploadData]];
         }
             break;
             
         case SaveTheColloectType:
         {
-            NSInteger collections = [[[[UserManager sharedInstance] loginUser] video_collections] integerValue];
-            collections += [info integerValue];
-            [LOGIN_USER setVideo_collections:[NSString stringWithFormat:@"%ld",collections]];
+            //NSInteger collections = [[[[UserManager sharedInstance] loginUser] video_collections] integerValue];
+            //collections += [info integerValue];
+            //[LOGIN_USER setVideo_collections:[NSString stringWithFormat:@"%ld",collections]];
         }
             break;
             
         case SaveTheLipPrintType:
         {
-            NSInteger red = [[[UserManager sharedInstance] loginUser] red];
-            red += [info integerValue];
-            [LOGIN_USER setRed:red];
+            //NSInteger red = [[[UserManager sharedInstance] loginUser] red];
+            //red += [info integerValue];
+            //[LOGIN_USER setRed:red];
         }
             break;
             

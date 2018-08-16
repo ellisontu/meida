@@ -761,7 +761,7 @@ ShareManagerOptionsKey const ShareManagerSavePoster         = @"ShareManagerSave
     }
     
     request.message = message;
-    request.openID = LOGIN_USER.openId;
+    //request.openID = LOGIN_USER.openId;
     [WXApi sendReq:request];
 }
 

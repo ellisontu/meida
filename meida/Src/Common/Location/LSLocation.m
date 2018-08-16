@@ -40,20 +40,18 @@
     self = [super init];
     if (self) {
         
-//        _locationManager = [[CLLocationManager alloc] init];
-//        //为设置定位的精度
-//        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//        //距离过滤器，为了减少对定位装置的轮询次数，位置的改变不会每次都去通知委托，而是在移动了足够的距离时才通知委托程序，它的单位是米
-//        //_locationManager.distanceFilter = kCLDistanceFilterNone;
-//        _locationManager.distanceFilter = 1000;
-//        _locationManager.delegate = self;
-//        
-//        if (IS_IOS_8_ABOVE) {
-//            //使用期间使用定位服务
-//            [_locationManager requestWhenInUseAuthorization];
-//            //始终使用定位服务
-//            //[_locationManager requestAlwaysAuthorization];
-//        }
+        _locationManager = [[CLLocationManager alloc] init];
+        //为设置定位的精度
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        //距离过滤器，为了减少对定位装置的轮询次数，位置的改变不会每次都去通知委托，而是在移动了足够的距离时才通知委托程序，它的单位是米
+        //_locationManager.distanceFilter = kCLDistanceFilterNone;
+        _locationManager.distanceFilter = 1000;
+        _locationManager.delegate = self;
+        
+        //使用期间使用定位服务
+        [_locationManager requestWhenInUseAuthorization];
+        //始终使用定位服务
+        //[_locationManager requestAlwaysAuthorization];
     }
     return self;
 }
@@ -78,6 +76,7 @@
 - (void)reverseGeocode:(CLLocation *)location
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    MDWeakPtr(weakPtr, self);
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (!arrayIsEmpty(placemarks)) {
             CLPlacemark *placemark = [placemarks firstObject];
@@ -98,45 +97,45 @@
             NSString *thoroughfare = placemark.thoroughfare;
             //eg. 中国北京市朝阳区太阳宫镇太阳宫中路12号
             NSString *formattedAddressLines = [[addressDic objectForKey:@"FormattedAddressLines"] firstObject];
-            XLog(@"地址信息 = %@", addressDic);
-            _country = stringIsEmpty(country) ? @"未知" : country;
+            //XLog(@"地址信息 = %@", addressDic);
+            weakPtr.country = stringIsEmpty(country) ? @"未知" : country;
             if (stringIsEmpty(locality)) {
                 if (stringIsEmpty(administrativeArea)) {
-                    _province = @"未知";
-                    _city = @"未知";
-                    _area = @"未知";
+                    weakPtr.province = @"未知";
+                    weakPtr.city = @"未知";
+                    weakPtr.area = @"未知";
                 }
                 else {
-                    _province = administrativeArea;
-                    _city = stringIsEmpty(subAdministrativeArea) ? @"未知" : subAdministrativeArea;
-                    _area = @"未知";
+                    weakPtr.province = administrativeArea;
+                    weakPtr.city = stringIsEmpty(subAdministrativeArea) ? @"未知" : subAdministrativeArea;
+                    weakPtr.area = @"未知";
                 }
             }
             else {
-                _province = locality;
+                weakPtr.province = locality;
                 if (stringIsEmpty(subLocality)) {
-                    _city = stringIsEmpty(administrativeArea) ? @"未知" : administrativeArea;
-                    _area = stringIsEmpty(subAdministrativeArea) ? @"未知" : subAdministrativeArea;
+                    weakPtr.city = stringIsEmpty(administrativeArea) ? @"未知" : administrativeArea;
+                    weakPtr.area = stringIsEmpty(subAdministrativeArea) ? @"未知" : subAdministrativeArea;
                 }
                 else {
                     if ([locality isEqualToString:administrativeArea]) {
-                        _city = administrativeArea;
-                        _area = stringIsEmpty(subLocality) ? @"未知" : subLocality;
+                        weakPtr.city = administrativeArea;
+                        weakPtr.area = stringIsEmpty(subLocality) ? @"未知" : subLocality;
                     }
                     else {
                         if (stringIsEmpty(subLocality)) {
-                            _city = stringIsEmpty(administrativeArea) ? @"未知" : administrativeArea;
-                            _area = stringIsEmpty(subAdministrativeArea) ? @"未知" : subAdministrativeArea;
+                            weakPtr.city = stringIsEmpty(administrativeArea) ? @"未知" : administrativeArea;
+                            weakPtr.area = stringIsEmpty(subAdministrativeArea) ? @"未知" : subAdministrativeArea;
                         }
                         else {
-                            _city = subLocality;
-                            _area = stringIsEmpty(administrativeArea) ? @"未知" : administrativeArea;
+                            weakPtr.city = subLocality;
+                            weakPtr.area = stringIsEmpty(administrativeArea) ? @"未知" : administrativeArea;
                         }
                     }
                 }
             }
-            _street = stringIsEmpty(thoroughfare) ? @"未知" : thoroughfare;
-            _address = stringIsEmpty(formattedAddressLines) ? @"未知" : formattedAddressLines;
+            weakPtr.street = stringIsEmpty(thoroughfare) ? @"未知" : thoroughfare;
+            weakPtr.address = stringIsEmpty(formattedAddressLines) ? @"未知" : formattedAddressLines;
             //缓存地理位置信息
             [self saveLocation];
         }
@@ -156,6 +155,8 @@
     self.location = [locations lastObject];
     self.longitude = _location.coordinate.longitude;
     self.latitude = _location.coordinate.latitude;
+    LOGIN_USER.longitude = [NSString stringWithFormat:@"%f",self.longitude];
+    LOGIN_USER.latitude  = [NSString stringWithFormat:@"%f",self.latitude];
     [self reverseGeocode:_location];
 }
 

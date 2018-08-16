@@ -7,17 +7,19 @@
 //
 
 #import "MDTrendControl.h"
+#import "MDTrendChildCtrl.h"
 
-#import "MDSegmentView.h"
-#import "MDTrendBaseScrollView.h"
+#import "MDSegmentTitleView.h"
+#import "MDSegmentScrollView.h"
 
 #define ksegmentHH 49
 
-@interface MDTrendControl ()<UIScrollViewDelegate, TrendBaseScrollViewDelegate>
+@interface MDTrendControl ()<MDSegmentTitleViewDelegate, MDSegmentScrollViewDelegate, TrendChildScrollDelegate >
 
-@property (nonatomic, strong) MDSegmentView     *segmentView;
-@property (nonatomic, assign) NSInteger         segmentIndex;       /**< segment index 位置 */
-@property (nonatomic, strong) NSMutableArray    *childScrollArr;
+@property (nonatomic, strong) UIView                *headerView;
+@property (nonatomic, strong) NSMutableArray        *childScrollArr;
+@property (nonatomic, strong) MDSegmentTitleView    *segmentTitleView;
+@property (nonatomic, strong) MDSegmentScrollView   *segmentScrollView;
 
 @end
 
@@ -42,81 +44,83 @@
     
     // 标题
     NSArray *titleArray = @[@"专题", @"上新", @"推荐"];
-    [self setupScrollView:titleArray];
     
-    _segmentView = [[MDSegmentView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, 50) titleArr:titleArray];
-    MDWeakPtr(weakPtr, self);
-    _segmentView.segmentViewChangeBlock = ^(NSInteger index) {
-        NSInteger page = (NSInteger)(weakPtr.scrollView.contentOffset.x / SCR_WIDTH);
-        if (page != index) {
-            [weakPtr.scrollView setContentOffset:CGPointMake(index * SCR_WIDTH, 0) animated:YES];
+    for (int i = 0; i < titleArray.count; i++) {
+        MDTrendChildCtrl *control = [[MDTrendChildCtrl alloc] init];
+        
+        if (0 == i) {
+            control.cellType = CellTypeChannel;
         }
-    };
-    [self.view addSubview:_segmentView];
-}
-
-- (void)setupScrollView:(NSArray *)titleArray
-{
-    // 各分类--背景容器
-    CGFloat scrollViewH = SCR_HEIGHT - kTabBarHeight - kTabBarHeight;
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, scrollViewH)];
-    self.scrollView.delegate = self;
-    self.scrollView.bounces = NO;
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.showsVerticalScrollIndicator = NO;
-    self.scrollView.pagingEnabled = YES;
-    self.scrollView.contentSize = CGSizeMake(SCR_WIDTH * titleArray.count, self.scrollView.height);
-    [self.view addSubview:self.scrollView];
-
-    MDTrendBaseScrollView *channelView = [[MDTrendBaseScrollView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, scrollViewH) withCellType:CellTypeChannel];
-    MDTrendBaseScrollView *uploadNew = [[MDTrendBaseScrollView alloc] initWithFrame:CGRectMake(SCR_WIDTH, 0, SCR_WIDTH, scrollViewH) withCellType:CellTypeUploadNew];
-    MDTrendBaseScrollView *recommendView = [[MDTrendBaseScrollView alloc] initWithFrame:CGRectMake(2 * SCR_WIDTH, 0, SCR_WIDTH, scrollViewH) withCellType:CellTypeRecommend];
-    
-    channelView.delegate = self;
-    uploadNew.delegate = self;
-    recommendView.delegate = self;
-    
-    [self.scrollView addSubview:channelView];
-    [self.scrollView addSubview:uploadNew];
-    [self.scrollView addSubview:recommendView];
-    
-    [self.childScrollArr addObject:channelView];
-    [self.childScrollArr addObject:uploadNew];
-    [self.childScrollArr addObject:recommendView];
-    
-    // 设置选中位置
-    if (_segmentIndex < 0) {
-        _segmentIndex = 1;
+        else if (1 == i){
+            control.cellType = CellTypeUploadNew;
+        }
+        else if (2 == i){
+            control.cellType = CellTypeRecommend;
+        }
+        control.delegate = self;
+        [self.childScrollArr addObject:control];
     }
-    [self.scrollView setContentOffsetX:SCR_WIDTH * _segmentIndex];
-}
-
-#pragma mark - scrollViewDelegate
-// 左右滑动
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat segmentHH = SCR_HEIGHT - kHeaderHeight - kTabBarHeight;
     
-    NSInteger page = (NSInteger)(scrollView.contentOffset.x / SCR_WIDTH + 0.5);
-    [_segmentView selectedSegmentViewPage:page];
+    self.segmentScrollView = [[MDSegmentScrollView alloc] initWithFrame:CGRectMake(0, kHeaderHeight,SCR_WIDTH, segmentHH) superControl:self subControls:self.childScrollArr];
+    self.segmentScrollView.delegateSegmentView = self;
+    self.segmentScrollView.isScrollEnabled = NO;
+    [self.view addSubview:self.segmentScrollView];
+    
+    _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH,ksegmentHH)];
+    [self.view addSubview:_headerView];
+    
+    MDSegmentTitleConfig *configure = [[MDSegmentTitleConfig alloc] init];
+    CGFloat padding = (SCR_WIDTH - 95 * 3) * 0.25;
+    configure.spacingBetweenButtons = padding;
+    configure.btnScrollStyle = BtnScrollStyleStyleCommon;
+    configure.titleColor = kDefaultThirdTitleColor;
+    configure.titleSelectedColor = kDefaultTitleColor;
+    configure.showIndicator = NO;
+    configure.showBottomSeparator = NO;
+    
+    self.segmentTitleView = [[MDSegmentTitleView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, ksegmentHH) delegate:self titleNames:titleArray configure:configure];
+    [_headerView addSubview:self.segmentTitleView];
+    self.segmentTitleView.backgroundColor = COLOR_HEX_STR(@"#F4F4F4");
+
+    [self.view bringSubviewToFront:self.navigation];
+    
 }
 
-// 上下滑动
--(void)trendBaseScrollViewScrollTo:(CGFloat)locattionY
+- (void)pageTitleView:(MDSegmentTitleView *)pageTitleView selectedIndex:(NSInteger)selectedIndex
 {
-    CGRect rect = _segmentView.frame;
-    rect.origin.y = - locattionY + kHeaderHeight;
+    [self.segmentScrollView setSegmentScrollViewCurrentIndex:selectedIndex];
+}
 
+- (void)segmentScrollView:(MDSegmentScrollView *)segmentScrollView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex
+{
+    [self.segmentTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
+}
+
+
+
+/**
+ * 上下滑动的时候，联动改变所有view y 坐标
+ */
+-(void)trendChildScrollTo:(CGFloat)locattionY
+{
+    CGRect rect = _headerView.frame;
+    rect.origin.y = - locattionY + kHeaderHeight;
+    
     if (locattionY >= ksegmentHH){
         rect.origin.y = - ksegmentHH;
     }
-
-    _segmentView.frame = rect;
-
+    
+    _headerView.frame = rect;
+    
     if (locattionY <= ksegmentHH && locattionY >=0) {
-        for (MDTrendBaseScrollView *view in self.childScrollArr) {
-            view.collectionView.contentOffset = CGPointMake(0, locattionY);
+        for (MDTrendChildCtrl *tbCtl in self.childScrollArr) {
+            tbCtl.collectionView.contentOffset = CGPointMake(0, locattionY);
         }
     }
 }
+
+#pragma mark - scrollViewDelegate
 
 - (NSMutableArray *)childScrollArr
 {

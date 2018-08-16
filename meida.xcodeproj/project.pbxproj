@@ -103,7 +103,7 @@
 		99CD9C7C20DF3185000BC7F0 /* MDWardrobeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CD9C7B20DF3185000BC7F0 /* MDWardrobeControl.m */; };
 		99CD9C7F20DF31BD000BC7F0 /* MDServicesControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CD9C7E20DF31BD000BC7F0 /* MDServicesControl.m */; };
 		99CD9C8220DF31F1000BC7F0 /* MDMineControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CD9C8120DF31F1000BC7F0 /* MDMineControl.m */; };
-		C228505E2101835B000FF959 /* MDTrendBaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C228505D2101835B000FF959 /* MDTrendBaseScrollView.m */; };
+		C21C76A6212524A100F4F222 /* MDTrendChildCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C76A5212524A100F4F222 /* MDTrendChildCtrl.m */; };
 		C2285061210189A6000FF959 /* MDTrendChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2285060210189A6000FF959 /* MDTrendChannelCell.m */; };
 		C2285064210193EE000FF959 /* MDTrendUploadNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2285063210193EE000FF959 /* MDTrendUploadNewCell.m */; };
 		C228506721019400000FF959 /* MDTrendRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C228506621019400000FF959 /* MDTrendRecommendCell.m */; };
@@ -448,8 +448,8 @@
 		99CD9C7E20DF31BD000BC7F0 /* MDServicesControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDServicesControl.m; sourceTree = "<group>"; };
 		99CD9C8020DF31F1000BC7F0 /* MDMineControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMineControl.h; sourceTree = "<group>"; };
 		99CD9C8120DF31F1000BC7F0 /* MDMineControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMineControl.m; sourceTree = "<group>"; };
-		C228505C2101835B000FF959 /* MDTrendBaseScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendBaseScrollView.h; sourceTree = "<group>"; };
-		C228505D2101835B000FF959 /* MDTrendBaseScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendBaseScrollView.m; sourceTree = "<group>"; };
+		C21C76A4212524A100F4F222 /* MDTrendChildCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendChildCtrl.h; sourceTree = "<group>"; };
+		C21C76A5212524A100F4F222 /* MDTrendChildCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendChildCtrl.m; sourceTree = "<group>"; };
 		C228505F210189A6000FF959 /* MDTrendChannelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendChannelCell.h; sourceTree = "<group>"; };
 		C2285060210189A6000FF959 /* MDTrendChannelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDTrendChannelCell.m; sourceTree = "<group>"; };
 		C2285062210193EE000FF959 /* MDTrendUploadNewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTrendUploadNewCell.h; sourceTree = "<group>"; };
@@ -1515,8 +1515,6 @@
 		99AA27AD20DE6DC70053CAB6 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
-				C228505C2101835B000FF959 /* MDTrendBaseScrollView.h */,
-				C228505D2101835B000FF959 /* MDTrendBaseScrollView.m */,
 				C228505F210189A6000FF959 /* MDTrendChannelCell.h */,
 				C2285060210189A6000FF959 /* MDTrendChannelCell.m */,
 				C2285062210193EE000FF959 /* MDTrendUploadNewCell.h */,
@@ -1542,6 +1540,8 @@
 			children = (
 				99CD9C7720DF3147000BC7F0 /* MDTrendControl.h */,
 				99CD9C7820DF3147000BC7F0 /* MDTrendControl.m */,
+				C21C76A4212524A100F4F222 /* MDTrendChildCtrl.h */,
+				C21C76A5212524A100F4F222 /* MDTrendChildCtrl.m */,
 				C2B053682106D51000102972 /* MDChannelDetailCtrl.h */,
 				C2B053692106D51000102972 /* MDChannelDetailCtrl.m */,
 				C2B0536E2106D56B00102972 /* MDUploadNewDetailCtrl.h */,
@@ -2454,6 +2454,7 @@
 				C2F5FBF620EC7A6200DC04FF /* UIImageView+sdTools.m in Sources */,
 				99AA280720DE6DC80053CAB6 /* SharePosterView.m in Sources */,
 				C22850802101CA81000FF959 /* MDAddClothMatchCtrl.m in Sources */,
+				C21C76A6212524A100F4F222 /* MDTrendChildCtrl.m in Sources */,
 				99AA289020DE6F580053CAB6 /* LocalFileManager.m in Sources */,
 				C2CE594320EB551F001F1F47 /* UIButton+ConentInsets.m in Sources */,
 				99AA27FD20DE6DC80053CAB6 /* LSLocation.m in Sources */,
@@ -2575,7 +2576,6 @@
 				C2A832B820EF51B300A821E6 /* MDLaunchAdManager.m in Sources */,
 				C2CE593620EB0C6A001F1F47 /* MDMineContentCell.m in Sources */,
 				C2CE595720EB833F001F1F47 /* MDStarView.m in Sources */,
-				C228505E2101835B000FF959 /* MDTrendBaseScrollView.m in Sources */,
 				99AA281120DE6DC80053CAB6 /* BaseModel.m in Sources */,
 				C29E2CA120F5F06400DE9BAC /* RSADataSigner.m in Sources */,
 				99AA284220DE6DC80053CAB6 /* UIView+Animation.m in Sources */,

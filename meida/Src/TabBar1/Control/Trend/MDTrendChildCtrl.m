@@ -1,12 +1,12 @@
 //
-//  MDTrendBaseScrollView.m
+//  MDTrendChildCtrl.m
 //  meida
 //
-//  Created by ToTo on 2018/7/20.
+//  Created by ToTo on 2018/8/16.
 //  Copyright © 2018年 ymfashion. All rights reserved.
 //
 
-#import "MDTrendBaseScrollView.h"
+#import "MDTrendChildCtrl.h"
 
 #import "MDTrendChannelCell.h"
 #import "MDTrendUploadNewCell.h"
@@ -23,31 +23,28 @@ static NSString *MDTrendUploadNewCellID = @"MDTrendUploadNewCell";
 static NSString *MDTrendRecommendCellID = @"MDTrendRecommendCell";
 static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
-@interface MDTrendBaseScrollView ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-@property (nonatomic, assign) TrendScrollCellType   cellType;
+
+@interface MDTrendChildCtrl ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+
 @property (nonatomic, assign) NSInteger             currentPage;
+
 
 @end
 
-@implementation MDTrendBaseScrollView
+@implementation MDTrendChildCtrl
 
-- (instancetype)initWithFrame:(CGRect)frame withCellType:(TrendScrollCellType )cellType
-{
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    if (self = [super initWithFrame:frame]) {
-        _cellType =  cellType;
-        [self initView];
-        [self refreshData];
-    }
-    return self;
+    [self initView];
 }
 
 - (void)initView
 {
-    self.backgroundColor = COLOR_WITH_WHITE;
+    self.view.backgroundColor = COLOR_WITH_WHITE;
     
     
-    switch (_cellType) {
+    switch (self.cellType) {
         case CellTypeChannel:
         {// 频道
             UICollectionViewFlowLayout *flowLayout     = [[UICollectionViewFlowLayout alloc] init];
@@ -92,9 +89,9 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
     self.collectionView.scrollEnabled = YES;
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:MDServicesReusableViewID];
     
-    [self addSubview:self.collectionView];
+    [self.view addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
+        make.edges.equalTo(self.view);
     }];
     
 }
@@ -102,7 +99,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 - (void)refreshData
 {
     
-    switch (_cellType) {
+    switch (self.cellType) {
         case CellTypeChannel:
         {// 频道
             NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -118,7 +115,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
             break;
         case CellTypeUploadNew:
         {// 上新
-           
+            
         }
             break;
         case CellTypeRecommend:
@@ -133,7 +130,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    switch (_cellType) {
+    switch (self.cellType) {
         case CellTypeChannel:
         {// 频道
             return 5;
@@ -157,7 +154,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (_cellType) {
+    switch (self.cellType) {
         case CellTypeChannel:
         {// 频道
             MDTrendChannelCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MDTrendChannelCellID forIndexPath:indexPath];
@@ -184,7 +181,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (_cellType) {
+    switch (self.cellType) {
         case CellTypeChannel:
         {// 频道
             return CGSizeMake(SCR_WIDTH, SCR_WIDTH + kOffPadding + 40);
@@ -192,7 +189,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
             break;
         case CellTypeUploadNew:
         {// 上新
-            return CGSizeMake(SCR_WIDTH, SCR_WIDTH * 0.71 + 50);
+            return CGSizeMake(SCR_WIDTH, 290.f);
         }
             break;
         case CellTypeRecommend:
@@ -208,17 +205,17 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_cellType == CellTypeChannel) {
-        // 
+    if (self.cellType == CellTypeChannel) {
+        //
         MDChannelDetailCtrl *vc = [[MDChannelDetailCtrl alloc] init];
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
     }
-    else if (_cellType == CellTypeUploadNew){
+    else if (self.cellType == CellTypeUploadNew){
         MDTrendUploadNewPopView *popView = [[MDTrendUploadNewPopView alloc] initWithFrame:MDAPPDELEGATE.window.frame];
         [MDAPPDELEGATE.window addSubview:popView];
         [popView showView];
     }
-    else if (_cellType == CellTypeRecommend){
+    else if (self.cellType == CellTypeRecommend){
         MDUploadNewDetailCtrl *vc = [[MDUploadNewDetailCtrl alloc] init];
         [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
         //MDRecommendDetailCtrl *vc = [[MDRecommendDetailCtrl alloc] init];
@@ -259,9 +256,10 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat f = scrollView.contentOffset.y;
-    if (_delegate && [_delegate respondsToSelector:@selector(trendBaseScrollViewScrollTo:)]) {
-        [_delegate trendBaseScrollViewScrollTo:f];
+    if (_delegate && [_delegate respondsToSelector:@selector(trendChildScrollTo:)]) {
+        [_delegate trendChildScrollTo:f];
     }
 }
 
 @end
+

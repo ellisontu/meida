@@ -36,7 +36,7 @@
     _showIndicator = YES;
 }
 
-#pragma mark - - SGPageTitleView 属性
+#pragma mark - - PageTitleView 属性
 - (UIColor *)bottomSeparatorColor {
     if (!_bottomSeparatorColor) {
         _bottomSeparatorColor = [UIColor lightGrayColor];
@@ -183,19 +183,19 @@
 
 #pragma mark -  通用 -> Segment title 配置class #############################################----------
 
-#define SGPageTitleViewWidth self.frame.size.width
-#define SGPageTitleViewHeight self.frame.size.height
+#define PageTitleViewWidth self.frame.size.width
+#define PageTitleViewHeight self.frame.size.height
 
-#pragma mark - - - SGPageTitleButton
-@interface SGPageTitleButton : UIButton
+#pragma mark - - - PageTitleButton
+@interface PageTitleButton : UIButton
 @end
-@implementation SGPageTitleButton
+@implementation PageTitleButton
 - (void)setHighlighted:(BOOL)highlighted {
     
 }
 @end
 
-#pragma mark - - - SGPageTitleView
+#pragma mark - - - PageTitleView
 @interface MDSegmentTitleView ()
 @property (nonatomic, weak) id<MDSegmentTitleViewDelegate> delegateTitleView;   /**<  */
 @property (nonatomic, strong) MDSegmentTitleConfig  *configure;         /**< 配置信息 */
@@ -225,7 +225,7 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.77];
         if (delegate == nil || arrayIsEmpty(titleNames) || configure == nil) {
-            @throw [NSException exceptionWithName:@"SGPageTitleView" reason:@"titleView 相关配置信息" userInfo:nil];
+            @throw [NSException exceptionWithName:@"PageTitleView" reason:@"titleView 相关配置信息" userInfo:nil];
         }
         
         self.delegateTitleView = delegate;
@@ -256,13 +256,8 @@
     if (self.configure.showIndicator == YES) {
         [self.scrollView insertSubview:self.indicatorView atIndex:0];
     }
-}
-
-#pragma mark - - - layoutSubviews
-- (void)layoutSubviews {
-    [super layoutSubviews];
     
-    // 选中按钮下标初始值
+    // 5. 选中按钮下标初始值
     UIButton *lastBtn = self.btnMArr.lastObject;
     if (lastBtn.tag >= _selectedIndex && _selectedIndex >= 0) {
         [self P_btn_action:self.btnMArr[_selectedIndex]];
@@ -270,6 +265,19 @@
         return;
     }
 }
+
+#pragma mark - - - layoutSubviews
+//- (void)layoutSubviews {
+//    [super layoutSubviews];
+//
+//    // 选中按钮下标初始值
+//    UIButton *lastBtn = self.btnMArr.lastObject;
+//    if (lastBtn.tag >= _selectedIndex && _selectedIndex >= 0) {
+//        [self P_btn_action:self.btnMArr[_selectedIndex]];
+//    } else {
+//        return;
+//    }
+//}
 
 #pragma mark - - - 懒加载
 - (NSArray *)titleArr {
@@ -292,7 +300,7 @@
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.alwaysBounceHorizontal = YES;
-        _scrollView.frame = CGRectMake(0, 0, SGPageTitleViewWidth, SGPageTitleViewHeight);
+        _scrollView.frame = CGRectMake(0, 0, PageTitleViewWidth, PageTitleViewHeight);
         if (_configure.needBounces == NO) {
             _scrollView.bounces = NO;
         }
@@ -303,7 +311,7 @@
 - (UIView *)indicatorView {
     if (!_indicatorView) {
         _indicatorView = [[UIView alloc] init];
-        if (self.configure.indicatorStyle == SGIndicatorStyleCover) {
+        if (self.configure.indicatorStyle == IndicatorStyleCover) {
             CGFloat tempIndicatorViewH = [self heightWithString:[self.btnMArr[0] currentTitle] font:self.configure.titleFont];
             if (self.configure.indicatorHeight > self.height) {
                 _indicatorView.y = 0;
@@ -373,27 +381,38 @@
     self.allBtnWidth = ceilf(self.allBtnWidth);
     
     NSInteger titleCount = self.titleArr.count;
-    if (self.allBtnWidth <= self.bounds.size.width) { // SGPageTitleView 静止样式
+    if (self.allBtnWidth <= self.bounds.size.width) { // PageTitleView 静止样式
         CGFloat btnY = 0;
-        CGFloat btnW = SGPageTitleViewWidth / self.titleArr.count;
+        CGFloat btnW = PageTitleViewWidth / self.titleArr.count;
         CGFloat btnH = 0;
-        if (self.configure.indicatorStyle == SGIndicatorStyleDefault) {
-            btnH = SGPageTitleViewHeight - self.configure.indicatorHeight;
+        if (self.configure.indicatorStyle == IndicatorStyleDefault) {
+            btnH = PageTitleViewHeight - self.configure.indicatorHeight;
         } else {
-            btnH = SGPageTitleViewHeight;
+            btnH = PageTitleViewHeight;
         }
         CGFloat VSeparatorW = 1;
-        CGFloat VSeparatorH = SGPageTitleViewHeight - self.configure.verticalSeparatorReduceHeight;
+        CGFloat VSeparatorH = PageTitleViewHeight - self.configure.verticalSeparatorReduceHeight;
         if (VSeparatorH <= 0) {
-            VSeparatorH = SGPageTitleViewHeight;
+            VSeparatorH = PageTitleViewHeight;
         }
-        CGFloat VSeparatorY = 0.5 * (SGPageTitleViewHeight - VSeparatorH);
+        CGFloat VSeparatorY = 0.5 * (PageTitleViewHeight - VSeparatorH);
         for (NSInteger index = 0; index < titleCount; index++) {
             // 1、添加按钮
-            SGPageTitleButton *btn = [[SGPageTitleButton alloc] init];
+            PageTitleButton *btn = [[PageTitleButton alloc] init];
             CGFloat btnX = btnW * index;
             btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
             btn.tag = index;
+            if (self.configure.btnScrollStyle == BtnScrollStyleStyleCommon) {
+                btn.width  = 95.f;
+                btn.height = 30.f;
+                btn.y = (self.height - btn.height) * 0.5f;
+                btn.x = self.configure.spacingBetweenButtons + index * (self.configure.spacingBetweenButtons + btn.width);
+                btn.layer.cornerRadius = btn.height * 0.5f;
+                btn.layer.masksToBounds = YES;
+                btn.layer.borderColor = COLOR_HEX_STR(@"#E7E7E7").CGColor;
+                btn.layer.borderWidth = 1.f;
+                btn.backgroundColor = COLOR_HEX_STR(@"#F4F4F4");
+            }
             btn.titleLabel.font = self.configure.titleFont;
             [btn setTitle:self.titleArr[index] forState:(UIControlStateNormal)];
             [btn setTitleColor:self.configure.titleColor forState:(UIControlStateNormal)];
@@ -416,26 +435,26 @@
                 }
             }
         }
-        self.scrollView.contentSize = CGSizeMake(SGPageTitleViewWidth, SGPageTitleViewHeight);
+        self.scrollView.contentSize = CGSizeMake(PageTitleViewWidth, PageTitleViewHeight);
         
-    } else { // SGPageTitleView 滚动样式
+    } else { // PageTitleView 滚动样式
         CGFloat btnX = 0;
         CGFloat btnY = 0;
         CGFloat btnH = 0;
-        if (self.configure.indicatorStyle == SGIndicatorStyleDefault) {
-            btnH = SGPageTitleViewHeight - self.configure.indicatorHeight;
+        if (self.configure.indicatorStyle == IndicatorStyleDefault) {
+            btnH = PageTitleViewHeight - self.configure.indicatorHeight;
         } else {
-            btnH = SGPageTitleViewHeight;
+            btnH = PageTitleViewHeight;
         }
         CGFloat VSeparatorW = 1;
-        CGFloat VSeparatorH = SGPageTitleViewHeight - self.configure.verticalSeparatorReduceHeight;
+        CGFloat VSeparatorH = PageTitleViewHeight - self.configure.verticalSeparatorReduceHeight;
         if (VSeparatorH <= 0) {
-            VSeparatorH = SGPageTitleViewHeight;
+            VSeparatorH = PageTitleViewHeight;
         }
-        CGFloat VSeparatorY = 0.5 * (SGPageTitleViewHeight - VSeparatorH);
+        CGFloat VSeparatorY = 0.5 * (PageTitleViewHeight - VSeparatorH);
         for (NSInteger index = 0; index < titleCount; index++) {
             // 1、添加按钮
-            SGPageTitleButton *btn = [[SGPageTitleButton alloc] init];
+            PageTitleButton *btn = [[PageTitleButton alloc] init];
             CGFloat btnW = [self widthWithString:self.titleArr[index] font:self.configure.titleFont] + self.configure.spacingBetweenButtons;
             btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
             btnX = btnX + btnW;
@@ -463,7 +482,7 @@
             }
         }
         CGFloat scrollViewWidth = CGRectGetMaxX(self.scrollView.subviews.lastObject.frame);
-        self.scrollView.contentSize = CGSizeMake(scrollViewWidth, SGPageTitleViewHeight);
+        self.scrollView.contentSize = CGSizeMake(scrollViewWidth, PageTitleViewHeight);
     }
 }
 
@@ -472,7 +491,7 @@
     // 1、改变按钮的选择状态
     [self P_changeSelectedButton:button];
     // 2、滚动标题选中按钮居中
-    if (self.allBtnWidth > SGPageTitleViewWidth) {
+    if (self.allBtnWidth > PageTitleViewWidth) {
         _signBtnClick = YES;
         [self P_selectedBtnCenter:button];
     }
@@ -491,12 +510,28 @@
     if (self.tempBtn == nil) {
         button.selected = YES;
         self.tempBtn = button;
-    } else if (self.tempBtn != nil && self.tempBtn == button){
+        self.tempBtn.layer.borderColor = COLOR_WITH_WHITE.CGColor;
+        self.tempBtn.layer.borderWidth = 1.f;
+        self.tempBtn.backgroundColor = COLOR_WITH_WHITE;
+    }
+    else if (self.tempBtn != nil && self.tempBtn == button){
         button.selected = YES;
-    } else if (self.tempBtn != button && self.tempBtn != nil){
+    }
+    else if (self.tempBtn != button && self.tempBtn != nil){
+       
+        self.tempBtn.layer.borderColor = COLOR_HEX_STR(@"#E7E7E7").CGColor;
+        self.tempBtn.layer.borderWidth = 1.f;
+        self.tempBtn.backgroundColor = COLOR_HEX_STR(@"#F4F4F4");
+        
         self.tempBtn.selected = NO;
         button.selected = YES;
+        
         self.tempBtn = button;
+        
+        self.tempBtn.layer.borderColor = COLOR_WITH_WHITE.CGColor;
+        self.tempBtn.layer.borderWidth = 1.f;
+        self.tempBtn.backgroundColor = COLOR_WITH_WHITE;
+        
     }
     
     UIFont *configureTitleSelectedFont = self.configure.titleSelectedFont;
@@ -542,10 +577,10 @@
 #pragma mark - - - 滚动标题选中按钮居中
 - (void)P_selectedBtnCenter:(UIButton *)centerBtn {
     // 计算偏移量
-    CGFloat offsetX = centerBtn.center.x - SGPageTitleViewWidth * 0.5;
+    CGFloat offsetX = centerBtn.center.x - PageTitleViewWidth * 0.5;
     if (offsetX < 0) offsetX = 0;
     // 获取最大滚动范围
-    CGFloat maxOffsetX = self.scrollView.contentSize.width - SGPageTitleViewWidth;
+    CGFloat maxOffsetX = self.scrollView.contentSize.width - PageTitleViewWidth;
     if (offsetX > maxOffsetX) offsetX = maxOffsetX;
     // 滚动标题滚动条
     [self.scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
@@ -554,11 +589,11 @@
 #pragma mark - - - 改变指示器的位置以及指示器宽度样式
 - (void)P_changeIndicatorViewLocationWithButton:(UIButton *)button {
     [UIView animateWithDuration:self.configure.indicatorAnimationTime animations:^{
-        if (self.configure.indicatorStyle == SGIndicatorStyleFixed) {
+        if (self.configure.indicatorStyle == IndicatorStyleFixed) {
             self.indicatorView.width = self.configure.indicatorFixedWidth;
             self.indicatorView.centerX = button.centerX;
             
-        } else if (self.configure.indicatorStyle == SGIndicatorStyleDynamic) {
+        } else if (self.configure.indicatorStyle == IndicatorStyleDynamic) {
             self.indicatorView.width = self.configure.indicatorDynamicWidth;
             self.indicatorView.centerX = button.centerX;
             
@@ -580,22 +615,22 @@
     UIButton *targetBtn = self.btnMArr[targetIndex];
     self.signBtnIndex = targetBtn.tag;
     // 2、 滚动标题选中居中
-    if (self.allBtnWidth > SGPageTitleViewWidth) {
+    if (self.allBtnWidth > PageTitleViewWidth) {
         if (_signBtnClick == NO) {
             [self P_selectedBtnCenter:targetBtn];
         }
         _signBtnClick = NO;
     }
     // 3、处理指示器的逻辑
-    if (self.allBtnWidth <= self.bounds.size.width) { /// SGPageTitleView 不可滚动
-        if (self.configure.indicatorScrollStyle == SGIndicatorScrollStyleDefault) {
+    if (self.allBtnWidth <= self.bounds.size.width) { /// PageTitleView 不可滚动
+        if (self.configure.indicatorScrollStyle == IndicatorScrollStyleDefault) {
             [self P_smallIndicatorScrollStyleDefaultWithProgress:progress originalBtn:originalBtn targetBtn:targetBtn];
         } else {
             [self P_smallIndicatorScrollStyleHalfEndWithProgress:progress originalBtn:originalBtn targetBtn:targetBtn];
         }
         
-    } else { /// SGPageTitleView 可滚动
-        if (self.configure.indicatorScrollStyle == SGIndicatorScrollStyleDefault) {
+    } else { /// PageTitleView 可滚动
+        if (self.configure.indicatorScrollStyle == IndicatorScrollStyleDefault) {
             [self P_indicatorScrollStyleDefaultWithProgress:progress originalBtn:originalBtn targetBtn:targetBtn];
         } else {
             [self P_indicatorScrollStyleHalfEndWithProgress:progress originalBtn:originalBtn targetBtn:targetBtn];
@@ -630,7 +665,7 @@
     UIButton *button = (UIButton *)self.btnMArr[index];
     [button setTitle:title forState:UIControlStateNormal];
     if (self.signBtnIndex == index) {
-        if (self.configure.indicatorStyle == SGIndicatorStyleDefault || self.configure.indicatorStyle == SGIndicatorStyleCover) {
+        if (self.configure.indicatorStyle == IndicatorStyleDefault || self.configure.indicatorStyle == IndicatorStyleCover) {
             CGFloat tempIndicatorWidth = self.configure.indicatorAdditionalWidth + [self widthWithString:button.currentTitle font:self.configure.titleFont];
             if (tempIndicatorWidth > button.width) {
                 tempIndicatorWidth = button.width;
@@ -668,7 +703,7 @@
     NSInteger selectedImagesCount = selectedImages.count;
     NSInteger titlesCount = self.titleArr.count;
     if (imagesCount < selectedImagesCount) {
-        NSLog(@"温馨提示：SGPageTitleView -> [setImages:selectedImages:imagePositionType:spacing] 方法中 images 必须大于或者等于selectedImages，否则 imagePositionTypeDefault 以外的其他样式图片及文字布局将会出现问题");
+        NSLog(@"温馨提示：PageTitleView -> [setImages:selectedImages:imagePositionType:spacing] 方法中 images 必须大于或者等于selectedImages，否则 imagePositionTypeDefault 以外的其他样式图片及文字布局将会出现问题");
     }
     
     if (imagesCount < titlesCount) {
@@ -727,14 +762,14 @@
     }
 }
 
-#pragma mark - - - SGPageTitleView 静止样式下指示器默认滚动样式（SGIndicatorScrollStyleDefault）
+#pragma mark - - - PageTitleView 静止样式下指示器默认滚动样式（IndicatorScrollStyleDefault）
 - (void)P_smallIndicatorScrollStyleDefaultWithProgress:(CGFloat)progress originalBtn:(UIButton *)originalBtn targetBtn:(UIButton *)targetBtn {
     // 1、改变按钮的选择状态
     if (progress >= 0.8) { /// 此处取 >= 0.8 而不是 1.0 为的是防止用户滚动过快而按钮的选中状态并没有改变
         [self P_changeSelectedButton:targetBtn];
     }
     
-    if (self.configure.indicatorStyle == SGIndicatorStyleDynamic) {
+    if (self.configure.indicatorStyle == IndicatorStyleDynamic) {
         NSInteger originalBtnTag = originalBtn.tag;
         NSInteger targetBtnTag = targetBtn.tag;
         // 按钮之间的距离
@@ -759,7 +794,7 @@
             }
         }
         
-    } else if (self.configure.indicatorStyle == SGIndicatorStyleFixed) {
+    } else if (self.configure.indicatorStyle == IndicatorStyleFixed) {
         CGFloat targetBtnIndicatorX = CGRectGetMaxX(targetBtn.frame) - 0.5 * (self.width / self.titleArr.count - self.configure.indicatorFixedWidth) - self.configure.indicatorFixedWidth;
         CGFloat originalBtnIndicatorX = CGRectGetMaxX(originalBtn.frame) - 0.5 * (self.width / self.titleArr.count - self.configure.indicatorFixedWidth) - self.configure.indicatorFixedWidth;
         CGFloat totalOffsetX = targetBtnIndicatorX - originalBtnIndicatorX;
@@ -803,14 +838,14 @@
     }
 }
 
-#pragma mark - - - SGPageTitleView 滚动样式下指示器默认滚动样式（SGIndicatorScrollStyleDefault）
+#pragma mark - - - PageTitleView 滚动样式下指示器默认滚动样式（IndicatorScrollStyleDefault）
 - (void)P_indicatorScrollStyleDefaultWithProgress:(CGFloat)progress originalBtn:(UIButton *)originalBtn targetBtn:(UIButton *)targetBtn {
     /// 改变按钮的选择状态
     if (progress >= 0.8) { /// 此处取 >= 0.8 而不是 1.0 为的是防止用户滚动过快而按钮的选中状态并没有改变
         [self P_changeSelectedButton:targetBtn];
     }
     
-    if (self.configure.indicatorStyle == SGIndicatorStyleDynamic) {
+    if (self.configure.indicatorStyle == IndicatorStyleDynamic) {
         NSInteger originalBtnTag = originalBtn.tag;
         NSInteger targetBtnTag = targetBtn.tag;
         if (originalBtnTag <= targetBtnTag) { // 往左滑
@@ -837,7 +872,7 @@
             }
         }
         
-    } else if (self.configure.indicatorStyle == SGIndicatorStyleFixed) {
+    } else if (self.configure.indicatorStyle == IndicatorStyleFixed) {
         CGFloat targetBtnIndicatorX = CGRectGetMaxX(targetBtn.frame) - 0.5 * (targetBtn.width - self.configure.indicatorFixedWidth) - self.configure.indicatorFixedWidth;
         CGFloat originalBtnIndicatorX = CGRectGetMaxX(originalBtn.frame) - self.configure.indicatorFixedWidth - 0.5 * (originalBtn.width - self.configure.indicatorFixedWidth);
         CGFloat totalOffsetX = targetBtnIndicatorX - originalBtnIndicatorX;
@@ -871,10 +906,10 @@
     }
 }
 
-#pragma mark - - - SGPageTitleView 静止样式下指示器 SGIndicatorScrollStyleHalf 和 SGIndicatorScrollStyleEnd 滚动样式
+#pragma mark - - - PageTitleView 静止样式下指示器 IndicatorScrollStyleHalf 和 IndicatorScrollStyleEnd 滚动样式
 - (void)P_smallIndicatorScrollStyleHalfEndWithProgress:(CGFloat)progress originalBtn:(UIButton *)originalBtn targetBtn:(UIButton *)targetBtn {
-    if (self.configure.indicatorScrollStyle == SGIndicatorScrollStyleHalf) {
-        if (self.configure.indicatorStyle == SGIndicatorStyleFixed) {
+    if (self.configure.indicatorScrollStyle == IndicatorScrollStyleHalf) {
+        if (self.configure.indicatorStyle == IndicatorStyleFixed) {
             if (progress >= 0.5) {
                 [UIView animateWithDuration:self.configure.indicatorAnimationTime animations:^{
                     self.indicatorView.centerX = targetBtn.centerX;
@@ -917,7 +952,7 @@
     }
     
     /// 滚动内容结束指示器处理 ____ 指示器默认样式以及遮盖样式处理
-    if (self.configure.indicatorStyle == SGIndicatorStyleFixed) {
+    if (self.configure.indicatorStyle == IndicatorStyleFixed) {
         if (progress == 1.0) {
             [UIView animateWithDuration:self.configure.indicatorAnimationTime animations:^{
                 self.indicatorView.centerX = targetBtn.centerX;
@@ -957,10 +992,10 @@
     }
 }
 
-#pragma mark - - - SGPageTitleView 滚动样式下指示器 SGIndicatorScrollStyleHalf 和 SGIndicatorScrollStyleEnd 滚动样式
+#pragma mark - - - PageTitleView 滚动样式下指示器 IndicatorScrollStyleHalf 和 IndicatorScrollStyleEnd 滚动样式
 - (void)P_indicatorScrollStyleHalfEndWithProgress:(CGFloat)progress originalBtn:(UIButton *)originalBtn targetBtn:(UIButton *)targetBtn {
-    if (self.configure.indicatorScrollStyle == SGIndicatorScrollStyleHalf) {
-        if (self.configure.indicatorStyle == SGIndicatorStyleFixed) {
+    if (self.configure.indicatorScrollStyle == IndicatorScrollStyleHalf) {
+        if (self.configure.indicatorStyle == IndicatorStyleFixed) {
             if (progress >= 0.5) {
                 [UIView animateWithDuration:self.configure.indicatorAnimationTime animations:^{
                     self.indicatorView.centerX = targetBtn.centerX;
@@ -1003,7 +1038,7 @@
     }
     
     /// 滚动内容结束指示器处理 ____ 指示器默认样式以及遮盖样式处理
-    if (self.configure.indicatorStyle == SGIndicatorStyleFixed) {
+    if (self.configure.indicatorStyle == IndicatorStyleFixed) {
         if (progress == 1.0) {
             [UIView animateWithDuration:self.configure.indicatorAnimationTime animations:^{
                 self.indicatorView.centerX = targetBtn.centerX;

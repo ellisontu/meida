@@ -135,8 +135,8 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
         {// 上新
             [params setObject:_currentPage forKey:@"currentPage"];
             [params setObject:_pageSize forKey:@"pageSize"];
-            [params setObject:LOGIN_USER.longitude forKey:@"mylng"];
-            [params setObject:LOGIN_USER.latitude forKey:@"mylat"];
+            [params setObject:stringIsEmpty(LOGIN_USER.longitude) ? @"" : LOGIN_USER.longitude forKey:@"mylng"];
+            [params setObject:stringIsEmpty(LOGIN_USER.latitude) ? @"" : LOGIN_USER.latitude forKey:@"mylat"];
             [[MDNetWorking sharedClient] requestWithPath:URL_GET_STORE_LIST params:params httpMethod:MethodGet callback:^(BOOL rs, NSObject *obj) {
                 if (rs) {
                     XLog(@"-------------%@",obj);
@@ -213,7 +213,7 @@ static NSString *MDServicesReusableViewID = @"MDServicesReusableViewID";
     switch (self.cellType) {
         case CellTypeChannel:
         {// 频道
-            return CGSizeMake(SCR_WIDTH, SCR_WIDTH + kOffPadding + 40);
+            return CGSizeMake(SCR_WIDTH, SCR_WIDTH + kOffPadding + 20);
         }
             break;
         case CellTypeUploadNew:

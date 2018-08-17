@@ -60,9 +60,7 @@ static NSString *appGeTuiNotify         = @"appGeTuiNotifyIsOn";    /**< key 个
         }
         else{
             _loginUser = [[UserModel alloc] init];
-            NSData *newData = [_loginUser yy_modelToJSONData];
-            [[NSUserDefaults standardUserDefaults] setObject:newData forKey:UserKey];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+            [self archivertUserInfo];
         }
     }
     return self;

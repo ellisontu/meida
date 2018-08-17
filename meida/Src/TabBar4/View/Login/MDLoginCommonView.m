@@ -216,7 +216,7 @@
     [self layoutIfNeeded];
     
     if ([notification.name isEqual:UIKeyboardWillHideNotification]) {
-        self.mainView.y = kHeaderHeight;
+        self.mainView.y = 0.f;
     }
     else {
         self.mainView.y = -kHeaderHeight;
@@ -535,7 +535,7 @@
     [self layoutIfNeeded];
     
     if ([notification.name isEqual:UIKeyboardWillHideNotification]) {
-        self.mainView.y = kHeaderHeight;
+        self.mainView.y = 0.f;
     }
     else {
         self.mainView.y = -kHeaderHeight;

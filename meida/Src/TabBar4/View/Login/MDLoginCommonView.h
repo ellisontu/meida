@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, UserClickType) {
 #pragma mark - 登录 view ############ -------------------
 @interface MDLoginView : UIView
 
+@property (nonatomic, copy) void (^loginSuccessBlock)(void);
 - (instancetype)initWithFrame:(CGRect)frame withMainView:(UIView *)mainView;
 - (void)cancelAllEidit;
 
@@ -29,6 +30,7 @@ typedef NS_ENUM(NSInteger, UserClickType) {
 #pragma mark - 注册 view ############ -------------------
 @interface MDRegisterView : UIView
 
+@property (nonatomic, copy) void (^registerSuccessBlock)(void);
 - (instancetype)initWithFrame:(CGRect)frame withMainView:(UIView *)mainView;
 - (void)cancelAllEidit;
 

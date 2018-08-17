@@ -8,8 +8,6 @@
 
 #import "MDSegmentScrollView.h"
 
-#import "UIView+cframe.h"
-
 @interface MDSegmentScrollView () <UIScrollViewDelegate>
 
 @property (nonatomic, weak) UIViewController    *superControl;      /**< 外界父控制器 */

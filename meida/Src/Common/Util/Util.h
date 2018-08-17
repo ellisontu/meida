@@ -191,12 +191,7 @@ typedef enum {  // 获取图片的格式
 + (void)areaJsonToPlist;
 
 
-#pragma mark - 新版本的 trace_info 传递公用方法
-/**
- path : /api2/client/event_track
- 客户端 事件统计 接口
- @param params dict
- */
-+ (void)clientEventTrackWithParams:(NSDictionary *)params;
+#pragma mark - 检测登录状态 ---------------
++ (void)checkLoginState;
 
 @end

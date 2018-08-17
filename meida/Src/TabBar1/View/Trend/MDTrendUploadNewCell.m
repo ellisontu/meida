@@ -108,10 +108,16 @@
     _shopLocationLbl.textColor = kDefaultTitleColor;
     _shopLocationLbl.text = @"万达广场城西二旗店";
     _distanceTipsBtn.titleEdgeInsets = UIEdgeInsetsMake(0, _distanceTipsBtn.titleLabel.bounds.size.width + 15, 0, -_distanceTipsBtn.titleLabel.bounds.size.width);
-    [_distanceTipsBtn setTitleColor:kDefaultTitleColor forState:UIControlStateNormal];
+    [_distanceTipsBtn setTitleColor:COLOR_WITH_WHITE forState:UIControlStateNormal];
     [_distanceTipsBtn setTitle:@"距您 2km" forState:UIControlStateNormal];
     _distanceTipsBtn.titleLabel.font = FONT_SYSTEM_NORMAL(14);
     [_distanceTipsBtn setImage:IMAGE(@"navi_right_icon") forState:UIControlStateNormal];
+    UIColor *color = COLOR_WITH_BLACK;
+    _distanceTipsBtn.backgroundColor = [color colorWithAlphaComponent:0.3f];
+    _shopDescLblView.font = FONT_SYSTEM_NORMAL(17.f);
+    _shopDescLblView.textColor = COLOR_WITH_WHITE;
+    _shopDescLblView.text = @"这里是一段关于本店的一些描述性语言哈哈哈哈哈哈~~~~~~~~";
+    _shopDescLblView.numberOfLines = 2;
     
     _shareShopBtnView.backgroundColor = [UIColor purpleColor];
     

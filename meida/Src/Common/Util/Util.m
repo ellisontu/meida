@@ -19,7 +19,7 @@
 #import "NSString+URLEncoding.h"
 #import "MDDeviceManager.h"
 #import "ServerConfigManager.h"
-#import <AddressBook/AddressBook.h>
+#import "MDLoginControl.h"
 
 @implementation Util
 
@@ -823,9 +823,12 @@
     }
 }
 
-+ (void)clientEventTrackWithParams:(NSDictionary *)params
++ (void)checkLoginState
 {
+    if (stringIsEmpty(LOGIN_USER.uid)) {
+        MDLoginControl *vc = [[MDLoginControl alloc] init];
+        [MDAPPDELEGATE.navigation presentViewController:vc animated:YES completion:nil];
+    }
 }
-
 
 @end

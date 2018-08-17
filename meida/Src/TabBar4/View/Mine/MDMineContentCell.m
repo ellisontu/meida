@@ -9,8 +9,6 @@
 #import "MDMineContentCell.h"
 #import "UIImage+Blur.h"
 
-#import "MDLoginControl.h"
-
 #pragma mark -  我的 -> tableView headView -> user info view #############################################----------
 
 @interface MDMineContentHeadView ()
@@ -248,8 +246,7 @@
 
 - (void)loginAciton:(UITapGestureRecognizer *)gesture
 {
-    MDLoginControl *vc = [[MDLoginControl alloc] init];
-    [MDAPPDELEGATE.navigation pushViewController:vc animated:YES];
+    [Util checkLoginState];
 }
 
 @end

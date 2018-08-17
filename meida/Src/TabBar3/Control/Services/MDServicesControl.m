@@ -11,7 +11,6 @@
 
 #import "MDSegmentTitleView.h"
 #import "MDSegmentScrollView.h"
-#import "UIView+cframe.h"
 #import "MDServicesBaseSortCell.h"
 
 #define kBannerHH 249

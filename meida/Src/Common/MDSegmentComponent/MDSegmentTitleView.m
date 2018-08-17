@@ -7,7 +7,6 @@
 //
 
 #import "MDSegmentTitleView.h"
-#import "UIView+cframe.h"
 
 #pragma mark -  通用 -> Segment title 配置class #############################################----------
 @interface MDSegmentTitleConfig ()

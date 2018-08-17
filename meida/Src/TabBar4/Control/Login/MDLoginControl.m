@@ -12,13 +12,14 @@
 static CGFloat duration = 0.25f;
 @interface MDLoginControl ()
 
-@property (nonatomic, strong) UIView        *mainView;       /**< 容器 */
-@property (nonatomic, strong) UIImageView   *bgImgView;      /**< 背景imageview */
-@property (nonatomic, strong) UIImageView   *iconImgView;    /**< app icon imageView */
+@property (nonatomic, strong) UIView        *mainView;          /**< 容器 */
+@property (nonatomic, strong) UIImageView   *bgImgView;         /**< 背景imageview */
+@property (nonatomic, strong) UIImageView   *iconImgView;       /**< app icon imageView */
 
-@property (nonatomic, strong) UIButton      *loginBtnView;   /**< 登录 切换按钮  */
-@property (nonatomic, strong) UIButton      *regisBtnView;   /**< 注册 切换按钮 */
-@property (nonatomic, assign) UserClickType clickType;       /**< 标记是登录还是注册 */
+@property (nonatomic, strong) UIButton      *loginBtnView;      /**< 登录 切换按钮  */
+@property (nonatomic, strong) UIButton      *regisBtnView;      /**< 注册 切换按钮 */
+@property (nonatomic, assign) UserClickType clickType;          /**< 标记是登录还是注册 */
+@property (nonatomic, strong) UIButton      *closeBtnView;      /**< 关闭按钮 */
 
 @property (nonatomic, strong) MDLoginView           *loginView;     /**< 登录view */
 @property (nonatomic, strong) MDRegisterView        *registerView;  /**< 注册view */
@@ -38,12 +39,12 @@ static CGFloat duration = 0.25f;
 - (void)initView
 {
     self.view.backgroundColor = COLOR_WITH_WHITE;
-    [self setNavigationType:NavShowBackAndTitle];
-    [self setTitle:@"登录"];
-    
-    self.mainView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_HEIGHT - kHeaderHeight)];
+    [self setNavigationType:NavHide];
+    //[[UIView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, SCR_WIDTH, SCR_HEIGHT - kHeaderHeight)];
+    self.mainView = [[UIView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:self.mainView];
     
+    _closeBtnView = [[UIButton alloc] init];
     _bgImgView    = [[UIImageView alloc] init];
     _iconImgView  = [[UIImageView alloc] init];
     _loginBtnView = [[UIButton alloc] init];
@@ -60,18 +61,19 @@ static CGFloat duration = 0.25f;
     [self.mainView addSubview:_loginView];
     [self.mainView addSubview:_registerView];
     [self.mainView addSubview:_thirdPlatView];
+    [self.mainView addSubview:_closeBtnView];
 
     [_bgImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.mainView);
     }];
     [_iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mainView).offset(65.f);
+        make.top.equalTo(self.mainView).offset(55.f);
         make.size.mas_equalTo(CGSizeMake(44.5f, 43.5f));
         make.centerX.equalTo(self.mainView);
     }];
     
     [_loginBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(60.f, 23.f));//CGSizeMake(39.f, 19.f)
+        make.size.mas_equalTo(CGSizeMake(60.f, 23.f));
         make.centerX.equalTo(self.mainView);
         make.top.equalTo(self.iconImgView.mas_bottom).offset(25.f);
     }];
@@ -99,13 +101,22 @@ static CGFloat duration = 0.25f;
         make.bottom.equalTo(self.mainView);
         make.height.mas_equalTo(75.f);
     }];
+    [_closeBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(30.f, 30.f));
+        make.top.equalTo(self.mainView).offset(20.f);
+        make.right.equalTo(self.mainView).offset(-20.f);
+    }];
     
     _bgImgView.contentMode = UIViewContentModeScaleAspectFill;
     _bgImgView.layer.masksToBounds = YES;
     _bgImgView.image = IMAGE(@"login_bg_image");
     _iconImgView.image = IMAGE(@"logo_icon");
     
-    
+    [_closeBtnView addTarget:self action:@selector(closeBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    //[_closeBtnView setImage:IMAGE(@"c_close") forState:UIControlStateNormal];
+    [_closeBtnView setTitle:@"关闭" forState:UIControlStateNormal];
+    [_closeBtnView setTitleColor:COLOR_WITH_WHITE forState:UIControlStateNormal];
+    _closeBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(14);
     [_loginBtnView setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
     _loginBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(25);
     [_loginBtnView setTitle:@"登录" forState:UIControlStateNormal];
@@ -121,6 +132,15 @@ static CGFloat duration = 0.25f;
     [_loginBtnView addTarget:self action:@selector(switchLoginOrRegisAction:) forControlEvents:UIControlEventTouchUpInside];
     [_regisBtnView addTarget:self action:@selector(switchLoginOrRegisAction:) forControlEvents:UIControlEventTouchUpInside];
     _registerView.alpha = 0.01f;
+    
+    MDWeakPtr(weakPtr, self);
+    _loginView.loginSuccessBlock = ^{
+        [weakPtr back:nil];
+    };
+    _registerView.registerSuccessBlock = ^{
+        [weakPtr back:nil];
+    };
+    
 }
 
 /**
@@ -211,6 +231,11 @@ static CGFloat duration = 0.25f;
         [_regisBtnView setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
         _regisBtnView.titleLabel.font = FONT_SYSTEM_NORMAL(25);
     }
+}
+
+- (void)closeBtnAction:(UIButton *)sender
+{
+    [self back:nil];
 }
 
 #pragma mark - 结束所有键盘 编辑模式

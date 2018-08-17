@@ -9,6 +9,7 @@
 
 #import "UIImageView+sdTools.h"
 #import <UIImageView+WebCache.h>
+//#import <UIImage+WebP.h>
 
 @implementation UIImageView (sdTools)
 

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D49B7C471008703B13E9E7821BFAD22F"
+               BlueprintIdentifier = "376B1A7B627912C1037A9ABFF1399344"
                BlueprintName = "UIImage-Resize"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libUIImage-Resize.a">

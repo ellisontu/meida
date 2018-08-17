@@ -16,8 +16,30 @@ PODS:
     - AFNetworking/NSURLSession
   - DateTools (2.0.0)
   - FBRetainCycleDetector (0.1.4)
-  - FrameAccessor (2.0)
-  - HyphenateLite (3.4.2)
+  - libwebp (1.0.0):
+    - libwebp/core (= 1.0.0)
+    - libwebp/dec (= 1.0.0)
+    - libwebp/demux (= 1.0.0)
+    - libwebp/dsp (= 1.0.0)
+    - libwebp/enc (= 1.0.0)
+    - libwebp/mux (= 1.0.0)
+    - libwebp/utils (= 1.0.0)
+    - libwebp/webp (= 1.0.0)
+  - libwebp/core (1.0.0):
+    - libwebp/webp
+  - libwebp/dec (1.0.0):
+    - libwebp/core
+  - libwebp/demux (1.0.0):
+    - libwebp/core
+  - libwebp/dsp (1.0.0):
+    - libwebp/core
+  - libwebp/enc (1.0.0):
+    - libwebp/core
+  - libwebp/mux (1.0.0):
+    - libwebp/core
+  - libwebp/utils (1.0.0):
+    - libwebp/core
+  - libwebp/webp (1.0.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.15.3)
@@ -28,6 +50,9 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - SDWebImage/WebP (3.7.6):
+    - libwebp
+    - SDWebImage/Core
   - UIImage-Resize (1.0.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - YYModel (1.0.4)
@@ -36,15 +61,14 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - DateTools (~> 2.0.0)
-  - FrameAccessor (~> 2.0)
-  - HyphenateLite (~> 3.4.2)
   - Masonry (~> 1.1.0)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.14)
   - MLeaksFinder (~> 1.0.0)
   - pop (~> 1.0.9)
   - PureLayout (~> 3.0.2)
-  - SDWebImage (~> 3.7.5)
+  - SDWebImage (~> 3.7.6)
+  - SDWebImage/WebP
   - UIImage-Resize (~> 1.0.1)
   - "UITableView+FDTemplateLayoutCell"
   - YYModel (~> 1.0.4)
@@ -55,8 +79,7 @@ SPEC REPOS:
     - AFNetworking
     - DateTools
     - FBRetainCycleDetector
-    - FrameAccessor
-    - HyphenateLite
+    - libwebp
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -73,8 +96,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
-  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
-  HyphenateLite: 0c5d9392c30ada198ef656e179b921e38a192df3
+  libwebp: 750d43a6c9f0eba068364ff8add4b9ba71d8c383
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
@@ -87,6 +109,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: e7468a98f0a5d27676f38414132ced3c720e2d20
+PODFILE CHECKSUM: 4415a3b35efd34c479918780d593ae85e41319a7
 
 COCOAPODS: 1.5.2

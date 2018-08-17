@@ -7,7 +7,6 @@
 //
 
 #import "MDCycleScrollView.h"
-#import "UIView+cframe.h"
 #import "MDPageControl.h"
 
 #define kCycleScrollViewInitialPageControlDotSize CGSizeMake(10, 10)

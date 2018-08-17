@@ -17,7 +17,6 @@
 #import "EncryptionMethods.h"
 #import "SAMKeychain.h"
 #import "ServerConfigManager.h"
-#import "MDDeviceManager.h"
 #import "MediaResourcesManager.h"
 
 @interface AppDelegate() <WXApiDelegate, UIAlertViewDelegate>

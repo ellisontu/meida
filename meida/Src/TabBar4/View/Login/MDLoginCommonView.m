@@ -115,26 +115,6 @@
         make.height.mas_equalTo(40.f);
     }];
     
-//    NSMutableParagraphStyle *style1 = [[NSMutableParagraphStyle alloc] init];
-//    style1.alignment = NSTextAlignmentCenter;
-//    NSAttributedString *attrString1 = [[NSAttributedString alloc] initWithString:@"用户名" attributes:
-//                                      @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
-//                                        NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
-//                                        NSParagraphStyleAttributeName:style1
-//                                        }];
-//    _phoneTextField.attributedPlaceholder = attrString1;
-//    _phoneTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
-//
-//    NSMutableParagraphStyle *style2 = [[NSMutableParagraphStyle alloc] init];
-//    style2.alignment = NSTextAlignmentCenter;
-//    NSAttributedString *attrString2 = [[NSAttributedString alloc] initWithString:@"密码" attributes:
-//                                      @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
-//                                        NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
-//                                        NSParagraphStyleAttributeName:style2
-//                                        }];
-//    _pwordTextField.attributedPlaceholder = attrString2;
-//    _pwordTextLine.backgroundColor = COLOR_HEX_STR(@"#DEDEDE");
-    
     _phoneTipsLbl.font = FONT_SYSTEM_NORMAL(20);
     _phoneTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
     _phoneTipsLbl.text = @"手机号";
@@ -160,6 +140,8 @@
     _phoneTextField.tag = 10001;
     _pwordTextField.tag = 10002;
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+    _phoneTextField.textColor = COLOR_WITH_WHITE;
+    _pwordTextField.textColor = COLOR_WITH_WHITE;
     [_phoneTextField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
     [_pwordTextField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
     
@@ -196,13 +178,13 @@
     MDWeakPtr(weakPtr, self);
     [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_LOGIN params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
         if (rs) {
-            UserManager *userManger = [UserManager sharedInstance];
-            userManger.loginUser = [[UserModel alloc] init];
-            userManger.loginUser.phone = weakPtr.phoneTextField.text;
-            userManger.loginUser.password = weakPtr.pwordTextField.text;
-            UIViewController *vc = [Util getCurrentVC];
-            [Util showMessage:@"登录..." forDuration:1.0 inView:MDAPPDELEGATE.window];
-            [vc.navigationController popViewControllerAnimated:YES];
+            LOGIN_USER.phone = weakPtr.phoneTextField.text;
+            LOGIN_USER.password = weakPtr.pwordTextField.text;
+            [[UserManager sharedInstance] archivertUserInfo];
+            [Util showMessage:@"登录成功" forDuration:1.0 inView:MDAPPDELEGATE.window];
+            if (weakPtr.loginSuccessBlock) {
+                weakPtr.loginSuccessBlock();
+            }
         }
         else{
             [Util showErrorMessage:obj forDuration:1.f];
@@ -374,24 +356,6 @@
         make.height.mas_equalTo(40.f);
     }];
     
-//    NSMutableParagraphStyle *style1 = [[NSMutableParagraphStyle alloc] init];
-//    style1.alignment = NSTextAlignmentCenter;
-//    NSAttributedString *attrString1 = [[NSAttributedString alloc] initWithString:@"用户名" attributes:
-//                                       @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
-//                                         NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
-//                                         NSParagraphStyleAttributeName:style1
-//                                         }];
-//    _phoneTextField.attributedPlaceholder = attrString1;
-//
-//    NSMutableParagraphStyle *style2 = [[NSMutableParagraphStyle alloc] init];
-//    style2.alignment = NSTextAlignmentCenter;
-//    NSAttributedString *attrString2 = [[NSAttributedString alloc] initWithString:@"验证码" attributes:
-//                                       @{NSForegroundColorAttributeName:COLOR_HEX_STR(@"#FEEA8D"),
-//                                         NSFontAttributeName:FONT_SYSTEM_NORMAL(20),
-//                                         NSParagraphStyleAttributeName:style2
-//                                         }];
-//    _pCodeTextField.attributedPlaceholder = attrString2;
-    
     _phoneTipsLbl.font = FONT_SYSTEM_NORMAL(20);
     _phoneTipsLbl.textColor = COLOR_HEX_STR(@"#FEEA8D");
     _phoneTipsLbl.text = @"手机号";
@@ -415,6 +379,8 @@
     [_registerBtn setTitleColor:COLOR_HEX_STR(@"#FEEA8D") forState:UIControlStateNormal];
     [_registerBtn addTarget:self action:@selector(registerBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [_pCodeRecivBtn setTitle:@"验证码" forState:UIControlStateNormal];
+    _pCodeRecivBtn.titleLabel.font = FONT_SYSTEM_NORMAL(13);
+    [_pCodeRecivBtn setTitleColor:kDefaultSubTitleColor forState:UIControlStateNormal];
     [_pCodeRecivBtn addTarget:self action:@selector(reciveBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     _phoneTextField.tag = 10001;
     _pCodeTextField.tag = 10002;
@@ -422,6 +388,9 @@
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     _pCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
     _pwordTextField.keyboardType = UIKeyboardTypeASCIICapable;
+    _phoneTextField.textColor = COLOR_WITH_WHITE;
+    _pCodeTextField.textColor = COLOR_WITH_WHITE;
+    _pwordTextField.textColor = COLOR_WITH_WHITE;
     [_phoneTextField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
     [_pCodeTextField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
     [_pwordTextField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
@@ -471,13 +440,13 @@
     MDWeakPtr(weakPtr, self);
     [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_REGISTER params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
         if (rs) {
-            UserManager *userManger = [UserManager sharedInstance];
-            userManger.loginUser = [[UserModel alloc] init];
-            userManger.loginUser.phone = weakPtr.phoneTextField.text;
-            userManger.loginUser.password = weakPtr.pwordTextField.text;
-            UIViewController *vc = [Util getCurrentVC];
+            LOGIN_USER.phone = weakPtr.phoneTextField.text;
+            LOGIN_USER.password = weakPtr.pwordTextField.text;
+            [[UserManager sharedInstance] archivertUserInfo];
             [Util showMessage:@"注册成功..." forDuration:1.0 inView:MDAPPDELEGATE.window];
-            [vc.navigationController popViewControllerAnimated:YES];
+            if (weakPtr.registerSuccessBlock) {
+                weakPtr.registerSuccessBlock();
+            }
         }
         else{
             [Util showErrorMessage:obj forDuration:1.f];
@@ -492,15 +461,53 @@
         [Util showMessage:@"请输入正确的手机号" inView:MDAPPDELEGATE.window];
         return;
     }
+    MDWeakPtr(weakPtr, self);
     NSDictionary *params = @{@"phone":_phoneTextField.text};
     [[MDNetWorking sharedClient] requestWithPath:URL_POST_USER_SENSMS params:params httpMethod:MethodPost callback:^(BOOL rs, NSObject *obj) {
         if (rs) {
-            
+            [weakPtr openCountdown];
+            [Util showMessage:@"验证码已发送，请注意查收" inView:MDAPPDELEGATE.window];
         }
         else{
             [Util showErrorMessage:obj forDuration:1.0f];
         }
     }];
+}
+
+-(void)openCountdown
+{
+    // 开启倒计时效果
+    __block NSInteger time = 59; //倒计时时间
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    //每秒执行
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0);
+    
+    dispatch_source_set_event_handler(_timer, ^{
+        
+        if(time <= 0) {
+            //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置按钮的样式
+                [self.pCodeRecivBtn setTitle:@"重新发送" forState:UIControlStateNormal];
+                [self.pCodeRecivBtn setTitleColor:RED forState:UIControlStateNormal];
+                self.pCodeRecivBtn.userInteractionEnabled = YES;
+            });
+        }
+        else {
+            int seconds = time % 60;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置按钮显示读秒效果
+                [self.pCodeRecivBtn setTitle:[NSString stringWithFormat:@"%.2ds后重发", seconds] forState:UIControlStateNormal];
+                [self.pCodeRecivBtn setTitleColor:kDefaultSubTitleColor forState:UIControlStateNormal];
+                self.pCodeRecivBtn.userInteractionEnabled = NO;
+            });
+            time --;
+        }
+    });
+    dispatch_resume(_timer);
 }
 
 - (void)cancelAllEidit

@@ -42,7 +42,7 @@ PODS:
   - libwebp/webp (1.0.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
-  - MJRefresh (3.1.15.3)
+  - MJRefresh (3.1.15.6)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - pop (1.0.10)
@@ -96,10 +96,10 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
-  libwebp: 750d43a6c9f0eba068364ff8add4b9ba71d8c383
+  libwebp: d7e0c95fe97245c97e08101eba10702ebb0f6101
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
